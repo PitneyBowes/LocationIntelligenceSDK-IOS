@@ -1,4 +1,4 @@
-
+![Pitney Bowes](/PitneyBowes_Logo.jpg)
 
 # Pitney Bowes Location Intelligence API
 
@@ -35,5 +35,5 @@ Location Intelligence iOS SDK facilitates you to build iOS applications using Lo
 To get started with iOS SDK, you must first register at [Location Intelligence API Home Page](http://developer.pitneybowes.com/en/location-intelligence.html) and obtain your API Key and Secret to get started with the iOS SDK and call Location Intelligence APIs.
 For more information refer to [‘Getting Started with iOS SDK’](https://developer2.pitneybowes.com/docs/location-intelligence/v1/en/index.html#iOS%20SDK/ios_intro.html) section in documentation.
 
-### LocationIntelligenceSDK-Java uses the following software
+### LocationIntelligenceSDK-iOS uses the following software
 * Afnetworking, version number 2.5.0 which is licensed under MIT license.  The license can be downloaded from http://opensource.org/licenses/mit-license.  The source code for this software is available from http://afnetworking.com/.
