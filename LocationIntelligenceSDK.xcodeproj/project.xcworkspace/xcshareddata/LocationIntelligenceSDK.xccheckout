@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AA82F256-D188-40F1-8FB3-5133CEABD89A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>LocationIntelligenceSDK</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>20cadaeb-c43d-4bb0-a0d1-97738d1e777a</key>
+		<string>http://noisvnmsprod/svn/lbs</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>trunk/ClientSDK/IOS/LocationIntelligenceSDK/src/xcode/LocationIntelligenceSDK.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>20cadaeb-c43d-4bb0-a0d1-97738d1e777a</key>
+		<string>../../../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>20cadaeb-c43d-4bb0-a0d1-97738d1e777a</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>20cadaeb-c43d-4bb0-a0d1-97738d1e777a</string>
+			<key>IDESourceControlWCCName</key>
+			<string>lbs</string>
+		</dict>
+	</array>
+</dict>
+</plist>

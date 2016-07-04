@@ -1,0 +1,1790 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 47;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		1F1E20C61BCD4254000175C0 /* LocationIntelligence - Universal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1F1E20C71BCD4254000175C0 /* Build configuration list for PBXAggregateTarget "LocationIntelligence - Universal" */;
+			buildPhases = (
+				1F1E20CA1BCD4263000175C0 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "LocationIntelligence - Universal";
+			productName = "LocationIntelligence - Universal";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		1F0F64091CF419E70092AA46 /* CustomPreference.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F0F64071CF419E70092AA46 /* CustomPreference.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F0F640A1CF419E70092AA46 /* CustomPreference.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0F64081CF419E70092AA46 /* CustomPreference.m */; };
+		1F0F640D1CF42C060092AA46 /* CustomPreferenceUSA.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F0F640B1CF42C060092AA46 /* CustomPreferenceUSA.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F0F640E1CF42C060092AA46 /* CustomPreferenceUSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0F640C1CF42C060092AA46 /* CustomPreferenceUSA.m */; };
+		1F0F64111CF452180092AA46 /* CustomPreferenceAUS.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F0F640F1CF452180092AA46 /* CustomPreferenceAUS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F0F64121CF452180092AA46 /* CustomPreferenceAUS.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0F64101CF452180092AA46 /* CustomPreferenceAUS.m */; };
+		1F1E20651BCD4001000175C0 /* LocationIntelligenceSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1E205B1BCD4000000175C0 /* LocationIntelligenceSDK.framework */; };
+		1F1E207B1BCD406F000175C0 /* AuthToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2311AFCE39D00DBB35A /* AuthToken.m */; };
+		1F1E207C1BCD406F000175C0 /* BaseAuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2331AFCE39D00DBB35A /* BaseAuthService.m */; };
+		1F1E207D1BCD406F000175C0 /* BaseAuthServiceInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2351AFCE39D00DBB35A /* BaseAuthServiceInternal.m */; };
+		1F1E207E1BCD406F000175C0 /* OAuthFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2371AFCE39D00DBB35A /* OAuthFactory.m */; };
+		1F1E207F1BCD406F000175C0 /* OAuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2391AFCE39D00DBB35A /* OAuthService.m */; };
+		1F1E20801BCD406F000175C0 /* NeighbourhoodName.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F53CA9E1B392D19005C12AE /* NeighbourhoodName.m */; };
+		1F1E20811BCD406F000175C0 /* ContactDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F53CA9B1B3927C4005C12AE /* ContactDetails.m */; };
+		1F1E20821BCD406F000175C0 /* Match.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F53CA951B39274F005C12AE /* Match.m */; };
+		1F1E20831BCD406F000175C0 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC23C1AFCE39D00DBB35A /* Address.m */; };
+		1F1E20841BCD406F000175C0 /* Distance.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC23E1AFCE39D00DBB35A /* Distance.m */; };
+		1F1E20851BCD406F000175C0 /* Poi.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F53CA981B3927A3005C12AE /* Poi.m */; };
+		1F1E20861BCD406F000175C0 /* Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2401AFCE39D00DBB35A /* Geometry.m */; };
+		1F1E20871BCD406F000175C0 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2421AFCE39D00DBB35A /* Location.m */; };
+		1F1E20881BCD406F000175C0 /* PlaceByLocationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F53CA8F1B38427A005C12AE /* PlaceByLocationResponse.m */; };
+		1F1E20891BCD406F000175C0 /* Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2451AFCE39D00DBB35A /* Error.m */; };
+		1F1E208A1BCD406F000175C0 /* ErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2471AFCE39D00DBB35A /* ErrorResponse.m */; };
+		1F1E208B1BCD406F000175C0 /* Errors.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2491AFCE39D00DBB35A /* Errors.m */; };
+		1F1E208C1BCD406F000175C0 /* LIErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC24B1AFCE39D00DBB35A /* LIErrorResponse.m */; };
+		1F1E208D1BCD406F000175C0 /* ContactPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2501AFCE39D00DBB35A /* ContactPerson.m */; };
+		1F1E208E1BCD406F000175C0 /* County.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2521AFCE39D00DBB35A /* County.m */; };
+		1F1E208F1BCD406F000175C0 /* Coverage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2541AFCE39D00DBB35A /* Coverage.m */; };
+		1F1E20901BCD406F000175C0 /* PsapResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2561AFCE39D00DBB35A /* PsapResponse.m */; };
+		1F1E20911BCD406F000175C0 /* Geo911Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2581AFCE39D00DBB35A /* Geo911Service.m */; };
+		1F1E20921BCD406F000175C0 /* SiteDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC25C1AFCE39D00DBB35A /* SiteDetails.m */; };
+		1F1E20931BCD406F000175C0 /* AgeTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B6D6A1BBACA8C00B07B7D /* AgeTheme.m */; };
+		1F1E20941BCD406F000175C0 /* AutomobileTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B6D8C1BBAD08200B07B7D /* AutomobileTheme.m */; };
+		1F1E20951BCD406F000175C0 /* GenderTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B6D891BBACF3200B07B7D /* GenderTheme.m */; };
+		1F1E20961BCD406F000175C0 /* AttitudesAndMotivationTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B6D941BBBBCC200B07B7D /* AttitudesAndMotivationTheme.m */; };
+		1F1E20971BCD406F000175C0 /* ChannelPreferencesTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B6D971BBBBCE900B07B7D /* ChannelPreferencesTheme.m */; };
+		1F1E20981BCD406F000175C0 /* CommuterPatternsTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B6D9A1BBBBD0700B07B7D /* CommuterPatternsTheme.m */; };
+		1F1E20991BCD406F000175C0 /* EducationalAttainmentTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B6D9D1BBBBD1E00B07B7D /* EducationalAttainmentTheme.m */; };
+		1F1E209A1BCD406F000175C0 /* EthnicityTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B6DA01BBBBD3200B07B7D /* EthnicityTheme.m */; };
+		1F1E209B1BCD406F000175C0 /* FinancialProductsTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B6DA31BBBBD4600B07B7D /* FinancialProductsTheme.m */; };
+		1F1E209C1BCD406F000175C0 /* HouseholdSizeTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B6DA61BBBBD6100B07B7D /* HouseholdSizeTheme.m */; };
+		1F1E209D1BCD406F000175C0 /* IncomeTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B6DA91BBBBD7900B07B7D /* IncomeTheme.m */; };
+		1F1E209E1BCD406F000175C0 /* MaritalStatusTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B6DAC1BBBBD8C00B07B7D /* MaritalStatusTheme.m */; };
+		1F1E209F1BCD406F000175C0 /* PurchasingBehaviorTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B6DAF1BBBBDA000B07B7D /* PurchasingBehaviorTheme.m */; };
+		1F1E20A01BCD406F000175C0 /* RaceTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B6DB21BBBBDB700B07B7D /* RaceTheme.m */; };
+		1F1E20A11BCD406F000175C0 /* Boundaries.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B6D6C1BBACA8C00B07B7D /* Boundaries.m */; };
+		1F1E20A21BCD406F000175C0 /* Boundary.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B6D6E1BBACA8C00B07B7D /* Boundary.m */; };
+		1F1E20A31BCD406F000175C0 /* Field.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B6D711BBACA8C00B07B7D /* Field.m */; };
+		1F1E20A41BCD406F000175C0 /* GeoLifeResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B6D731BBACA8C00B07B7D /* GeoLifeResponse.m */; };
+		1F1E20A51BCD406F000175C0 /* GeoLifeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B6D751BBACA8C00B07B7D /* GeoLifeService.m */; };
+		1F1E20A71BCD406F000175C0 /* RangeVariable.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B6D791BBACA8C00B07B7D /* RangeVariable.m */; };
+		1F1E20A81BCD406F000175C0 /* Themes.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B6D7B1BBACA8C00B07B7D /* Themes.m */; };
+		1F1E20AA1BCD406F000175C0 /* Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B6D8F1BBAD54C00B07B7D /* Theme.m */; };
+		1F1E20AC1BCD406F000175C0 /* Timezone.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F53CAA41B39A39F005C12AE /* Timezone.m */; };
+		1F1E20AD1BCD406F000175C0 /* GeoEnhance.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2871AFCE39D00DBB35A /* GeoEnhance.m */; };
+		1F1E20AE1BCD406F000175C0 /* GeoEnhanceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2951AFCE39D00DBB35A /* GeoEnhanceService.m */; };
+		1F1E20AF1BCD406F000175C0 /* GeoSearchLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F53CAA11B398C0B005C12AE /* GeoSearchLocation.m */; };
+		1F1E20B01BCD406F000175C0 /* GeoSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2A01AFCE39D00DBB35A /* GeoSearch.m */; };
+		1F1E20B11BCD406F000175C0 /* GeoSearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2A41AFCE39D00DBB35A /* GeoSearchService.m */; };
+		1F1E20B21BCD406F000175C0 /* GeoTaxCounty.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF40ADE1B031B7F00174E34 /* GeoTaxCounty.m */; };
+		1F1E20B31BCD406F000175C0 /* GeoTax.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF40AE11B031B7F00174E34 /* GeoTax.m */; };
+		1F1E20B41BCD406F000175C0 /* GeoTaxService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF40AE31B031B7F00174E34 /* GeoTaxService.m */; };
+		1F1E20B51BCD406F000175C0 /* Jurisdiction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF40AE51B031B7F00174E34 /* Jurisdiction.m */; };
+		1F1E20B61BCD406F000175C0 /* GeoTaxPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF40AE91B031B7F00174E34 /* GeoTaxPlace.m */; };
+		1F1E20B71BCD406F000175C0 /* SalesTax.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF40AEB1B031B7F00174E34 /* SalesTax.m */; };
+		1F1E20B81BCD406F000175C0 /* Spds.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF40AED1B031B7F00174E34 /* Spds.m */; };
+		1F1E20B91BCD4070000175C0 /* SpdsTax.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF40AEF1B031B7F00174E34 /* SpdsTax.m */; };
+		1F1E20BA1BCD4070000175C0 /* State.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF40AF11B031B7F00174E34 /* State.m */; };
+		1F1E20BB1BCD4070000175C0 /* UseTax.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF40AF31B031B7F00174E34 /* UseTax.m */; };
+		1F1E20BC1BCD4070000175C0 /* LIServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2A71AFCE39D00DBB35A /* LIServiceManager.m */; };
+		1F1E20BD1BCD4070000175C0 /* JSONResponseSerializerWithData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2AC1AFCE39D00DBB35A /* JSONResponseSerializerWithData.m */; };
+		1F1E20BE1BCD4070000175C0 /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2AE1AFCE39D00DBB35A /* NetworkService.m */; };
+		1F1E20BF1BCD4070000175C0 /* UrlMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2B01AFCE39D00DBB35A /* UrlMaker.m */; };
+		1F1E20C01BCD4130000175C0 /* GeoTaxServiceTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F066AF01B046DED0013F009 /* GeoTaxServiceTestCase.m */; };
+		1F1E20C11BCD4130000175C0 /* GeoSearchServiceTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F066AD61B0365080013F009 /* GeoSearchServiceTestCase.m */; };
+		1F1E20C21BCD4130000175C0 /* OAuthTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F066AD81B0365080013F009 /* OAuthTestCase.m */; };
+		1F1E20C31BCD4130000175C0 /* Geo911ServiceTestcase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2F61AFCE3C400DBB35A /* Geo911ServiceTestcase.m */; };
+		1F1E20C41BCD4130000175C0 /* GeoEnhanceServiceTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2F71AFCE3C400DBB35A /* GeoEnhanceServiceTestCase.m */; };
+		1F1E20C51BCD4130000175C0 /* GeoLifeServiceTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2EC2F81AFCE3C400DBB35A /* GeoLifeServiceTestCase.m */; };
+		1F1E20D51BCD43CD000175C0 /* AuthToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC2301AFCE39D00DBB35A /* AuthToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20D61BCD43CD000175C0 /* BaseAuthService.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC2321AFCE39D00DBB35A /* BaseAuthService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20D71BCD43CD000175C0 /* BaseAuthServiceInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC2341AFCE39D00DBB35A /* BaseAuthServiceInternal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20D81BCD43CD000175C0 /* OAuthFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC2361AFCE39D00DBB35A /* OAuthFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20D91BCD43CD000175C0 /* OAuthService.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC2381AFCE39D00DBB35A /* OAuthService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20DA1BCD43DB000175C0 /* NeighbourhoodName.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F53CA9D1B392D19005C12AE /* NeighbourhoodName.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20DB1BCD43DB000175C0 /* ContactDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F53CA9A1B3927C4005C12AE /* ContactDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20DC1BCD43DB000175C0 /* Match.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F53CA941B39274F005C12AE /* Match.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20DD1BCD43DB000175C0 /* Address.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC23B1AFCE39D00DBB35A /* Address.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20DE1BCD43DB000175C0 /* Distance.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC23D1AFCE39D00DBB35A /* Distance.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20DF1BCD43DC000175C0 /* Poi.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F53CA971B3927A3005C12AE /* Poi.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20E01BCD43DC000175C0 /* Geometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC23F1AFCE39D00DBB35A /* Geometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20E11BCD43DC000175C0 /* Location.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC2411AFCE39D00DBB35A /* Location.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20E21BCD43DC000175C0 /* PlaceByLocationResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F53CA8E1B38427A005C12AE /* PlaceByLocationResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20E31BCD441D000175C0 /* Error.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC2441AFCE39D00DBB35A /* Error.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20E41BCD441E000175C0 /* ErrorResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC2461AFCE39D00DBB35A /* ErrorResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20E51BCD441E000175C0 /* Errors.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC2481AFCE39D00DBB35A /* Errors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20E61BCD441E000175C0 /* LIErrorResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC24A1AFCE39D00DBB35A /* LIErrorResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20E71BCD441E000175C0 /* ContactPerson.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC24F1AFCE39D00DBB35A /* ContactPerson.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20E81BCD441E000175C0 /* County.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC2511AFCE39D00DBB35A /* County.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20E91BCD441E000175C0 /* Coverage.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC2531AFCE39D00DBB35A /* Coverage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20EA1BCD441E000175C0 /* PsapResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC2551AFCE39D00DBB35A /* PsapResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20EB1BCD441E000175C0 /* Geo911Service.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC2571AFCE39D00DBB35A /* Geo911Service.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20EC1BCD441E000175C0 /* SiteDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC25B1AFCE39D00DBB35A /* SiteDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20ED1BCD441E000175C0 /* AgeTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B6D691BBACA8C00B07B7D /* AgeTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20EE1BCD441E000175C0 /* AutomobileTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B6D8B1BBAD08200B07B7D /* AutomobileTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20EF1BCD441E000175C0 /* GenderTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B6D881BBACF3200B07B7D /* GenderTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20F01BCD441E000175C0 /* AttitudesAndMotivationTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B6D931BBBBCC200B07B7D /* AttitudesAndMotivationTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20F11BCD441E000175C0 /* ChannelPreferencesTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B6D961BBBBCE900B07B7D /* ChannelPreferencesTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20F21BCD441F000175C0 /* CommuterPatternsTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B6D991BBBBD0700B07B7D /* CommuterPatternsTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20F31BCD441F000175C0 /* EducationalAttainmentTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B6D9C1BBBBD1E00B07B7D /* EducationalAttainmentTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20F41BCD441F000175C0 /* EthnicityTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B6D9F1BBBBD3200B07B7D /* EthnicityTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20F51BCD441F000175C0 /* FinancialProductsTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B6DA21BBBBD4600B07B7D /* FinancialProductsTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20F61BCD441F000175C0 /* HouseholdSizeTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B6DA51BBBBD6100B07B7D /* HouseholdSizeTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20F71BCD441F000175C0 /* IncomeTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B6DA81BBBBD7900B07B7D /* IncomeTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20F81BCD441F000175C0 /* MaritalStatusTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B6DAB1BBBBD8C00B07B7D /* MaritalStatusTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20F91BCD441F000175C0 /* PurchasingBehaviorTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B6DAE1BBBBDA000B07B7D /* PurchasingBehaviorTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20FA1BCD441F000175C0 /* RaceTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B6DB11BBBBDB700B07B7D /* RaceTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20FB1BCD4420000175C0 /* Boundaries.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B6D6B1BBACA8C00B07B7D /* Boundaries.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20FC1BCD4420000175C0 /* Boundary.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B6D6D1BBACA8C00B07B7D /* Boundary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20FD1BCD4420000175C0 /* Field.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B6D701BBACA8C00B07B7D /* Field.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E20FF1BCD4420000175C0 /* GeoLifeService.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B6D921BBAD9AE00B07B7D /* GeoLifeService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E21011BCD4420000175C0 /* RangeVariable.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B6D781BBACA8C00B07B7D /* RangeVariable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E21021BCD4420000175C0 /* Themes.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B6D7A1BBACA8C00B07B7D /* Themes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E21041BCD4421000175C0 /* Theme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B6D8E1BBAD54C00B07B7D /* Theme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E21061BCD4421000175C0 /* Timezone.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F53CAA31B39A39F005C12AE /* Timezone.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E21071BCD4421000175C0 /* ContactDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC2841AFCE39D00DBB35A /* ContactDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E21081BCD4421000175C0 /* GeoEnhance.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC2861AFCE39D00DBB35A /* GeoEnhance.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E21091BCD4421000175C0 /* GeoEnhanceService.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC2941AFCE39D00DBB35A /* GeoEnhanceService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E210A1BCD4422000175C0 /* GeoSearchLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F53CAA01B398C0B005C12AE /* GeoSearchLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E210B1BCD4422000175C0 /* GeoSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC29F1AFCE39D00DBB35A /* GeoSearch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E210C1BCD4422000175C0 /* GeoSearchService.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC2A31AFCE39D00DBB35A /* GeoSearchService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E210D1BCD4422000175C0 /* GeoTaxCounty.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FF40ADD1B031B7F00174E34 /* GeoTaxCounty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E210E1BCD4422000175C0 /* GeoTax.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FF40AE01B031B7F00174E34 /* GeoTax.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E210F1BCD4422000175C0 /* GeoTaxService.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FF40AE21B031B7F00174E34 /* GeoTaxService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E21101BCD4423000175C0 /* Jurisdiction.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FF40AE41B031B7F00174E34 /* Jurisdiction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E21111BCD4423000175C0 /* GeoTaxPlace.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FF40AE81B031B7F00174E34 /* GeoTaxPlace.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E21121BCD4423000175C0 /* SalesTax.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FF40AEA1B031B7F00174E34 /* SalesTax.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E21131BCD4423000175C0 /* Spds.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FF40AEC1B031B7F00174E34 /* Spds.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E21141BCD4423000175C0 /* SpdsTax.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FF40AEE1B031B7F00174E34 /* SpdsTax.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E21151BCD4423000175C0 /* State.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FF40AF01B031B7F00174E34 /* State.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E21161BCD4424000175C0 /* UseTax.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FF40AF21B031B7F00174E34 /* UseTax.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E21171BCD4424000175C0 /* LIServiceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC2A61AFCE39D00DBB35A /* LIServiceManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E21181BCD4424000175C0 /* JSONResponseSerializerWithData.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC2AB1AFCE39D00DBB35A /* JSONResponseSerializerWithData.h */; };
+		1F1E21191BCD4424000175C0 /* NetworkService.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC2AD1AFCE39D00DBB35A /* NetworkService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E211A1BCD4424000175C0 /* UrlMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC2AF1AFCE39D00DBB35A /* UrlMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1E211E1BCF8753000175C0 /* GeoLifeResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B6D721BBACA8C00B07B7D /* GeoLifeResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F2B9A9E1C6DB13F00C038CC /* CountrySupportInfos.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2B9A981C6DB13F00C038CC /* CountrySupportInfos.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F2B9A9F1C6DB13F00C038CC /* CountrySupportInfos.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B9A991C6DB13F00C038CC /* CountrySupportInfos.m */; };
+		1F2B9AAB1C6DB87800C038CC /* GeocodeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B9AA91C6DB87800C038CC /* GeocodeService.m */; };
+		1F2B9AAC1C6DBAD100C038CC /* GeocodeService.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2B9AA81C6DB87800C038CC /* GeocodeService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F2B9ACE1C6DDDAB00C038CC /* GeocodeTestCases.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B9ACD1C6DDDAB00C038CC /* GeocodeTestCases.m */; };
+		1F2B9AE41C6E0ADE00C038CC /* Crs.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2B9AD41C6E0ADE00C038CC /* Crs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F2B9AE51C6E0ADE00C038CC /* Crs.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B9AD51C6E0ADE00C038CC /* Crs.m */; };
+		1F2B9B0B1C6E0B0600C038CC /* CustomPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2B9AFC1C6E0B0600C038CC /* CustomPreferences.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F2B9B0C1C6E0B0600C038CC /* CustomPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B9AFD1C6E0B0600C038CC /* CustomPreferences.m */; };
+		1F2B9B0F1C6E0B0600C038CC /* MustMatchFields.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2B9AFF1C6E0B0600C038CC /* MustMatchFields.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F2B9B101C6E0B0600C038CC /* MustMatchFields.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B9B001C6E0B0600C038CC /* MustMatchFields.m */; };
+		1F2B9B121C6E0B0600C038CC /* Preferences.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2B9B011C6E0B0600C038CC /* Preferences.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F2B9B131C6E0B0600C038CC /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B9B021C6E0B0600C038CC /* Preferences.m */; };
+		1F2B9B151C6E0B0600C038CC /* ReturnFieldsDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2B9B031C6E0B0600C038CC /* ReturnFieldsDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F2B9B161C6E0B0600C038CC /* ReturnFieldsDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B9B041C6E0B0600C038CC /* ReturnFieldsDescriptor.m */; };
+		1F2B9B1A1C6E0BB100C038CC /* GeocodeRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2B9B181C6E0BB100C038CC /* GeocodeRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F2B9B1B1C6E0BB100C038CC /* GeocodeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2B9B191C6E0BB100C038CC /* GeocodeRequest.m */; };
+		1F6543251CFC6B1C00728023 /* CustomPreferencePRT.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F6543231CFC6B1C00728023 /* CustomPreferencePRT.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F6543261CFC6B1C00728023 /* CustomPreferencePRT.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6543241CFC6B1C00728023 /* CustomPreferencePRT.m */; };
+		1F6543291CFC6B4200728023 /* CustomPreferenceCAN.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F6543271CFC6B4200728023 /* CustomPreferenceCAN.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F65432A1CFC6B4200728023 /* CustomPreferenceCAN.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6543281CFC6B4200728023 /* CustomPreferenceCAN.m */; };
+		1F65432D1CFC6B5E00728023 /* CustomPreferenceDUE.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F65432B1CFC6B5E00728023 /* CustomPreferenceDUE.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F65432E1CFC6B5E00728023 /* CustomPreferenceDUE.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F65432C1CFC6B5E00728023 /* CustomPreferenceDUE.m */; };
+		1F6543311CFC6B7100728023 /* CustomPreferenceFRA.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F65432F1CFC6B7100728023 /* CustomPreferenceFRA.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F6543321CFC6B7100728023 /* CustomPreferenceFRA.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6543301CFC6B7100728023 /* CustomPreferenceFRA.m */; };
+		1F6543351CFC6B8700728023 /* CustomPreferenceGBR.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F6543331CFC6B8700728023 /* CustomPreferenceGBR.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F6543361CFC6B8700728023 /* CustomPreferenceGBR.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6543341CFC6B8700728023 /* CustomPreferenceGBR.m */; };
+		1F6543391CFC6BC900728023 /* CustomPreferenceNZL.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F6543371CFC6BC900728023 /* CustomPreferenceNZL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F65433A1CFC6BC900728023 /* CustomPreferenceNZL.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6543381CFC6BC900728023 /* CustomPreferenceNZL.m */; };
+		1F65433D1CFC6BEB00728023 /* CustomPreferenceSGP.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F65433B1CFC6BEB00728023 /* CustomPreferenceSGP.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F65433E1CFC6BEB00728023 /* CustomPreferenceSGP.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F65433C1CFC6BEB00728023 /* CustomPreferenceSGP.m */; };
+		1F6543411CFC6BFC00728023 /* CustomPreferenceSWE.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F65433F1CFC6BFC00728023 /* CustomPreferenceSWE.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F6543421CFC6BFC00728023 /* CustomPreferenceSWE.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6543401CFC6BFC00728023 /* CustomPreferenceSWE.m */; };
+		1F79704B1CF748690037BCCB /* MatchFields.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F7970491CF748690037BCCB /* MatchFields.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F79704C1CF748690037BCCB /* MatchFields.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F79704A1CF748690037BCCB /* MatchFields.m */; };
+		1F79704D1CF748690037BCCB /* MatchFields.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F79704A1CF748690037BCCB /* MatchFields.m */; };
+		1F9301E71CEEE05200A87099 /* ConfiguredDictionaryResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9301E51CEEE05200A87099 /* ConfiguredDictionaryResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F9301E81CEEE05200A87099 /* ConfiguredDictionaryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9301E61CEEE05200A87099 /* ConfiguredDictionaryResponse.m */; };
+		1F9301F71CEEF90600A87099 /* AddressGeocode.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9301F51CEEF90600A87099 /* AddressGeocode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F9301F81CEEF90600A87099 /* AddressGeocode.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9301F61CEEF90600A87099 /* AddressGeocode.m */; };
+		1FAE08501BCFADD300D71FA5 /* LifeStyleTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FAE084E1BCFADD300D71FA5 /* LifeStyleTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FAE08511BCFADD300D71FA5 /* LifeStyleTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE084F1BCFADD300D71FA5 /* LifeStyleTheme.m */; };
+		1FAE08601BCFAE2700D71FA5 /* Segmentation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FAE085E1BCFAE2700D71FA5 /* Segmentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FAE08611BCFAE2700D71FA5 /* Segmentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE085F1BCFAE2700D71FA5 /* Segmentation.m */; };
+		1FAE08681BCFAE4C00D71FA5 /* SegmentationThemes.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FAE08661BCFAE4C00D71FA5 /* SegmentationThemes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FAE08691BCFAE4C00D71FA5 /* SegmentatonThemes.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE08671BCFAE4C00D71FA5 /* SegmentatonThemes.m */; };
+		1FAE086C1BCFAE5D00D71FA5 /* Variable.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FAE086A1BCFAE5D00D71FA5 /* Variable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FAE086D1BCFAE5D00D71FA5 /* Variable.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE086B1BCFAE5D00D71FA5 /* Variable.m */; };
+		1FAE08741BCFB20400D71FA5 /* SegmentationService.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FAE08721BCFB20400D71FA5 /* SegmentationService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FAE08751BCFB20400D71FA5 /* SegmentationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE08731BCFB20400D71FA5 /* SegmentationService.m */; };
+		1FAE087A1BCFC82C00D71FA5 /* SegmentationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE08791BCFC82C00D71FA5 /* SegmentationTestCase.m */; };
+		1FAE089E1BCFD68600D71FA5 /* LocationIntelligenceSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2EC2A81AFCE39D00DBB35A /* LocationIntelligenceSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB235A21CF1833900AF771A /* Dictionaries.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235A01CF1833900AF771A /* Dictionaries.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB235A31CF1833900AF771A /* Dictionaries.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235A11CF1833900AF771A /* Dictionaries.m */; };
+		1FB235C21CF1857400AF771A /* AllowedValuesWithDescriptions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235A91CF1857400AF771A /* AllowedValuesWithDescriptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB235C31CF1857400AF771A /* AllowedValuesWithDescriptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235AA1CF1857400AF771A /* AllowedValuesWithDescriptions.m */; };
+		1FB235C41CF1857400AF771A /* CustomObjects.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235AB1CF1857400AF771A /* CustomObjects.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB235C51CF1857400AF771A /* CustomObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235AC1CF1857400AF771A /* CustomObjects.m */; };
+		1FB235C61CF1857400AF771A /* DataModels.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235AD1CF1857400AF771A /* DataModels.h */; };
+		1FB235C71CF1857400AF771A /* GeocodeCapabilitiesResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235AE1CF1857400AF771A /* GeocodeCapabilitiesResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB235C81CF1857400AF771A /* GeocodeCapabilitiesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235AF1CF1857400AF771A /* GeocodeCapabilitiesResponse.m */; };
+		1FB235C91CF1857400AF771A /* Input.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235B01CF1857400AF771A /* Input.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB235CA1CF1857400AF771A /* Input.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235B11CF1857400AF771A /* Input.m */; };
+		1FB235CB1CF1857400AF771A /* OptionalInputs.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235B21CF1857400AF771A /* OptionalInputs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB235CC1CF1857400AF771A /* OptionalInputs.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235B31CF1857400AF771A /* OptionalInputs.m */; };
+		1FB235CD1CF1857400AF771A /* Output.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235B41CF1857400AF771A /* Output.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB235CE1CF1857400AF771A /* Output.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235B51CF1857400AF771A /* Output.m */; };
+		1FB235CF1CF1857400AF771A /* Outputs.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235B61CF1857400AF771A /* Outputs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB235D01CF1857400AF771A /* Outputs.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235B71CF1857400AF771A /* Outputs.m */; };
+		1FB235D11CF1857400AF771A /* CapabilityProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235B81CF1857400AF771A /* CapabilityProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB235D21CF1857400AF771A /* CapabilityProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235B91CF1857400AF771A /* CapabilityProperties.m */; };
+		1FB235D31CF1857400AF771A /* RequiredInputs.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235BA1CF1857400AF771A /* RequiredInputs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB235D41CF1857400AF771A /* RequiredInputs.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235BB1CF1857400AF771A /* RequiredInputs.m */; };
+		1FB235D51CF1857400AF771A /* SupportedOperations.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235BC1CF1857400AF771A /* SupportedOperations.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB235D61CF1857400AF771A /* SupportedOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235BD1CF1857400AF771A /* SupportedOperations.m */; };
+		1FB235D71CF1857400AF771A /* SupportLevels.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235BE1CF1857400AF771A /* SupportLevels.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB235D81CF1857400AF771A /* SupportLevels.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235BF1CF1857400AF771A /* SupportLevels.m */; };
+		1FB235D91CF1857400AF771A /* UpdatedOptionalOutputs.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235C01CF1857400AF771A /* UpdatedOptionalOutputs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB235DA1CF1857400AF771A /* UpdatedOptionalOutputs.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235C11CF1857400AF771A /* UpdatedOptionalOutputs.m */; };
+		1FB235DE1CF1DFCC00AF771A /* Points.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235DC1CF1DFCC00AF771A /* Points.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB235DF1CF1DFCC00AF771A /* Points.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235DD1CF1DFCC00AF771A /* Points.m */; };
+		1FB235F61CF1E22B00AF771A /* Candidates.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235E01CF1E22B00AF771A /* Candidates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB235F71CF1E22B00AF771A /* Candidates.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235E11CF1E22B00AF771A /* Candidates.m */; };
+		1FB235FA1CF1E22B00AF771A /* CustomFields.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235E41CF1E22B00AF771A /* CustomFields.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB235FB1CF1E22B00AF771A /* CustomFields.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235E51CF1E22B00AF771A /* CustomFields.m */; };
+		1FB235FC1CF1E22B00AF771A /* CustomValues.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235E61CF1E22B00AF771A /* CustomValues.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB235FD1CF1E22B00AF771A /* CustomValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235E71CF1E22B00AF771A /* CustomValues.m */; };
+		1FB235FE1CF1E22B00AF771A /* GeocodeAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235E81CF1E22B00AF771A /* GeocodeAddress.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB235FF1CF1E22B00AF771A /* GeocodeAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235E91CF1E22B00AF771A /* GeocodeAddress.m */; };
+		1FB236001CF1E22B00AF771A /* GeocodeResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235EA1CF1E22B00AF771A /* GeocodeResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB236011CF1E22B00AF771A /* GeocodeResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235EB1CF1E22B00AF771A /* GeocodeResponse.m */; };
+		1FB236021CF1E22B00AF771A /* GeocodeGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235EC1CF1E22B00AF771A /* GeocodeGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB236031CF1E22B00AF771A /* GeocodeGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235ED1CF1E22B00AF771A /* GeocodeGeometry.m */; };
+		1FB236041CF1E22B00AF771A /* GeocodeProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235EE1CF1E22B00AF771A /* GeocodeProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB236051CF1E22B00AF771A /* GeocodeProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235EF1CF1E22B00AF771A /* GeocodeProperties.m */; };
+		1FB236061CF1E22B00AF771A /* Ranges.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235F01CF1E22B00AF771A /* Ranges.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB236071CF1E22B00AF771A /* Ranges.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235F11CF1E22B00AF771A /* Ranges.m */; };
+		1FB236081CF1E22B00AF771A /* Responses.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235F21CF1E22B00AF771A /* Responses.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB236091CF1E22B00AF771A /* Responses.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235F31CF1E22B00AF771A /* Responses.m */; };
+		1FB2360A1CF1E22B00AF771A /* Units.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB235F41CF1E22B00AF771A /* Units.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB2360B1CF1E22B00AF771A /* Units.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB235F51CF1E22B00AF771A /* Units.m */; };
+		1FB2360E1CF2C7B400AF771A /* ReverseGeocodeRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB2360C1CF2C7B400AF771A /* ReverseGeocodeRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB2360F1CF2C7B400AF771A /* ReverseGeocodeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB2360D1CF2C7B400AF771A /* ReverseGeocodeRequest.m */; };
+		1FB236171CF300B300AF771A /* GeocodePreferenceBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB236151CF300B300AF771A /* GeocodePreferenceBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB236181CF300B300AF771A /* GeocodePreferenceBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB236161CF300B300AF771A /* GeocodePreferenceBuilder.m */; };
+		1FB2361A1CF304D600AF771A /* ICustomPreference.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB236191CF304D600AF771A /* ICustomPreference.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB2361D1CF309F400AF771A /* GeocodePreference.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB2361B1CF309F400AF771A /* GeocodePreference.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB2361E1CF309F400AF771A /* GeocodePreference.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB2361C1CF309F400AF771A /* GeocodePreference.m */; };
+		1FB236211CF30A2700AF771A /* GeocodeReturnFieldDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB2361F1CF30A2700AF771A /* GeocodeReturnFieldDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB236221CF30A2700AF771A /* GeocodeReturnFieldDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB236201CF30A2700AF771A /* GeocodeReturnFieldDescriptor.m */; };
+		1FBA42E21BD505E00045F680 /* IndividualValueVariable.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FBA42E01BD505E00045F680 /* IndividualValueVariable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FBA42E31BD505E00045F680 /* IndividualValueVariable.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA42E11BD505E00045F680 /* IndividualValueVariable.m */; };
+		267FE26E186C607D1E3F4FAA /* libPods-LocationIntelligenceSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3383F83B5C48E52A8665C4E /* libPods-LocationIntelligenceSDK.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1F1E20661BCD4001000175C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F39345B1AFCBD8300ED8859 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F1E205A1BCD4000000175C0;
+			remoteInfo = LocationIntelligenceSDK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1F00BD4F1AFCD44B0043DF14 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		1F00BD511AFCD4500043DF14 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1F066AD61B0365080013F009 /* GeoSearchServiceTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoSearchServiceTestCase.m; sourceTree = "<group>"; };
+		1F066AD81B0365080013F009 /* OAuthTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthTestCase.m; sourceTree = "<group>"; };
+		1F066AF01B046DED0013F009 /* GeoTaxServiceTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoTaxServiceTestCase.m; sourceTree = "<group>"; };
+		1F0F64071CF419E70092AA46 /* CustomPreference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPreference.h; sourceTree = "<group>"; };
+		1F0F64081CF419E70092AA46 /* CustomPreference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPreference.m; sourceTree = "<group>"; };
+		1F0F640B1CF42C060092AA46 /* CustomPreferenceUSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPreferenceUSA.h; sourceTree = "<group>"; };
+		1F0F640C1CF42C060092AA46 /* CustomPreferenceUSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPreferenceUSA.m; sourceTree = "<group>"; };
+		1F0F640F1CF452180092AA46 /* CustomPreferenceAUS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPreferenceAUS.h; sourceTree = "<group>"; };
+		1F0F64101CF452180092AA46 /* CustomPreferenceAUS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPreferenceAUS.m; sourceTree = "<group>"; };
+		1F1E205B1BCD4000000175C0 /* LocationIntelligenceSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LocationIntelligenceSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F1E20641BCD4001000175C0 /* LocationIntelligenceSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationIntelligenceSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F2B9A981C6DB13F00C038CC /* CountrySupportInfos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountrySupportInfos.h; sourceTree = "<group>"; };
+		1F2B9A991C6DB13F00C038CC /* CountrySupportInfos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountrySupportInfos.m; sourceTree = "<group>"; };
+		1F2B9AA81C6DB87800C038CC /* GeocodeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeocodeService.h; sourceTree = "<group>"; };
+		1F2B9AA91C6DB87800C038CC /* GeocodeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeocodeService.m; sourceTree = "<group>"; };
+		1F2B9ACD1C6DDDAB00C038CC /* GeocodeTestCases.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeocodeTestCases.m; sourceTree = "<group>"; };
+		1F2B9AD41C6E0ADE00C038CC /* Crs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crs.h; sourceTree = "<group>"; };
+		1F2B9AD51C6E0ADE00C038CC /* Crs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Crs.m; sourceTree = "<group>"; };
+		1F2B9AFC1C6E0B0600C038CC /* CustomPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPreferences.h; sourceTree = "<group>"; };
+		1F2B9AFD1C6E0B0600C038CC /* CustomPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPreferences.m; sourceTree = "<group>"; };
+		1F2B9AFF1C6E0B0600C038CC /* MustMatchFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MustMatchFields.h; sourceTree = "<group>"; };
+		1F2B9B001C6E0B0600C038CC /* MustMatchFields.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MustMatchFields.m; sourceTree = "<group>"; };
+		1F2B9B011C6E0B0600C038CC /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
+		1F2B9B021C6E0B0600C038CC /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
+		1F2B9B031C6E0B0600C038CC /* ReturnFieldsDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnFieldsDescriptor.h; sourceTree = "<group>"; };
+		1F2B9B041C6E0B0600C038CC /* ReturnFieldsDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReturnFieldsDescriptor.m; sourceTree = "<group>"; };
+		1F2B9B181C6E0BB100C038CC /* GeocodeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeocodeRequest.h; sourceTree = "<group>"; };
+		1F2B9B191C6E0BB100C038CC /* GeocodeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeocodeRequest.m; sourceTree = "<group>"; };
+		1F2EC2301AFCE39D00DBB35A /* AuthToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthToken.h; sourceTree = "<group>"; };
+		1F2EC2311AFCE39D00DBB35A /* AuthToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthToken.m; sourceTree = "<group>"; };
+		1F2EC2321AFCE39D00DBB35A /* BaseAuthService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseAuthService.h; sourceTree = "<group>"; };
+		1F2EC2331AFCE39D00DBB35A /* BaseAuthService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseAuthService.m; sourceTree = "<group>"; };
+		1F2EC2341AFCE39D00DBB35A /* BaseAuthServiceInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseAuthServiceInternal.h; sourceTree = "<group>"; };
+		1F2EC2351AFCE39D00DBB35A /* BaseAuthServiceInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseAuthServiceInternal.m; sourceTree = "<group>"; };
+		1F2EC2361AFCE39D00DBB35A /* OAuthFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthFactory.h; sourceTree = "<group>"; };
+		1F2EC2371AFCE39D00DBB35A /* OAuthFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthFactory.m; sourceTree = "<group>"; };
+		1F2EC2381AFCE39D00DBB35A /* OAuthService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthService.h; sourceTree = "<group>"; };
+		1F2EC2391AFCE39D00DBB35A /* OAuthService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthService.m; sourceTree = "<group>"; };
+		1F2EC23B1AFCE39D00DBB35A /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
+		1F2EC23C1AFCE39D00DBB35A /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
+		1F2EC23D1AFCE39D00DBB35A /* Distance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Distance.h; sourceTree = "<group>"; };
+		1F2EC23E1AFCE39D00DBB35A /* Distance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Distance.m; sourceTree = "<group>"; };
+		1F2EC23F1AFCE39D00DBB35A /* Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geometry.h; sourceTree = "<group>"; };
+		1F2EC2401AFCE39D00DBB35A /* Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Geometry.m; sourceTree = "<group>"; };
+		1F2EC2411AFCE39D00DBB35A /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		1F2EC2421AFCE39D00DBB35A /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		1F2EC2441AFCE39D00DBB35A /* Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Error.h; sourceTree = "<group>"; };
+		1F2EC2451AFCE39D00DBB35A /* Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Error.m; sourceTree = "<group>"; };
+		1F2EC2461AFCE39D00DBB35A /* ErrorResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorResponse.h; sourceTree = "<group>"; };
+		1F2EC2471AFCE39D00DBB35A /* ErrorResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorResponse.m; sourceTree = "<group>"; };
+		1F2EC2481AFCE39D00DBB35A /* Errors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Errors.h; sourceTree = "<group>"; };
+		1F2EC2491AFCE39D00DBB35A /* Errors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Errors.m; sourceTree = "<group>"; };
+		1F2EC24A1AFCE39D00DBB35A /* LIErrorResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIErrorResponse.h; sourceTree = "<group>"; };
+		1F2EC24B1AFCE39D00DBB35A /* LIErrorResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIErrorResponse.m; sourceTree = "<group>"; };
+		1F2EC24F1AFCE39D00DBB35A /* ContactPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactPerson.h; sourceTree = "<group>"; };
+		1F2EC2501AFCE39D00DBB35A /* ContactPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactPerson.m; sourceTree = "<group>"; };
+		1F2EC2511AFCE39D00DBB35A /* County.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = County.h; sourceTree = "<group>"; };
+		1F2EC2521AFCE39D00DBB35A /* County.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = County.m; sourceTree = "<group>"; };
+		1F2EC2531AFCE39D00DBB35A /* Coverage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coverage.h; sourceTree = "<group>"; };
+		1F2EC2541AFCE39D00DBB35A /* Coverage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coverage.m; sourceTree = "<group>"; };
+		1F2EC2551AFCE39D00DBB35A /* PsapResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PsapResponse.h; sourceTree = "<group>"; };
+		1F2EC2561AFCE39D00DBB35A /* PsapResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PsapResponse.m; sourceTree = "<group>"; };
+		1F2EC2571AFCE39D00DBB35A /* Geo911Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geo911Service.h; sourceTree = "<group>"; };
+		1F2EC2581AFCE39D00DBB35A /* Geo911Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Geo911Service.m; sourceTree = "<group>"; };
+		1F2EC25B1AFCE39D00DBB35A /* SiteDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteDetails.h; sourceTree = "<group>"; };
+		1F2EC25C1AFCE39D00DBB35A /* SiteDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteDetails.m; sourceTree = "<group>"; };
+		1F2EC2841AFCE39D00DBB35A /* ContactDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetails.h; sourceTree = "<group>"; };
+		1F2EC2851AFCE39D00DBB35A /* ContactDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetails.m; sourceTree = "<group>"; };
+		1F2EC2861AFCE39D00DBB35A /* GeoEnhance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoEnhance.h; sourceTree = "<group>"; };
+		1F2EC2871AFCE39D00DBB35A /* GeoEnhance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoEnhance.m; sourceTree = "<group>"; };
+		1F2EC2941AFCE39D00DBB35A /* GeoEnhanceService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoEnhanceService.h; sourceTree = "<group>"; };
+		1F2EC2951AFCE39D00DBB35A /* GeoEnhanceService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoEnhanceService.m; sourceTree = "<group>"; };
+		1F2EC29F1AFCE39D00DBB35A /* GeoSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoSearch.h; sourceTree = "<group>"; };
+		1F2EC2A01AFCE39D00DBB35A /* GeoSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoSearch.m; sourceTree = "<group>"; };
+		1F2EC2A31AFCE39D00DBB35A /* GeoSearchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoSearchService.h; sourceTree = "<group>"; };
+		1F2EC2A41AFCE39D00DBB35A /* GeoSearchService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoSearchService.m; sourceTree = "<group>"; };
+		1F2EC2A61AFCE39D00DBB35A /* LIServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIServiceManager.h; sourceTree = "<group>"; };
+		1F2EC2A71AFCE39D00DBB35A /* LIServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIServiceManager.m; sourceTree = "<group>"; };
+		1F2EC2A81AFCE39D00DBB35A /* LocationIntelligenceSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationIntelligenceSDK.h; sourceTree = "<group>"; };
+		1F2EC2A91AFCE39D00DBB35A /* LocationIntelligenceSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationIntelligenceSDK.m; sourceTree = "<group>"; };
+		1F2EC2AB1AFCE39D00DBB35A /* JSONResponseSerializerWithData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONResponseSerializerWithData.h; sourceTree = "<group>"; };
+		1F2EC2AC1AFCE39D00DBB35A /* JSONResponseSerializerWithData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONResponseSerializerWithData.m; sourceTree = "<group>"; };
+		1F2EC2AD1AFCE39D00DBB35A /* NetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
+		1F2EC2AE1AFCE39D00DBB35A /* NetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkService.m; sourceTree = "<group>"; };
+		1F2EC2AF1AFCE39D00DBB35A /* UrlMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlMaker.h; sourceTree = "<group>"; };
+		1F2EC2B01AFCE39D00DBB35A /* UrlMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrlMaker.m; sourceTree = "<group>"; };
+		1F2EC2F61AFCE3C400DBB35A /* Geo911ServiceTestcase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Geo911ServiceTestcase.m; sourceTree = "<group>"; };
+		1F2EC2F71AFCE3C400DBB35A /* GeoEnhanceServiceTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoEnhanceServiceTestCase.m; sourceTree = "<group>"; };
+		1F2EC2F81AFCE3C400DBB35A /* GeoLifeServiceTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoLifeServiceTestCase.m; sourceTree = "<group>"; };
+		1F2EC3001AFCE3D000DBB35A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F53CA8E1B38427A005C12AE /* PlaceByLocationResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceByLocationResponse.h; sourceTree = "<group>"; };
+		1F53CA8F1B38427A005C12AE /* PlaceByLocationResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceByLocationResponse.m; sourceTree = "<group>"; };
+		1F53CA941B39274F005C12AE /* Match.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Match.h; sourceTree = "<group>"; };
+		1F53CA951B39274F005C12AE /* Match.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Match.m; sourceTree = "<group>"; };
+		1F53CA971B3927A3005C12AE /* Poi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Poi.h; sourceTree = "<group>"; };
+		1F53CA981B3927A3005C12AE /* Poi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Poi.m; sourceTree = "<group>"; };
+		1F53CA9A1B3927C4005C12AE /* ContactDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetails.h; sourceTree = "<group>"; };
+		1F53CA9B1B3927C4005C12AE /* ContactDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetails.m; sourceTree = "<group>"; };
+		1F53CA9D1B392D19005C12AE /* NeighbourhoodName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NeighbourhoodName.h; sourceTree = "<group>"; };
+		1F53CA9E1B392D19005C12AE /* NeighbourhoodName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NeighbourhoodName.m; sourceTree = "<group>"; };
+		1F53CAA01B398C0B005C12AE /* GeoSearchLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoSearchLocation.h; sourceTree = "<group>"; };
+		1F53CAA11B398C0B005C12AE /* GeoSearchLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoSearchLocation.m; sourceTree = "<group>"; };
+		1F53CAA31B39A39F005C12AE /* Timezone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timezone.h; sourceTree = "<group>"; };
+		1F53CAA41B39A39F005C12AE /* Timezone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timezone.m; sourceTree = "<group>"; };
+		1F6543231CFC6B1C00728023 /* CustomPreferencePRT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPreferencePRT.h; sourceTree = "<group>"; };
+		1F6543241CFC6B1C00728023 /* CustomPreferencePRT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPreferencePRT.m; sourceTree = "<group>"; };
+		1F6543271CFC6B4200728023 /* CustomPreferenceCAN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPreferenceCAN.h; sourceTree = "<group>"; };
+		1F6543281CFC6B4200728023 /* CustomPreferenceCAN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPreferenceCAN.m; sourceTree = "<group>"; };
+		1F65432B1CFC6B5E00728023 /* CustomPreferenceDUE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPreferenceDUE.h; sourceTree = "<group>"; };
+		1F65432C1CFC6B5E00728023 /* CustomPreferenceDUE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPreferenceDUE.m; sourceTree = "<group>"; };
+		1F65432F1CFC6B7100728023 /* CustomPreferenceFRA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPreferenceFRA.h; sourceTree = "<group>"; };
+		1F6543301CFC6B7100728023 /* CustomPreferenceFRA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPreferenceFRA.m; sourceTree = "<group>"; };
+		1F6543331CFC6B8700728023 /* CustomPreferenceGBR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPreferenceGBR.h; sourceTree = "<group>"; };
+		1F6543341CFC6B8700728023 /* CustomPreferenceGBR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPreferenceGBR.m; sourceTree = "<group>"; };
+		1F6543371CFC6BC900728023 /* CustomPreferenceNZL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPreferenceNZL.h; sourceTree = "<group>"; };
+		1F6543381CFC6BC900728023 /* CustomPreferenceNZL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPreferenceNZL.m; sourceTree = "<group>"; };
+		1F65433B1CFC6BEB00728023 /* CustomPreferenceSGP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPreferenceSGP.h; sourceTree = "<group>"; };
+		1F65433C1CFC6BEB00728023 /* CustomPreferenceSGP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPreferenceSGP.m; sourceTree = "<group>"; };
+		1F65433F1CFC6BFC00728023 /* CustomPreferenceSWE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPreferenceSWE.h; sourceTree = "<group>"; };
+		1F6543401CFC6BFC00728023 /* CustomPreferenceSWE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPreferenceSWE.m; sourceTree = "<group>"; };
+		1F7970491CF748690037BCCB /* MatchFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchFields.h; sourceTree = "<group>"; };
+		1F79704A1CF748690037BCCB /* MatchFields.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchFields.m; sourceTree = "<group>"; };
+		1F9301E51CEEE05200A87099 /* ConfiguredDictionaryResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfiguredDictionaryResponse.h; sourceTree = "<group>"; };
+		1F9301E61CEEE05200A87099 /* ConfiguredDictionaryResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfiguredDictionaryResponse.m; sourceTree = "<group>"; };
+		1F9301F51CEEF90600A87099 /* AddressGeocode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressGeocode.h; sourceTree = "<group>"; };
+		1F9301F61CEEF90600A87099 /* AddressGeocode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressGeocode.m; sourceTree = "<group>"; };
+		1F9B6D691BBACA8C00B07B7D /* AgeTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgeTheme.h; sourceTree = "<group>"; };
+		1F9B6D6A1BBACA8C00B07B7D /* AgeTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgeTheme.m; sourceTree = "<group>"; };
+		1F9B6D6B1BBACA8C00B07B7D /* Boundaries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Boundaries.h; path = "../Geo Life/Boundaries.h"; sourceTree = "<group>"; };
+		1F9B6D6C1BBACA8C00B07B7D /* Boundaries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Boundaries.m; path = "../Geo Life/Boundaries.m"; sourceTree = "<group>"; };
+		1F9B6D6D1BBACA8C00B07B7D /* Boundary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Boundary.h; path = "../Geo Life/Boundary.h"; sourceTree = "<group>"; };
+		1F9B6D6E1BBACA8C00B07B7D /* Boundary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Boundary.m; path = "../Geo Life/Boundary.m"; sourceTree = "<group>"; };
+		1F9B6D6F1BBACA8C00B07B7D /* DataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModels.h; sourceTree = "<group>"; };
+		1F9B6D701BBACA8C00B07B7D /* Field.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Field.h; sourceTree = "<group>"; };
+		1F9B6D711BBACA8C00B07B7D /* Field.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Field.m; sourceTree = "<group>"; };
+		1F9B6D721BBACA8C00B07B7D /* GeoLifeResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoLifeResponse.h; sourceTree = "<group>"; };
+		1F9B6D731BBACA8C00B07B7D /* GeoLifeResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoLifeResponse.m; sourceTree = "<group>"; };
+		1F9B6D751BBACA8C00B07B7D /* GeoLifeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoLifeService.m; sourceTree = "<group>"; };
+		1F9B6D781BBACA8C00B07B7D /* RangeVariable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RangeVariable.h; sourceTree = "<group>"; };
+		1F9B6D791BBACA8C00B07B7D /* RangeVariable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RangeVariable.m; sourceTree = "<group>"; };
+		1F9B6D7A1BBACA8C00B07B7D /* Themes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Themes.h; sourceTree = "<group>"; };
+		1F9B6D7B1BBACA8C00B07B7D /* Themes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Themes.m; sourceTree = "<group>"; };
+		1F9B6D881BBACF3200B07B7D /* GenderTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenderTheme.h; sourceTree = "<group>"; };
+		1F9B6D891BBACF3200B07B7D /* GenderTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenderTheme.m; sourceTree = "<group>"; };
+		1F9B6D8B1BBAD08200B07B7D /* AutomobileTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutomobileTheme.h; sourceTree = "<group>"; };
+		1F9B6D8C1BBAD08200B07B7D /* AutomobileTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutomobileTheme.m; sourceTree = "<group>"; };
+		1F9B6D8E1BBAD54C00B07B7D /* Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Theme.h; sourceTree = "<group>"; };
+		1F9B6D8F1BBAD54C00B07B7D /* Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Theme.m; sourceTree = "<group>"; };
+		1F9B6D921BBAD9AE00B07B7D /* GeoLifeService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeoLifeService.h; sourceTree = "<group>"; };
+		1F9B6D931BBBBCC200B07B7D /* AttitudesAndMotivationTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttitudesAndMotivationTheme.h; sourceTree = "<group>"; };
+		1F9B6D941BBBBCC200B07B7D /* AttitudesAndMotivationTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttitudesAndMotivationTheme.m; sourceTree = "<group>"; };
+		1F9B6D961BBBBCE900B07B7D /* ChannelPreferencesTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelPreferencesTheme.h; sourceTree = "<group>"; };
+		1F9B6D971BBBBCE900B07B7D /* ChannelPreferencesTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelPreferencesTheme.m; sourceTree = "<group>"; };
+		1F9B6D991BBBBD0700B07B7D /* CommuterPatternsTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommuterPatternsTheme.h; sourceTree = "<group>"; };
+		1F9B6D9A1BBBBD0700B07B7D /* CommuterPatternsTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommuterPatternsTheme.m; sourceTree = "<group>"; };
+		1F9B6D9C1BBBBD1E00B07B7D /* EducationalAttainmentTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EducationalAttainmentTheme.h; sourceTree = "<group>"; };
+		1F9B6D9D1BBBBD1E00B07B7D /* EducationalAttainmentTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EducationalAttainmentTheme.m; sourceTree = "<group>"; };
+		1F9B6D9F1BBBBD3200B07B7D /* EthnicityTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EthnicityTheme.h; sourceTree = "<group>"; };
+		1F9B6DA01BBBBD3200B07B7D /* EthnicityTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EthnicityTheme.m; sourceTree = "<group>"; };
+		1F9B6DA21BBBBD4600B07B7D /* FinancialProductsTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancialProductsTheme.h; sourceTree = "<group>"; };
+		1F9B6DA31BBBBD4600B07B7D /* FinancialProductsTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancialProductsTheme.m; sourceTree = "<group>"; };
+		1F9B6DA51BBBBD6100B07B7D /* HouseholdSizeTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouseholdSizeTheme.h; sourceTree = "<group>"; };
+		1F9B6DA61BBBBD6100B07B7D /* HouseholdSizeTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouseholdSizeTheme.m; sourceTree = "<group>"; };
+		1F9B6DA81BBBBD7900B07B7D /* IncomeTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeTheme.h; sourceTree = "<group>"; };
+		1F9B6DA91BBBBD7900B07B7D /* IncomeTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeTheme.m; sourceTree = "<group>"; };
+		1F9B6DAB1BBBBD8C00B07B7D /* MaritalStatusTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaritalStatusTheme.h; sourceTree = "<group>"; };
+		1F9B6DAC1BBBBD8C00B07B7D /* MaritalStatusTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaritalStatusTheme.m; sourceTree = "<group>"; };
+		1F9B6DAE1BBBBDA000B07B7D /* PurchasingBehaviorTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchasingBehaviorTheme.h; sourceTree = "<group>"; };
+		1F9B6DAF1BBBBDA000B07B7D /* PurchasingBehaviorTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchasingBehaviorTheme.m; sourceTree = "<group>"; };
+		1F9B6DB11BBBBDB700B07B7D /* RaceTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceTheme.h; sourceTree = "<group>"; };
+		1F9B6DB21BBBBDB700B07B7D /* RaceTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceTheme.m; sourceTree = "<group>"; };
+		1FAE084E1BCFADD300D71FA5 /* LifeStyleTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifeStyleTheme.h; sourceTree = "<group>"; };
+		1FAE084F1BCFADD300D71FA5 /* LifeStyleTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifeStyleTheme.m; sourceTree = "<group>"; };
+		1FAE085E1BCFAE2700D71FA5 /* Segmentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Segmentation.h; sourceTree = "<group>"; };
+		1FAE085F1BCFAE2700D71FA5 /* Segmentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Segmentation.m; sourceTree = "<group>"; };
+		1FAE08661BCFAE4C00D71FA5 /* SegmentationThemes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentationThemes.h; sourceTree = "<group>"; };
+		1FAE08671BCFAE4C00D71FA5 /* SegmentatonThemes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentatonThemes.m; sourceTree = "<group>"; };
+		1FAE086A1BCFAE5D00D71FA5 /* Variable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Variable.h; sourceTree = "<group>"; };
+		1FAE086B1BCFAE5D00D71FA5 /* Variable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Variable.m; sourceTree = "<group>"; };
+		1FAE08721BCFB20400D71FA5 /* SegmentationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentationService.h; sourceTree = "<group>"; };
+		1FAE08731BCFB20400D71FA5 /* SegmentationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentationService.m; sourceTree = "<group>"; };
+		1FAE08791BCFC82C00D71FA5 /* SegmentationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentationTestCase.m; sourceTree = "<group>"; };
+		1FB235A01CF1833900AF771A /* Dictionaries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dictionaries.h; sourceTree = "<group>"; };
+		1FB235A11CF1833900AF771A /* Dictionaries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dictionaries.m; sourceTree = "<group>"; };
+		1FB235A91CF1857400AF771A /* AllowedValuesWithDescriptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllowedValuesWithDescriptions.h; sourceTree = "<group>"; };
+		1FB235AA1CF1857400AF771A /* AllowedValuesWithDescriptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllowedValuesWithDescriptions.m; sourceTree = "<group>"; };
+		1FB235AB1CF1857400AF771A /* CustomObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomObjects.h; sourceTree = "<group>"; };
+		1FB235AC1CF1857400AF771A /* CustomObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomObjects.m; sourceTree = "<group>"; };
+		1FB235AD1CF1857400AF771A /* DataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModels.h; sourceTree = "<group>"; };
+		1FB235AE1CF1857400AF771A /* GeocodeCapabilitiesResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeocodeCapabilitiesResponse.h; sourceTree = "<group>"; };
+		1FB235AF1CF1857400AF771A /* GeocodeCapabilitiesResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeocodeCapabilitiesResponse.m; sourceTree = "<group>"; };
+		1FB235B01CF1857400AF771A /* Input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Input.h; sourceTree = "<group>"; };
+		1FB235B11CF1857400AF771A /* Input.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Input.m; sourceTree = "<group>"; };
+		1FB235B21CF1857400AF771A /* OptionalInputs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionalInputs.h; sourceTree = "<group>"; };
+		1FB235B31CF1857400AF771A /* OptionalInputs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionalInputs.m; sourceTree = "<group>"; };
+		1FB235B41CF1857400AF771A /* Output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Output.h; sourceTree = "<group>"; };
+		1FB235B51CF1857400AF771A /* Output.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Output.m; sourceTree = "<group>"; };
+		1FB235B61CF1857400AF771A /* Outputs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Outputs.h; sourceTree = "<group>"; };
+		1FB235B71CF1857400AF771A /* Outputs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Outputs.m; sourceTree = "<group>"; };
+		1FB235B81CF1857400AF771A /* CapabilityProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapabilityProperties.h; sourceTree = "<group>"; };
+		1FB235B91CF1857400AF771A /* CapabilityProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapabilityProperties.m; sourceTree = "<group>"; };
+		1FB235BA1CF1857400AF771A /* RequiredInputs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequiredInputs.h; sourceTree = "<group>"; };
+		1FB235BB1CF1857400AF771A /* RequiredInputs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequiredInputs.m; sourceTree = "<group>"; };
+		1FB235BC1CF1857400AF771A /* SupportedOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupportedOperations.h; sourceTree = "<group>"; };
+		1FB235BD1CF1857400AF771A /* SupportedOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupportedOperations.m; sourceTree = "<group>"; };
+		1FB235BE1CF1857400AF771A /* SupportLevels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupportLevels.h; sourceTree = "<group>"; };
+		1FB235BF1CF1857400AF771A /* SupportLevels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupportLevels.m; sourceTree = "<group>"; };
+		1FB235C01CF1857400AF771A /* UpdatedOptionalOutputs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatedOptionalOutputs.h; sourceTree = "<group>"; };
+		1FB235C11CF1857400AF771A /* UpdatedOptionalOutputs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatedOptionalOutputs.m; sourceTree = "<group>"; };
+		1FB235DC1CF1DFCC00AF771A /* Points.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Points.h; sourceTree = "<group>"; };
+		1FB235DD1CF1DFCC00AF771A /* Points.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Points.m; sourceTree = "<group>"; };
+		1FB235E01CF1E22B00AF771A /* Candidates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Candidates.h; sourceTree = "<group>"; };
+		1FB235E11CF1E22B00AF771A /* Candidates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Candidates.m; sourceTree = "<group>"; };
+		1FB235E41CF1E22B00AF771A /* CustomFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFields.h; sourceTree = "<group>"; };
+		1FB235E51CF1E22B00AF771A /* CustomFields.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFields.m; sourceTree = "<group>"; };
+		1FB235E61CF1E22B00AF771A /* CustomValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomValues.h; sourceTree = "<group>"; };
+		1FB235E71CF1E22B00AF771A /* CustomValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomValues.m; sourceTree = "<group>"; };
+		1FB235E81CF1E22B00AF771A /* GeocodeAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeocodeAddress.h; sourceTree = "<group>"; };
+		1FB235E91CF1E22B00AF771A /* GeocodeAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeocodeAddress.m; sourceTree = "<group>"; };
+		1FB235EA1CF1E22B00AF771A /* GeocodeResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeocodeResponse.h; sourceTree = "<group>"; };
+		1FB235EB1CF1E22B00AF771A /* GeocodeResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeocodeResponse.m; sourceTree = "<group>"; };
+		1FB235EC1CF1E22B00AF771A /* GeocodeGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeocodeGeometry.h; sourceTree = "<group>"; };
+		1FB235ED1CF1E22B00AF771A /* GeocodeGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeocodeGeometry.m; sourceTree = "<group>"; };
+		1FB235EE1CF1E22B00AF771A /* GeocodeProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeocodeProperties.h; sourceTree = "<group>"; };
+		1FB235EF1CF1E22B00AF771A /* GeocodeProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeocodeProperties.m; sourceTree = "<group>"; };
+		1FB235F01CF1E22B00AF771A /* Ranges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ranges.h; sourceTree = "<group>"; };
+		1FB235F11CF1E22B00AF771A /* Ranges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ranges.m; sourceTree = "<group>"; };
+		1FB235F21CF1E22B00AF771A /* Responses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Responses.h; sourceTree = "<group>"; };
+		1FB235F31CF1E22B00AF771A /* Responses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Responses.m; sourceTree = "<group>"; };
+		1FB235F41CF1E22B00AF771A /* Units.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Units.h; sourceTree = "<group>"; };
+		1FB235F51CF1E22B00AF771A /* Units.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Units.m; sourceTree = "<group>"; };
+		1FB2360C1CF2C7B400AF771A /* ReverseGeocodeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReverseGeocodeRequest.h; sourceTree = "<group>"; };
+		1FB2360D1CF2C7B400AF771A /* ReverseGeocodeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReverseGeocodeRequest.m; sourceTree = "<group>"; };
+		1FB236151CF300B300AF771A /* GeocodePreferenceBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeocodePreferenceBuilder.h; sourceTree = "<group>"; };
+		1FB236161CF300B300AF771A /* GeocodePreferenceBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeocodePreferenceBuilder.m; sourceTree = "<group>"; };
+		1FB236191CF304D600AF771A /* ICustomPreference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICustomPreference.h; path = ../ICustomPreference.h; sourceTree = "<group>"; };
+		1FB2361B1CF309F400AF771A /* GeocodePreference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeocodePreference.h; sourceTree = "<group>"; };
+		1FB2361C1CF309F400AF771A /* GeocodePreference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeocodePreference.m; sourceTree = "<group>"; };
+		1FB2361F1CF30A2700AF771A /* GeocodeReturnFieldDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeocodeReturnFieldDescriptor.h; sourceTree = "<group>"; };
+		1FB236201CF30A2700AF771A /* GeocodeReturnFieldDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeocodeReturnFieldDescriptor.m; sourceTree = "<group>"; };
+		1FBA42DE1BD505BE0045F680 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FBA42E01BD505E00045F680 /* IndividualValueVariable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndividualValueVariable.h; sourceTree = "<group>"; };
+		1FBA42E11BD505E00045F680 /* IndividualValueVariable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndividualValueVariable.m; sourceTree = "<group>"; };
+		1FF40ADD1B031B7F00174E34 /* GeoTaxCounty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoTaxCounty.h; sourceTree = "<group>"; };
+		1FF40ADE1B031B7F00174E34 /* GeoTaxCounty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoTaxCounty.m; sourceTree = "<group>"; };
+		1FF40AE01B031B7F00174E34 /* GeoTax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoTax.h; sourceTree = "<group>"; };
+		1FF40AE11B031B7F00174E34 /* GeoTax.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoTax.m; sourceTree = "<group>"; };
+		1FF40AE21B031B7F00174E34 /* GeoTaxService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoTaxService.h; sourceTree = "<group>"; };
+		1FF40AE31B031B7F00174E34 /* GeoTaxService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoTaxService.m; sourceTree = "<group>"; };
+		1FF40AE41B031B7F00174E34 /* Jurisdiction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jurisdiction.h; sourceTree = "<group>"; };
+		1FF40AE51B031B7F00174E34 /* Jurisdiction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jurisdiction.m; sourceTree = "<group>"; };
+		1FF40AE81B031B7F00174E34 /* GeoTaxPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoTaxPlace.h; sourceTree = "<group>"; };
+		1FF40AE91B031B7F00174E34 /* GeoTaxPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoTaxPlace.m; sourceTree = "<group>"; };
+		1FF40AEA1B031B7F00174E34 /* SalesTax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesTax.h; sourceTree = "<group>"; };
+		1FF40AEB1B031B7F00174E34 /* SalesTax.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesTax.m; sourceTree = "<group>"; };
+		1FF40AEC1B031B7F00174E34 /* Spds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spds.h; sourceTree = "<group>"; };
+		1FF40AED1B031B7F00174E34 /* Spds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spds.m; sourceTree = "<group>"; };
+		1FF40AEE1B031B7F00174E34 /* SpdsTax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpdsTax.h; sourceTree = "<group>"; };
+		1FF40AEF1B031B7F00174E34 /* SpdsTax.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpdsTax.m; sourceTree = "<group>"; };
+		1FF40AF01B031B7F00174E34 /* State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = State.h; sourceTree = "<group>"; };
+		1FF40AF11B031B7F00174E34 /* State.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = State.m; sourceTree = "<group>"; };
+		1FF40AF21B031B7F00174E34 /* UseTax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UseTax.h; sourceTree = "<group>"; };
+		1FF40AF31B031B7F00174E34 /* UseTax.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UseTax.m; sourceTree = "<group>"; };
+		48E5F0E6BA92C6249D7633C6 /* Pods-LocationIntelligenceSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationIntelligenceSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocationIntelligenceSDK/Pods-LocationIntelligenceSDK.debug.xcconfig"; sourceTree = "<group>"; };
+		795770BDD070F7EAE7A3B2FF /* Pods-LocationIntelligenceSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationIntelligenceSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocationIntelligenceSDK/Pods-LocationIntelligenceSDK.release.xcconfig"; sourceTree = "<group>"; };
+		E3383F83B5C48E52A8665C4E /* libPods-LocationIntelligenceSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LocationIntelligenceSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1F1E20571BCD4000000175C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				267FE26E186C607D1E3F4FAA /* libPods-LocationIntelligenceSDK.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F1E20611BCD4001000175C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F1E20651BCD4001000175C0 /* LocationIntelligenceSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F00BD551AFCD6620043DF14 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F00BD4F1AFCD44B0043DF14 /* MobileCoreServices.framework */,
+				1F00BD511AFCD4500043DF14 /* SystemConfiguration.framework */,
+				E3383F83B5C48E52A8665C4E /* libPods-LocationIntelligenceSDK.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1F2B9A941C6DB0D700C038CC /* Geocode */ = {
+			isa = PBXGroup;
+			children = (
+				1FB236141CF3001700AF771A /* Preference */,
+				1F9301FC1CF0751300A87099 /* ReverseGeocode */,
+				1F9301FB1CF0750000A87099 /* Capabilities */,
+				1F2B9AAD1C6DC39800C038CC /* ForwardGeocode */,
+				1F2B9A951C6DB10100C038CC /* Dictionary */,
+				1F2B9AA81C6DB87800C038CC /* GeocodeService.h */,
+				1F2B9AA91C6DB87800C038CC /* GeocodeService.m */,
+			);
+			path = Geocode;
+			sourceTree = "<group>";
+		};
+		1F2B9A951C6DB10100C038CC /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				1F2B9A971C6DB10D00C038CC /* Model */,
+			);
+			path = Dictionary;
+			sourceTree = "<group>";
+		};
+		1F2B9A971C6DB10D00C038CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1FB235A01CF1833900AF771A /* Dictionaries.h */,
+				1FB235A11CF1833900AF771A /* Dictionaries.m */,
+				1F2B9A981C6DB13F00C038CC /* CountrySupportInfos.h */,
+				1F2B9A991C6DB13F00C038CC /* CountrySupportInfos.m */,
+				1F9301E51CEEE05200A87099 /* ConfiguredDictionaryResponse.h */,
+				1F9301E61CEEE05200A87099 /* ConfiguredDictionaryResponse.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1F2B9AAD1C6DC39800C038CC /* ForwardGeocode */ = {
+			isa = PBXGroup;
+			children = (
+				1F2B9AAE1C6DC3C000C038CC /* Model */,
+			);
+			path = ForwardGeocode;
+			sourceTree = "<group>";
+		};
+		1F2B9AAE1C6DC3C000C038CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1F2B9AF71C6E0B0600C038CC /* Request */,
+				1F2B9AD11C6E0ADE00C038CC /* Response */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1F2B9AD11C6E0ADE00C038CC /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				1FB235E01CF1E22B00AF771A /* Candidates.h */,
+				1FB235E11CF1E22B00AF771A /* Candidates.m */,
+				1FB235E41CF1E22B00AF771A /* CustomFields.h */,
+				1FB235E51CF1E22B00AF771A /* CustomFields.m */,
+				1FB235E61CF1E22B00AF771A /* CustomValues.h */,
+				1FB235E71CF1E22B00AF771A /* CustomValues.m */,
+				1FB235E81CF1E22B00AF771A /* GeocodeAddress.h */,
+				1FB235E91CF1E22B00AF771A /* GeocodeAddress.m */,
+				1FB235EA1CF1E22B00AF771A /* GeocodeResponse.h */,
+				1FB235EB1CF1E22B00AF771A /* GeocodeResponse.m */,
+				1FB235EC1CF1E22B00AF771A /* GeocodeGeometry.h */,
+				1FB235ED1CF1E22B00AF771A /* GeocodeGeometry.m */,
+				1FB235EE1CF1E22B00AF771A /* GeocodeProperties.h */,
+				1FB235EF1CF1E22B00AF771A /* GeocodeProperties.m */,
+				1FB235F01CF1E22B00AF771A /* Ranges.h */,
+				1FB235F11CF1E22B00AF771A /* Ranges.m */,
+				1FB235F21CF1E22B00AF771A /* Responses.h */,
+				1FB235F31CF1E22B00AF771A /* Responses.m */,
+				1FB235F41CF1E22B00AF771A /* Units.h */,
+				1FB235F51CF1E22B00AF771A /* Units.m */,
+				1F2B9AD41C6E0ADE00C038CC /* Crs.h */,
+				1F2B9AD51C6E0ADE00C038CC /* Crs.m */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		1F2B9AF71C6E0B0600C038CC /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				1F2B9B181C6E0BB100C038CC /* GeocodeRequest.h */,
+				1F2B9B191C6E0BB100C038CC /* GeocodeRequest.m */,
+				1F2B9AFC1C6E0B0600C038CC /* CustomPreferences.h */,
+				1F2B9AFD1C6E0B0600C038CC /* CustomPreferences.m */,
+				1F2B9AFF1C6E0B0600C038CC /* MustMatchFields.h */,
+				1F2B9B001C6E0B0600C038CC /* MustMatchFields.m */,
+				1F2B9B011C6E0B0600C038CC /* Preferences.h */,
+				1F2B9B021C6E0B0600C038CC /* Preferences.m */,
+				1F2B9B031C6E0B0600C038CC /* ReturnFieldsDescriptor.h */,
+				1F2B9B041C6E0B0600C038CC /* ReturnFieldsDescriptor.m */,
+				1F9301F51CEEF90600A87099 /* AddressGeocode.h */,
+				1F9301F61CEEF90600A87099 /* AddressGeocode.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		1F2EC22F1AFCE39D00DBB35A /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				1F2EC2301AFCE39D00DBB35A /* AuthToken.h */,
+				1F2EC2311AFCE39D00DBB35A /* AuthToken.m */,
+				1F2EC2321AFCE39D00DBB35A /* BaseAuthService.h */,
+				1F2EC2331AFCE39D00DBB35A /* BaseAuthService.m */,
+				1F2EC2341AFCE39D00DBB35A /* BaseAuthServiceInternal.h */,
+				1F2EC2351AFCE39D00DBB35A /* BaseAuthServiceInternal.m */,
+				1F2EC2361AFCE39D00DBB35A /* OAuthFactory.h */,
+				1F2EC2371AFCE39D00DBB35A /* OAuthFactory.m */,
+				1F2EC2381AFCE39D00DBB35A /* OAuthService.h */,
+				1F2EC2391AFCE39D00DBB35A /* OAuthService.m */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		1F2EC23A1AFCE39D00DBB35A /* CommonObject */ = {
+			isa = PBXGroup;
+			children = (
+				1FBA42E01BD505E00045F680 /* IndividualValueVariable.h */,
+				1FBA42E11BD505E00045F680 /* IndividualValueVariable.m */,
+				1F9B6D6B1BBACA8C00B07B7D /* Boundaries.h */,
+				1F9B6D6C1BBACA8C00B07B7D /* Boundaries.m */,
+				1F9B6D6D1BBACA8C00B07B7D /* Boundary.h */,
+				1F9B6D6E1BBACA8C00B07B7D /* Boundary.m */,
+				1F53CA9D1B392D19005C12AE /* NeighbourhoodName.h */,
+				1F53CA9E1B392D19005C12AE /* NeighbourhoodName.m */,
+				1F53CA9A1B3927C4005C12AE /* ContactDetails.h */,
+				1F53CA9B1B3927C4005C12AE /* ContactDetails.m */,
+				1F53CA941B39274F005C12AE /* Match.h */,
+				1F53CA951B39274F005C12AE /* Match.m */,
+				1F2EC23B1AFCE39D00DBB35A /* Address.h */,
+				1F2EC23C1AFCE39D00DBB35A /* Address.m */,
+				1F2EC23D1AFCE39D00DBB35A /* Distance.h */,
+				1F2EC23E1AFCE39D00DBB35A /* Distance.m */,
+				1F53CA971B3927A3005C12AE /* Poi.h */,
+				1F53CA981B3927A3005C12AE /* Poi.m */,
+				1F2EC23F1AFCE39D00DBB35A /* Geometry.h */,
+				1F2EC2401AFCE39D00DBB35A /* Geometry.m */,
+				1F2EC2411AFCE39D00DBB35A /* Location.h */,
+				1F2EC2421AFCE39D00DBB35A /* Location.m */,
+				1F53CA8E1B38427A005C12AE /* PlaceByLocationResponse.h */,
+				1F53CA8F1B38427A005C12AE /* PlaceByLocationResponse.m */,
+			);
+			path = CommonObject;
+			sourceTree = "<group>";
+		};
+		1F2EC2431AFCE39D00DBB35A /* ErrorFramework */ = {
+			isa = PBXGroup;
+			children = (
+				1F2EC2441AFCE39D00DBB35A /* Error.h */,
+				1F2EC2451AFCE39D00DBB35A /* Error.m */,
+				1F2EC2461AFCE39D00DBB35A /* ErrorResponse.h */,
+				1F2EC2471AFCE39D00DBB35A /* ErrorResponse.m */,
+				1F2EC2481AFCE39D00DBB35A /* Errors.h */,
+				1F2EC2491AFCE39D00DBB35A /* Errors.m */,
+				1F2EC24A1AFCE39D00DBB35A /* LIErrorResponse.h */,
+				1F2EC24B1AFCE39D00DBB35A /* LIErrorResponse.m */,
+			);
+			path = ErrorFramework;
+			sourceTree = "<group>";
+		};
+		1F2EC24E1AFCE39D00DBB35A /* Geo 911 */ = {
+			isa = PBXGroup;
+			children = (
+				1F2EC24F1AFCE39D00DBB35A /* ContactPerson.h */,
+				1F2EC2501AFCE39D00DBB35A /* ContactPerson.m */,
+				1F2EC2511AFCE39D00DBB35A /* County.h */,
+				1F2EC2521AFCE39D00DBB35A /* County.m */,
+				1F2EC2531AFCE39D00DBB35A /* Coverage.h */,
+				1F2EC2541AFCE39D00DBB35A /* Coverage.m */,
+				1F2EC2551AFCE39D00DBB35A /* PsapResponse.h */,
+				1F2EC2561AFCE39D00DBB35A /* PsapResponse.m */,
+				1F2EC2571AFCE39D00DBB35A /* Geo911Service.h */,
+				1F2EC2581AFCE39D00DBB35A /* Geo911Service.m */,
+				1F2EC25B1AFCE39D00DBB35A /* SiteDetails.h */,
+				1F2EC25C1AFCE39D00DBB35A /* SiteDetails.m */,
+			);
+			path = "Geo 911";
+			sourceTree = "<group>";
+		};
+		1F2EC25D1AFCE39D00DBB35A /* Geo Life */ = {
+			isa = PBXGroup;
+			children = (
+				1F9B6D691BBACA8C00B07B7D /* AgeTheme.h */,
+				1F9B6D6A1BBACA8C00B07B7D /* AgeTheme.m */,
+				1F9B6D8B1BBAD08200B07B7D /* AutomobileTheme.h */,
+				1F9B6D8C1BBAD08200B07B7D /* AutomobileTheme.m */,
+				1F9B6D881BBACF3200B07B7D /* GenderTheme.h */,
+				1F9B6D891BBACF3200B07B7D /* GenderTheme.m */,
+				1F9B6D931BBBBCC200B07B7D /* AttitudesAndMotivationTheme.h */,
+				1F9B6D941BBBBCC200B07B7D /* AttitudesAndMotivationTheme.m */,
+				1F9B6D961BBBBCE900B07B7D /* ChannelPreferencesTheme.h */,
+				1F9B6D971BBBBCE900B07B7D /* ChannelPreferencesTheme.m */,
+				1F9B6D991BBBBD0700B07B7D /* CommuterPatternsTheme.h */,
+				1F9B6D9A1BBBBD0700B07B7D /* CommuterPatternsTheme.m */,
+				1F9B6D9C1BBBBD1E00B07B7D /* EducationalAttainmentTheme.h */,
+				1F9B6D9D1BBBBD1E00B07B7D /* EducationalAttainmentTheme.m */,
+				1F9B6D9F1BBBBD3200B07B7D /* EthnicityTheme.h */,
+				1F9B6DA01BBBBD3200B07B7D /* EthnicityTheme.m */,
+				1F9B6DA21BBBBD4600B07B7D /* FinancialProductsTheme.h */,
+				1F9B6DA31BBBBD4600B07B7D /* FinancialProductsTheme.m */,
+				1F9B6DA51BBBBD6100B07B7D /* HouseholdSizeTheme.h */,
+				1F9B6DA61BBBBD6100B07B7D /* HouseholdSizeTheme.m */,
+				1F9B6DA81BBBBD7900B07B7D /* IncomeTheme.h */,
+				1F9B6DA91BBBBD7900B07B7D /* IncomeTheme.m */,
+				1F9B6DAB1BBBBD8C00B07B7D /* MaritalStatusTheme.h */,
+				1F9B6DAC1BBBBD8C00B07B7D /* MaritalStatusTheme.m */,
+				1F9B6DAE1BBBBDA000B07B7D /* PurchasingBehaviorTheme.h */,
+				1F9B6DAF1BBBBDA000B07B7D /* PurchasingBehaviorTheme.m */,
+				1F9B6DB11BBBBDB700B07B7D /* RaceTheme.h */,
+				1F9B6DB21BBBBDB700B07B7D /* RaceTheme.m */,
+				1F9B6D6F1BBACA8C00B07B7D /* DataModels.h */,
+				1F9B6D701BBACA8C00B07B7D /* Field.h */,
+				1F9B6D711BBACA8C00B07B7D /* Field.m */,
+				1F9B6D721BBACA8C00B07B7D /* GeoLifeResponse.h */,
+				1F9B6D731BBACA8C00B07B7D /* GeoLifeResponse.m */,
+				1F9B6D921BBAD9AE00B07B7D /* GeoLifeService.h */,
+				1F9B6D751BBACA8C00B07B7D /* GeoLifeService.m */,
+				1F9B6D781BBACA8C00B07B7D /* RangeVariable.h */,
+				1F9B6D791BBACA8C00B07B7D /* RangeVariable.m */,
+				1F9B6D7A1BBACA8C00B07B7D /* Themes.h */,
+				1F9B6D7B1BBACA8C00B07B7D /* Themes.m */,
+				1F9B6D8E1BBAD54C00B07B7D /* Theme.h */,
+				1F9B6D8F1BBAD54C00B07B7D /* Theme.m */,
+			);
+			path = "Geo Life";
+			sourceTree = "<group>";
+		};
+		1F2EC2831AFCE39D00DBB35A /* GeoEnhance */ = {
+			isa = PBXGroup;
+			children = (
+				1F53CAA31B39A39F005C12AE /* Timezone.h */,
+				1F53CAA41B39A39F005C12AE /* Timezone.m */,
+				1F2EC2841AFCE39D00DBB35A /* ContactDetails.h */,
+				1F2EC2851AFCE39D00DBB35A /* ContactDetails.m */,
+				1F2EC2861AFCE39D00DBB35A /* GeoEnhance.h */,
+				1F2EC2871AFCE39D00DBB35A /* GeoEnhance.m */,
+				1F2EC2941AFCE39D00DBB35A /* GeoEnhanceService.h */,
+				1F2EC2951AFCE39D00DBB35A /* GeoEnhanceService.m */,
+			);
+			path = GeoEnhance;
+			sourceTree = "<group>";
+		};
+		1F2EC29E1AFCE39D00DBB35A /* GeoSearch */ = {
+			isa = PBXGroup;
+			children = (
+				1F53CAA01B398C0B005C12AE /* GeoSearchLocation.h */,
+				1F53CAA11B398C0B005C12AE /* GeoSearchLocation.m */,
+				1F2EC29F1AFCE39D00DBB35A /* GeoSearch.h */,
+				1F2EC2A01AFCE39D00DBB35A /* GeoSearch.m */,
+				1F2EC2A31AFCE39D00DBB35A /* GeoSearchService.h */,
+				1F2EC2A41AFCE39D00DBB35A /* GeoSearchService.m */,
+			);
+			path = GeoSearch;
+			sourceTree = "<group>";
+		};
+		1F2EC2A51AFCE39D00DBB35A /* LI */ = {
+			isa = PBXGroup;
+			children = (
+				1F2EC2A61AFCE39D00DBB35A /* LIServiceManager.h */,
+				1F2EC2A71AFCE39D00DBB35A /* LIServiceManager.m */,
+			);
+			path = LI;
+			sourceTree = "<group>";
+		};
+		1F2EC2AA1AFCE39D00DBB35A /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				1F2EC2AB1AFCE39D00DBB35A /* JSONResponseSerializerWithData.h */,
+				1F2EC2AC1AFCE39D00DBB35A /* JSONResponseSerializerWithData.m */,
+				1F2EC2AD1AFCE39D00DBB35A /* NetworkService.h */,
+				1F2EC2AE1AFCE39D00DBB35A /* NetworkService.m */,
+				1F2EC2AF1AFCE39D00DBB35A /* UrlMaker.h */,
+				1F2EC2B01AFCE39D00DBB35A /* UrlMaker.m */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		1F39345A1AFCBD8300ED8859 = {
+			isa = PBXGroup;
+			children = (
+				1F3934651AFCBD8300ED8859 /* LocationIntelligenceSDK */,
+				1F3934721AFCBD8300ED8859 /* LocationIntelligenceSDKTests */,
+				1F00BD551AFCD6620043DF14 /* Frameworks */,
+				1F3934641AFCBD8300ED8859 /* Products */,
+				C014D4BDFE2256C4878DF56B /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		1F3934641AFCBD8300ED8859 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F1E205B1BCD4000000175C0 /* LocationIntelligenceSDK.framework */,
+				1F1E20641BCD4001000175C0 /* LocationIntelligenceSDKTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F3934651AFCBD8300ED8859 /* LocationIntelligenceSDK */ = {
+			isa = PBXGroup;
+			children = (
+				1F2B9A941C6DB0D700C038CC /* Geocode */,
+				1FBA42DE1BD505BE0045F680 /* Info.plist */,
+				1FAE083C1BCFAD4800D71FA5 /* Segmentation */,
+				1F2EC22F1AFCE39D00DBB35A /* Authentication */,
+				1F2EC23A1AFCE39D00DBB35A /* CommonObject */,
+				1F2EC2431AFCE39D00DBB35A /* ErrorFramework */,
+				1F2EC24E1AFCE39D00DBB35A /* Geo 911 */,
+				1F2EC25D1AFCE39D00DBB35A /* Geo Life */,
+				1F2EC2831AFCE39D00DBB35A /* GeoEnhance */,
+				1F2EC29E1AFCE39D00DBB35A /* GeoSearch */,
+				1FF40ADC1B031B7F00174E34 /* GeoTax */,
+				1F2EC2A51AFCE39D00DBB35A /* LI */,
+				1F2EC2A81AFCE39D00DBB35A /* LocationIntelligenceSDK.h */,
+				1F2EC2A91AFCE39D00DBB35A /* LocationIntelligenceSDK.m */,
+				1F2EC2AA1AFCE39D00DBB35A /* NetWork */,
+			);
+			path = LocationIntelligenceSDK;
+			sourceTree = "<group>";
+		};
+		1F3934721AFCBD8300ED8859 /* LocationIntelligenceSDKTests */ = {
+			isa = PBXGroup;
+			children = (
+				1F2B9ACD1C6DDDAB00C038CC /* GeocodeTestCases.m */,
+				1F066AF01B046DED0013F009 /* GeoTaxServiceTestCase.m */,
+				1F066AD61B0365080013F009 /* GeoSearchServiceTestCase.m */,
+				1F066AD81B0365080013F009 /* OAuthTestCase.m */,
+				1F2EC2F61AFCE3C400DBB35A /* Geo911ServiceTestcase.m */,
+				1F2EC2F71AFCE3C400DBB35A /* GeoEnhanceServiceTestCase.m */,
+				1F2EC2F81AFCE3C400DBB35A /* GeoLifeServiceTestCase.m */,
+				1FAE08791BCFC82C00D71FA5 /* SegmentationTestCase.m */,
+				1F3934731AFCBD8300ED8859 /* Supporting Files */,
+			);
+			path = LocationIntelligenceSDKTests;
+			sourceTree = "<group>";
+		};
+		1F3934731AFCBD8300ED8859 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F2EC3001AFCE3D000DBB35A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F9301FB1CF0750000A87099 /* Capabilities */ = {
+			isa = PBXGroup;
+			children = (
+				1FB235A41CF184B200AF771A /* Model */,
+			);
+			path = Capabilities;
+			sourceTree = "<group>";
+		};
+		1F9301FC1CF0751300A87099 /* ReverseGeocode */ = {
+			isa = PBXGroup;
+			children = (
+				1FB235DB1CF1DFCC00AF771A /* Model */,
+			);
+			path = ReverseGeocode;
+			sourceTree = "<group>";
+		};
+		1FAE083C1BCFAD4800D71FA5 /* Segmentation */ = {
+			isa = PBXGroup;
+			children = (
+				1FAE083D1BCFAD4800D71FA5 /* Model */,
+				1FAE08721BCFB20400D71FA5 /* SegmentationService.h */,
+				1FAE08731BCFB20400D71FA5 /* SegmentationService.m */,
+			);
+			path = Segmentation;
+			sourceTree = "<group>";
+		};
+		1FAE083D1BCFAD4800D71FA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1FAE084E1BCFADD300D71FA5 /* LifeStyleTheme.h */,
+				1FAE084F1BCFADD300D71FA5 /* LifeStyleTheme.m */,
+				1FAE085E1BCFAE2700D71FA5 /* Segmentation.h */,
+				1FAE085F1BCFAE2700D71FA5 /* Segmentation.m */,
+				1FAE08661BCFAE4C00D71FA5 /* SegmentationThemes.h */,
+				1FAE08671BCFAE4C00D71FA5 /* SegmentatonThemes.m */,
+				1FAE086A1BCFAE5D00D71FA5 /* Variable.h */,
+				1FAE086B1BCFAE5D00D71FA5 /* Variable.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1FB235A41CF184B200AF771A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1FB235A91CF1857400AF771A /* AllowedValuesWithDescriptions.h */,
+				1FB235AA1CF1857400AF771A /* AllowedValuesWithDescriptions.m */,
+				1FB235AB1CF1857400AF771A /* CustomObjects.h */,
+				1FB235AC1CF1857400AF771A /* CustomObjects.m */,
+				1FB235AD1CF1857400AF771A /* DataModels.h */,
+				1FB235AE1CF1857400AF771A /* GeocodeCapabilitiesResponse.h */,
+				1FB235AF1CF1857400AF771A /* GeocodeCapabilitiesResponse.m */,
+				1FB235B01CF1857400AF771A /* Input.h */,
+				1FB235B11CF1857400AF771A /* Input.m */,
+				1FB235B21CF1857400AF771A /* OptionalInputs.h */,
+				1FB235B31CF1857400AF771A /* OptionalInputs.m */,
+				1FB235B41CF1857400AF771A /* Output.h */,
+				1FB235B51CF1857400AF771A /* Output.m */,
+				1FB235B61CF1857400AF771A /* Outputs.h */,
+				1FB235B71CF1857400AF771A /* Outputs.m */,
+				1FB235B81CF1857400AF771A /* CapabilityProperties.h */,
+				1FB235B91CF1857400AF771A /* CapabilityProperties.m */,
+				1FB235BA1CF1857400AF771A /* RequiredInputs.h */,
+				1FB235BB1CF1857400AF771A /* RequiredInputs.m */,
+				1FB235BC1CF1857400AF771A /* SupportedOperations.h */,
+				1FB235BD1CF1857400AF771A /* SupportedOperations.m */,
+				1FB235BE1CF1857400AF771A /* SupportLevels.h */,
+				1FB235BF1CF1857400AF771A /* SupportLevels.m */,
+				1FB235C01CF1857400AF771A /* UpdatedOptionalOutputs.h */,
+				1FB235C11CF1857400AF771A /* UpdatedOptionalOutputs.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1FB235DB1CF1DFCC00AF771A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1FB2360C1CF2C7B400AF771A /* ReverseGeocodeRequest.h */,
+				1FB2360D1CF2C7B400AF771A /* ReverseGeocodeRequest.m */,
+				1FB235DC1CF1DFCC00AF771A /* Points.h */,
+				1FB235DD1CF1DFCC00AF771A /* Points.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1FB236141CF3001700AF771A /* Preference */ = {
+			isa = PBXGroup;
+			children = (
+				1FB236231CF31FAE00AF771A /* CustomPreference */,
+				1F7970491CF748690037BCCB /* MatchFields.h */,
+				1F79704A1CF748690037BCCB /* MatchFields.m */,
+				1FB236151CF300B300AF771A /* GeocodePreferenceBuilder.h */,
+				1FB2361B1CF309F400AF771A /* GeocodePreference.h */,
+				1FB2361C1CF309F400AF771A /* GeocodePreference.m */,
+				1FB236161CF300B300AF771A /* GeocodePreferenceBuilder.m */,
+				1FB2361F1CF30A2700AF771A /* GeocodeReturnFieldDescriptor.h */,
+				1FB236201CF30A2700AF771A /* GeocodeReturnFieldDescriptor.m */,
+			);
+			path = Preference;
+			sourceTree = "<group>";
+		};
+		1FB236231CF31FAE00AF771A /* CustomPreference */ = {
+			isa = PBXGroup;
+			children = (
+				1FB236191CF304D600AF771A /* ICustomPreference.h */,
+				1F0F64071CF419E70092AA46 /* CustomPreference.h */,
+				1F0F64081CF419E70092AA46 /* CustomPreference.m */,
+				1F0F640B1CF42C060092AA46 /* CustomPreferenceUSA.h */,
+				1F0F640C1CF42C060092AA46 /* CustomPreferenceUSA.m */,
+				1F0F640F1CF452180092AA46 /* CustomPreferenceAUS.h */,
+				1F0F64101CF452180092AA46 /* CustomPreferenceAUS.m */,
+				1F6543231CFC6B1C00728023 /* CustomPreferencePRT.h */,
+				1F6543241CFC6B1C00728023 /* CustomPreferencePRT.m */,
+				1F6543271CFC6B4200728023 /* CustomPreferenceCAN.h */,
+				1F6543281CFC6B4200728023 /* CustomPreferenceCAN.m */,
+				1F65432B1CFC6B5E00728023 /* CustomPreferenceDUE.h */,
+				1F65432C1CFC6B5E00728023 /* CustomPreferenceDUE.m */,
+				1F65432F1CFC6B7100728023 /* CustomPreferenceFRA.h */,
+				1F6543301CFC6B7100728023 /* CustomPreferenceFRA.m */,
+				1F6543331CFC6B8700728023 /* CustomPreferenceGBR.h */,
+				1F6543341CFC6B8700728023 /* CustomPreferenceGBR.m */,
+				1F6543371CFC6BC900728023 /* CustomPreferenceNZL.h */,
+				1F6543381CFC6BC900728023 /* CustomPreferenceNZL.m */,
+				1F65433B1CFC6BEB00728023 /* CustomPreferenceSGP.h */,
+				1F65433C1CFC6BEB00728023 /* CustomPreferenceSGP.m */,
+				1F65433F1CFC6BFC00728023 /* CustomPreferenceSWE.h */,
+				1F6543401CFC6BFC00728023 /* CustomPreferenceSWE.m */,
+			);
+			path = CustomPreference;
+			sourceTree = "<group>";
+		};
+		1FF40ADC1B031B7F00174E34 /* GeoTax */ = {
+			isa = PBXGroup;
+			children = (
+				1FF40ADD1B031B7F00174E34 /* GeoTaxCounty.h */,
+				1FF40ADE1B031B7F00174E34 /* GeoTaxCounty.m */,
+				1FF40AE01B031B7F00174E34 /* GeoTax.h */,
+				1FF40AE11B031B7F00174E34 /* GeoTax.m */,
+				1FF40AE21B031B7F00174E34 /* GeoTaxService.h */,
+				1FF40AE31B031B7F00174E34 /* GeoTaxService.m */,
+				1FF40AE41B031B7F00174E34 /* Jurisdiction.h */,
+				1FF40AE51B031B7F00174E34 /* Jurisdiction.m */,
+				1FF40AE81B031B7F00174E34 /* GeoTaxPlace.h */,
+				1FF40AE91B031B7F00174E34 /* GeoTaxPlace.m */,
+				1FF40AEA1B031B7F00174E34 /* SalesTax.h */,
+				1FF40AEB1B031B7F00174E34 /* SalesTax.m */,
+				1FF40AEC1B031B7F00174E34 /* Spds.h */,
+				1FF40AED1B031B7F00174E34 /* Spds.m */,
+				1FF40AEE1B031B7F00174E34 /* SpdsTax.h */,
+				1FF40AEF1B031B7F00174E34 /* SpdsTax.m */,
+				1FF40AF01B031B7F00174E34 /* State.h */,
+				1FF40AF11B031B7F00174E34 /* State.m */,
+				1FF40AF21B031B7F00174E34 /* UseTax.h */,
+				1FF40AF31B031B7F00174E34 /* UseTax.m */,
+			);
+			path = GeoTax;
+			sourceTree = "<group>";
+		};
+		C014D4BDFE2256C4878DF56B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				48E5F0E6BA92C6249D7633C6 /* Pods-LocationIntelligenceSDK.debug.xcconfig */,
+				795770BDD070F7EAE7A3B2FF /* Pods-LocationIntelligenceSDK.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1F1E20581BCD4000000175C0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F6543311CFC6B7100728023 /* CustomPreferenceFRA.h in Headers */,
+				1F6543291CFC6B4200728023 /* CustomPreferenceCAN.h in Headers */,
+				1F6543411CFC6BFC00728023 /* CustomPreferenceSWE.h in Headers */,
+				1F0F64111CF452180092AA46 /* CustomPreferenceAUS.h in Headers */,
+				1F6543251CFC6B1C00728023 /* CustomPreferencePRT.h in Headers */,
+				1F6543391CFC6BC900728023 /* CustomPreferenceNZL.h in Headers */,
+				1F6543351CFC6B8700728023 /* CustomPreferenceGBR.h in Headers */,
+				1F65433D1CFC6BEB00728023 /* CustomPreferenceSGP.h in Headers */,
+				1F0F640D1CF42C060092AA46 /* CustomPreferenceUSA.h in Headers */,
+				1F65432D1CFC6B5E00728023 /* CustomPreferenceDUE.h in Headers */,
+				1F79704B1CF748690037BCCB /* MatchFields.h in Headers */,
+				1FB236171CF300B300AF771A /* GeocodePreferenceBuilder.h in Headers */,
+				1FB236211CF30A2700AF771A /* GeocodeReturnFieldDescriptor.h in Headers */,
+				1FB2361D1CF309F400AF771A /* GeocodePreference.h in Headers */,
+				1FB2361A1CF304D600AF771A /* ICustomPreference.h in Headers */,
+				1F0F64091CF419E70092AA46 /* CustomPreference.h in Headers */,
+				1FB2360E1CF2C7B400AF771A /* ReverseGeocodeRequest.h in Headers */,
+				1FB235F61CF1E22B00AF771A /* Candidates.h in Headers */,
+				1FB235FC1CF1E22B00AF771A /* CustomValues.h in Headers */,
+				1FB235FA1CF1E22B00AF771A /* CustomFields.h in Headers */,
+				1FB235FE1CF1E22B00AF771A /* GeocodeAddress.h in Headers */,
+				1FB236021CF1E22B00AF771A /* GeocodeGeometry.h in Headers */,
+				1FB236081CF1E22B00AF771A /* Responses.h in Headers */,
+				1FB235DE1CF1DFCC00AF771A /* Points.h in Headers */,
+				1FB236041CF1E22B00AF771A /* GeocodeProperties.h in Headers */,
+				1FB2360A1CF1E22B00AF771A /* Units.h in Headers */,
+				1FB236061CF1E22B00AF771A /* Ranges.h in Headers */,
+				1FB236001CF1E22B00AF771A /* GeocodeResponse.h in Headers */,
+				1FB235C21CF1857400AF771A /* AllowedValuesWithDescriptions.h in Headers */,
+				1FB235CB1CF1857400AF771A /* OptionalInputs.h in Headers */,
+				1FB235D31CF1857400AF771A /* RequiredInputs.h in Headers */,
+				1FB235CF1CF1857400AF771A /* Outputs.h in Headers */,
+				1FB235D11CF1857400AF771A /* CapabilityProperties.h in Headers */,
+				1FB235C91CF1857400AF771A /* Input.h in Headers */,
+				1FB235D91CF1857400AF771A /* UpdatedOptionalOutputs.h in Headers */,
+				1FB235D51CF1857400AF771A /* SupportedOperations.h in Headers */,
+				1FB235D71CF1857400AF771A /* SupportLevels.h in Headers */,
+				1FB235CD1CF1857400AF771A /* Output.h in Headers */,
+				1FB235C41CF1857400AF771A /* CustomObjects.h in Headers */,
+				1FB235C71CF1857400AF771A /* GeocodeCapabilitiesResponse.h in Headers */,
+				1FB235A21CF1833900AF771A /* Dictionaries.h in Headers */,
+				1F1E20E31BCD441D000175C0 /* Error.h in Headers */,
+				1F1E20E41BCD441E000175C0 /* ErrorResponse.h in Headers */,
+				1F1E20E51BCD441E000175C0 /* Errors.h in Headers */,
+				1F1E20E61BCD441E000175C0 /* LIErrorResponse.h in Headers */,
+				1F1E20E71BCD441E000175C0 /* ContactPerson.h in Headers */,
+				1F1E20E81BCD441E000175C0 /* County.h in Headers */,
+				1F1E20E91BCD441E000175C0 /* Coverage.h in Headers */,
+				1F1E20EA1BCD441E000175C0 /* PsapResponse.h in Headers */,
+				1F1E20EB1BCD441E000175C0 /* Geo911Service.h in Headers */,
+				1F1E20EC1BCD441E000175C0 /* SiteDetails.h in Headers */,
+				1F1E20ED1BCD441E000175C0 /* AgeTheme.h in Headers */,
+				1F1E20EE1BCD441E000175C0 /* AutomobileTheme.h in Headers */,
+				1F1E20EF1BCD441E000175C0 /* GenderTheme.h in Headers */,
+				1F1E20F01BCD441E000175C0 /* AttitudesAndMotivationTheme.h in Headers */,
+				1F1E20F11BCD441E000175C0 /* ChannelPreferencesTheme.h in Headers */,
+				1F1E20F21BCD441F000175C0 /* CommuterPatternsTheme.h in Headers */,
+				1F1E20F31BCD441F000175C0 /* EducationalAttainmentTheme.h in Headers */,
+				1F1E20F41BCD441F000175C0 /* EthnicityTheme.h in Headers */,
+				1F1E20F51BCD441F000175C0 /* FinancialProductsTheme.h in Headers */,
+				1F1E20F61BCD441F000175C0 /* HouseholdSizeTheme.h in Headers */,
+				1F1E20F71BCD441F000175C0 /* IncomeTheme.h in Headers */,
+				1F1E20F81BCD441F000175C0 /* MaritalStatusTheme.h in Headers */,
+				1F1E20F91BCD441F000175C0 /* PurchasingBehaviorTheme.h in Headers */,
+				1F1E20FA1BCD441F000175C0 /* RaceTheme.h in Headers */,
+				1F1E20FB1BCD4420000175C0 /* Boundaries.h in Headers */,
+				1F1E20FC1BCD4420000175C0 /* Boundary.h in Headers */,
+				1F1E20FD1BCD4420000175C0 /* Field.h in Headers */,
+				1F1E20FF1BCD4420000175C0 /* GeoLifeService.h in Headers */,
+				1F1E21011BCD4420000175C0 /* RangeVariable.h in Headers */,
+				1F1E21021BCD4420000175C0 /* Themes.h in Headers */,
+				1F1E21041BCD4421000175C0 /* Theme.h in Headers */,
+				1F1E21061BCD4421000175C0 /* Timezone.h in Headers */,
+				1F1E21071BCD4421000175C0 /* ContactDetails.h in Headers */,
+				1F1E21081BCD4421000175C0 /* GeoEnhance.h in Headers */,
+				1F1E21091BCD4421000175C0 /* GeoEnhanceService.h in Headers */,
+				1F1E210A1BCD4422000175C0 /* GeoSearchLocation.h in Headers */,
+				1F1E210B1BCD4422000175C0 /* GeoSearch.h in Headers */,
+				1F1E210C1BCD4422000175C0 /* GeoSearchService.h in Headers */,
+				1FB235C61CF1857400AF771A /* DataModels.h in Headers */,
+				1F1E210D1BCD4422000175C0 /* GeoTaxCounty.h in Headers */,
+				1F1E210E1BCD4422000175C0 /* GeoTax.h in Headers */,
+				1F1E210F1BCD4422000175C0 /* GeoTaxService.h in Headers */,
+				1F1E21101BCD4423000175C0 /* Jurisdiction.h in Headers */,
+				1F1E21111BCD4423000175C0 /* GeoTaxPlace.h in Headers */,
+				1F1E21121BCD4423000175C0 /* SalesTax.h in Headers */,
+				1F1E21131BCD4423000175C0 /* Spds.h in Headers */,
+				1F1E21141BCD4423000175C0 /* SpdsTax.h in Headers */,
+				1F1E21151BCD4423000175C0 /* State.h in Headers */,
+				1F1E21161BCD4424000175C0 /* UseTax.h in Headers */,
+				1F1E21171BCD4424000175C0 /* LIServiceManager.h in Headers */,
+				1F1E21191BCD4424000175C0 /* NetworkService.h in Headers */,
+				1F1E211A1BCD4424000175C0 /* UrlMaker.h in Headers */,
+				1F1E20DA1BCD43DB000175C0 /* NeighbourhoodName.h in Headers */,
+				1F1E20DB1BCD43DB000175C0 /* ContactDetails.h in Headers */,
+				1F1E20DC1BCD43DB000175C0 /* Match.h in Headers */,
+				1F1E20DD1BCD43DB000175C0 /* Address.h in Headers */,
+				1F1E20DE1BCD43DB000175C0 /* Distance.h in Headers */,
+				1F1E20DF1BCD43DC000175C0 /* Poi.h in Headers */,
+				1F1E20E01BCD43DC000175C0 /* Geometry.h in Headers */,
+				1F1E20E11BCD43DC000175C0 /* Location.h in Headers */,
+				1F1E20E21BCD43DC000175C0 /* PlaceByLocationResponse.h in Headers */,
+				1F1E20D51BCD43CD000175C0 /* AuthToken.h in Headers */,
+				1FAE08681BCFAE4C00D71FA5 /* SegmentationThemes.h in Headers */,
+				1FAE08741BCFB20400D71FA5 /* SegmentationService.h in Headers */,
+				1F1E20D61BCD43CD000175C0 /* BaseAuthService.h in Headers */,
+				1FAE08601BCFAE2700D71FA5 /* Segmentation.h in Headers */,
+				1F1E20D81BCD43CD000175C0 /* OAuthFactory.h in Headers */,
+				1FAE08501BCFADD300D71FA5 /* LifeStyleTheme.h in Headers */,
+				1F1E20D71BCD43CD000175C0 /* BaseAuthServiceInternal.h in Headers */,
+				1F2B9B121C6E0B0600C038CC /* Preferences.h in Headers */,
+				1FAE086C1BCFAE5D00D71FA5 /* Variable.h in Headers */,
+				1F1E211E1BCF8753000175C0 /* GeoLifeResponse.h in Headers */,
+				1F2B9B0B1C6E0B0600C038CC /* CustomPreferences.h in Headers */,
+				1F1E20D91BCD43CD000175C0 /* OAuthService.h in Headers */,
+				1F2B9AE41C6E0ADE00C038CC /* Crs.h in Headers */,
+				1F2B9B151C6E0B0600C038CC /* ReturnFieldsDescriptor.h in Headers */,
+				1FBA42E21BD505E00045F680 /* IndividualValueVariable.h in Headers */,
+				1F2B9B1A1C6E0BB100C038CC /* GeocodeRequest.h in Headers */,
+				1FAE089E1BCFD68600D71FA5 /* LocationIntelligenceSDK.h in Headers */,
+				1F9301F71CEEF90600A87099 /* AddressGeocode.h in Headers */,
+				1F2B9A9E1C6DB13F00C038CC /* CountrySupportInfos.h in Headers */,
+				1F2B9AAC1C6DBAD100C038CC /* GeocodeService.h in Headers */,
+				1F9301E71CEEE05200A87099 /* ConfiguredDictionaryResponse.h in Headers */,
+				1F2B9B0F1C6E0B0600C038CC /* MustMatchFields.h in Headers */,
+				1F1E21181BCD4424000175C0 /* JSONResponseSerializerWithData.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1F1E205A1BCD4000000175C0 /* LocationIntelligenceSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F1E206C1BCD4001000175C0 /* Build configuration list for PBXNativeTarget "LocationIntelligenceSDK" */;
+			buildPhases = (
+				5887B4E59BC39511ED2B9551 /* 📦 Check Pods Manifest.lock */,
+				1F1E20561BCD4000000175C0 /* Sources */,
+				1F1E20571BCD4000000175C0 /* Frameworks */,
+				1F1E20581BCD4000000175C0 /* Headers */,
+				1F1E20591BCD4000000175C0 /* Resources */,
+				F18D74D39B224BAA22575403 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LocationIntelligenceSDK;
+			productName = LocationIntelligenceSDK;
+			productReference = 1F1E205B1BCD4000000175C0 /* LocationIntelligenceSDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1F1E20631BCD4001000175C0 /* LocationIntelligenceSDKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F1E206F1BCD4001000175C0 /* Build configuration list for PBXNativeTarget "LocationIntelligenceSDKTests" */;
+			buildPhases = (
+				1F1E20601BCD4001000175C0 /* Sources */,
+				1F1E20611BCD4001000175C0 /* Frameworks */,
+				1F1E20621BCD4001000175C0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F1E20671BCD4001000175C0 /* PBXTargetDependency */,
+			);
+			name = LocationIntelligenceSDKTests;
+			productName = LocationIntelligenceSDKTests;
+			productReference = 1F1E20641BCD4001000175C0 /* LocationIntelligenceSDKTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1F39345B1AFCBD8300ED8859 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = PB;
+				TargetAttributes = {
+					1F1E205A1BCD4000000175C0 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					1F1E20631BCD4001000175C0 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					1F1E20C61BCD4254000175C0 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = 1F39345E1AFCBD8300ED8859 /* Build configuration list for PBXProject "LocationIntelligenceSDK" */;
+			compatibilityVersion = "Xcode 6.3";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1F39345A1AFCBD8300ED8859;
+			productRefGroup = 1F3934641AFCBD8300ED8859 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1F1E205A1BCD4000000175C0 /* LocationIntelligenceSDK */,
+				1F1E20631BCD4001000175C0 /* LocationIntelligenceSDKTests */,
+				1F1E20C61BCD4254000175C0 /* LocationIntelligence - Universal */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1F1E20591BCD4000000175C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F1E20621BCD4001000175C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F1E20CA1BCD4263000175C0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\n######################\n# Options\n######################\n\nREVEAL_ARCHIVE_IN_FINDER=false\n\nFRAMEWORK_NAME=\"${PROJECT_NAME}\"\n\nSIMULATOR_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${FRAMEWORK_NAME}.framework\"\n\nDEVICE_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${FRAMEWORK_NAME}.framework\"\n\nUNIVERSAL_LIBRARY_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal\"\n\nFRAMEWORK=\"${UNIVERSAL_LIBRARY_DIR}/${FRAMEWORK_NAME}.framework\"\n\n\n######################\n# Build Frameworks\n######################\n\nxcodebuild -workspace ${PROJECT_NAME}.xcworkspace -scheme ${PROJECT_NAME} -sdk iphonesimulator -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphonesimulator 2>&1\n\nxcodebuild -workspace ${PROJECT_NAME}.xcworkspace -scheme ${PROJECT_NAME} -sdk iphoneos -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphoneos 2>&1\n\n######################\n# Create directory for universal\n######################\n\nrm -rf \"${UNIVERSAL_LIBRARY_DIR}\"\n\nmkdir \"${UNIVERSAL_LIBRARY_DIR}\"\n\nmkdir \"${FRAMEWORK}\"\n\n\n######################\n# Copy files Framework\n######################\n\ncp -r \"${DEVICE_LIBRARY_PATH}/.\" \"${FRAMEWORK}\"\n\n\n######################\n# Make an universal binary\n######################\n\nlipo \"${SIMULATOR_LIBRARY_PATH}/${FRAMEWORK_NAME}\" \"${DEVICE_LIBRARY_PATH}/${FRAMEWORK_NAME}\" -create -output \"${FRAMEWORK}/${FRAMEWORK_NAME}\" | echo\n\n\n######################\n# On Release, copy the result to release directory\n######################\nOUTPUT_DIR=\"${PROJECT_DIR}/Output/${FRAMEWORK_NAME}-${CONFIGURATION}-iphoneuniversal/\"\n                                                                      \nrm -rf \"$OUTPUT_DIR\"\nmkdir -p \"$OUTPUT_DIR\"\ncp -r \"${FRAMEWORK}\" \"$OUTPUT_DIR\"\n\nif [ ${REVEAL_ARCHIVE_IN_FINDER} = true ]; then\nopen \"${OUTPUT_DIR}/\"\nfi";
+		};
+		5887B4E59BC39511ED2B9551 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F18D74D39B224BAA22575403 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LocationIntelligenceSDK/Pods-LocationIntelligenceSDK-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F1E20561BCD4000000175C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FB2360B1CF1E22B00AF771A /* Units.m in Sources */,
+				1FAE08691BCFAE4C00D71FA5 /* SegmentatonThemes.m in Sources */,
+				1FB236011CF1E22B00AF771A /* GeocodeResponse.m in Sources */,
+				1FB235CC1CF1857400AF771A /* OptionalInputs.m in Sources */,
+				1F79704C1CF748690037BCCB /* MatchFields.m in Sources */,
+				1F1E207B1BCD406F000175C0 /* AuthToken.m in Sources */,
+				1F1E207C1BCD406F000175C0 /* BaseAuthService.m in Sources */,
+				1F65432E1CFC6B5E00728023 /* CustomPreferenceDUE.m in Sources */,
+				1F1E207D1BCD406F000175C0 /* BaseAuthServiceInternal.m in Sources */,
+				1F1E207E1BCD406F000175C0 /* OAuthFactory.m in Sources */,
+				1F1E207F1BCD406F000175C0 /* OAuthService.m in Sources */,
+				1F65433E1CFC6BEB00728023 /* CustomPreferenceSGP.m in Sources */,
+				1FB235CA1CF1857400AF771A /* Input.m in Sources */,
+				1F1E20801BCD406F000175C0 /* NeighbourhoodName.m in Sources */,
+				1F1E20811BCD406F000175C0 /* ContactDetails.m in Sources */,
+				1FB2360F1CF2C7B400AF771A /* ReverseGeocodeRequest.m in Sources */,
+				1F1E20821BCD406F000175C0 /* Match.m in Sources */,
+				1F1E20831BCD406F000175C0 /* Address.m in Sources */,
+				1FB236071CF1E22B00AF771A /* Ranges.m in Sources */,
+				1FB2361E1CF309F400AF771A /* GeocodePreference.m in Sources */,
+				1F1E20841BCD406F000175C0 /* Distance.m in Sources */,
+				1F1E20851BCD406F000175C0 /* Poi.m in Sources */,
+				1F1E20861BCD406F000175C0 /* Geometry.m in Sources */,
+				1F1E20871BCD406F000175C0 /* Location.m in Sources */,
+				1F2B9AE51C6E0ADE00C038CC /* Crs.m in Sources */,
+				1FAE08611BCFAE2700D71FA5 /* Segmentation.m in Sources */,
+				1F1E20881BCD406F000175C0 /* PlaceByLocationResponse.m in Sources */,
+				1F6543261CFC6B1C00728023 /* CustomPreferencePRT.m in Sources */,
+				1F1E20891BCD406F000175C0 /* Error.m in Sources */,
+				1F1E208A1BCD406F000175C0 /* ErrorResponse.m in Sources */,
+				1F65432A1CFC6B4200728023 /* CustomPreferenceCAN.m in Sources */,
+				1F6543361CFC6B8700728023 /* CustomPreferenceGBR.m in Sources */,
+				1FB235FF1CF1E22B00AF771A /* GeocodeAddress.m in Sources */,
+				1F1E208B1BCD406F000175C0 /* Errors.m in Sources */,
+				1F1E208C1BCD406F000175C0 /* LIErrorResponse.m in Sources */,
+				1FB235DA1CF1857400AF771A /* UpdatedOptionalOutputs.m in Sources */,
+				1F1E208D1BCD406F000175C0 /* ContactPerson.m in Sources */,
+				1F9301E81CEEE05200A87099 /* ConfiguredDictionaryResponse.m in Sources */,
+				1F1E208E1BCD406F000175C0 /* County.m in Sources */,
+				1F2B9AAB1C6DB87800C038CC /* GeocodeService.m in Sources */,
+				1F1E208F1BCD406F000175C0 /* Coverage.m in Sources */,
+				1F1E20901BCD406F000175C0 /* PsapResponse.m in Sources */,
+				1F1E20911BCD406F000175C0 /* Geo911Service.m in Sources */,
+				1F1E20921BCD406F000175C0 /* SiteDetails.m in Sources */,
+				1FB235A31CF1833900AF771A /* Dictionaries.m in Sources */,
+				1F1E20931BCD406F000175C0 /* AgeTheme.m in Sources */,
+				1F1E20941BCD406F000175C0 /* AutomobileTheme.m in Sources */,
+				1FB236221CF30A2700AF771A /* GeocodeReturnFieldDescriptor.m in Sources */,
+				1F1E20951BCD406F000175C0 /* GenderTheme.m in Sources */,
+				1FB236031CF1E22B00AF771A /* GeocodeGeometry.m in Sources */,
+				1F1E20961BCD406F000175C0 /* AttitudesAndMotivationTheme.m in Sources */,
+				1FB235C81CF1857400AF771A /* GeocodeCapabilitiesResponse.m in Sources */,
+				1F1E20971BCD406F000175C0 /* ChannelPreferencesTheme.m in Sources */,
+				1FB236051CF1E22B00AF771A /* GeocodeProperties.m in Sources */,
+				1F1E20981BCD406F000175C0 /* CommuterPatternsTheme.m in Sources */,
+				1F2B9B0C1C6E0B0600C038CC /* CustomPreferences.m in Sources */,
+				1F1E20991BCD406F000175C0 /* EducationalAttainmentTheme.m in Sources */,
+				1F1E209A1BCD406F000175C0 /* EthnicityTheme.m in Sources */,
+				1F2B9B1B1C6E0BB100C038CC /* GeocodeRequest.m in Sources */,
+				1F6543321CFC6B7100728023 /* CustomPreferenceFRA.m in Sources */,
+				1F1E209B1BCD406F000175C0 /* FinancialProductsTheme.m in Sources */,
+				1F0F640A1CF419E70092AA46 /* CustomPreference.m in Sources */,
+				1FBA42E31BD505E00045F680 /* IndividualValueVariable.m in Sources */,
+				1F2B9B131C6E0B0600C038CC /* Preferences.m in Sources */,
+				1FAE086D1BCFAE5D00D71FA5 /* Variable.m in Sources */,
+				1F0F64121CF452180092AA46 /* CustomPreferenceAUS.m in Sources */,
+				1FB236181CF300B300AF771A /* GeocodePreferenceBuilder.m in Sources */,
+				1FB235C31CF1857400AF771A /* AllowedValuesWithDescriptions.m in Sources */,
+				1F1E209C1BCD406F000175C0 /* HouseholdSizeTheme.m in Sources */,
+				1F1E209D1BCD406F000175C0 /* IncomeTheme.m in Sources */,
+				1F1E209E1BCD406F000175C0 /* MaritalStatusTheme.m in Sources */,
+				1F65433A1CFC6BC900728023 /* CustomPreferenceNZL.m in Sources */,
+				1FB235D21CF1857400AF771A /* CapabilityProperties.m in Sources */,
+				1FB235C51CF1857400AF771A /* CustomObjects.m in Sources */,
+				1F1E209F1BCD406F000175C0 /* PurchasingBehaviorTheme.m in Sources */,
+				1F1E20A01BCD406F000175C0 /* RaceTheme.m in Sources */,
+				1F1E20A11BCD406F000175C0 /* Boundaries.m in Sources */,
+				1F1E20A21BCD406F000175C0 /* Boundary.m in Sources */,
+				1FAE08511BCFADD300D71FA5 /* LifeStyleTheme.m in Sources */,
+				1FB235D01CF1857400AF771A /* Outputs.m in Sources */,
+				1FB235DF1CF1DFCC00AF771A /* Points.m in Sources */,
+				1F2B9A9F1C6DB13F00C038CC /* CountrySupportInfos.m in Sources */,
+				1FB235D41CF1857400AF771A /* RequiredInputs.m in Sources */,
+				1F1E20A31BCD406F000175C0 /* Field.m in Sources */,
+				1F9301F81CEEF90600A87099 /* AddressGeocode.m in Sources */,
+				1FAE08751BCFB20400D71FA5 /* SegmentationService.m in Sources */,
+				1F1E20A41BCD406F000175C0 /* GeoLifeResponse.m in Sources */,
+				1F1E20A51BCD406F000175C0 /* GeoLifeService.m in Sources */,
+				1F1E20A71BCD406F000175C0 /* RangeVariable.m in Sources */,
+				1F1E20A81BCD406F000175C0 /* Themes.m in Sources */,
+				1FB235D81CF1857400AF771A /* SupportLevels.m in Sources */,
+				1F1E20AA1BCD406F000175C0 /* Theme.m in Sources */,
+				1FB235F71CF1E22B00AF771A /* Candidates.m in Sources */,
+				1F1E20AC1BCD406F000175C0 /* Timezone.m in Sources */,
+				1F1E20AD1BCD406F000175C0 /* GeoEnhance.m in Sources */,
+				1F0F640E1CF42C060092AA46 /* CustomPreferenceUSA.m in Sources */,
+				1F1E20AE1BCD406F000175C0 /* GeoEnhanceService.m in Sources */,
+				1F1E20AF1BCD406F000175C0 /* GeoSearchLocation.m in Sources */,
+				1F1E20B01BCD406F000175C0 /* GeoSearch.m in Sources */,
+				1F1E20B11BCD406F000175C0 /* GeoSearchService.m in Sources */,
+				1FB236091CF1E22B00AF771A /* Responses.m in Sources */,
+				1F1E20B21BCD406F000175C0 /* GeoTaxCounty.m in Sources */,
+				1F1E20B31BCD406F000175C0 /* GeoTax.m in Sources */,
+				1F1E20B41BCD406F000175C0 /* GeoTaxService.m in Sources */,
+				1F1E20B51BCD406F000175C0 /* Jurisdiction.m in Sources */,
+				1FB235FB1CF1E22B00AF771A /* CustomFields.m in Sources */,
+				1F1E20B61BCD406F000175C0 /* GeoTaxPlace.m in Sources */,
+				1F1E20B71BCD406F000175C0 /* SalesTax.m in Sources */,
+				1F1E20B81BCD406F000175C0 /* Spds.m in Sources */,
+				1F1E20B91BCD4070000175C0 /* SpdsTax.m in Sources */,
+				1F2B9B101C6E0B0600C038CC /* MustMatchFields.m in Sources */,
+				1F1E20BA1BCD4070000175C0 /* State.m in Sources */,
+				1F1E20BB1BCD4070000175C0 /* UseTax.m in Sources */,
+				1FB235CE1CF1857400AF771A /* Output.m in Sources */,
+				1F1E20BC1BCD4070000175C0 /* LIServiceManager.m in Sources */,
+				1F6543421CFC6BFC00728023 /* CustomPreferenceSWE.m in Sources */,
+				1F1E20BD1BCD4070000175C0 /* JSONResponseSerializerWithData.m in Sources */,
+				1F1E20BE1BCD4070000175C0 /* NetworkService.m in Sources */,
+				1FB235FD1CF1E22B00AF771A /* CustomValues.m in Sources */,
+				1F1E20BF1BCD4070000175C0 /* UrlMaker.m in Sources */,
+				1FB235D61CF1857400AF771A /* SupportedOperations.m in Sources */,
+				1F2B9B161C6E0B0600C038CC /* ReturnFieldsDescriptor.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F1E20601BCD4001000175C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FAE087A1BCFC82C00D71FA5 /* SegmentationTestCase.m in Sources */,
+				1F79704D1CF748690037BCCB /* MatchFields.m in Sources */,
+				1F1E20C01BCD4130000175C0 /* GeoTaxServiceTestCase.m in Sources */,
+				1F1E20C11BCD4130000175C0 /* GeoSearchServiceTestCase.m in Sources */,
+				1F1E20C21BCD4130000175C0 /* OAuthTestCase.m in Sources */,
+				1F1E20C31BCD4130000175C0 /* Geo911ServiceTestcase.m in Sources */,
+				1F2B9ACE1C6DDDAB00C038CC /* GeocodeTestCases.m in Sources */,
+				1F1E20C41BCD4130000175C0 /* GeoEnhanceServiceTestCase.m in Sources */,
+				1F1E20C51BCD4130000175C0 /* GeoLifeServiceTestCase.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1F1E20671BCD4001000175C0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F1E205A1BCD4000000175C0 /* LocationIntelligenceSDK */;
+			targetProxy = 1F1E20661BCD4001000175C0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1F1E206D1BCD4001000175C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48E5F0E6BA92C6249D7633C6 /* Pods-LocationIntelligenceSDK.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = LocationIntelligenceSDK/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pb.LocationInteligence.LocationIntelligenceSDK;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 i386 x86_64";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1F1E206E1BCD4001000175C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 795770BDD070F7EAE7A3B2FF /* Pods-LocationIntelligenceSDK.release.xcconfig */;
+			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = LocationIntelligenceSDK/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pb.LocationInteligence.LocationIntelligenceSDK;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 i386 x86_64";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1F1E20701BCD4001000175C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				INFOPLIST_FILE = LocationIntelligenceSDKTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pb.LocationInteligence.LocationIntelligenceSDKTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				VALID_ARCHS = "arm64 i386 x86_64";
+			};
+			name = Debug;
+		};
+		1F1E20711BCD4001000175C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = LocationIntelligenceSDKTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pb.LocationInteligence.LocationIntelligenceSDKTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				VALID_ARCHS = "arm64 i386 x86_64";
+			};
+			name = Release;
+		};
+		1F1E20C81BCD4254000175C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1F1E20C91BCD4254000175C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1F3934751AFCBD8300ED8859 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "arm64 i386 armv7";
+			};
+			name = Debug;
+		};
+		1F3934761AFCBD8300ED8859 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 i386 armv7";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F1E206C1BCD4001000175C0 /* Build configuration list for PBXNativeTarget "LocationIntelligenceSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F1E206D1BCD4001000175C0 /* Debug */,
+				1F1E206E1BCD4001000175C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1F1E206F1BCD4001000175C0 /* Build configuration list for PBXNativeTarget "LocationIntelligenceSDKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F1E20701BCD4001000175C0 /* Debug */,
+				1F1E20711BCD4001000175C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1F1E20C71BCD4254000175C0 /* Build configuration list for PBXAggregateTarget "LocationIntelligence - Universal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F1E20C81BCD4254000175C0 /* Debug */,
+				1F1E20C91BCD4254000175C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1F39345E1AFCBD8300ED8859 /* Build configuration list for PBXProject "LocationIntelligenceSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F3934751AFCBD8300ED8859 /* Debug */,
+				1F3934761AFCBD8300ED8859 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1F39345B1AFCBD8300ED8859 /* Project object */;
+}
