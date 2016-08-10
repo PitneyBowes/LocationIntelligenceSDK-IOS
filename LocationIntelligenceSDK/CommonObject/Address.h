@@ -17,34 +17,23 @@ See the License for the specific language governing permissions and limitations 
 
 @interface Address : NSObject <NSCoding, NSCopying>
 
-@property (nonatomic, strong) id addressLine1;
-@property (nonatomic, strong) id businessName;
-@property (nonatomic, strong) id status;
+
+
 @property (nonatomic, strong) id country;
 @property (nonatomic, strong) id postCodeExt;
-@property (nonatomic, strong) id displayName;
-@property (nonatomic, strong) id urbanizationName;
 @property (nonatomic, strong) id formattedAddress;
 @property (nonatomic, strong) id areaName1;
-@property (nonatomic, strong) id latitude;
 @property (nonatomic, strong) id addressNumber;
-@property (nonatomic, strong) id streetSide;
 @property (nonatomic, strong) id streetName;
 @property (nonatomic, strong) id city;
 @property (nonatomic, strong) id areaName3;
 @property (nonatomic, strong) id mainAddressLine;
 @property (nonatomic, strong) id unitType;
 @property (nonatomic, strong) id placeName;
-@property (nonatomic, strong) id longitude;
 @property (nonatomic, strong) id addressLastLine;
-@property (nonatomic, strong) id stateProvince;
 @property (nonatomic, strong) id postalCode;
-@property (nonatomic, strong) id postCode;
-@property (nonatomic, strong) NSArray *additionalProperties;
 @property (nonatomic, strong) id areaName2;
 @property (nonatomic, strong) id areaName4;
-@property (nonatomic, strong) id addressLine3;
-@property (nonatomic, strong) id addressLine2;
 @property (nonatomic, strong) id unitValue;
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict;

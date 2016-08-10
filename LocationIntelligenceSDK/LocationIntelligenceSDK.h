@@ -102,7 +102,6 @@ FOUNDATION_EXPORT const unsigned char LocationIntelligenceSDKVersionString[];
 #import <LocationIntelligenceSDK/UseTax.h>
 
 //Segmentation
-#import <LocationIntelligenceSDK/SegmentationService.h>
 #import <LocationIntelligenceSDK/LifeStyleTheme.h>
 #import <LocationIntelligenceSDK/Segmentation.h>
 #import <LocationIntelligenceSDK/SegmentationThemes.h>
@@ -126,6 +125,9 @@ FOUNDATION_EXPORT const unsigned char LocationIntelligenceSDKVersionString[];
 #import <LocationIntelligenceSDK/GeocodePreference.h>
 #import <LocationIntelligenceSDK/GeocodePreferenceBuilder.h>
 #import <LocationIntelligenceSDK/GeocodeReturnFieldDescriptor.h>
+#import <LocationIntelligenceSDK/SupportLevels.h>
+#import <LocationIntelligenceSDK/Units.h>
+
 
 
 
@@ -156,6 +158,13 @@ FOUNDATION_EXPORT const unsigned char LocationIntelligenceSDKVersionString[];
 #import<LocationIntelligenceSDK/Preferences.h>
 #import<LocationIntelligenceSDK/ReturnFieldsDescriptor.h>
 #import<LocationIntelligenceSDK/GeocodeGeometry.h>
+#import<LocationIntelligenceSDK/Ranges.h>
+#import<LocationIntelligenceSDK/Responses.h>
+#import<LocationIntelligenceSDK/Outputs.h>
+#import<LocationIntelligenceSDK/Output.h>
+#import<LocationIntelligenceSDK/UpdatedOptionalOutputs.h>
+#import<LocationIntelligenceSDK/SupportedOperations.h>
+#import<LocationIntelligenceSDK/RequiredInputs.h>
 
 
 //Response

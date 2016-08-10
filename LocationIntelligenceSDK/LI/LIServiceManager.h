@@ -20,7 +20,7 @@ See the License for the specific language governing permissions and limitations 
 #import "Geo911Service.h"
 #import "GeoTaxService.h"
 #import "GeocodeService.h"
-#import "SegmentationService.h"
+
 
 
 
@@ -110,12 +110,7 @@ See the License for the specific language governing permissions and limitations 
  */
 -(GeoTaxService *) getGeoTaxService;
 
-/**
- * GeoTax Service Handler
- *
- * @return an instance of GeoTaxService
- */
--(SegmentationService *) getSegmentationService;
+
 
 
 /**

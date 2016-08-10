@@ -17,6 +17,7 @@ See the License for the specific language governing permissions and limitations 
 @implementation GeoLifeService
 
 NSString *geoLifeURL = @"/geolife/v1/demographics";
+NSString *segmentationURL = @"/geolife/v1/segmentation";
 
 
 
@@ -57,7 +58,7 @@ NSString *geoLifeURL = @"/geolife/v1/demographics";
             geoLifeWEBURL = [geoLifeWEBURL stringByAppendingFormat:@"%@",filter];
         }
         
-        [self getGeoLifeResponse:geoLifeWEBURL :@"getDemographicsByAddress" :success failure:failure];
+        [self getGeoLifeResponseDemographics:geoLifeWEBURL :@"getDemographicsByAddress" :success failure:failure];
         
         
         
@@ -105,7 +106,7 @@ NSString *geoLifeURL = @"/geolife/v1/demographics";
             geoLifeWEBURL = [geoLifeWEBURL stringByAppendingFormat:@"%@",filter];
         }
         
-        [self getGeoLifeResponse:geoLifeWEBURL :@"getDemographicsByLocation" :success failure:failure];
+        [self getGeoLifeResponseDemographics:geoLifeWEBURL :@"getDemographicsByLocation" :success failure:failure];
         
         
         
@@ -132,7 +133,7 @@ NSString *geoLifeURL = @"/geolife/v1/demographics";
  *  @param success    <#success description#>
  *  @param failure    <#failure description#>
  */
-- (void) getGeoLifeResponse:(NSString *)url :
+- (void) getGeoLifeResponseDemographics:(NSString *)url :
                             (NSString *)methodName :
                             (void (^)(GeoLifeResponse *geoLofe))success failure : (void (^)( ErrorResponse *error))failure{
     
@@ -158,5 +159,122 @@ NSString *geoLifeURL = @"/geolife/v1/demographics";
     
     
 }
+
+
+-(void) getSegmentationByAddress: (NSString *)address :
+(NSString *)country :
+(void (^)(Segmentation *geoLife))success
+                        failure : (void (^)( ErrorResponse *error))failure{
+    
+    [self getAuthenticationToken:^(AuthToken *authToken) {        //Sucess case
+        
+        NSLog(@"Authentication is sucessfull, Its time to call Geo Life getAddress APIs");
+        
+        NSString *geoLifeWEBURL;
+        
+        geoLifeWEBURL =[segmentationURL stringByAppendingString:@"/byaddress?"];
+        geoLifeWEBURL =[geoLifeWEBURL stringByAppendingString:@"address="];
+        geoLifeWEBURL = [geoLifeWEBURL stringByAppendingFormat:@"%@",address];
+        
+        
+        if(country != nil){
+            geoLifeWEBURL = [geoLifeWEBURL stringByAppendingString:@"&country="];
+            geoLifeWEBURL = [geoLifeWEBURL stringByAppendingFormat:@"%@",country];
+        }
+        
+        
+        
+        
+        [self getGeoLifeResponseSegmentation:geoLifeWEBURL :@"getSegmentationByAddress" :success failure:failure];
+        
+        
+        
+    } failure:^(ErrorResponse *error) {
+        
+        //Failure case
+        NSLog(@"It failure in GeoLife getAddress and the error is %@",error.rootCauseErrorMessage);
+        failure(error);
+        
+    }];
+    
+    
+}
+
+
+
+- (void) getSegmentationByLocation: (NSNumber *)latitude :
+(NSNumber *)longitude :
+(void (^)(Segmentation *geoLife))success
+                          failure : (void (^)( ErrorResponse *error))failure {
+    
+    [self getAuthenticationToken:^(AuthToken *authToken) {
+        //Sucess case
+        
+        NSLog(@"Authentication is sucessfull, Its time to call Geo Life getAddress APIs");
+        
+        NSString *segmentationWEBURL;
+        
+        segmentationWEBURL =[segmentationURL stringByAppendingString:@"/bylocation?"];
+        
+        segmentationWEBURL = [segmentationWEBURL stringByAppendingString:@"&latitude="];
+        segmentationWEBURL = [segmentationWEBURL stringByAppendingFormat:@"%@",latitude];
+        
+        segmentationWEBURL = [segmentationWEBURL stringByAppendingString:@"&longitude="];
+        segmentationWEBURL = [segmentationWEBURL stringByAppendingFormat:@"%@",longitude];
+        
+        [self getGeoLifeResponseSegmentation:segmentationWEBURL :@"getSegmentationByLocation" :success failure:failure];
+        
+        
+        
+    } failure:^(ErrorResponse *error) {
+        
+        //Failure case
+        NSLog(@"It failure in GeoLife getDemographicsByLocation and the error is %@",error.rootCauseErrorMessage);
+        failure(error);
+        
+    }];
+    
+    
+    
+}
+
+
+
+
+/**
+ *  <#Description#>
+ *
+ *  @param url
+ *  @param methodName <#methodName description#>
+ *  @param success    <#success description#>
+ *  @param failure    <#failure description#>
+ */
+- (void) getGeoLifeResponseSegmentation:(NSString *)url :
+(NSString *)methodName :
+(void (^)(Segmentation *geoLofe))success failure : (void (^)( ErrorResponse *error))failure{
+    
+    
+    
+    UrlMaker *urlMake = [UrlMaker getInstance];
+    NSString * urlString = [urlMake getAbsoluteUrl:url];
+    
+    NetworkService *ns = [[NetworkService alloc] init];
+    
+    
+    [ ns GetRestService:urlString: self :^(id id) {
+        Segmentation *segmentation = [Segmentation modelObjectWithDictionary:id];
+        success(segmentation);
+        
+    } failure:^(ErrorResponse *error) {
+        failure(error);
+        
+    }];
+    
+    
+    
+    
+    
+}
+
 
 @end

@@ -40,7 +40,7 @@ static inline void hxRunInMainLoop(void(^block)(BOOL *done)) {
     
     
     
-    BaseAuthServiceInternal *baseAuthService = [BaseAuthServiceInternal sharedBaseOauthObject:@"" :@""];
+    BaseAuthServiceInternal *baseAuthService = [BaseAuthServiceInternal sharedBaseOauthObject:@"":@""];
        lbsGeoLife = [LIServiceManager sharedSingletonClass:baseAuthService];
     
     
@@ -278,7 +278,7 @@ static inline void hxRunInMainLoop(void(^block)(BOOL *done)) {
             XCTAssertTrue(geoLife != nil);
             
             XCTAssertTrue([geoLife themes] != nil);
-            
+            NSLog(@"Geolife Response %@" ,geoLife );
             
         } failure:^(ErrorResponse *error) {
             *done = YES;
@@ -466,6 +466,65 @@ static inline void hxRunInMainLoop(void(^block)(BOOL *done)) {
         
         
     });
+    
+}
+- (void)testgetSegmentationByLocation
+{
+    
+    hxRunInMainLoop(^(BOOL *done) {
+        
+        GeoLifeService  *geoLifeService = lbsGeoLife.getGeoLifeService;
+        NSLog(@"Received executeSegmentationByAddress service object %@" ,lbsGeoLife );
+        
+        
+        [geoLifeService getSegmentationByLocation:[NSNumber numberWithDouble:42.5309] : [NSNumber numberWithDouble: -73.6572] : ^(Segmentation *segmentation) {
+            
+            *done = YES;
+            XCTAssertTrue(segmentation != nil);
+            
+            XCTAssertTrue([segmentation themes] != nil);
+            
+            
+        } failure:^(ErrorResponse *error) {
+            *done = YES;
+            XCTFail();
+            
+        } ];
+        
+    });
+    
+    
+}
+
+
+
+
+
+- (void)testgetSegmentationByAddress
+{
+    
+    hxRunInMainLoop(^(BOOL *done) {
+        
+        GeoLifeService  *geoLifeService = lbsGeoLife.getGeoLifeService;
+        NSLog(@"Received executeSegmentationByAddress service object %@" ,geoLifeService );
+        
+        
+        [geoLifeService getSegmentationByAddress:@"1 Global View, Troy, NY" : @"USA": ^(Segmentation *segmentation) {
+            
+            *done = YES;
+            XCTAssertTrue(segmentation != nil);
+            
+            XCTAssertTrue([segmentation themes] != nil);
+            
+            
+        } failure:^(ErrorResponse *error) {
+            *done = YES;
+            XCTFail();
+            
+        } ];
+        
+    });
+    
     
 }
 

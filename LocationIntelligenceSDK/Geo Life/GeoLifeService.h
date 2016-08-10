@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and limitations 
 
 #import "OAuthService.h"
 #import "GeoLifeResponse.h"
-
+#import "Segmentation.h"
 
 /**
  *  This Service provides demographic data and lifestyle characteristics for a specific area.
@@ -85,6 +85,37 @@ See the License for the specific language governing permissions and limitations 
                                     failure : (void (^)( ErrorResponse *error))failure;
 
 
+
+
+
+/**
+ *  <#Description#>
+ *
+ *  @param address <#address description#>
+ *  @param country <#country description#>
+ *  @param success <#success description#>
+ *  @param failure <#failure description#>
+ */
+
+- (void) getSegmentationByAddress: (NSString *)address :
+(NSString *)country :
+(void (^)(Segmentation *segmentation))success
+                         failure : (void (^)( ErrorResponse *error))failure;
+
+
+/**
+ *  <#Description#>
+ *
+ *  @param latitude  <#latitude description#>
+ *  @param longitude <#longitude description#>
+ *  @param success   <#success description#>
+ *  @param failure   <#failure description#>
+ */
+
+- (void) getSegmentationByLocation: (NSNumber *)latitude :
+(NSNumber *)longitude :
+(void (^)(Segmentation *segmentation))success
+                          failure : (void (^)( ErrorResponse *error))failure;
 
 
 

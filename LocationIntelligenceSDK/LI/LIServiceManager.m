@@ -165,11 +165,6 @@ static LIServiceManager *singletonObject = nil;
 }
 
 
--(SegmentationService *) getSegmentationService{
-    
-    SegmentationService *segmentationService;
-    segmentationService = [[SegmentationService alloc] init];
-    return segmentationService;
-}
+
 
 @end
