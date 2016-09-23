@@ -567,10 +567,10 @@ NSString *capabilityURL = @"/geocode-service/v1/transient/";
     
     switch(enumName) {
         case Premium:
-            result = @"Premium";
+            result = @"premium";
             break;
         case Basic:
-            result = @"Basic";
+            result = @"basic";
             break;
         default:
             result = @"unknown";
@@ -1276,7 +1276,7 @@ NSString *capabilityURL = @"/geocode-service/v1/transient/";
     NSString * urlString = [urlMake getAbsoluteUrl:url];
     
     NetworkService *ns = [[NetworkService alloc] init];
-    [ ns PostRestServiceWithPayLoad: urlString: newparams:^(id id) {
+    [ ns PostRestServiceWithPayLoad: urlString: newparams:self:^(id id) {
         
         GeocodeResponse *geocodeResponse = [GeocodeResponse modelObjectWithDictionary:id];
         success(geocodeResponse);

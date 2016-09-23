@@ -13,10 +13,12 @@ See the License for the specific language governing permissions and limitations 
 
 #import "Geo911Service.h"
 #import "PsapResponse.h"
+#import "AHJPlusPSAPResponse.h"
 
 @implementation Geo911Service
 
-NSString *geo911URL = @"/geo911/v1/psap";
+NSString *geo911URL = @"/geo911/v1";
+
 
 
 - (void) getPSAPByAddress:(NSString *)address :
@@ -32,7 +34,7 @@ NSString *geo911URL = @"/geo911/v1/psap";
         
         NSString *geo911WEBURL;
         
-        geo911WEBURL =[geo911URL stringByAppendingString:@"/byaddress?"];
+        geo911WEBURL =[geo911URL stringByAppendingString:@"/psap/byaddress?"];
         geo911WEBURL =[geo911WEBURL stringByAppendingString:@"address="];
         geo911WEBURL = [geo911WEBURL stringByAppendingFormat:@"%@",address];
 
@@ -70,7 +72,7 @@ NSString *geo911URL = @"/geo911/v1/psap";
         NSString *geo911WEBURL;
 
         
-        geo911WEBURL =[geo911URL stringByAppendingString:@"/bylocation?"];
+        geo911WEBURL =[geo911URL stringByAppendingString:@"/psap/bylocation?"];
         
         geo911WEBURL = [geo911WEBURL stringByAppendingString:@"latitude="];
         geo911WEBURL = [geo911WEBURL stringByAppendingFormat:@"%@",latitude];
@@ -92,6 +94,85 @@ NSString *geo911URL = @"/geo911/v1/psap";
     
 }
 
+
+
+- (void) getAHJPlusPSAPByLocation: (NSNumber *)latitude :
+(NSNumber *)longitude :
+(void (^)(AHJPlusPSAPResponse *aHJPlusPSAPResponse))success
+                         failure : (void (^)( ErrorResponse *error))failure{
+    
+    
+    [self getAuthenticationToken:^(AuthToken *authToken) {
+        //Sucess case
+        
+        NSLog(@"Authentication is sucessfull, Its time to call Geo 911 getPSAPByAddress APIs");
+        
+        NSString *geo911WEBURL;
+        
+        
+        geo911WEBURL =[geo911URL stringByAppendingString:@"/ahj-psap/bylocation?"];
+        
+        geo911WEBURL = [geo911WEBURL stringByAppendingString:@"latitude="];
+        geo911WEBURL = [geo911WEBURL stringByAppendingFormat:@"%@",latitude];
+        
+        geo911WEBURL = [geo911WEBURL stringByAppendingString:@"&longitude="];
+        geo911WEBURL = [geo911WEBURL stringByAppendingFormat:@"%@",longitude];
+        
+        [self getGeo911AHJResponse:geo911WEBURL :@"getPSAPByLocation" :success failure:failure];
+        
+        
+        
+    } failure:^(ErrorResponse *error) {
+        
+        //Failure case
+        NSLog(@"It failure in Geo911 getPSAPByLocation and the error is %@",error.rootCauseErrorMessage);
+        failure(error);
+        
+    }];
+    
+}
+
+
+/**
+ *  <#Description#>
+ *
+ *  @param address <#address description#>
+ *  @param success <#success description#>
+ *  @param failure <#failure description#>
+ */
+- (void) getAHJPlusPSAPByAddress:(NSString *)address :
+(void (^)(AHJPlusPSAPResponse *aHJPlusPSAPResponse))success
+                        failure : (void (^)( ErrorResponse *error))failure
+{
+    
+    
+    [self getAuthenticationToken:^(AuthToken *authToken) {
+        //Sucess case
+        
+        NSLog(@"Authentication is sucessfull, Its time to call Geo 911 getPSAPByAddress APIs");
+        
+        NSString *geo911WEBURL;
+        
+        
+        geo911WEBURL =[geo911URL stringByAppendingString:@"/ahj-psap/byaddress?"];
+        
+      
+        geo911WEBURL =[geo911WEBURL stringByAppendingString:@"address="];
+        geo911WEBURL = [geo911WEBURL stringByAppendingFormat:@"%@",address];
+        
+        [self getGeo911AHJResponse:geo911WEBURL :@"getPSAPByLocation" :success failure:failure];
+        
+        
+        
+    } failure:^(ErrorResponse *error) {
+        
+        //Failure case
+        NSLog(@"It failure in Geo911 getPSAPByLocation and the error is %@",error.rootCauseErrorMessage);
+        failure(error);
+        
+    }];
+    
+}
 
 
 
@@ -127,5 +208,36 @@ NSString *geo911URL = @"/geo911/v1/psap";
     
 }
 
+
+/**
+ *  <#Description#>
+ *
+ *  @param url
+ *  @param methodName <#methodName description#>
+ *  @param success    <#success description#>
+ *  @param failure    <#failure description#>
+ */
+- (void) getGeo911AHJResponse:(NSString *)url :
+(NSString *)methodName :
+(void (^)(AHJPlusPSAPResponse *aHJPlusPSAPResponse))success failure : (void (^)( ErrorResponse *error))failure{
+    
+    UrlMaker *urlMake = [UrlMaker getInstance];
+    NSString * urlString = [urlMake getAbsoluteUrl:url];
+    
+    NetworkService *ns = [[NetworkService alloc] init];
+    
+    
+    [ ns GetRestService :urlString: self :^(id id) {
+        
+        AHJPlusPSAPResponse *aHJPlusPSAPResponse = [AHJPlusPSAPResponse modelObjectWithDictionary:id];
+        success(aHJPlusPSAPResponse);
+        
+    } failure:^(ErrorResponse *error) {
+        failure(error);
+        
+    }];
+    
+    
+}
 
 @end

@@ -20,7 +20,7 @@ See the License for the specific language governing permissions and limitations 
 #import "Geo911Service.h"
 #import "GeoTaxService.h"
 #import "GeocodeService.h"
-
+#import "GeoCommService.h"
 
 
 
@@ -112,7 +112,6 @@ See the License for the specific language governing permissions and limitations 
 
 
 
-
 /**
  * Geocode Service Handler
  *
@@ -120,6 +119,12 @@ See the License for the specific language governing permissions and limitations 
  */
 -(GeocodeService *) getGeocodeService;
 
+/**
+ *  <#Description#>
+ *
+ *  @return <#return value description#>
+ */
+-(GeoCommService *) getGeoCommSerivce;
 
 /**
  * To invalidate the LBS static reference

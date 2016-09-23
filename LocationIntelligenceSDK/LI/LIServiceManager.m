@@ -164,6 +164,11 @@ static LIServiceManager *singletonObject = nil;
     return geoCodeService;
 }
 
+-(GeoCommService *) getGeoCommSerivce{
+    GeoCommService *geoCommService;
+    geoCommService = [[GeoCommService alloc] init];
+    return geoCommService;
+}
 
 
 

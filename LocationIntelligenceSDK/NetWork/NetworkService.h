@@ -56,7 +56,7 @@ See the License for the specific language governing permissions and limitations 
  *  @param success success callback
  *  @param failure failure callback
  */
-- (void)PostRestServiceWithPayLoad: (NSString *)webUrl :(id) parameters  : (void (^)(id))success
+- (void)PostRestServiceWithPayLoad: (NSString *)webUrl :(id) parameters  :(OAuthService*) oAuthService: (void (^)(id))success
                 failure:(void (^)( ErrorResponse *errorResponse))failure;
 
 

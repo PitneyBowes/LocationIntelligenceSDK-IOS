@@ -52,6 +52,8 @@ FOUNDATION_EXPORT const unsigned char LocationIntelligenceSDKVersionString[];
 #import <LocationIntelligenceSDK/PsapResponse.h>
 #import <LocationIntelligenceSDK/Geo911Service.h>
 #import <LocationIntelligenceSDK/SiteDetails.h>
+#import <LocationIntelligenceSDK/AHJPlusPSAPResponse.h>
+#import <LocationIntelligenceSDK/Ahjs.h>
 
 //GeoLife
 #import <LocationIntelligenceSDK/AgeTheme.h>
@@ -90,9 +92,14 @@ FOUNDATION_EXPORT const unsigned char LocationIntelligenceSDKVersionString[];
 #import <LocationIntelligenceSDK/GeoSearchService.h>
 
 //Geotax
+#import <LocationIntelligenceSDK/Mcd.h>
+#import <LocationIntelligenceSDK/Cbsa.h>
+#import <LocationIntelligenceSDK/LatLongFields.h>
+#import <LocationIntelligenceSDK/Census.h>
+#import <LocationIntelligenceSDK/TaxResponses.h>
+#import  <LocationIntelligenceSDK/TaxResponseList.h>
 #import <LocationIntelligenceSDK/GeoTaxCounty.h>
 #import <LocationIntelligenceSDK/GeoTax.h>
-#import <LocationIntelligenceSDK/GeoTaxService.h>
 #import <LocationIntelligenceSDK/Jurisdiction.h>
 #import <LocationIntelligenceSDK/GeoTaxPlace.h>
 #import <LocationIntelligenceSDK/SalesTax.h>
@@ -100,6 +107,20 @@ FOUNDATION_EXPORT const unsigned char LocationIntelligenceSDKVersionString[];
 #import <LocationIntelligenceSDK/SpdsTax.h>
 #import <LocationIntelligenceSDK/State.h>
 #import <LocationIntelligenceSDK/UseTax.h>
+#import  <LocationIntelligenceSDK/RateLocations.h>
+#import  <LocationIntelligenceSDK/TaxLocation.h>
+#import  <LocationIntelligenceSDK/TaxRateLocationRequest.h>
+#import  <LocationIntelligenceSDK/TaxLocationRequest.h>
+#import  <LocationIntelligenceSDK/TaxRateAddresses.h>
+#import  <LocationIntelligenceSDK/TaxAddressRequest.h>
+#import  <LocationIntelligenceSDK/TaxRateAddressRequest.h>
+#import  <LocationIntelligenceSDK/TaxAddresses.h>
+#import <LocationIntelligenceSDK/GeoTaxService.h>
+
+
+
+
+
 
 //Segmentation
 #import <LocationIntelligenceSDK/LifeStyleTheme.h>
@@ -180,6 +201,14 @@ FOUNDATION_EXPORT const unsigned char LocationIntelligenceSDKVersionString[];
 //Reverse Geocode
 #import<LocationIntelligenceSDK/ReverseGeocodeRequest.h>
 #import<LocationIntelligenceSDK/Points.h>
+
+
+//GeoComm Service
+
+#import <LocationIntelligenceSDK/AreaCodeInfoList.h>
+#import <LocationIntelligenceSDK/RateCenterResponse.h>
+#import <LocationIntelligenceSDK/GeoCommService.h>
+
 
 //LI
 #import <LocationIntelligenceSDK/LIServiceManager.h>

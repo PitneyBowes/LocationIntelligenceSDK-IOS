@@ -24,7 +24,7 @@ See the License for the specific language governing permissions and limitations 
 //TODO : Need to split this file in modular functions
 @implementation NetworkService
 
-- (void)PostRestServiceWithPayLoad: (NSString *)webUrl :(id) parameters: (void (^)(id))success
+- (void)PostRestServiceWithPayLoad: (NSString *)webUrl :(id) parameters:(OAuthService*) oAuthService:(void (^)(id))success
 failure:(void (^)( ErrorResponse *errorResponse))failure{
     
     NSURL *baseLIURL = [NSURL URLWithString:BASE_URL];
@@ -39,8 +39,20 @@ failure:(void (^)( ErrorResponse *errorResponse))failure{
     
     [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
     manager.responseSerializer = [JSONResponseSerializerWithData serializer];
+    
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:_ConsumerKey password:_ConsumerSecretKey];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Application-Type"];
+    
+
+   
+    if(oAuthService.isTokenAvailable){
+        
+        [manager.requestSerializer setValue: [_AuthToken toString] forHTTPHeaderField:@"Authorization"];
+        
+    }
+
+    
     
     [manager POST:webUrl parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
         
@@ -121,6 +133,33 @@ failure:(void (^)( ErrorResponse *errorResponse))failure{
                 liErRes.error = liErr;
                 erRes.liErrorResponse = liErRes;
             }
+            // Renew the Tokens If they are expired
+            if(codeResponse.statusCode == 401 && ![oAuthService isUserGenereatedToken]){
+                
+                //Time to renew tokens now
+                
+                NSLog(@"It seems Auth token has been expired, Its time to regenarate the new tokens");
+                
+                //Token expired, It's time to regenrate the tocken
+                [oAuthService invalidateAuthenticationToken];
+                
+                [oAuthService getAuthenticationToken:^(AuthToken *authToken) {
+                    //Again new auth token has been generated
+                    
+                    NSLog(@"OAuth token has been regenerated successfully, it time to resume services");
+                    [self GetRestService:webUrl : oAuthService :success failure:failure];
+                    
+                } failure:^(ErrorResponse *errorResponse) {
+                    
+                    NSLog(@"OAuth token regeneration has been failed again, going back");
+                    failure(errorResponse);
+                    
+                }];
+                
+                return;
+                
+            }
+
         }
         failure(erRes);
     }];

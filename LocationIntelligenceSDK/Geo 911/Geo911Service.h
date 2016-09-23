@@ -18,6 +18,7 @@ See the License for the specific language governing permissions and limitations 
 #import "SiteDetails.h"
 #import "Coverage.h"
 #import "PsapResponse.h"
+#import "AHJPlusPSAPResponse.h"
 
 
 /**
@@ -59,6 +60,33 @@ See the License for the specific language governing permissions and limitations 
                             (NSNumber *)longitude :
                             (void (^)(PsapResponse *geo911))success
                                 failure : (void (^)( ErrorResponse *error))failure;
+
+
+/**
+ *  <#Description#>
+ *
+ *  @param latitude  <#latitude description#>
+ *  @param longitude <#longitude description#>
+ *  @param success   <#success description#>
+ *  @param failure   <#failure description#>
+ */
+- (void) getAHJPlusPSAPByLocation: (NSNumber *)latitude :
+(NSNumber *)longitude :
+(void (^)(AHJPlusPSAPResponse *aHJPlusPSAPResponse))success
+                  failure : (void (^)( ErrorResponse *error))failure;
+
+
+
+/**
+ *  <#Description#>
+ *
+ *  @param address <#address description#>
+ *  @param success <#success description#>
+ *  @param failure <#failure description#>
+ */
+- (void) getAHJPlusPSAPByAddress:(NSString *)address :
+                        (void (^)(AHJPlusPSAPResponse *aHJPlusPSAPResponse))success
+                         failure : (void (^)( ErrorResponse *error))failure;
 
 
 @end

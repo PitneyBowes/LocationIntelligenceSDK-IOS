@@ -172,7 +172,7 @@ typedef enum {Geocode=0,ReverseGeocode=1} OperationType;
  *  <#Description#>
  *
  *  @param country    <#country description#>
- *  @param bundleName <#bundleType description#>
+ *  @param bundleType <#bundleType description#>
  *  @param success    <#success description#>
  *  @param failure    <#failure description#>
  */

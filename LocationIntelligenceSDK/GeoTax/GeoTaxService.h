@@ -22,8 +22,13 @@ See the License for the specific language governing permissions and limitations 
 #import "State.h"
 #import "Jurisdiction.h"
 #import "OAuthService.h"
-
-
+#import "TaxRateAddressRequest.h"
+#import "TaxAddressRequest.h"
+#import "TaxAddresses.h"
+#import "TaxRateAddresses.h"
+#import "TaxResponseList.h"
+#import "TaxLocationRequest.h"
+#import "TaxRateLocationRequest.h"
 
 @interface GeoTaxService : OAuthService
 
@@ -43,5 +48,22 @@ See the License for the specific language governing permissions and limitations 
 - (void) getGeoTaxByAddress: (NSString *)taxRateTypeId :(NSString *)address : (NSNumber *) purchaseAmount :
   (void (^)(GeoTax *geoTax))success
    failure : (void (^)( ErrorResponse *error))failure;
+
+- (void) getGeoTaxBatchRateByAddress: (NSString *)taxRateTypeId :(TaxRateAddressRequest *)taxRateRequest :
+(void (^)(TaxResponseList *geoTax))success
+                   failure : (void (^)( ErrorResponse *error))failure;
+
+- (void) getGeoTaxBatchByAddress: (NSString *)taxRateTypeId :(TaxAddressRequest *)taxRateRequest :
+(void (^)(TaxResponseList *geoTax))success
+                            failure : (void (^)( ErrorResponse *error))failure;
+
+- (void) getGeoTaxBatchRateByLocation: (NSString *)taxRateTypeId :(TaxRateLocationRequest *)taxRateRequest :
+(void (^)(TaxResponseList *geoTax))success
+                            failure : (void (^)( ErrorResponse *error))failure;
+
+- (void) getGeoTaxBatchByLocation: (NSString *)taxRateTypeId :(TaxLocationRequest *)taxRateRequest :
+(void (^)(TaxResponseList *geoTax))success
+                            failure : (void (^)( ErrorResponse *error))failure;
+
 
 @end

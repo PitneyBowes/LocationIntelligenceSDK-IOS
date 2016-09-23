@@ -11,6 +11,8 @@ License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF 
 See the License for the specific language governing permissions and limitations under the License. */
 //
 
+
+
 #import "GeoTaxService.h"
 
 @implementation GeoTaxService
@@ -169,6 +171,160 @@ NSString * const TAX=@"tax/";
     
 }
 
+
+
+
+
+/**
+ *  <#Description#>
+ *
+ *  @param taxRateTypeId  <#taxRateTypeId description#>
+ *  @param taxRateRequest <#taxRateRequest description#>
+ *  @param success        <#success description#>
+ *  @param failure        <#failure description#>
+ */
+- (void) getGeoTaxBatchRateByAddress: (NSString *)taxRateTypeId :(TaxRateAddressRequest *)taxRateRequest :
+(void (^)(TaxResponseList *geoTax))success
+                            failure : (void (^)( ErrorResponse *error))failure
+
+{
+    [self getAuthenticationToken:^(AuthToken *authToken) {
+        //Sucess case
+        
+        NSLog(@"Authentication is sucessfull, Its time to call Geo Tax getGeoTaxByBatchRateByAddress APIs");
+        
+        NSString *geoTaxWEBURL=geoTaxURL;
+        geoTaxWEBURL =[geoTaxWEBURL stringByAppendingString:TAX_RATE];
+        geoTaxWEBURL =[geoTaxWEBURL stringByAppendingString:taxRateTypeId];
+        
+        geoTaxWEBURL =[geoTaxWEBURL stringByAppendingString:@"/byaddress"];
+        
+       
+        
+        [self postGeoTaxResponse:geoTaxWEBURL :[taxRateRequest dictionaryRepresentation] :success failure:failure];
+        
+        
+        
+    } failure:^(ErrorResponse *error) {
+        
+        //Failure case
+        NSLog(@"It failure in GeoTax getGeoTaxByAddress and the error is %@",error.rootCauseErrorMessage);
+        failure(error);
+        
+    }];
+    
+
+}
+
+/**
+ *  <#Description#>
+ *
+ *  @param taxRateTypeId  <#taxRateTypeId description#>
+ *  @param taxRateRequest <#taxRateRequest description#>
+ *  @param success        <#success description#>
+ *  @param failure        <#failure description#>
+ */
+- (void) getGeoTaxBatchByAddress: (NSString *)taxRateTypeId :(TaxAddressRequest *)taxRateRequest :
+(void (^)(TaxResponseList *geoTax))success
+                            failure : (void (^)( ErrorResponse *error))failure
+
+{
+    [self getAuthenticationToken:^(AuthToken *authToken) {
+        //Sucess case
+        
+        NSLog(@"Authentication is sucessfull, Its time to call Geo Tax getGeoTaxByBatchRateByAddress APIs");
+        
+        NSString *geoTaxWEBURL=geoTaxURL;
+        geoTaxWEBURL =[geoTaxWEBURL stringByAppendingString:TAX];
+        geoTaxWEBURL =[geoTaxWEBURL stringByAppendingString:taxRateTypeId];
+        
+        geoTaxWEBURL =[geoTaxWEBURL stringByAppendingString:@"/byaddress"];
+        
+        
+        
+        [self postGeoTaxResponse:geoTaxWEBURL :[taxRateRequest dictionaryRepresentation] :success failure:failure];
+        
+        
+        
+    } failure:^(ErrorResponse *error) {
+        
+        //Failure case
+        NSLog(@"It failure in GeoTax getGeoTaxByAddress and the error is %@",error.rootCauseErrorMessage);
+        failure(error);
+        
+    }];
+    
+    
+}
+
+
+- (void) getGeoTaxBatchRateByLocation: (NSString *)taxRateTypeId :(TaxRateLocationRequest *)taxRateLocationRequest :
+(void (^)(TaxResponseList *geoTax))success
+                             failure : (void (^)( ErrorResponse *error))failure;
+
+{
+    [self getAuthenticationToken:^(AuthToken *authToken) {
+        //Sucess case
+        
+        NSLog(@"Authentication is sucessfull, Its time to call Geo Tax getGeoTaxByBatchRateByAddress APIs");
+        
+        NSString *geoTaxWEBURL=geoTaxURL;
+        geoTaxWEBURL =[geoTaxWEBURL stringByAppendingString:TAX_RATE];
+        geoTaxWEBURL =[geoTaxWEBURL stringByAppendingString:taxRateTypeId];
+        
+        geoTaxWEBURL =[geoTaxWEBURL stringByAppendingString:@"/bylocation"];
+        
+        
+        
+        [self postGeoTaxResponse:geoTaxWEBURL :[taxRateLocationRequest dictionaryRepresentation] :success failure:failure];
+        
+        
+        
+    } failure:^(ErrorResponse *error) {
+        
+        //Failure case
+        NSLog(@"It failure in GeoTax getGeoTaxByAddress and the error is %@",error.rootCauseErrorMessage);
+        failure(error);
+        
+    }];
+
+}
+
+- (void) getGeoTaxBatchByLocation: (NSString *)taxRateTypeId :(TaxLocationRequest *)taxLocationRequest :
+(void (^)(TaxResponseList *geoTax))success
+                           failure : (void (^)( ErrorResponse *error))failure
+
+
+{
+    [self getAuthenticationToken:^(AuthToken *authToken) {
+        //Sucess case
+        
+        NSLog(@"Authentication is sucessfull, Its time to call Geo Tax getGeoTaxByBatchRateByAddress APIs");
+        
+        NSString *geoTaxWEBURL=geoTaxURL;
+        geoTaxWEBURL =[geoTaxWEBURL stringByAppendingString:TAX];
+        geoTaxWEBURL =[geoTaxWEBURL stringByAppendingString:taxRateTypeId];
+        
+        geoTaxWEBURL =[geoTaxWEBURL stringByAppendingString:@"/bylocation"];
+        
+        
+        
+        [self postGeoTaxResponse:geoTaxWEBURL :[taxLocationRequest dictionaryRepresentation] :success failure:failure];
+        
+        
+        
+    } failure:^(ErrorResponse *error) {
+        
+        //Failure case
+        NSLog(@"It failure in GeoTax getGeoTaxByAddress and the error is %@",error.rootCauseErrorMessage);
+        failure(error);
+        
+    }];
+    
+    
+}
+
+
 /**
  *  <#Description#>
  *
@@ -200,5 +356,25 @@ NSString * const TAX=@"tax/";
     
 }
 
+- (void) postGeoTaxResponse:(NSString *)url
+                              :(id) newparams
+                              :(void (^)(TaxResponseList  *geocodingResponse))success
+                      failure :(void (^)( ErrorResponse *error))failure{
+    
+    UrlMaker *urlMake = [UrlMaker getInstance];
+    NSString * urlString = [urlMake getAbsoluteUrl:url];
+    
+    NetworkService *ns = [[NetworkService alloc] init];
+    [ ns PostRestServiceWithPayLoad: urlString: newparams:self:^(id id) {
+        
+        TaxResponseList *taxResponseList = [TaxResponseList modelObjectWithDictionary:id];
+        success(taxResponseList);
+        
+    } failure:^(ErrorResponse *error) {
+        NSLog(@"getAuthenticationToken - its failure %@",error.rootCauseErrorMessage);
+        failure(error);
+    }];
+    
+}
 
 @end
