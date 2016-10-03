@@ -37,7 +37,7 @@ static inline void hxRunInMainLoop(void(^block)(BOOL *done)) {
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
-    BaseAuthServiceInternal *baseAuthService = [BaseAuthServiceInternal sharedBaseOauthObject:@"" :@""];
+    BaseAuthServiceInternal *baseAuthService = [BaseAuthServiceInternal sharedBaseOauthObject:@"":@""];
     liGeoTax = [LIServiceManager sharedSingletonClass:baseAuthService];
 
 }
@@ -235,5 +235,208 @@ static inline void hxRunInMainLoop(void(^block)(BOOL *done)) {
 }
 
 
+- (void)testgeoTaxBatchGeneralByRateAddress
+{
+    
+    hxRunInMainLoop(^(BOOL *done) {
+        
+        GeoTaxService *geoTaxService = liGeoTax.getGeoTaxService;
+        
+        
+       
+        TaxRateAddressRequest *taxRateRequest= [[TaxRateAddressRequest alloc]init];
+        
+       
+        TaxRateAddresses *taxaddress= [[TaxRateAddresses alloc]init];
+        taxaddress.mainAddressLine=@"39 Sycamore Rd,Stafford 08050,USA";
+        
+        NSArray *taxAddresses=[[NSArray arrayWithObject:taxaddress] init];
+        
+        taxRateRequest.taxRateAddresses=taxAddresses;
+        
+        
+        Preferences *preferncenew=[[Preferences alloc] init];
+        preferncenew.distanceUnits=@"Miles";
+        taxRateRequest.preferences = preferncenew;
+        
+        
+        
+       
+        
+        [geoTaxService getGeoTaxBatchRateByAddress:@"General": taxRateRequest : ^(TaxResponseList *taxResponseList) {
+            *done = YES;
+            XCTAssertTrue(taxResponseList != nil);
+            
+            XCTAssertTrue(taxResponseList.taxResponses != nil);
+            NSLog(@"responseList %@",taxResponseList);
+            
+        } failure:^(ErrorResponse *error) {
+            *done = YES;
+            XCTFail();
+            
+        } ];
+        
+    });
+    
+}
+
+
+
+- (void)testgeoTaxBatchGeneralByAddress
+{
+    
+    hxRunInMainLoop(^(BOOL *done) {
+        
+        GeoTaxService *geoTaxService = liGeoTax.getGeoTaxService;
+        
+        
+        
+        TaxAddressRequest *taxRateRequest= [[TaxAddressRequest alloc]init];
+        
+        
+        TaxAddresses *taxaddress= [[TaxAddresses alloc]init];
+        taxaddress.mainAddressLine=@"39 Sycamore Rd,Stafford 08050,USA";
+        taxaddress.purchaseAmount=@"10";
+        
+        NSArray *taxAddresses=[[NSArray arrayWithObject:taxaddress] init];
+        
+        taxRateRequest.taxAddresses=taxAddresses;
+        
+        
+        Preferences *preferncenew=[[Preferences alloc] init];
+        preferncenew.distanceUnits=@"Miles";
+        taxRateRequest.preferences = preferncenew;
+        
+        
+        
+                
+        [geoTaxService getGeoTaxBatchByAddress:@"General": taxRateRequest : ^(TaxResponseList *taxResponseList) {
+            *done = YES;
+            XCTAssertTrue(taxResponseList != nil);
+            
+            XCTAssertTrue(taxResponseList.taxResponses != nil);
+            NSLog(@"responseList %@",taxResponseList);
+            
+        } failure:^(ErrorResponse *error) {
+            *done = YES;
+            XCTFail();
+            
+        } ];
+        
+    });
+    
+}
+
+
+
+- (void)testgeoTaxBatchGeneralByLocation
+{
+    
+    hxRunInMainLoop(^(BOOL *done) {
+        
+        GeoTaxService *geoTaxService = liGeoTax.getGeoTaxService;
+        
+        
+        
+        TaxLocationRequest *taxLocationRequest= [[TaxLocationRequest alloc]init];
+        
+        
+        TaxLocation *taxLocation= [[TaxLocation alloc]init];
+        
+        Geometry *geometry=[[Geometry alloc]init];
+        geometry.type=@"point";
+        NSArray *coordinates= @[@"-101.2369835", @"45.0001134"];
+        
+        geometry.coordinates=coordinates;
+        
+        taxLocation.geometry=geometry;
+
+       taxLocation.purchaseAmount=@"100";
+        
+       
+        
+        NSArray *taxLocations=[[NSArray arrayWithObject:taxLocation] init];
+        
+        taxLocationRequest.locations=taxLocations;
+        
+        
+                Preferences *preferncenew=[[Preferences alloc] init];
+                preferncenew.distanceUnits=@"Miles";
+                taxLocationRequest.preferences = preferncenew;
+        
+        
+        
+        
+        
+        [geoTaxService getGeoTaxBatchByLocation:@"General": taxLocationRequest : ^(TaxResponseList *taxResponseList) {
+            *done = YES;
+            XCTAssertTrue(taxResponseList != nil);
+            
+            XCTAssertTrue(taxResponseList.taxResponses != nil);
+            NSLog(@"responseList %@",taxResponseList);
+            
+        } failure:^(ErrorResponse *error) {
+            *done = YES;
+            XCTFail();
+            
+        } ];
+        
+    });
+    
+}
+
+- (void)testgeoTaxBatchGeneralByRateLocation
+{
+    
+    hxRunInMainLoop(^(BOOL *done) {
+        
+        
+        GeoTaxService *geoTaxService = liGeoTax.getGeoTaxService;
+        
+        
+        
+        TaxRateLocationRequest *taxRateLocationRequest= [[TaxRateLocationRequest alloc]init];
+        
+        
+        RateLocations *taxRateLocation= [[RateLocations alloc]init];
+        
+        Geometry *geometry=[[Geometry alloc]init];
+        geometry.type=@"point";
+        NSArray *coordinates= @[@"-101.2369835", @"45.0001134"];
+        
+        geometry.coordinates=coordinates;
+        
+        taxRateLocation.geometry=geometry;
+        
+        
+        taxRateLocation.geometry=geometry;
+        
+        NSArray *taxLocations=[[NSArray arrayWithObject:taxRateLocation] init];
+        
+        taxRateLocationRequest.locations=taxLocations;
+        
+        
+                Preferences *preferncenew=[[Preferences alloc] init];
+                preferncenew.distanceUnits=@"Miles";
+                taxRateLocationRequest.preferences = preferncenew;
+        
+        
+        
+        [geoTaxService getGeoTaxBatchRateByLocation:@"General": taxRateLocationRequest : ^(TaxResponseList *taxResponseList) {
+            *done = YES;
+            XCTAssertTrue(taxResponseList != nil);
+            
+            XCTAssertTrue(taxResponseList.taxResponses != nil);
+            NSLog(@"responseList %@",taxResponseList);
+            
+        } failure:^(ErrorResponse *error) {
+            *done = YES;
+            XCTFail();
+            
+        } ];
+        
+    });
+    
+}
 
 @end

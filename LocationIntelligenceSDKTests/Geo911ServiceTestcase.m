@@ -43,7 +43,7 @@ static inline void hxRunInMainLoop(void(^block)(BOOL *done)) {
     
     
     //------->Ralappoc Server<-------------//
-       BaseAuthServiceInternal *baseAuthService = [BaseAuthServiceInternal sharedBaseOauthObject:@"" :@""];
+       BaseAuthServiceInternal *baseAuthService = [BaseAuthServiceInternal sharedBaseOauthObject:@"":@""];
     //-------//
     
     liGeo911 = [LIServiceManager sharedSingletonClass:baseAuthService];
@@ -109,6 +109,58 @@ static inline void hxRunInMainLoop(void(^block)(BOOL *done)) {
     
 }
 
+
+- (void)testgeo911AHJByLocation
+{
+    
+    hxRunInMainLoop(^(BOOL *done) {
+        
+        Geo911Service  *geo911Service = liGeo911.getGeo911Service;
+        
+        [geo911Service getAHJPlusPSAPByLocation:[NSNumber numberWithDouble:32.032] : [NSNumber numberWithDouble: -93.703] : ^(AHJPlusPSAPResponse *psapResponse) {
+            
+            *done = YES;
+            XCTAssertTrue(psapResponse != nil);
+            
+            XCTAssertTrue([psapResponse psap ] != nil);
+            NSLog(@"dsfsd %@",psapResponse);
+            
+        } failure:^(ErrorResponse *error) {
+            *done = YES;
+            XCTFail();
+            
+        } ];
+        
+    });
+    
+}
+
+
+- (void)testgeo911AHJByAddress
+{
+    
+    hxRunInMainLoop(^(BOOL *done) {
+        
+        Geo911Service  *geo911Service = liGeo911.getGeo911Service;
+        
+        [geo911Service getAHJPlusPSAPByAddress: @"4750 Walnut St, Boulder, CO" : ^(AHJPlusPSAPResponse *aHJResponse) {
+            *done = YES;
+            XCTAssertTrue(aHJResponse != nil);
+            
+            XCTAssertTrue([aHJResponse psap] != nil);
+            XCTAssertTrue([aHJResponse ahjs] != nil);
+              NSLog(@"dsfsd %@",aHJResponse);
+            
+            
+        } failure:^(ErrorResponse *error) {
+            *done = YES;
+            XCTFail();
+            
+        } ];
+        
+    });
+    
+}
 
 - (void)testgeo911ByAddressWithInvalidAddress
 {
