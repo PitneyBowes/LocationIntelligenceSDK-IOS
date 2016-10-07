@@ -160,6 +160,12 @@
 		1F79704B1CF748690037BCCB /* MatchFields.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F7970491CF748690037BCCB /* MatchFields.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F79704C1CF748690037BCCB /* MatchFields.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F79704A1CF748690037BCCB /* MatchFields.m */; };
 		1F79704D1CF748690037BCCB /* MatchFields.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F79704A1CF748690037BCCB /* MatchFields.m */; };
+		1F7B61AA1D2F66EE008A3FD5 /* AHJPlusPSAPResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F7B61A81D2F66EE008A3FD5 /* AHJPlusPSAPResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F7B61AB1D2F66EE008A3FD5 /* AHJPlusPSAPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B61A91D2F66EE008A3FD5 /* AHJPlusPSAPResponse.m */; };
+		1F7B61AC1D2F66EE008A3FD5 /* AHJPlusPSAPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B61A91D2F66EE008A3FD5 /* AHJPlusPSAPResponse.m */; };
+		1F7B61AF1D2F6703008A3FD5 /* Ahjs.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F7B61AD1D2F6703008A3FD5 /* Ahjs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F7B61B01D2F6703008A3FD5 /* Ahjs.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B61AE1D2F6703008A3FD5 /* Ahjs.m */; };
+		1F7B61B11D2F6703008A3FD5 /* Ahjs.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B61AE1D2F6703008A3FD5 /* Ahjs.m */; };
 		1F7F8DD21D44DDC800EFEC36 /* AgeTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F7F8DA31D44DDC800EFEC36 /* AgeTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F7F8DD31D44DDC800EFEC36 /* AgeTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7F8DA41D44DDC800EFEC36 /* AgeTheme.m */; };
 		1F7F8DD41D44DDC800EFEC36 /* AttitudesAndMotivationTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F7F8DA51D44DDC800EFEC36 /* AttitudesAndMotivationTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -416,6 +422,10 @@
 		1F6543401CFC6BFC00728023 /* CustomPreferenceSWE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPreferenceSWE.m; sourceTree = "<group>"; };
 		1F7970491CF748690037BCCB /* MatchFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchFields.h; sourceTree = "<group>"; };
 		1F79704A1CF748690037BCCB /* MatchFields.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchFields.m; sourceTree = "<group>"; };
+		1F7B61A81D2F66EE008A3FD5 /* AHJPlusPSAPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHJPlusPSAPResponse.h; sourceTree = "<group>"; };
+		1F7B61A91D2F66EE008A3FD5 /* AHJPlusPSAPResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHJPlusPSAPResponse.m; sourceTree = "<group>"; };
+		1F7B61AD1D2F6703008A3FD5 /* Ahjs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ahjs.h; sourceTree = "<group>"; };
+		1F7B61AE1D2F6703008A3FD5 /* Ahjs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ahjs.m; sourceTree = "<group>"; };
 		1F7F8DA31D44DDC800EFEC36 /* AgeTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgeTheme.h; sourceTree = "<group>"; };
 		1F7F8DA41D44DDC800EFEC36 /* AgeTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgeTheme.m; sourceTree = "<group>"; };
 		1F7F8DA51D44DDC800EFEC36 /* AttitudesAndMotivationTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttitudesAndMotivationTheme.h; sourceTree = "<group>"; };
@@ -765,6 +775,10 @@
 				1F2EC2581AFCE39D00DBB35A /* Geo911Service.m */,
 				1F2EC25B1AFCE39D00DBB35A /* SiteDetails.h */,
 				1F2EC25C1AFCE39D00DBB35A /* SiteDetails.m */,
+				1F7B61A81D2F66EE008A3FD5 /* AHJPlusPSAPResponse.h */,
+				1F7B61A91D2F66EE008A3FD5 /* AHJPlusPSAPResponse.m */,
+				1F7B61AD1D2F6703008A3FD5 /* Ahjs.h */,
+				1F7B61AE1D2F6703008A3FD5 /* Ahjs.m */,
 			);
 			path = "Geo 911";
 			sourceTree = "<group>";
@@ -1230,8 +1244,10 @@
 				1F2B9B1A1C6E0BB100C038CC /* GeocodeRequest.h in Headers */,
 				1FAE089E1BCFD68600D71FA5 /* LocationIntelligenceSDK.h in Headers */,
 				1F9301F71CEEF90600A87099 /* AddressGeocode.h in Headers */,
+				1F7B61AF1D2F6703008A3FD5 /* Ahjs.h in Headers */,
 				1F7F8DE01D44DDC800EFEC36 /* DataModels.h in Headers */,
 				1F2B9A9E1C6DB13F00C038CC /* CountrySupportInfos.h in Headers */,
+				1F7B61AA1D2F66EE008A3FD5 /* AHJPlusPSAPResponse.h in Headers */,
 				1F2B9AAC1C6DBAD100C038CC /* GeocodeService.h in Headers */,
 				1F9301E71CEEE05200A87099 /* ConfiguredDictionaryResponse.h in Headers */,
 				1F2B9B0F1C6E0B0600C038CC /* MustMatchFields.h in Headers */,
@@ -1459,6 +1475,7 @@
 				1F0F64121CF452180092AA46 /* CustomPreferenceAUS.m in Sources */,
 				1FB236181CF300B300AF771A /* GeocodePreferenceBuilder.m in Sources */,
 				1FB235C31CF1857400AF771A /* AllowedValuesWithDescriptions.m in Sources */,
+				1F7B61B01D2F6703008A3FD5 /* Ahjs.m in Sources */,
 				1F65433A1CFC6BC900728023 /* CustomPreferenceNZL.m in Sources */,
 				1FB235D21CF1857400AF771A /* CapabilityProperties.m in Sources */,
 				1FB235C51CF1857400AF771A /* CustomObjects.m in Sources */,
@@ -1480,6 +1497,7 @@
 				1F1E20B01BCD406F000175C0 /* GeoSearch.m in Sources */,
 				1F1E20B11BCD406F000175C0 /* GeoSearchService.m in Sources */,
 				1FB236091CF1E22B00AF771A /* Responses.m in Sources */,
+				1F7B61AB1D2F66EE008A3FD5 /* AHJPlusPSAPResponse.m in Sources */,
 				1F1E20B21BCD406F000175C0 /* GeoTaxCounty.m in Sources */,
 				1F1E20B31BCD406F000175C0 /* GeoTax.m in Sources */,
 				1F1E20B41BCD406F000175C0 /* GeoTaxService.m in Sources */,
@@ -1517,10 +1535,12 @@
 			files = (
 				1F79704D1CF748690037BCCB /* MatchFields.m in Sources */,
 				1F1E20C01BCD4130000175C0 /* GeoTaxServiceTestCase.m in Sources */,
+				1F7B61B11D2F6703008A3FD5 /* Ahjs.m in Sources */,
 				1F1E20C11BCD4130000175C0 /* GeoSearchServiceTestCase.m in Sources */,
 				1F1E20C21BCD4130000175C0 /* OAuthTestCase.m in Sources */,
 				1F1E20C31BCD4130000175C0 /* Geo911ServiceTestcase.m in Sources */,
 				1F2B9ACE1C6DDDAB00C038CC /* GeocodeTestCases.m in Sources */,
+				1F7B61AC1D2F66EE008A3FD5 /* AHJPlusPSAPResponse.m in Sources */,
 				1F1E20C41BCD4130000175C0 /* GeoEnhanceServiceTestCase.m in Sources */,
 				1F1E20C51BCD4130000175C0 /* GeoLifeServiceTestCase.m in Sources */,
 			);
@@ -1542,6 +1562,7 @@
 			baseConfigurationReference = 48E5F0E6BA92C6249D7633C6 /* Pods-LocationIntelligenceSDK.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1565,7 +1586,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 i386";
+				VALID_ARCHS = "arm64 i386 x86_64";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1576,6 +1597,7 @@
 			baseConfigurationReference = 795770BDD070F7EAE7A3B2FF /* Pods-LocationIntelligenceSDK.release.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1598,7 +1620,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 i386";
+				VALID_ARCHS = "arm64 i386 x86_64";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1607,6 +1629,7 @@
 		1F1E20701BCD4001000175C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
@@ -1617,12 +1640,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pb.LocationInteligence.LocationIntelligenceSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				VALID_ARCHS = "arm64 i386 x86_64";
 			};
 			name = Debug;
 		};
 		1F1E20711BCD4001000175C0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = LocationIntelligenceSDKTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1632,13 +1657,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pb.LocationInteligence.LocationIntelligenceSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				VALID_ARCHS = "arm64 i386 x86_64";
 			};
 			name = Release;
 		};
 		1F1E20C81BCD4254000175C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ONLY_ACTIVE_ARCH = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1646,7 +1673,8 @@
 		1F1E20C91BCD4254000175C0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ONLY_ACTIVE_ARCH = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -1691,7 +1719,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "arm64 i386";
+				VALID_ARCHS = "arm64 i386 armv7";
 			};
 			name = Debug;
 		};
@@ -1729,7 +1757,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "arm64 i386";
+				VALID_ARCHS = "arm64 i386 armv7";
 			};
 			name = Release;
 		};
