@@ -32,6 +32,16 @@ NSString *const kPreferencesClientCoordSysName = @"clientCoordSysName";
 NSString *const kPreferencesReturnFieldsDescriptor = @"returnFieldsDescriptor";
 NSString *const kPreferencesCustomPreferences = @"customPreferences";
 NSString *const kPreferencesStreetOffset = @"streetOffset";
+//GeoTax Batch
+NSString *const kPreferencesUseGeoTaxAuxiliaryFile = @"useGeoTaxAuxiliaryFile";
+NSString *const kPreferencesLatLongOffset = @"latLongOffset";
+NSString *const kPreferencesSqueeze=@"squeeze";
+NSString *const kPreferencesLatLongFormat=@"latLongFormat";
+NSString *const kPreferencesDefaultBufferWidth=@"defaultBufferWidth";
+NSString *const kPreferencesDistanceUnits=@"distanceUnits";
+NSString *const kPreferencesOutputCasing=@"outputCasing";
+NSString *const kPreferencesReturnCensusFields=@"returnCensusFields";
+NSString *const kPreferencesReturnLatLongFields=@"returnLatLongFields";
 
 
 @interface Preferences ()
@@ -57,6 +67,16 @@ NSString *const kPreferencesStreetOffset = @"streetOffset";
 @synthesize returnFieldsDescriptor = _returnFieldsDescriptor;
 @synthesize customPreferences = _customPreferences;
 @synthesize streetOffset = _streetOffset;
+//Geotax Batch
+@synthesize useGeoTaxAuxiliaryFile = _useGeoTaxAuxiliaryFile;
+@synthesize latLongOffset = _latLongOffset;
+@synthesize squeeze = _squeeze;
+@synthesize latLongFormat = _latLongFormat;
+@synthesize defaultBufferWidth = _defaultBufferWidth;
+@synthesize outputCasing = _outputCasing;
+@synthesize returnCensusFields = _returnCensusFields;
+@synthesize returnLatLongFields = _returnLatLongFields;
+
 
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict
@@ -86,6 +106,21 @@ NSString *const kPreferencesStreetOffset = @"streetOffset";
             self.returnFieldsDescriptor = [ReturnFieldsDescriptor modelObjectWithDictionary:[dict objectForKey:kPreferencesReturnFieldsDescriptor]];
             self.customPreferences = [self objectOrNilForKey:kPreferencesCustomPreferences fromDictionary:dict];
             self.streetOffset = [[self objectOrNilForKey:kPreferencesStreetOffset fromDictionary:dict] doubleValue];
+        
+        
+        
+        
+        self.outputCasing = [self objectOrNilForKey:kPreferencesOutputCasing fromDictionary:dict];
+        self.returnLatLongFields = [self objectOrNilForKey:kPreferencesReturnLatLongFields fromDictionary:dict];
+        self.latLongFormat = [self objectOrNilForKey:kPreferencesLatLongFormat fromDictionary:dict];
+        self.latLongOffset = [self objectOrNilForKey:kPreferencesLatLongOffset fromDictionary:dict];
+        self.fallbackToGeographic = [self objectOrNilForKey:kPreferencesFallbackToGeographic fromDictionary:dict];
+        self.squeeze = [self objectOrNilForKey:kPreferencesSqueeze fromDictionary:dict];
+        self.matchMode = [self objectOrNilForKey:kPreferencesMatchMode fromDictionary:dict];
+        self.defaultBufferWidth = [self objectOrNilForKey:kPreferencesDefaultBufferWidth fromDictionary:dict];
+        self.distanceUnits = [self objectOrNilForKey:kPreferencesDistanceUnits fromDictionary:dict];
+        self.useGeoTaxAuxiliaryFile = [self objectOrNilForKey:kPreferencesUseGeoTaxAuxiliaryFile fromDictionary:dict];
+        self.returnCensusFields = [self objectOrNilForKey:kPreferencesReturnCensusFields fromDictionary:dict];
 
     }
     
@@ -122,6 +157,18 @@ NSString *const kPreferencesStreetOffset = @"streetOffset";
     
     [mutableDict setValue:[NSDictionary dictionaryWithDictionary:self.customPreferences] forKey:kPreferencesCustomPreferences];
     [mutableDict setValue:[NSNumber numberWithDouble:self.streetOffset] forKey:kPreferencesStreetOffset];
+    
+    
+    
+    [mutableDict setValue:self.outputCasing forKey:kPreferencesOutputCasing];
+    [mutableDict setValue:self.returnLatLongFields forKey:kPreferencesReturnLatLongFields];
+    [mutableDict setValue:self.latLongFormat forKey:kPreferencesLatLongFormat];
+    [mutableDict setValue:self.latLongOffset forKey:kPreferencesLatLongOffset];
+    [mutableDict setValue:self.squeeze forKey:kPreferencesSqueeze];
+    [mutableDict setValue:self.defaultBufferWidth forKey:kPreferencesDefaultBufferWidth];
+    [mutableDict setValue:self.distanceUnits forKey:kPreferencesDistanceUnits];
+    [mutableDict setValue:self.useGeoTaxAuxiliaryFile forKey:kPreferencesUseGeoTaxAuxiliaryFile];
+    [mutableDict setValue:self.returnCensusFields forKey:kPreferencesReturnCensusFields];
 
     return [NSDictionary dictionaryWithDictionary:mutableDict];
 }
@@ -160,6 +207,22 @@ NSString *const kPreferencesStreetOffset = @"streetOffset";
     self.returnFieldsDescriptor = [aDecoder decodeObjectForKey:kPreferencesReturnFieldsDescriptor];
    self.customPreferences = [aDecoder decodeObjectForKey:kPreferencesCustomPreferences];
     self.streetOffset = [aDecoder decodeDoubleForKey:kPreferencesStreetOffset];
+    
+    
+    //self.customPreferences = [aDecoder decodeObjectForKey:kPreferencesCustomPreferences];
+    self.outputCasing = [aDecoder decodeObjectForKey:kPreferencesOutputCasing];
+    self.returnLatLongFields = [aDecoder decodeObjectForKey:kPreferencesReturnLatLongFields];
+    self.latLongFormat = [aDecoder decodeObjectForKey:kPreferencesLatLongFormat];
+    self.latLongOffset = [aDecoder decodeObjectForKey:kPreferencesLatLongOffset];
+    //self.fallbackToGeographic = [aDecoder decodeObjectForKey:kPreferencesFallbackToGeographic];
+    self.squeeze = [aDecoder decodeObjectForKey:kPreferencesSqueeze];
+    //self.matchMode = [aDecoder decodeObjectForKey:kPreferencesMatchMode];
+    self.defaultBufferWidth = [aDecoder decodeObjectForKey:kPreferencesDefaultBufferWidth];
+    self.distanceUnits = [aDecoder decodeObjectForKey:kPreferencesDistanceUnits];
+    self.useGeoTaxAuxiliaryFile = [aDecoder decodeObjectForKey:kPreferencesUseGeoTaxAuxiliaryFile];
+    self.returnCensusFields = [aDecoder decodeObjectForKey:kPreferencesReturnCensusFields];
+    
+    
     return self;
 }
 
@@ -181,6 +244,21 @@ NSString *const kPreferencesStreetOffset = @"streetOffset";
     [aCoder encodeObject:_returnFieldsDescriptor forKey:kPreferencesReturnFieldsDescriptor];
     [aCoder encodeObject:_customPreferences forKey:kPreferencesCustomPreferences];
     [aCoder encodeDouble:_streetOffset forKey:kPreferencesStreetOffset];
+    
+    //[aCoder encodeObject:_customPreferences forKey:kPreferencesCustomPreferences];
+    [aCoder encodeObject:_outputCasing forKey:kPreferencesOutputCasing];
+    [aCoder encodeObject:_returnLatLongFields forKey:kPreferencesReturnLatLongFields];
+    [aCoder encodeObject:_latLongFormat forKey:kPreferencesLatLongFormat];
+    [aCoder encodeObject:_latLongOffset forKey:kPreferencesLatLongOffset];
+    //[aCoder encodeObject:_fallbackToGeographic forKey:kPreferencesFallbackToGeographic];
+    [aCoder encodeObject:_squeeze forKey:kPreferencesSqueeze];
+    //[aCoder encodeObject:_matchMode forKey:kPreferencesMatchMode];
+    [aCoder encodeObject:_defaultBufferWidth forKey:kPreferencesDefaultBufferWidth];
+    [aCoder encodeObject:_distanceUnits forKey:kPreferencesDistanceUnits];
+    [aCoder encodeObject:_useGeoTaxAuxiliaryFile forKey:kPreferencesUseGeoTaxAuxiliaryFile];
+    [aCoder encodeObject:_returnCensusFields forKey:kPreferencesReturnCensusFields];
+    
+    
 }
 
 - (id)copyWithZone:(NSZone *)zone
@@ -204,6 +282,20 @@ NSString *const kPreferencesStreetOffset = @"streetOffset";
         copy.returnFieldsDescriptor = [self.returnFieldsDescriptor copyWithZone:zone];
         copy.customPreferences = [self.customPreferences copyWithZone:zone];
         copy.streetOffset = self.streetOffset;
+        
+        
+       // copy.customPreferences = [self.customPreferences copyWithZone:zone];
+        copy.outputCasing = [self.outputCasing copyWithZone:zone];
+        copy.returnLatLongFields = [self.returnLatLongFields copyWithZone:zone];
+        copy.latLongFormat = [self.latLongFormat copyWithZone:zone];
+        copy.latLongOffset = [self.latLongOffset copyWithZone:zone];
+       // copy.fallbackToGeographic = [self.fallbackToGeographic copyWithZone:zone];
+        copy.squeeze = [self.squeeze copyWithZone:zone];
+       // copy.matchMode = [self.matchMode copyWithZone:zone];
+        copy.defaultBufferWidth = [self.defaultBufferWidth copyWithZone:zone];
+        copy.distanceUnits = [self.distanceUnits copyWithZone:zone];
+        copy.useGeoTaxAuxiliaryFile = [self.useGeoTaxAuxiliaryFile copyWithZone:zone];
+        copy.returnCensusFields = [self.returnCensusFields copyWithZone:zone];
     }
     
     return copy;

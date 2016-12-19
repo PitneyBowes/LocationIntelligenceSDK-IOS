@@ -26,7 +26,7 @@ See the License for the specific language governing permissions and limitations 
 @property (nonatomic, assign) double cornerOffset;
 @property (nonatomic, assign) double distance;
 @property (nonatomic, strong) MustMatchFields *mustMatchFields;
-@property (nonatomic, strong) NSString *matchMode;
+@property (nonatomic, strong) NSString  *matchMode;
 @property (nonatomic, strong) NSString *cornerOffsetUnits;
 @property (nonatomic, strong) NSString *distanceUnits;
 @property (nonatomic, strong) NSString *clientLocale;
@@ -35,6 +35,16 @@ See the License for the specific language governing permissions and limitations 
 @property (nonatomic, strong) ReturnFieldsDescriptor *returnFieldsDescriptor;
 @property (nonatomic, strong) NSDictionary *customPreferences;
 @property (nonatomic, assign) double streetOffset;
+
+@property (nonatomic, strong) NSString *useGeoTaxAuxiliaryFile;
+@property (nonatomic, strong) NSString *latLongOffset;
+@property (nonatomic, strong) NSString *squeeze;
+@property (nonatomic, strong) NSString *latLongFormat;
+@property (nonatomic, strong) NSString *defaultBufferWidth;
+@property (nonatomic, strong) NSString *outputCasing;
+@property (nonatomic, strong) NSString *returnCensusFields;
+@property (nonatomic, strong) NSString *returnLatLongFields;
+
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict;
 - (instancetype)initWithDictionary:(NSDictionary *)dict;

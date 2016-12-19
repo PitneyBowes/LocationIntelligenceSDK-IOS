@@ -63,6 +63,19 @@ See the License for the specific language governing permissions and limitations 
  **/
 
 
+/**
+ *  <#Description#>
+ *
+ *  @param searchText       <#searchText description#>
+ *  @param originLatitude   <#originLatitude description#>
+ *  @param originLongitude  <#originLongitude description#>
+ *  @param searchRadius     <#searchRadius description#>
+ *  @param searchRadiusUnit <#searchRadiusUnit description#>
+ *  @param maxCandidate     <#maxCandidate description#>
+ *  @param success          <#success description#>
+ *  @param failure          <#failure description#>
+ */
+
 - (void) geoSearch: (NSString*) searchText :
                     (NSNumber*) originLatitude :
                     (NSNumber*) originLongitude :
@@ -72,5 +85,76 @@ See the License for the specific language governing permissions and limitations 
                     (void (^)(GeoSearch *geoSearch))success failure : (void (^)( ErrorResponse *error))failure;
 
 
+/**
+ *  <#Description#>
+ *
+ *  @param searchText <#searchText description#>
+ *  @param country    <#country description#>
+ *  @param success    <#success description#>
+ *  @param failure    <#failure description#>
+ */
+- (void) geoSearch: (NSString*) searchText :
+                    (NSString*) country :
+                    (void (^)(GeoSearch *geoSearch))success failure : (void (^)( ErrorResponse *error))failure;
+
+
+/**
+ *  <#Description#>
+ *
+ *  @param searchText      <#searchText description#>
+ *  @param country         <#country description#>
+ *  @param originLatitude  <#originLatitude description#>
+ *  @param originLongitude <#originLongitude description#>
+ *  @param success         <#success description#>
+ *  @param failure         <#failure description#>
+ */
+- (void) geoSearch: (NSString*) searchText :
+                    (NSString*) country :
+                    (NSNumber*) originLatitude :
+                    (NSNumber*) originLongitude :
+                    (void (^)(GeoSearch *geoSearch))success failure : (void (^)( ErrorResponse *error))failure;
+
+
+
+
+/**
+ *  <#Description#>
+ *
+ *  @param searchText       <#searchText description#>
+ *  @param country          <#country description#>
+ *  @param originLatitude   <#originLatitude description#>
+ *  @param originLongitude  <#originLongitude description#>
+ *  @param searchRadius     <#searchRadius description#>
+ *  @param searchRadiusUnit <#searchRadiusUnit description#>
+ *  @param maxCandidate     <#maxCandidate description#>
+ *  @param success          <#success description#>
+ *  @param failure          <#failure description#>
+ */
+- (void) geoSearch: (NSString*) searchText :
+                    (NSString*) country :
+                    (NSNumber*) originLatitude :
+                    (NSNumber*) originLongitude :
+                    (NSNumber*) searchRadius :
+                    (NSString*) searchRadiusUnit :
+                    (NSNumber*) maxCandidate :
+                    (void (^)(GeoSearch *geoSearch))success failure : (void (^)( ErrorResponse *error))failure;
+/**
+ *  <#Description#>
+ *
+ *  @param searchText       <#searchText description#>
+ *  @param country          <#country description#>
+ *  @param searchRadius     <#searchRadius description#>
+ *  @param searchRadiusUnit <#searchRadiusUnit description#>
+ *  @param maxCandidate     <#maxCandidate description#>
+ *  @param success          <#success description#>
+ *  @param failure          <#failure description#>
+ */
+
+- (void) geoSearch: (NSString*) searchText :
+                    (NSString*) country :
+                    (NSNumber*) searchRadius :
+                    (NSString*) searchRadiusUnit :
+                    (NSNumber*) maxCandidate :
+                    (void (^)(GeoSearch *geoSearch))success failure : (void (^)( ErrorResponse *error))failure;
 
 @end

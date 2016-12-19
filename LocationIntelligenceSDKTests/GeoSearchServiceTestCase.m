@@ -306,4 +306,122 @@ static inline void hxRunInMainLoop(void(^block)(BOOL *done)) {
     
 }
 
+
+
+
+/**
+ *  Geo Search Test case with Invalid Search Text
+ */
+- (void)testGeoSearchCounty
+{
+    
+    hxRunInMainLoop(^(BOOL *done) {
+        
+        GeoSearchService *geoSearchService = liSearch.getGeoSearchService;
+        NSLog(@"Received geoSearchService service object %@" ,geoSearchService );
+        [geoSearchService geoSearch:@"times sq":@"USA":^(GeoSearch *geoSearch ) {
+            
+            *done = YES;
+            XCTAssertTrue(geoSearchService != nil);
+            Location *loc = [[Location alloc] init];
+            loc = geoSearch.location[0];
+            Address * address = (Address*)(Location*)loc.address;
+            
+            XCTAssertTrue(address.placeName != nil);
+            
+        } failure:^(ErrorResponse *error) {
+            *done = YES;
+            XCTFail();
+            
+        } ];
+    });
+    
+}
+
+
+- (void)testGeoSearchCounty_lat_lng
+{
+    
+    hxRunInMainLoop(^(BOOL *done) {
+        
+        GeoSearchService *geoSearchService = liSearch.getGeoSearchService;
+        NSLog(@"Received geoSearchService service object %@" ,geoSearchService );
+        [geoSearchService geoSearch:@"1 global V":@"USA": [NSNumber numberWithDouble:42.682322] : [NSNumber numberWithDouble:-73.7064118]:^(GeoSearch *geoSearch ) {
+            
+            *done = YES;
+            XCTAssertTrue(geoSearchService != nil);
+            Location *loc = [[Location alloc] init];
+            loc = geoSearch.location[0];
+            Address * address = (Address*)(Location*)loc.address;
+            
+            XCTAssertTrue(address.placeName != nil);
+            
+        } failure:^(ErrorResponse *error) {
+            *done = YES;
+            XCTFail();
+            
+        } ];
+    });
+    
+}
+
+
+- (void)testGeoSearchCounty_Country_All_Params
+{
+    
+    
+    hxRunInMainLoop(^(BOOL *done) {
+        
+        GeoSearchService *geoSearchService = liSearch.getGeoSearchService;
+        NSLog(@"Received geoSearchService service object %@" ,geoSearchService );
+        [geoSearchService geoSearch:@"1 global V" :@"USA": [NSNumber numberWithDouble:40.682815] : [NSNumber numberWithDouble:-80.239771]: [NSNumber numberWithInt: 20]:(NSString*)@"KILOMETERS":[NSNumber numberWithInt: 10]: ^(GeoSearch *geoSearch ) {
+            
+            *done = YES;
+            XCTAssertTrue(geoSearchService != nil);
+            Location *loc = [[Location alloc] init];
+            loc = geoSearch.location[0];
+            Address * address = (Address*)(Location*)loc.address;
+            
+            XCTAssertTrue(address.placeName != nil);
+            
+        } failure:^(ErrorResponse *error) {
+            *done = YES;
+            XCTFail();
+            
+        } ];
+        
+    });
+    
+}
+
+
+- (void)testGeoSearchCounty_Country_All_Params_WithOut_LatLng
+{
+    
+    
+    hxRunInMainLoop(^(BOOL *done) {
+        
+        GeoSearchService *geoSearchService = liSearch.getGeoSearchService;
+        NSLog(@"Received geoSearchService service object %@" ,geoSearchService );
+        [geoSearchService geoSearch:@"1 global V" :@"USA":[NSNumber numberWithInt: 20]:(NSString*)@"KILOMETERS":[NSNumber numberWithInt: 10]: ^(GeoSearch *geoSearch ) {
+            
+            *done = YES;
+            XCTAssertTrue(geoSearchService != nil);
+            Location *loc = [[Location alloc] init];
+            loc = geoSearch.location[0];
+            Address * address = (Address*)(Location*)loc.address;
+            
+            XCTAssertTrue(address.placeName != nil);
+            
+        } failure:^(ErrorResponse *error) {
+            *done = YES;
+            XCTFail();
+            
+        } ];
+        
+    });
+    
+}
+
+
 @end
