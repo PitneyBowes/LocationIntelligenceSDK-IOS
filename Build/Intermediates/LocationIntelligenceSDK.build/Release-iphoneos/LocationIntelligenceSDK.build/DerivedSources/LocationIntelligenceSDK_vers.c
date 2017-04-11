@@ -1,1 +1,0 @@
- const unsigned char LocationIntelligenceSDKVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:LocationIntelligenceSDK  PROJECT:LocationIntelligenceSDK-1" "\n"; const double LocationIntelligenceSDKVersionNumber __attribute__ ((used)) = (double)1.;

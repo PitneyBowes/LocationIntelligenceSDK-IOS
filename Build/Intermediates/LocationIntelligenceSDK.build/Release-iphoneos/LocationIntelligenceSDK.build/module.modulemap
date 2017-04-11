@@ -1,6 +1,0 @@
-framework module LocationIntelligenceSDK {
-  umbrella header "LocationIntelligenceSDK.h"
-
-  export *
-  module * { export * }
-}
