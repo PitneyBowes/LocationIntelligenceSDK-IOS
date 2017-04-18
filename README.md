@@ -29,11 +29,11 @@
 * [GeoRisk](https://locate.pitneybowes.com/georisk): Returns critical risk intelligence with the input of Location Coordinates or Addresses. Critical for any Risk Mitigation Analyses involving threats to lives or property.
 
 The following platforms are supported by Location Intelligence SDKs:
-*	[Android](https://locate.pitneybowes.com/docs/location-intelligence/v1/en/index.html#Android%20SDK/android_intro.html)
-*	[JavaScript](https://locate.pitneybowes.com/docs/location-intelligence/v1/en/index.html#Java%20Script%20SDK/js_intro.html) 
-*	[iOS](https://locate.pitneybowes.com/docs/location-intelligence/v1/en/index.html#iOS%20SDK/ios_intro.html)
-*	[Java](https://locate.pitneybowes.com/docs/location-intelligence/v1/en/index.html#Java%20SDK/java_intro.html)
-*	[C#](https://locate.pitneybowes.com/docs/location-intelligence/v1/en/index.html#C_sdk/java_intro.html)  
+*	[Android](https://github.com/PitneyBowes/LocationIntelligenceSDK-Android)
+*	[JavaScript](https://github.com/PitneyBowes/LocationIntelligenceSDK-javascript) 
+*	[iOS](https://github.com/PitneyBowes/LocationIntelligenceSDK-IOS)
+*	[Java](https://github.com/PitneyBowes/LocationIntelligenceSDK-Java)
+*	[C#](https://github.com/PitneyBowes/LocationIntelligenceSDK-CSharp)  
 
 [Click here](https://locate.pitneybowes.com/docs/location-intelligence/v1/en/index.html) for detailed Documentation on Location Intelligence APIs 
 
@@ -43,7 +43,7 @@ The following platforms are supported by Location Intelligence SDKs:
 Location Intelligence iOS SDK facilitates you to build iOS applications using Location Intelligence APIs.
 ### Getting Started
 To get started with iOS SDK, you must first register at [Location Intelligence API Home Page](http://developer.pitneybowes.com/en/location-intelligence.html) and obtain your API Key and Secret to get started with the iOS SDK and call Location Intelligence APIs.
-For more information refer to [‘Getting Started with iOS SDK’](https://locate.pitneybowes.com/docs/location-intelligence/v1/en/index.html#iOS%20SDK/ios_intro.html) section in documentation.
+For more information refer to [â€˜Getting Started with iOS SDKâ€™](https://locate.pitneybowes.com/docs/location-intelligence/v1/en/index.html#iOS%20SDK/ios_intro.html) section in documentation.
 
 ### LocationIntelligenceSDK-iOS uses the following software
 * Afnetworking, version number 2.5.0 which is licensed under MIT license.  The license can be downloaded from http://opensource.org/licenses/mit-license.  The source code for this software is available from http://afnetworking.com/.
@@ -67,10 +67,10 @@ To specify a particular commit, append `, :commit => '11aa22'`
 
 ### Install from local path using [CocoaPods](https://cocoapods.org/)
 
-Put the SDK under your project folder (e.g. /path/to/objc_project/Vendor/SwaggerClient) and then add the following to the Podfile:
+Put the SDK under your project folder (e.g. /path/to/objc_project/Vendor/LocationIntelligenceIOSSDK) and then add the following to the Podfile:
 
 ```ruby
-pod 'SwaggerClient', :path => 'Vendor/SwaggerClient'
+pod 'LocationIntelligenceIOSSDK', :path => 'Vendor/LocationIntelligenceIOSSDK'
 ```
 
 ### Usage
