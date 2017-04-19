@@ -1,4 +1,4 @@
-# SWGAreaCodeInfo
+# PBAreaCodeInfo
 
 ## Properties
 Name | Type | Description | Notes

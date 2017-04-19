@@ -1,13 +1,13 @@
-# SWGLIAPIGeoEnhanceServiceApi
+# PBLIAPIGeoEnhanceServiceApi
 
 All URIs are relative to *https://api.pitneybowes.com/location-intelligence*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAddress**](SWGLIAPIGeoEnhanceServiceApi.md#getaddress) | **GET** /geoenhance/v1/address/bylocation | Address By Location.
-[**getEntityByLocation**](SWGLIAPIGeoEnhanceServiceApi.md#getentitybylocation) | **GET** /geoenhance/v1/poi/bylocation | Points Of Interest By Location.
-[**getPlaceByLocation**](SWGLIAPIGeoEnhanceServiceApi.md#getplacebylocation) | **GET** /geoenhance/v1/place/bylocation | Place By Location.
-[**getTimezoneByLocation**](SWGLIAPIGeoEnhanceServiceApi.md#gettimezonebylocation) | **GET** /geoenhance/v1/timezone/bylocation | Timezone By Location.
+[**getAddress**](PBLIAPIGeoEnhanceServiceApi.md#getaddress) | **GET** /geoenhance/v1/address/bylocation | Address By Location.
+[**getEntityByLocation**](PBLIAPIGeoEnhanceServiceApi.md#getentitybylocation) | **GET** /geoenhance/v1/poi/bylocation | Points Of Interest By Location.
+[**getPlaceByLocation**](PBLIAPIGeoEnhanceServiceApi.md#getplacebylocation) | **GET** /geoenhance/v1/place/bylocation | Place By Location.
+[**getTimezoneByLocation**](PBLIAPIGeoEnhanceServiceApi.md#gettimezonebylocation) | **GET** /geoenhance/v1/timezone/bylocation | Timezone By Location.
 
 
 # **getAddress**
@@ -16,7 +16,7 @@ Method | HTTP request | Description
     longitude: (NSString*) longitude
     searchRadius: (NSString*) searchRadius
     searchRadiusUnit: (NSString*) searchRadiusUnit
-        completionHandler: (void (^)(SWGLocations* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBLocations* output, NSError* error)) handler;
 ```
 
 Address By Location.
@@ -25,7 +25,7 @@ This service accepts longitude and latitude as input and returns an address for 
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -36,19 +36,19 @@ NSString* longitude = @"longitude_example"; // Longitude of the location.
 NSString* searchRadius = @"searchRadius_example"; // Radius range within which search is performed. (optional)
 NSString* searchRadiusUnit = @"searchRadiusUnit_example"; // Radius unit such as feet, kilometers, miles or meters. (optional)
 
-SWGLIAPIGeoEnhanceServiceApi*apiInstance = [[SWGLIAPIGeoEnhanceServiceApi alloc] init];
+PBLIAPIGeoEnhanceServiceApi*apiInstance = [[PBLIAPIGeoEnhanceServiceApi alloc] init];
 
 // Address By Location.
 [apiInstance getAddressWithLatitude:latitude
               longitude:longitude
               searchRadius:searchRadius
               searchRadiusUnit:searchRadiusUnit
-          completionHandler: ^(SWGLocations* output, NSError* error) {
+          completionHandler: ^(PBLocations* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoEnhanceServiceApi->getAddress: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoEnhanceServiceApi->getAddress: %@", error);
                         }
                     }];
 ```
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGLocations***](SWGLocations.md)
+[**PBLocations***](PBLocations.md)
 
 ### Authorization
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
     travelDistance: (NSString*) travelDistance
     travelDistanceUnit: (NSString*) travelDistanceUnit
     mode: (NSString*) mode
-        completionHandler: (void (^)(SWGLocations* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBLocations* output, NSError* error)) handler;
 ```
 
 Points Of Interest By Location.
@@ -102,7 +102,7 @@ Identifies and retrieves Points of Interest that exist around a specific locatio
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -123,7 +123,7 @@ NSString* travelDistance = @"travelDistance_example"; // Specifies the search bo
 NSString* travelDistanceUnit = @"travelDistanceUnit_example"; // Specifies acceptable time units.Allowed values Feet,Kilometers,Miles and Meters (optional)
 NSString* mode = @"mode_example"; // Specifies the available mode of commute. This is required when u r trying to do search by travel distance or travel time.Allowed values driving and walking (optional)
 
-SWGLIAPIGeoEnhanceServiceApi*apiInstance = [[SWGLIAPIGeoEnhanceServiceApi alloc] init];
+PBLIAPIGeoEnhanceServiceApi*apiInstance = [[PBLIAPIGeoEnhanceServiceApi alloc] init];
 
 // Points Of Interest By Location.
 [apiInstance getEntityByLocationWithLongitude:longitude
@@ -140,12 +140,12 @@ SWGLIAPIGeoEnhanceServiceApi*apiInstance = [[SWGLIAPIGeoEnhanceServiceApi alloc]
               travelDistance:travelDistance
               travelDistanceUnit:travelDistanceUnit
               mode:mode
-          completionHandler: ^(SWGLocations* output, NSError* error) {
+          completionHandler: ^(PBLocations* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoEnhanceServiceApi->getEntityByLocation: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoEnhanceServiceApi->getEntityByLocation: %@", error);
                         }
                     }];
 ```
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGLocations***](SWGLocations.md)
+[**PBLocations***](PBLocations.md)
 
 ### Authorization
 
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 -(NSNumber*) getPlaceByLocationWithLongitude: (NSString*) longitude
     latitude: (NSString*) latitude
     levelHint: (NSString*) levelHint
-        completionHandler: (void (^)(SWGPlaceByLocations* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBPlaceByLocations* output, NSError* error)) handler;
 ```
 
 Place By Location.
@@ -198,7 +198,7 @@ Identifies and retrieves the nearest neighborhood around a specific location. Th
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -208,18 +208,18 @@ NSString* longitude = @"longitude_example"; // Longitude of the location.
 NSString* latitude = @"latitude_example"; // Latitude of the location.
 NSString* levelHint = @"levelHint_example"; // Numeric code of geographic hierarchy level which is classified at six levels.Allowed values 1,2,3,4,5,6 (optional)
 
-SWGLIAPIGeoEnhanceServiceApi*apiInstance = [[SWGLIAPIGeoEnhanceServiceApi alloc] init];
+PBLIAPIGeoEnhanceServiceApi*apiInstance = [[PBLIAPIGeoEnhanceServiceApi alloc] init];
 
 // Place By Location.
 [apiInstance getPlaceByLocationWithLongitude:longitude
               latitude:latitude
               levelHint:levelHint
-          completionHandler: ^(SWGPlaceByLocations* output, NSError* error) {
+          completionHandler: ^(PBPlaceByLocations* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoEnhanceServiceApi->getPlaceByLocation: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoEnhanceServiceApi->getPlaceByLocation: %@", error);
                         }
                     }];
 ```
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGPlaceByLocations***](SWGPlaceByLocations.md)
+[**PBPlaceByLocations***](PBPlaceByLocations.md)
 
 ### Authorization
 
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 -(NSNumber*) getTimezoneByLocationWithTimestamp: (NSString*) timestamp
     longitude: (NSString*) longitude
     latitude: (NSString*) latitude
-        completionHandler: (void (^)(SWGTimezone* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBTimezone* output, NSError* error)) handler;
 ```
 
 Timezone By Location.
@@ -261,7 +261,7 @@ Identifies and retrieves the local time of any location in the world for a given
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -271,18 +271,18 @@ NSString* timestamp = @"timestamp_example"; // Timestamp in miliseconds.
 NSString* longitude = @"longitude_example"; // Longitude of the location.
 NSString* latitude = @"latitude_example"; // Latitude of the location.
 
-SWGLIAPIGeoEnhanceServiceApi*apiInstance = [[SWGLIAPIGeoEnhanceServiceApi alloc] init];
+PBLIAPIGeoEnhanceServiceApi*apiInstance = [[PBLIAPIGeoEnhanceServiceApi alloc] init];
 
 // Timezone By Location.
 [apiInstance getTimezoneByLocationWithTimestamp:timestamp
               longitude:longitude
               latitude:latitude
-          completionHandler: ^(SWGTimezone* output, NSError* error) {
+          completionHandler: ^(PBTimezone* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoEnhanceServiceApi->getTimezoneByLocation: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoEnhanceServiceApi->getTimezoneByLocation: %@", error);
                         }
                     }];
 ```
@@ -297,7 +297,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGTimezone***](SWGTimezone.md)
+[**PBTimezone***](PBTimezone.md)
 
 ### Authorization
 

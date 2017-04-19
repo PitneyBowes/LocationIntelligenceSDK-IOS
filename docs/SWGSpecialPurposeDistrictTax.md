@@ -1,4 +1,4 @@
-# SWGSpecialPurposeDistrictTax
+# PBSpecialPurposeDistrictTax
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SWGIndividualValueVariable
+# PBIndividualValueVariable
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SWGDirectionGeometry
+# PBDirectionGeometry
 
 ## Properties
 Name | Type | Description | Notes

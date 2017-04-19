@@ -1,4 +1,4 @@
-# SWGReturnFieldsDescriptor
+# PBReturnFieldsDescriptor
 
 ## Properties
 Name | Type | Description | Notes

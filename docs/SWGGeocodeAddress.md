@@ -1,4 +1,4 @@
-# SWGGeocodeAddress
+# PBGeocodeAddress
 
 ## Properties
 Name | Type | Description | Notes

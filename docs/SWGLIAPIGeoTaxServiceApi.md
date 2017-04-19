@@ -1,24 +1,24 @@
-# SWGLIAPIGeoTaxServiceApi
+# PBLIAPIGeoTaxServiceApi
 
 All URIs are relative to *https://api.pitneybowes.com/location-intelligence*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getBatchTaxByAddress**](SWGLIAPIGeoTaxServiceApi.md#getbatchtaxbyaddress) | **POST** /geotax/v1/tax/{taxRateTypeId}/byaddress | Post Tax By Address
-[**getBatchTaxByLocation**](SWGLIAPIGeoTaxServiceApi.md#getbatchtaxbylocation) | **POST** /geotax/v1/tax/{taxRateTypeId}/bylocation | Post Tax By Location
-[**getBatchTaxRateByAddress**](SWGLIAPIGeoTaxServiceApi.md#getbatchtaxratebyaddress) | **POST** /geotax/v1/taxrate/{taxRateTypeId}/byaddress | Post Taxrate By Address
-[**getBatchTaxRateByLocation**](SWGLIAPIGeoTaxServiceApi.md#getbatchtaxratebylocation) | **POST** /geotax/v1/taxrate/{taxRateTypeId}/bylocation | Post Taxrate By Location
-[**getSpecificTaxByAddress**](SWGLIAPIGeoTaxServiceApi.md#getspecifictaxbyaddress) | **GET** /geotax/v1/tax/{taxRateTypeId}/byaddress | Get Tax By Address
-[**getSpecificTaxByLocation**](SWGLIAPIGeoTaxServiceApi.md#getspecifictaxbylocation) | **GET** /geotax/v1/tax/{taxRateTypeId}/bylocation | Get Tax By Location
-[**getSpecificTaxRateByAddress**](SWGLIAPIGeoTaxServiceApi.md#getspecifictaxratebyaddress) | **GET** /geotax/v1/taxrate/{taxRateTypeId}/byaddress | Get Taxrate By Address
-[**getSpecificTaxRateByLocation**](SWGLIAPIGeoTaxServiceApi.md#getspecifictaxratebylocation) | **GET** /geotax/v1/taxrate/{taxRateTypeId}/bylocation | Get Taxrate By Location
+[**getBatchTaxByAddress**](PBLIAPIGeoTaxServiceApi.md#getbatchtaxbyaddress) | **POST** /geotax/v1/tax/{taxRateTypeId}/byaddress | Post Tax By Address
+[**getBatchTaxByLocation**](PBLIAPIGeoTaxServiceApi.md#getbatchtaxbylocation) | **POST** /geotax/v1/tax/{taxRateTypeId}/bylocation | Post Tax By Location
+[**getBatchTaxRateByAddress**](PBLIAPIGeoTaxServiceApi.md#getbatchtaxratebyaddress) | **POST** /geotax/v1/taxrate/{taxRateTypeId}/byaddress | Post Taxrate By Address
+[**getBatchTaxRateByLocation**](PBLIAPIGeoTaxServiceApi.md#getbatchtaxratebylocation) | **POST** /geotax/v1/taxrate/{taxRateTypeId}/bylocation | Post Taxrate By Location
+[**getSpecificTaxByAddress**](PBLIAPIGeoTaxServiceApi.md#getspecifictaxbyaddress) | **GET** /geotax/v1/tax/{taxRateTypeId}/byaddress | Get Tax By Address
+[**getSpecificTaxByLocation**](PBLIAPIGeoTaxServiceApi.md#getspecifictaxbylocation) | **GET** /geotax/v1/tax/{taxRateTypeId}/bylocation | Get Tax By Location
+[**getSpecificTaxRateByAddress**](PBLIAPIGeoTaxServiceApi.md#getspecifictaxratebyaddress) | **GET** /geotax/v1/taxrate/{taxRateTypeId}/byaddress | Get Taxrate By Address
+[**getSpecificTaxRateByLocation**](PBLIAPIGeoTaxServiceApi.md#getspecifictaxratebylocation) | **GET** /geotax/v1/taxrate/{taxRateTypeId}/bylocation | Get Taxrate By Location
 
 
 # **getBatchTaxByAddress**
 ```objc
 -(NSNumber*) getBatchTaxByAddressWithTaxRateTypeId: (NSString*) taxRateTypeId
-    body: (SWGTaxAddressRequest*) body
-        completionHandler: (void (^)(SWGTaxResponses* output, NSError* error)) handler;
+    body: (PBTaxAddressRequest*) body
+        completionHandler: (void (^)(PBTaxResponses* output, NSError* error)) handler;
 ```
 
 Post Tax By Address
@@ -27,26 +27,26 @@ This is a Batch offering for 'Tax By Address' service. It accepts a single addre
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
 
 
 NSString* taxRateTypeId = @"taxRateTypeId_example"; // The tax rate id.
-SWGTaxAddressRequest* body = [[SWGTaxAddressRequest alloc] init]; // TaxAddressRequest Class Object having tax request.
+PBTaxAddressRequest* body = [[PBTaxAddressRequest alloc] init]; // TaxAddressRequest Class Object having tax request.
 
-SWGLIAPIGeoTaxServiceApi*apiInstance = [[SWGLIAPIGeoTaxServiceApi alloc] init];
+PBLIAPIGeoTaxServiceApi*apiInstance = [[PBLIAPIGeoTaxServiceApi alloc] init];
 
 // Post Tax By Address
 [apiInstance getBatchTaxByAddressWithTaxRateTypeId:taxRateTypeId
               body:body
-          completionHandler: ^(SWGTaxResponses* output, NSError* error) {
+          completionHandler: ^(PBTaxResponses* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoTaxServiceApi->getBatchTaxByAddress: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoTaxServiceApi->getBatchTaxByAddress: %@", error);
                         }
                     }];
 ```
@@ -56,11 +56,11 @@ SWGLIAPIGeoTaxServiceApi*apiInstance = [[SWGLIAPIGeoTaxServiceApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taxRateTypeId** | **NSString***| The tax rate id. | 
- **body** | [**SWGTaxAddressRequest***](SWGTaxAddressRequest*.md)| TaxAddressRequest Class Object having tax request. | 
+ **body** | [**PBTaxAddressRequest***](PBTaxAddressRequest*.md)| TaxAddressRequest Class Object having tax request. | 
 
 ### Return type
 
-[**SWGTaxResponses***](SWGTaxResponses.md)
+[**PBTaxResponses***](PBTaxResponses.md)
 
 ### Authorization
 
@@ -76,8 +76,8 @@ Name | Type | Description  | Notes
 # **getBatchTaxByLocation**
 ```objc
 -(NSNumber*) getBatchTaxByLocationWithTaxRateTypeId: (NSString*) taxRateTypeId
-    body: (SWGTaxLocationRequest*) body
-        completionHandler: (void (^)(SWGTaxResponses* output, NSError* error)) handler;
+    body: (PBTaxLocationRequest*) body
+        completionHandler: (void (^)(PBTaxResponses* output, NSError* error)) handler;
 ```
 
 Post Tax By Location
@@ -86,26 +86,26 @@ This is a Batch offering for 'Tax By Location' service. It accepts a single loca
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
 
 
 NSString* taxRateTypeId = @"taxRateTypeId_example"; // The tax rate id.
-SWGTaxLocationRequest* body = [[SWGTaxLocationRequest alloc] init]; // TaxAddressRequest Class Object having tax request.
+PBTaxLocationRequest* body = [[PBTaxLocationRequest alloc] init]; // TaxAddressRequest Class Object having tax request.
 
-SWGLIAPIGeoTaxServiceApi*apiInstance = [[SWGLIAPIGeoTaxServiceApi alloc] init];
+PBLIAPIGeoTaxServiceApi*apiInstance = [[PBLIAPIGeoTaxServiceApi alloc] init];
 
 // Post Tax By Location
 [apiInstance getBatchTaxByLocationWithTaxRateTypeId:taxRateTypeId
               body:body
-          completionHandler: ^(SWGTaxResponses* output, NSError* error) {
+          completionHandler: ^(PBTaxResponses* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoTaxServiceApi->getBatchTaxByLocation: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoTaxServiceApi->getBatchTaxByLocation: %@", error);
                         }
                     }];
 ```
@@ -115,11 +115,11 @@ SWGLIAPIGeoTaxServiceApi*apiInstance = [[SWGLIAPIGeoTaxServiceApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taxRateTypeId** | **NSString***| The tax rate id. | 
- **body** | [**SWGTaxLocationRequest***](SWGTaxLocationRequest*.md)| TaxAddressRequest Class Object having tax request. | 
+ **body** | [**PBTaxLocationRequest***](PBTaxLocationRequest*.md)| TaxAddressRequest Class Object having tax request. | 
 
 ### Return type
 
-[**SWGTaxResponses***](SWGTaxResponses.md)
+[**PBTaxResponses***](PBTaxResponses.md)
 
 ### Authorization
 
@@ -135,8 +135,8 @@ Name | Type | Description  | Notes
 # **getBatchTaxRateByAddress**
 ```objc
 -(NSNumber*) getBatchTaxRateByAddressWithTaxRateTypeId: (NSString*) taxRateTypeId
-    body: (SWGTaxRateAddressRequest*) body
-        completionHandler: (void (^)(SWGTaxResponses* output, NSError* error)) handler;
+    body: (PBTaxRateAddressRequest*) body
+        completionHandler: (void (^)(PBTaxResponses* output, NSError* error)) handler;
 ```
 
 Post Taxrate By Address
@@ -145,26 +145,26 @@ This is a Batch offering for 'Taxrate By Address' service. It accepts a single a
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
 
 
 NSString* taxRateTypeId = @"taxRateTypeId_example"; // The tax rate id.
-SWGTaxRateAddressRequest* body = [[SWGTaxRateAddressRequest alloc] init]; // TaxRateAddressRequest Class Object having tax rate request.
+PBTaxRateAddressRequest* body = [[PBTaxRateAddressRequest alloc] init]; // TaxRateAddressRequest Class Object having tax rate request.
 
-SWGLIAPIGeoTaxServiceApi*apiInstance = [[SWGLIAPIGeoTaxServiceApi alloc] init];
+PBLIAPIGeoTaxServiceApi*apiInstance = [[PBLIAPIGeoTaxServiceApi alloc] init];
 
 // Post Taxrate By Address
 [apiInstance getBatchTaxRateByAddressWithTaxRateTypeId:taxRateTypeId
               body:body
-          completionHandler: ^(SWGTaxResponses* output, NSError* error) {
+          completionHandler: ^(PBTaxResponses* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoTaxServiceApi->getBatchTaxRateByAddress: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoTaxServiceApi->getBatchTaxRateByAddress: %@", error);
                         }
                     }];
 ```
@@ -174,11 +174,11 @@ SWGLIAPIGeoTaxServiceApi*apiInstance = [[SWGLIAPIGeoTaxServiceApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taxRateTypeId** | **NSString***| The tax rate id. | 
- **body** | [**SWGTaxRateAddressRequest***](SWGTaxRateAddressRequest*.md)| TaxRateAddressRequest Class Object having tax rate request. | 
+ **body** | [**PBTaxRateAddressRequest***](PBTaxRateAddressRequest*.md)| TaxRateAddressRequest Class Object having tax rate request. | 
 
 ### Return type
 
-[**SWGTaxResponses***](SWGTaxResponses.md)
+[**PBTaxResponses***](PBTaxResponses.md)
 
 ### Authorization
 
@@ -194,8 +194,8 @@ Name | Type | Description  | Notes
 # **getBatchTaxRateByLocation**
 ```objc
 -(NSNumber*) getBatchTaxRateByLocationWithTaxRateTypeId: (NSString*) taxRateTypeId
-    body: (SWGTaxRateLocationRequest*) body
-        completionHandler: (void (^)(SWGTaxResponses* output, NSError* error)) handler;
+    body: (PBTaxRateLocationRequest*) body
+        completionHandler: (void (^)(PBTaxResponses* output, NSError* error)) handler;
 ```
 
 Post Taxrate By Location
@@ -204,26 +204,26 @@ This is a Batch offering for 'Taxrate By Location' service. It accepts a single 
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
 
 
 NSString* taxRateTypeId = @"taxRateTypeId_example"; // The tax rate id.
-SWGTaxRateLocationRequest* body = [[SWGTaxRateLocationRequest alloc] init]; // TaxRateLocationRequest Class Object having tax rate request.
+PBTaxRateLocationRequest* body = [[PBTaxRateLocationRequest alloc] init]; // TaxRateLocationRequest Class Object having tax rate request.
 
-SWGLIAPIGeoTaxServiceApi*apiInstance = [[SWGLIAPIGeoTaxServiceApi alloc] init];
+PBLIAPIGeoTaxServiceApi*apiInstance = [[PBLIAPIGeoTaxServiceApi alloc] init];
 
 // Post Taxrate By Location
 [apiInstance getBatchTaxRateByLocationWithTaxRateTypeId:taxRateTypeId
               body:body
-          completionHandler: ^(SWGTaxResponses* output, NSError* error) {
+          completionHandler: ^(PBTaxResponses* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoTaxServiceApi->getBatchTaxRateByLocation: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoTaxServiceApi->getBatchTaxRateByLocation: %@", error);
                         }
                     }];
 ```
@@ -233,11 +233,11 @@ SWGLIAPIGeoTaxServiceApi*apiInstance = [[SWGLIAPIGeoTaxServiceApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taxRateTypeId** | **NSString***| The tax rate id. | 
- **body** | [**SWGTaxRateLocationRequest***](SWGTaxRateLocationRequest*.md)| TaxRateLocationRequest Class Object having tax rate request. | 
+ **body** | [**PBTaxRateLocationRequest***](PBTaxRateLocationRequest*.md)| TaxRateLocationRequest Class Object having tax rate request. | 
 
 ### Return type
 
-[**SWGTaxResponses***](SWGTaxResponses.md)
+[**PBTaxResponses***](PBTaxResponses.md)
 
 ### Authorization
 
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 -(NSNumber*) getSpecificTaxByAddressWithTaxRateTypeId: (NSString*) taxRateTypeId
     address: (NSString*) address
     purchaseAmount: (NSString*) purchaseAmount
-        completionHandler: (void (^)(SWGTaxResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBTaxResponse* output, NSError* error)) handler;
 ```
 
 Get Tax By Address
@@ -264,7 +264,7 @@ This service calculates and returns taxes applicable at a specific address. Addr
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -274,18 +274,18 @@ NSString* taxRateTypeId = @"taxRateTypeId_example"; // The tax rate id.
 NSString* address = @"address_example"; // The address to be searched.
 NSString* purchaseAmount = @"purchaseAmount_example"; // The amount on which tax to be calculated.
 
-SWGLIAPIGeoTaxServiceApi*apiInstance = [[SWGLIAPIGeoTaxServiceApi alloc] init];
+PBLIAPIGeoTaxServiceApi*apiInstance = [[PBLIAPIGeoTaxServiceApi alloc] init];
 
 // Get Tax By Address
 [apiInstance getSpecificTaxByAddressWithTaxRateTypeId:taxRateTypeId
               address:address
               purchaseAmount:purchaseAmount
-          completionHandler: ^(SWGTaxResponse* output, NSError* error) {
+          completionHandler: ^(PBTaxResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoTaxServiceApi->getSpecificTaxByAddress: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoTaxServiceApi->getSpecificTaxByAddress: %@", error);
                         }
                     }];
 ```
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGTaxResponse***](SWGTaxResponse.md)
+[**PBTaxResponse***](PBTaxResponse.md)
 
 ### Authorization
 
@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
     latitude: (NSString*) latitude
     longitude: (NSString*) longitude
     purchaseAmount: (NSString*) purchaseAmount
-        completionHandler: (void (^)(SWGTaxResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBTaxResponse* output, NSError* error)) handler;
 ```
 
 Get Tax By Location
@@ -328,7 +328,7 @@ This service calculates and returns tax applicable at a specific location. Longi
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -339,19 +339,19 @@ NSString* latitude = @"latitude_example"; // Latitude of the location.
 NSString* longitude = @"longitude_example"; // Longitude of the location.
 NSString* purchaseAmount = @"purchaseAmount_example"; // The amount on which tax to be calculated.
 
-SWGLIAPIGeoTaxServiceApi*apiInstance = [[SWGLIAPIGeoTaxServiceApi alloc] init];
+PBLIAPIGeoTaxServiceApi*apiInstance = [[PBLIAPIGeoTaxServiceApi alloc] init];
 
 // Get Tax By Location
 [apiInstance getSpecificTaxByLocationWithTaxRateTypeId:taxRateTypeId
               latitude:latitude
               longitude:longitude
               purchaseAmount:purchaseAmount
-          completionHandler: ^(SWGTaxResponse* output, NSError* error) {
+          completionHandler: ^(PBTaxResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoTaxServiceApi->getSpecificTaxByLocation: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoTaxServiceApi->getSpecificTaxByLocation: %@", error);
                         }
                     }];
 ```
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGTaxResponse***](SWGTaxResponse.md)
+[**PBTaxResponse***](PBTaxResponse.md)
 
 ### Authorization
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) getSpecificTaxRateByAddressWithTaxRateTypeId: (NSString*) taxRateTypeId
     address: (NSString*) address
-        completionHandler: (void (^)(SWGTaxResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBTaxResponse* output, NSError* error)) handler;
 ```
 
 Get Taxrate By Address
@@ -393,7 +393,7 @@ Retrieves tax rates applicable to a specific address. This service accepts addre
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -402,17 +402,17 @@ SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
 NSString* taxRateTypeId = @"taxRateTypeId_example"; // The tax rate id.
 NSString* address = @"address_example"; // The address to be searched.
 
-SWGLIAPIGeoTaxServiceApi*apiInstance = [[SWGLIAPIGeoTaxServiceApi alloc] init];
+PBLIAPIGeoTaxServiceApi*apiInstance = [[PBLIAPIGeoTaxServiceApi alloc] init];
 
 // Get Taxrate By Address
 [apiInstance getSpecificTaxRateByAddressWithTaxRateTypeId:taxRateTypeId
               address:address
-          completionHandler: ^(SWGTaxResponse* output, NSError* error) {
+          completionHandler: ^(PBTaxResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoTaxServiceApi->getSpecificTaxRateByAddress: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoTaxServiceApi->getSpecificTaxRateByAddress: %@", error);
                         }
                     }];
 ```
@@ -426,7 +426,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGTaxResponse***](SWGTaxResponse.md)
+[**PBTaxResponse***](PBTaxResponse.md)
 
 ### Authorization
 
@@ -444,7 +444,7 @@ Name | Type | Description  | Notes
 -(NSNumber*) getSpecificTaxRateByLocationWithTaxRateTypeId: (NSString*) taxRateTypeId
     latitude: (NSString*) latitude
     longitude: (NSString*) longitude
-        completionHandler: (void (^)(SWGTaxResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBTaxResponse* output, NSError* error)) handler;
 ```
 
 Get Taxrate By Location
@@ -453,7 +453,7 @@ Retrieves tax rates applicable to a specific location. This service accepts long
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -463,18 +463,18 @@ NSString* taxRateTypeId = @"taxRateTypeId_example"; // The tax rate id.
 NSString* latitude = @"latitude_example"; // Latitude of the location.
 NSString* longitude = @"longitude_example"; // Longitude of the location.
 
-SWGLIAPIGeoTaxServiceApi*apiInstance = [[SWGLIAPIGeoTaxServiceApi alloc] init];
+PBLIAPIGeoTaxServiceApi*apiInstance = [[PBLIAPIGeoTaxServiceApi alloc] init];
 
 // Get Taxrate By Location
 [apiInstance getSpecificTaxRateByLocationWithTaxRateTypeId:taxRateTypeId
               latitude:latitude
               longitude:longitude
-          completionHandler: ^(SWGTaxResponse* output, NSError* error) {
+          completionHandler: ^(PBTaxResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoTaxServiceApi->getSpecificTaxRateByLocation: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoTaxServiceApi->getSpecificTaxRateByLocation: %@", error);
                         }
                     }];
 ```
@@ -489,7 +489,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGTaxResponse***](SWGTaxResponse.md)
+[**PBTaxResponse***](PBTaxResponse.md)
 
 ### Authorization
 

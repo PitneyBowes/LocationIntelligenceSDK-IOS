@@ -1,26 +1,26 @@
-# SWGLIAPIGeoRiskServiceApi
+# PBLIAPIGeoRiskServiceApi
 
 All URIs are relative to *https://api.pitneybowes.com/location-intelligence*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCrimeRiskByAddress**](SWGLIAPIGeoRiskServiceApi.md#getcrimeriskbyaddress) | **GET** /georisk/v1/crime/byaddress | Gets CrimeRiskResponse
-[**getCrimeRiskByLocation**](SWGLIAPIGeoRiskServiceApi.md#getcrimeriskbylocation) | **GET** /georisk/v1/crime/bylocation | Gets CrimeRiskResponse
-[**getEarthquakeRiskByAddress**](SWGLIAPIGeoRiskServiceApi.md#getearthquakeriskbyaddress) | **GET** /georisk/v1/earthquake/byaddress | Gets EarthquakeRiskResponse
-[**getEarthquakeRiskByLocation**](SWGLIAPIGeoRiskServiceApi.md#getearthquakeriskbylocation) | **GET** /georisk/v1/earthquake/bylocation | Gets EarthquakeRiskResponse
-[**getFireRiskByAddress**](SWGLIAPIGeoRiskServiceApi.md#getfireriskbyaddress) | **GET** /georisk/v1/fire/byaddress | Gets FireRiskResponse
-[**getFireRiskByLocation**](SWGLIAPIGeoRiskServiceApi.md#getfireriskbylocation) | **GET** /georisk/v1/fire/bylocation | Gets FireRiskResponse
-[**getFireStationByAddress**](SWGLIAPIGeoRiskServiceApi.md#getfirestationbyaddress) | **GET** /georisk/v1/firestation/byaddress | Gets FireStationResponse
-[**getFireStationByLocation**](SWGLIAPIGeoRiskServiceApi.md#getfirestationbylocation) | **GET** /georisk/v1/firestation/bylocation | Gets FireStationResponse
-[**getFloodRiskByAddress**](SWGLIAPIGeoRiskServiceApi.md#getfloodriskbyaddress) | **GET** /georisk/v1/flood/byaddress | Gets FloodRiskResponse
-[**getFloodRiskByLocation**](SWGLIAPIGeoRiskServiceApi.md#getfloodriskbylocation) | **GET** /georisk/v1/flood/bylocation | Gets FloodRiskResponse
+[**getCrimeRiskByAddress**](PBLIAPIGeoRiskServiceApi.md#getcrimeriskbyaddress) | **GET** /georisk/v1/crime/byaddress | Gets CrimeRiskResponse
+[**getCrimeRiskByLocation**](PBLIAPIGeoRiskServiceApi.md#getcrimeriskbylocation) | **GET** /georisk/v1/crime/bylocation | Gets CrimeRiskResponse
+[**getEarthquakeRiskByAddress**](PBLIAPIGeoRiskServiceApi.md#getearthquakeriskbyaddress) | **GET** /georisk/v1/earthquake/byaddress | Gets EarthquakeRiskResponse
+[**getEarthquakeRiskByLocation**](PBLIAPIGeoRiskServiceApi.md#getearthquakeriskbylocation) | **GET** /georisk/v1/earthquake/bylocation | Gets EarthquakeRiskResponse
+[**getFireRiskByAddress**](PBLIAPIGeoRiskServiceApi.md#getfireriskbyaddress) | **GET** /georisk/v1/fire/byaddress | Gets FireRiskResponse
+[**getFireRiskByLocation**](PBLIAPIGeoRiskServiceApi.md#getfireriskbylocation) | **GET** /georisk/v1/fire/bylocation | Gets FireRiskResponse
+[**getFireStationByAddress**](PBLIAPIGeoRiskServiceApi.md#getfirestationbyaddress) | **GET** /georisk/v1/firestation/byaddress | Gets FireStationResponse
+[**getFireStationByLocation**](PBLIAPIGeoRiskServiceApi.md#getfirestationbylocation) | **GET** /georisk/v1/firestation/bylocation | Gets FireStationResponse
+[**getFloodRiskByAddress**](PBLIAPIGeoRiskServiceApi.md#getfloodriskbyaddress) | **GET** /georisk/v1/flood/byaddress | Gets FloodRiskResponse
+[**getFloodRiskByLocation**](PBLIAPIGeoRiskServiceApi.md#getfloodriskbylocation) | **GET** /georisk/v1/flood/bylocation | Gets FloodRiskResponse
 
 
 # **getCrimeRiskByAddress**
 ```objc
 -(NSNumber*) getCrimeRiskByAddressWithAddress: (NSString*) address
     type: (NSString*) type
-        completionHandler: (void (^)(SWGCrimeRiskResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBCrimeRiskResponse* output, NSError* error)) handler;
 ```
 
 Gets CrimeRiskResponse
@@ -29,7 +29,7 @@ Returns the crime data or crime indexes for a given address input.
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -38,17 +38,17 @@ SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
 NSString* address = @"address_example"; // Free-form address text.
 NSString* type = @"type_example"; // Type of crime like violent crime, property crime, etc., multiple crime type indexes could be requested as comma separated values with 'all' as default.) (optional)
 
-SWGLIAPIGeoRiskServiceApi*apiInstance = [[SWGLIAPIGeoRiskServiceApi alloc] init];
+PBLIAPIGeoRiskServiceApi*apiInstance = [[PBLIAPIGeoRiskServiceApi alloc] init];
 
 // Gets CrimeRiskResponse
 [apiInstance getCrimeRiskByAddressWithAddress:address
               type:type
-          completionHandler: ^(SWGCrimeRiskResponse* output, NSError* error) {
+          completionHandler: ^(PBCrimeRiskResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoRiskServiceApi->getCrimeRiskByAddress: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoRiskServiceApi->getCrimeRiskByAddress: %@", error);
                         }
                     }];
 ```
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGCrimeRiskResponse***](SWGCrimeRiskResponse.md)
+[**PBCrimeRiskResponse***](PBCrimeRiskResponse.md)
 
 ### Authorization
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 -(NSNumber*) getCrimeRiskByLocationWithLongitude: (NSString*) longitude
     latitude: (NSString*) latitude
     type: (NSString*) type
-        completionHandler: (void (^)(SWGCrimeRiskResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBCrimeRiskResponse* output, NSError* error)) handler;
 ```
 
 Gets CrimeRiskResponse
@@ -89,7 +89,7 @@ Returns the crime data or crime indexes for a given location.
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -99,18 +99,18 @@ NSString* longitude = @"longitude_example"; // The longitude of the location
 NSString* latitude = @"latitude_example"; // The latitude of the location
 NSString* type = @"type_example"; // Refers to crime type. Valid values are following 11 crime types with 'all' as default (more than one can also be given as comma separated types) (optional)
 
-SWGLIAPIGeoRiskServiceApi*apiInstance = [[SWGLIAPIGeoRiskServiceApi alloc] init];
+PBLIAPIGeoRiskServiceApi*apiInstance = [[PBLIAPIGeoRiskServiceApi alloc] init];
 
 // Gets CrimeRiskResponse
 [apiInstance getCrimeRiskByLocationWithLongitude:longitude
               latitude:latitude
               type:type
-          completionHandler: ^(SWGCrimeRiskResponse* output, NSError* error) {
+          completionHandler: ^(PBCrimeRiskResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoRiskServiceApi->getCrimeRiskByLocation: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoRiskServiceApi->getCrimeRiskByLocation: %@", error);
                         }
                     }];
 ```
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGCrimeRiskResponse***](SWGCrimeRiskResponse.md)
+[**PBCrimeRiskResponse***](PBCrimeRiskResponse.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) getEarthquakeRiskByAddressWithAddress: (NSString*) address
     richterValue: (NSString*) richterValue
-        completionHandler: (void (^)(SWGEarthquakeRiskResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBEarthquakeRiskResponse* output, NSError* error)) handler;
 ```
 
 Gets EarthquakeRiskResponse
@@ -151,7 +151,7 @@ Returns the count of earthquake events for various richter measurements and valu
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -160,17 +160,17 @@ SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
 NSString* address = @"address_example"; // Free-form address text
 NSString* richterValue = @"richterValue_example"; // Richter values like R5 (count of richter scale 5 events), R7 (count of richter scale 7 events), R6_GE (count of events >= richter scale 6), etc., multiple richter scales could be requested as comma separated values with 'all' as default. Valid values: All (default value), R0, R1, R2, R3, R4, R5, R6, R7, R0_GE, R1_GE, R2_GE, R3_GE, R4_GE, R5_GE, R6_GE, R7_GE (optional)
 
-SWGLIAPIGeoRiskServiceApi*apiInstance = [[SWGLIAPIGeoRiskServiceApi alloc] init];
+PBLIAPIGeoRiskServiceApi*apiInstance = [[PBLIAPIGeoRiskServiceApi alloc] init];
 
 // Gets EarthquakeRiskResponse
 [apiInstance getEarthquakeRiskByAddressWithAddress:address
               richterValue:richterValue
-          completionHandler: ^(SWGEarthquakeRiskResponse* output, NSError* error) {
+          completionHandler: ^(PBEarthquakeRiskResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoRiskServiceApi->getEarthquakeRiskByAddress: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoRiskServiceApi->getEarthquakeRiskByAddress: %@", error);
                         }
                     }];
 ```
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGEarthquakeRiskResponse***](SWGEarthquakeRiskResponse.md)
+[**PBEarthquakeRiskResponse***](PBEarthquakeRiskResponse.md)
 
 ### Authorization
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 -(NSNumber*) getEarthquakeRiskByLocationWithLongitude: (NSString*) longitude
     latitude: (NSString*) latitude
     richterValue: (NSString*) richterValue
-        completionHandler: (void (^)(SWGEarthquakeRiskResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBEarthquakeRiskResponse* output, NSError* error)) handler;
 ```
 
 Gets EarthquakeRiskResponse
@@ -211,7 +211,7 @@ Gets EarthquakeRiskResponse
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -221,18 +221,18 @@ NSString* longitude = @"longitude_example"; // The longitude of the location
 NSString* latitude = @"latitude_example"; // The latitude of the location
 NSString* richterValue = @"richterValue_example"; // Richter values like R5 (count of richter scale 5 events), R7 (count of richter scale 7 events), R6_GE (count of events >= richter scale 6), etc., multiple richter scales could be requested as comma separated values with 'all' as default. Valid values: All (default value), R0, R1, R2, R3, R4, R5, R6, R7, R0_GE, R1_GE, R2_GE, R3_GE, R4_GE, R5_GE, R6_GE, R7_GE (optional)
 
-SWGLIAPIGeoRiskServiceApi*apiInstance = [[SWGLIAPIGeoRiskServiceApi alloc] init];
+PBLIAPIGeoRiskServiceApi*apiInstance = [[PBLIAPIGeoRiskServiceApi alloc] init];
 
 // Gets EarthquakeRiskResponse
 [apiInstance getEarthquakeRiskByLocationWithLongitude:longitude
               latitude:latitude
               richterValue:richterValue
-          completionHandler: ^(SWGEarthquakeRiskResponse* output, NSError* error) {
+          completionHandler: ^(PBEarthquakeRiskResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoRiskServiceApi->getEarthquakeRiskByLocation: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoRiskServiceApi->getEarthquakeRiskByLocation: %@", error);
                         }
                     }];
 ```
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGEarthquakeRiskResponse***](SWGEarthquakeRiskResponse.md)
+[**PBEarthquakeRiskResponse***](PBEarthquakeRiskResponse.md)
 
 ### Authorization
 
@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
 # **getFireRiskByAddress**
 ```objc
 -(NSNumber*) getFireRiskByAddressWithAddress: (NSString*) address
-        completionHandler: (void (^)(SWGFireRiskResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBFireRiskResponse* output, NSError* error)) handler;
 ```
 
 Gets FireRiskResponse
@@ -272,7 +272,7 @@ Returns the fire data based on address input.
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -280,16 +280,16 @@ SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
 
 NSString* address = @"address_example"; // Free-form address text
 
-SWGLIAPIGeoRiskServiceApi*apiInstance = [[SWGLIAPIGeoRiskServiceApi alloc] init];
+PBLIAPIGeoRiskServiceApi*apiInstance = [[PBLIAPIGeoRiskServiceApi alloc] init];
 
 // Gets FireRiskResponse
 [apiInstance getFireRiskByAddressWithAddress:address
-          completionHandler: ^(SWGFireRiskResponse* output, NSError* error) {
+          completionHandler: ^(PBFireRiskResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoRiskServiceApi->getFireRiskByAddress: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoRiskServiceApi->getFireRiskByAddress: %@", error);
                         }
                     }];
 ```
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGFireRiskResponse***](SWGFireRiskResponse.md)
+[**PBFireRiskResponse***](PBFireRiskResponse.md)
 
 ### Authorization
 
@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) getFireRiskByLocationWithLongitude: (NSString*) longitude
     latitude: (NSString*) latitude
-        completionHandler: (void (^)(SWGFireRiskResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBFireRiskResponse* output, NSError* error)) handler;
 ```
 
 Gets FireRiskResponse
@@ -328,7 +328,7 @@ Returns the fire data based on location input.
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -337,17 +337,17 @@ SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
 NSString* longitude = @"longitude_example"; // Longitude of Location
 NSString* latitude = @"latitude_example"; // Latitude of Location
 
-SWGLIAPIGeoRiskServiceApi*apiInstance = [[SWGLIAPIGeoRiskServiceApi alloc] init];
+PBLIAPIGeoRiskServiceApi*apiInstance = [[PBLIAPIGeoRiskServiceApi alloc] init];
 
 // Gets FireRiskResponse
 [apiInstance getFireRiskByLocationWithLongitude:longitude
               latitude:latitude
-          completionHandler: ^(SWGFireRiskResponse* output, NSError* error) {
+          completionHandler: ^(PBFireRiskResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoRiskServiceApi->getFireRiskByLocation: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoRiskServiceApi->getFireRiskByLocation: %@", error);
                         }
                     }];
 ```
@@ -361,7 +361,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGFireRiskResponse***](SWGFireRiskResponse.md)
+[**PBFireRiskResponse***](PBFireRiskResponse.md)
 
 ### Authorization
 
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
     travelDistance: (NSString*) travelDistance
     travelDistanceUnit: (NSString*) travelDistanceUnit
     sortBy: (NSString*) sortBy
-        completionHandler: (void (^)(SWGFireStations* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBFireStations* output, NSError* error)) handler;
 ```
 
 Gets FireStationResponse
@@ -392,7 +392,7 @@ Returns the nearest Firestations from an input address.
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -406,7 +406,7 @@ NSString* travelDistance = @"travelDistance_example"; // Maximum travel distance
 NSString* travelDistanceUnit = @"travelDistanceUnit_example"; // Travel distance unit such as Feet (default), Kilometers, Miles or Meters. (optional)
 NSString* sortBy = @"sortBy_example"; // Sort the fire stations results by either travel time or travel distance (nearest first). Default sorting is by travel time. (optional)
 
-SWGLIAPIGeoRiskServiceApi*apiInstance = [[SWGLIAPIGeoRiskServiceApi alloc] init];
+PBLIAPIGeoRiskServiceApi*apiInstance = [[PBLIAPIGeoRiskServiceApi alloc] init];
 
 // Gets FireStationResponse
 [apiInstance getFireStationByAddressWithAddress:address
@@ -416,12 +416,12 @@ SWGLIAPIGeoRiskServiceApi*apiInstance = [[SWGLIAPIGeoRiskServiceApi alloc] init]
               travelDistance:travelDistance
               travelDistanceUnit:travelDistanceUnit
               sortBy:sortBy
-          completionHandler: ^(SWGFireStations* output, NSError* error) {
+          completionHandler: ^(PBFireStations* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoRiskServiceApi->getFireStationByAddress: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoRiskServiceApi->getFireStationByAddress: %@", error);
                         }
                     }];
 ```
@@ -440,7 +440,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGFireStations***](SWGFireStations.md)
+[**PBFireStations***](PBFireStations.md)
 
 ### Authorization
 
@@ -463,7 +463,7 @@ Name | Type | Description  | Notes
     travelDistance: (NSString*) travelDistance
     travelDistanceUnit: (NSString*) travelDistanceUnit
     sortBy: (NSString*) sortBy
-        completionHandler: (void (^)(SWGFireStations* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBFireStations* output, NSError* error)) handler;
 ```
 
 Gets FireStationResponse
@@ -472,7 +472,7 @@ Returns the nearest Firestations from an input location.
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -487,7 +487,7 @@ NSString* travelDistance = @"travelDistance_example"; // Maximum travel distance
 NSString* travelDistanceUnit = @"travelDistanceUnit_example"; // Travel distance unit such as Feet (default), Kilometers, Miles or Meters. (optional)
 NSString* sortBy = @"sortBy_example"; // Sorting of fire stations in result by travel time/distance (nearest first from input location). (optional)
 
-SWGLIAPIGeoRiskServiceApi*apiInstance = [[SWGLIAPIGeoRiskServiceApi alloc] init];
+PBLIAPIGeoRiskServiceApi*apiInstance = [[PBLIAPIGeoRiskServiceApi alloc] init];
 
 // Gets FireStationResponse
 [apiInstance getFireStationByLocationWithLongitude:longitude
@@ -498,12 +498,12 @@ SWGLIAPIGeoRiskServiceApi*apiInstance = [[SWGLIAPIGeoRiskServiceApi alloc] init]
               travelDistance:travelDistance
               travelDistanceUnit:travelDistanceUnit
               sortBy:sortBy
-          completionHandler: ^(SWGFireStations* output, NSError* error) {
+          completionHandler: ^(PBFireStations* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoRiskServiceApi->getFireStationByLocation: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoRiskServiceApi->getFireStationByLocation: %@", error);
                         }
                     }];
 ```
@@ -523,7 +523,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGFireStations***](SWGFireStations.md)
+[**PBFireStations***](PBFireStations.md)
 
 ### Authorization
 
@@ -540,7 +540,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) getFloodRiskByAddressWithAddress: (NSString*) address
     includeZoneDesc: (NSString*) includeZoneDesc
-        completionHandler: (void (^)(SWGFloodRiskResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBFloodRiskResponse* output, NSError* error)) handler;
 ```
 
 Gets FloodRiskResponse
@@ -549,7 +549,7 @@ Returns the Flood Risk data for flood zones based on an address.
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -558,17 +558,17 @@ SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
 NSString* address = @"address_example"; // Free-text Address
 NSString* includeZoneDesc = @"includeZoneDesc_example"; // Specifies primary zone description. Valid Values: 'Y' or 'N'. (optional)
 
-SWGLIAPIGeoRiskServiceApi*apiInstance = [[SWGLIAPIGeoRiskServiceApi alloc] init];
+PBLIAPIGeoRiskServiceApi*apiInstance = [[PBLIAPIGeoRiskServiceApi alloc] init];
 
 // Gets FloodRiskResponse
 [apiInstance getFloodRiskByAddressWithAddress:address
               includeZoneDesc:includeZoneDesc
-          completionHandler: ^(SWGFloodRiskResponse* output, NSError* error) {
+          completionHandler: ^(PBFloodRiskResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoRiskServiceApi->getFloodRiskByAddress: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoRiskServiceApi->getFloodRiskByAddress: %@", error);
                         }
                     }];
 ```
@@ -582,7 +582,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGFloodRiskResponse***](SWGFloodRiskResponse.md)
+[**PBFloodRiskResponse***](PBFloodRiskResponse.md)
 
 ### Authorization
 
@@ -600,7 +600,7 @@ Name | Type | Description  | Notes
 -(NSNumber*) getFloodRiskByLocationWithLongitude: (NSString*) longitude
     latitude: (NSString*) latitude
     includeZoneDesc: (NSString*) includeZoneDesc
-        completionHandler: (void (^)(SWGFloodRiskResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBFloodRiskResponse* output, NSError* error)) handler;
 ```
 
 Gets FloodRiskResponse
@@ -609,7 +609,7 @@ Returns the Flood Risk data for Flood Zones and Base Flood Elevation, based on l
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -619,18 +619,18 @@ NSString* longitude = @"longitude_example"; // Longitude of Location
 NSString* latitude = @"latitude_example"; // Latitude of Location
 NSString* includeZoneDesc = @"includeZoneDesc_example"; // Specifies primary zone description. Valid Values: 'Y' or 'N'. Default: 'Y' (optional)
 
-SWGLIAPIGeoRiskServiceApi*apiInstance = [[SWGLIAPIGeoRiskServiceApi alloc] init];
+PBLIAPIGeoRiskServiceApi*apiInstance = [[PBLIAPIGeoRiskServiceApi alloc] init];
 
 // Gets FloodRiskResponse
 [apiInstance getFloodRiskByLocationWithLongitude:longitude
               latitude:latitude
               includeZoneDesc:includeZoneDesc
-          completionHandler: ^(SWGFloodRiskResponse* output, NSError* error) {
+          completionHandler: ^(PBFloodRiskResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoRiskServiceApi->getFloodRiskByLocation: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoRiskServiceApi->getFloodRiskByLocation: %@", error);
                         }
                     }];
 ```
@@ -645,7 +645,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGFloodRiskResponse***](SWGFloodRiskResponse.md)
+[**PBFloodRiskResponse***](PBFloodRiskResponse.md)
 
 ### Authorization
 

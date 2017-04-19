@@ -1,4 +1,4 @@
-# SWGPrimaryZone
+# PBPrimaryZone
 
 ## Properties
 Name | Type | Description | Notes

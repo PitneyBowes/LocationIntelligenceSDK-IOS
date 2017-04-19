@@ -1,4 +1,4 @@
-# SWGRateCenterResponse
+# PBRateCenterResponse
 
 ## Properties
 Name | Type | Description | Notes
@@ -7,11 +7,11 @@ Name | Type | Description | Notes
 **name** | **NSString*** |  | [optional] 
 **alternateName** | **NSString*** |  | [optional] 
 **areaName1** | **NSString*** |  | [optional] 
-**geometry** | [**SWGGeometry***](SWGGeometry.md) |  | [optional] 
-**areaCodeInfoList** | [**NSArray&lt;SWGAreaCodeInfo&gt;***](SWGAreaCodeInfo.md) |  | [optional] 
-**matchedAddress** | [**SWGAddress***](SWGAddress.md) |  | [optional] 
-**match** | [**SWGMatch***](SWGMatch.md) |  | [optional] 
-**county** | [**SWGCounty***](SWGCounty.md) |  | [optional] 
+**geometry** | [**PBGeometry***](PBGeometry.md) |  | [optional] 
+**areaCodeInfoList** | [**NSArray&lt;PBAreaCodeInfo&gt;***](PBAreaCodeInfo.md) |  | [optional] 
+**matchedAddress** | [**PBAddress***](PBAddress.md) |  | [optional] 
+**match** | [**PBMatch***](PBMatch.md) |  | [optional] 
+**county** | [**PBCounty***](PBCounty.md) |  | [optional] 
 **count** | **NSNumber*** |  | [optional] 
 **productCode** | **NSString*** |  | [optional] 
 

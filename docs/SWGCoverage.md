@@ -1,4 +1,4 @@
-# SWGCoverage
+# PBCoverage
 
 ## Properties
 Name | Type | Description | Notes

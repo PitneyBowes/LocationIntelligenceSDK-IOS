@@ -1,9 +1,9 @@
-# SWGTravelBoundaries
+# PBTravelBoundaries
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**travelBoundary** | [**SWGTravelBoundary***](SWGTravelBoundary.md) |  | [optional] 
+**travelBoundary** | [**PBTravelBoundary***](PBTravelBoundary.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

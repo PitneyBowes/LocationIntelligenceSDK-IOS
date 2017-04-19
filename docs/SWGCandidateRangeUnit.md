@@ -1,4 +1,4 @@
-# SWGCandidateRangeUnit
+# PBCandidateRangeUnit
 
 ## Properties
 Name | Type | Description | Notes

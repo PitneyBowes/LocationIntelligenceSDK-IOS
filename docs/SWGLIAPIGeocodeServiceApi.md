@@ -1,15 +1,15 @@
-# SWGLIAPIGeocodeServiceApi
+# PBLIAPIGeocodeServiceApi
 
 All URIs are relative to *https://api.pitneybowes.com/location-intelligence*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**geocode**](SWGLIAPIGeocodeServiceApi.md#geocode) | **GET** /geocode-service/v1/transient/{datapackBundle}/geocode | Gets Geocode
-[**geocodeBatch**](SWGLIAPIGeocodeServiceApi.md#geocodebatch) | **POST** /geocode-service/v1/transient/{datapackBundle}/geocode | Gets Geocode
-[**geocodeServiceV1TransientDatapackBundleReverseGeocodePost**](SWGLIAPIGeocodeServiceApi.md#geocodeservicev1transientdatapackbundlereversegeocodepost) | **POST** /geocode-service/v1/transient/{datapackBundle}/reverseGeocode | reverse Geocode
-[**getCapabilities**](SWGLIAPIGeocodeServiceApi.md#getcapabilities) | **GET** /geocode-service/v1/transient/{datapackBundle}/capabilities | Gets Capabilities
-[**getDictionaries**](SWGLIAPIGeocodeServiceApi.md#getdictionaries) | **GET** /geocode-service/v1/transient/{datapackBundle}/dictionaries | Gets installed Dictionaries
-[**reverseGeocode**](SWGLIAPIGeocodeServiceApi.md#reversegeocode) | **GET** /geocode-service/v1/transient/{datapackBundle}/reverseGeocode | reverse Geocode
+[**geocode**](PBLIAPIGeocodeServiceApi.md#geocode) | **GET** /geocode-service/v1/transient/{datapackBundle}/geocode | Gets Geocode
+[**geocodeBatch**](PBLIAPIGeocodeServiceApi.md#geocodebatch) | **POST** /geocode-service/v1/transient/{datapackBundle}/geocode | Gets Geocode
+[**geocodeServiceV1TransientDatapackBundleReverseGeocodePost**](PBLIAPIGeocodeServiceApi.md#geocodeservicev1transientdatapackbundlereversegeocodepost) | **POST** /geocode-service/v1/transient/{datapackBundle}/reverseGeocode | reverse Geocode
+[**getCapabilities**](PBLIAPIGeocodeServiceApi.md#getcapabilities) | **GET** /geocode-service/v1/transient/{datapackBundle}/capabilities | Gets Capabilities
+[**getDictionaries**](PBLIAPIGeocodeServiceApi.md#getdictionaries) | **GET** /geocode-service/v1/transient/{datapackBundle}/dictionaries | Gets installed Dictionaries
+[**reverseGeocode**](PBLIAPIGeocodeServiceApi.md#reversegeocode) | **GET** /geocode-service/v1/transient/{datapackBundle}/reverseGeocode | reverse Geocode
 
 
 # **geocode**
@@ -32,7 +32,7 @@ Method | HTTP request | Description
     streetOffsetUnits: (NSString*) streetOffsetUnits
     cornerOffset: (NSNumber*) cornerOffset
     cornerOffsetUnits: (NSString*) cornerOffsetUnits
-        completionHandler: (void (^)(SWGGeocodeServiceResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBGeocodeServiceResponse* output, NSError* error)) handler;
 ```
 
 Gets Geocode
@@ -41,7 +41,7 @@ Gets Geocode
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -66,7 +66,7 @@ NSString* streetOffsetUnits = @"METERS"; // Specifies the unit of measurement fo
 NSNumber* cornerOffset = @7; // Specifies the distance to offset the street end points in street-level matching. (optional) (default to 7)
 NSString* cornerOffsetUnits = @"METERS"; // Specifies the unit of measurement for the corner offset. (optional) (default to METERS)
 
-SWGLIAPIGeocodeServiceApi*apiInstance = [[SWGLIAPIGeocodeServiceApi alloc] init];
+PBLIAPIGeocodeServiceApi*apiInstance = [[PBLIAPIGeocodeServiceApi alloc] init];
 
 // Gets Geocode
 [apiInstance geocodeWithDatapackBundle:datapackBundle
@@ -87,12 +87,12 @@ SWGLIAPIGeocodeServiceApi*apiInstance = [[SWGLIAPIGeocodeServiceApi alloc] init]
               streetOffsetUnits:streetOffsetUnits
               cornerOffset:cornerOffset
               cornerOffsetUnits:cornerOffsetUnits
-          completionHandler: ^(SWGGeocodeServiceResponse* output, NSError* error) {
+          completionHandler: ^(PBGeocodeServiceResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeocodeServiceApi->geocode: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeocodeServiceApi->geocode: %@", error);
                         }
                     }];
 ```
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGGeocodeServiceResponse***](SWGGeocodeServiceResponse.md)
+[**PBGeocodeServiceResponse***](PBGeocodeServiceResponse.md)
 
 ### Authorization
 
@@ -138,8 +138,8 @@ Name | Type | Description  | Notes
 # **geocodeBatch**
 ```objc
 -(NSNumber*) geocodeBatchWithDatapackBundle: (NSString*) datapackBundle
-    body: (SWGGeocodeRequest*) body
-        completionHandler: (void (^)(SWGGeocodeServiceResponseList* output, NSError* error)) handler;
+    body: (PBGeocodeRequest*) body
+        completionHandler: (void (^)(PBGeocodeServiceResponseList* output, NSError* error)) handler;
 ```
 
 Gets Geocode
@@ -148,26 +148,26 @@ Gets Geocode
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
 
 
 NSString* datapackBundle = @"datapackBundle_example"; // value of datapackBundle
-SWGGeocodeRequest* body = [[SWGGeocodeRequest alloc] init]; // Geocode Request Object (optional)
+PBGeocodeRequest* body = [[PBGeocodeRequest alloc] init]; // Geocode Request Object (optional)
 
-SWGLIAPIGeocodeServiceApi*apiInstance = [[SWGLIAPIGeocodeServiceApi alloc] init];
+PBLIAPIGeocodeServiceApi*apiInstance = [[PBLIAPIGeocodeServiceApi alloc] init];
 
 // Gets Geocode
 [apiInstance geocodeBatchWithDatapackBundle:datapackBundle
               body:body
-          completionHandler: ^(SWGGeocodeServiceResponseList* output, NSError* error) {
+          completionHandler: ^(PBGeocodeServiceResponseList* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeocodeServiceApi->geocodeBatch: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeocodeServiceApi->geocodeBatch: %@", error);
                         }
                     }];
 ```
@@ -177,11 +177,11 @@ SWGLIAPIGeocodeServiceApi*apiInstance = [[SWGLIAPIGeocodeServiceApi alloc] init]
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **datapackBundle** | **NSString***| value of datapackBundle | 
- **body** | [**SWGGeocodeRequest***](SWGGeocodeRequest*.md)| Geocode Request Object | [optional] 
+ **body** | [**PBGeocodeRequest***](PBGeocodeRequest*.md)| Geocode Request Object | [optional] 
 
 ### Return type
 
-[**SWGGeocodeServiceResponseList***](SWGGeocodeServiceResponseList.md)
+[**PBGeocodeServiceResponseList***](PBGeocodeServiceResponseList.md)
 
 ### Authorization
 
@@ -197,8 +197,8 @@ Name | Type | Description  | Notes
 # **geocodeServiceV1TransientDatapackBundleReverseGeocodePost**
 ```objc
 -(NSNumber*) geocodeServiceV1TransientDatapackBundleReverseGeocodePostWithDatapackBundle: (NSString*) datapackBundle
-    body: (SWGReverseGeocodeRequest*) body
-        completionHandler: (void (^)(SWGGeocodeServiceResponseList* output, NSError* error)) handler;
+    body: (PBReverseGeocodeRequest*) body
+        completionHandler: (void (^)(PBGeocodeServiceResponseList* output, NSError* error)) handler;
 ```
 
 reverse Geocode
@@ -207,26 +207,26 @@ reverse Geocode
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
 
 
 NSString* datapackBundle = @"datapackBundle_example"; // value of datapackBundle
-SWGReverseGeocodeRequest* body = [[SWGReverseGeocodeRequest alloc] init]; // Reverse Geocode Request object (optional)
+PBReverseGeocodeRequest* body = [[PBReverseGeocodeRequest alloc] init]; // Reverse Geocode Request object (optional)
 
-SWGLIAPIGeocodeServiceApi*apiInstance = [[SWGLIAPIGeocodeServiceApi alloc] init];
+PBLIAPIGeocodeServiceApi*apiInstance = [[PBLIAPIGeocodeServiceApi alloc] init];
 
 // reverse Geocode
 [apiInstance geocodeServiceV1TransientDatapackBundleReverseGeocodePostWithDatapackBundle:datapackBundle
               body:body
-          completionHandler: ^(SWGGeocodeServiceResponseList* output, NSError* error) {
+          completionHandler: ^(PBGeocodeServiceResponseList* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeocodeServiceApi->geocodeServiceV1TransientDatapackBundleReverseGeocodePost: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeocodeServiceApi->geocodeServiceV1TransientDatapackBundleReverseGeocodePost: %@", error);
                         }
                     }];
 ```
@@ -236,11 +236,11 @@ SWGLIAPIGeocodeServiceApi*apiInstance = [[SWGLIAPIGeocodeServiceApi alloc] init]
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **datapackBundle** | **NSString***| value of datapackBundle | 
- **body** | [**SWGReverseGeocodeRequest***](SWGReverseGeocodeRequest*.md)| Reverse Geocode Request object | [optional] 
+ **body** | [**PBReverseGeocodeRequest***](PBReverseGeocodeRequest*.md)| Reverse Geocode Request object | [optional] 
 
 ### Return type
 
-[**SWGGeocodeServiceResponseList***](SWGGeocodeServiceResponseList.md)
+[**PBGeocodeServiceResponseList***](PBGeocodeServiceResponseList.md)
 
 ### Authorization
 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 -(NSNumber*) getCapabilitiesWithDatapackBundle: (NSString*) datapackBundle
     operation: (NSString*) operation
     country: (NSString*) country
-        completionHandler: (void (^)(SWGGeocodeCapabilitiesResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBGeocodeCapabilitiesResponse* output, NSError* error)) handler;
 ```
 
 Gets Capabilities
@@ -267,7 +267,7 @@ Gets Capabilities
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -277,18 +277,18 @@ NSString* datapackBundle = @"datapackBundle_example"; // value of datapackBundle
 NSString* operation = @"geocode"; // Geocode or ReverseGeocode Operation. (optional) (default to geocode)
 NSString* country = @"USA"; // Country name or ISO code. (optional) (default to USA)
 
-SWGLIAPIGeocodeServiceApi*apiInstance = [[SWGLIAPIGeocodeServiceApi alloc] init];
+PBLIAPIGeocodeServiceApi*apiInstance = [[PBLIAPIGeocodeServiceApi alloc] init];
 
 // Gets Capabilities
 [apiInstance getCapabilitiesWithDatapackBundle:datapackBundle
               operation:operation
               country:country
-          completionHandler: ^(SWGGeocodeCapabilitiesResponse* output, NSError* error) {
+          completionHandler: ^(PBGeocodeCapabilitiesResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeocodeServiceApi->getCapabilities: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeocodeServiceApi->getCapabilities: %@", error);
                         }
                     }];
 ```
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGGeocodeCapabilitiesResponse***](SWGGeocodeCapabilitiesResponse.md)
+[**PBGeocodeCapabilitiesResponse***](PBGeocodeCapabilitiesResponse.md)
 
 ### Authorization
 
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) getDictionariesWithDatapackBundle: (NSString*) datapackBundle
     country: (NSString*) country
-        completionHandler: (void (^)(SWGConfiguredDictionaryResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBConfiguredDictionaryResponse* output, NSError* error)) handler;
 ```
 
 Gets installed Dictionaries
@@ -329,7 +329,7 @@ Gets installed Dictionaries
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -338,17 +338,17 @@ SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
 NSString* datapackBundle = @"datapackBundle_example"; // value of datapackBundle
 NSString* country = @"USA"; // Three Letter ISO Country code (optional) (default to USA)
 
-SWGLIAPIGeocodeServiceApi*apiInstance = [[SWGLIAPIGeocodeServiceApi alloc] init];
+PBLIAPIGeocodeServiceApi*apiInstance = [[PBLIAPIGeocodeServiceApi alloc] init];
 
 // Gets installed Dictionaries
 [apiInstance getDictionariesWithDatapackBundle:datapackBundle
               country:country
-          completionHandler: ^(SWGConfiguredDictionaryResponse* output, NSError* error) {
+          completionHandler: ^(PBConfiguredDictionaryResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeocodeServiceApi->getDictionaries: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeocodeServiceApi->getDictionaries: %@", error);
                         }
                     }];
 ```
@@ -362,7 +362,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGConfiguredDictionaryResponse***](SWGConfiguredDictionaryResponse.md)
+[**PBConfiguredDictionaryResponse***](PBConfiguredDictionaryResponse.md)
 
 ### Authorization
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
     coordSysName: (NSString*) coordSysName
     distance: (NSNumber*) distance
     distanceUnits: (NSString*) distanceUnits
-        completionHandler: (void (^)(SWGGeocodeServiceResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBGeocodeServiceResponse* output, NSError* error)) handler;
 ```
 
 reverse Geocode
@@ -393,7 +393,7 @@ reverse Geocode
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -407,7 +407,7 @@ NSString* coordSysName = @"EPSG:4326"; // Coordinate system to convert geometry 
 NSNumber* distance = @150; // Radius in which search is performed. (optional) (default to 150)
 NSString* distanceUnits = @"METERS"; // Unit of measurement for the search distance. (optional) (default to METERS)
 
-SWGLIAPIGeocodeServiceApi*apiInstance = [[SWGLIAPIGeocodeServiceApi alloc] init];
+PBLIAPIGeocodeServiceApi*apiInstance = [[PBLIAPIGeocodeServiceApi alloc] init];
 
 // reverse Geocode
 [apiInstance reverseGeocodeWithDatapackBundle:datapackBundle
@@ -417,12 +417,12 @@ SWGLIAPIGeocodeServiceApi*apiInstance = [[SWGLIAPIGeocodeServiceApi alloc] init]
               coordSysName:coordSysName
               distance:distance
               distanceUnits:distanceUnits
-          completionHandler: ^(SWGGeocodeServiceResponse* output, NSError* error) {
+          completionHandler: ^(PBGeocodeServiceResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeocodeServiceApi->reverseGeocode: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeocodeServiceApi->reverseGeocode: %@", error);
                         }
                     }];
 ```
@@ -441,7 +441,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGGeocodeServiceResponse***](SWGGeocodeServiceResponse.md)
+[**PBGeocodeServiceResponse***](PBGeocodeServiceResponse.md)
 
 ### Authorization
 

@@ -1,4 +1,4 @@
-# SWGContactPerson
+# PBContactPerson
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SWGRouteGeometry
+# PBRouteGeometry
 
 ## Properties
 Name | Type | Description | Notes

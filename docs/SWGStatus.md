@@ -1,4 +1,4 @@
-# SWGStatus
+# PBStatus
 
 ## Properties
 Name | Type | Description | Notes

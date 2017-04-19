@@ -1,4 +1,4 @@
-# SWGTaxAddress
+# PBTaxAddress
 
 ## Properties
 Name | Type | Description | Notes

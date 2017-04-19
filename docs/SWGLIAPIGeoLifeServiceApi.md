@@ -1,13 +1,13 @@
-# SWGLIAPIGeoLifeServiceApi
+# PBLIAPIGeoLifeServiceApi
 
 All URIs are relative to *https://api.pitneybowes.com/location-intelligence*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getDemographicsByAddress**](SWGLIAPIGeoLifeServiceApi.md#getdemographicsbyaddress) | **GET** /geolife/v1/demographics/byaddress | Demographics By Address.
-[**getDemographicsByLocation**](SWGLIAPIGeoLifeServiceApi.md#getdemographicsbylocation) | **GET** /geolife/v1/demographics/bylocation | Demographics By Location.
-[**getSegmentationByAddress**](SWGLIAPIGeoLifeServiceApi.md#getsegmentationbyaddress) | **GET** /geolife/v1/segmentation/byaddress | Segmentation By Address.
-[**getSegmentationByLocation**](SWGLIAPIGeoLifeServiceApi.md#getsegmentationbylocation) | **GET** /geolife/v1/segmentation/bylocation | Segmentation By Location.
+[**getDemographicsByAddress**](PBLIAPIGeoLifeServiceApi.md#getdemographicsbyaddress) | **GET** /geolife/v1/demographics/byaddress | Demographics By Address.
+[**getDemographicsByLocation**](PBLIAPIGeoLifeServiceApi.md#getdemographicsbylocation) | **GET** /geolife/v1/demographics/bylocation | Demographics By Location.
+[**getSegmentationByAddress**](PBLIAPIGeoLifeServiceApi.md#getsegmentationbyaddress) | **GET** /geolife/v1/segmentation/byaddress | Segmentation By Address.
+[**getSegmentationByLocation**](PBLIAPIGeoLifeServiceApi.md#getsegmentationbylocation) | **GET** /geolife/v1/segmentation/bylocation | Segmentation By Location.
 
 
 # **getDemographicsByAddress**
@@ -16,7 +16,7 @@ Method | HTTP request | Description
     profile: (NSString*) profile
     filter: (NSString*) filter
     country: (NSString*) country
-        completionHandler: (void (^)(SWGDemographics* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBDemographics* output, NSError* error)) handler;
 ```
 
 Demographics By Address.
@@ -25,7 +25,7 @@ Provides the demographic details around a specified address. GeoLife 'byaddress'
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -36,19 +36,19 @@ NSString* profile = @"profile_example"; // Retrieves the sorted demographic data
 NSString* filter = @"filter_example"; // The 'filter' parameter retrieves the demographic data based upon specified input themes. (optional)
 NSString* country = @"country_example"; // 3 letter ISO code of the country to be searched.Allowed values USA,CAN,GBR,FRA,IND,ITA,AUS,DEU. (optional)
 
-SWGLIAPIGeoLifeServiceApi*apiInstance = [[SWGLIAPIGeoLifeServiceApi alloc] init];
+PBLIAPIGeoLifeServiceApi*apiInstance = [[PBLIAPIGeoLifeServiceApi alloc] init];
 
 // Demographics By Address.
 [apiInstance getDemographicsByAddressWithAddress:address
               profile:profile
               filter:filter
               country:country
-          completionHandler: ^(SWGDemographics* output, NSError* error) {
+          completionHandler: ^(PBDemographics* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoLifeServiceApi->getDemographicsByAddress: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoLifeServiceApi->getDemographicsByAddress: %@", error);
                         }
                     }];
 ```
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGDemographics***](SWGDemographics.md)
+[**PBDemographics***](PBDemographics.md)
 
 ### Authorization
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
     latitude: (NSString*) latitude
     profile: (NSString*) profile
     filter: (NSString*) filter
-        completionHandler: (void (^)(SWGDemographics* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBDemographics* output, NSError* error)) handler;
 ```
 
 Demographics By Location.
@@ -92,7 +92,7 @@ Provides the demographic details around a specified location. GeoLife 'bylocatio
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -103,19 +103,19 @@ NSString* latitude = @"latitude_example"; // Latitude of the location.
 NSString* profile = @"profile_example"; // Retrieves the sorted demographic data on the basis of pre-defined profiles that can display the top 3 or top 5 results (by address) either in ascending or descending order.Allowed values Top5Ascending,Top5Descending,Top3Ascending,Top3Descending (optional)
 NSString* filter = @"filter_example"; // The 'filter' parameter retrieves the demographic data based upon specified input themes. (optional)
 
-SWGLIAPIGeoLifeServiceApi*apiInstance = [[SWGLIAPIGeoLifeServiceApi alloc] init];
+PBLIAPIGeoLifeServiceApi*apiInstance = [[PBLIAPIGeoLifeServiceApi alloc] init];
 
 // Demographics By Location.
 [apiInstance getDemographicsByLocationWithLongitude:longitude
               latitude:latitude
               profile:profile
               filter:filter
-          completionHandler: ^(SWGDemographics* output, NSError* error) {
+          completionHandler: ^(PBDemographics* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoLifeServiceApi->getDemographicsByLocation: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoLifeServiceApi->getDemographicsByLocation: %@", error);
                         }
                     }];
 ```
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGDemographics***](SWGDemographics.md)
+[**PBDemographics***](PBDemographics.md)
 
 ### Authorization
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) getSegmentationByAddressWithAddress: (NSString*) address
     country: (NSString*) country
-        completionHandler: (void (^)(SWGSegmentation* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBSegmentation* output, NSError* error)) handler;
 ```
 
 Segmentation By Address.
@@ -157,7 +157,7 @@ Provides the segmentation details around a specified address. GeoLife 'Segmentat
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -166,17 +166,17 @@ SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
 NSString* address = @"address_example"; // The address to be searched.
 NSString* country = @"country_example"; // 3 letter ISO code of the country to be searched.Allowed values USA,CAN,GBR,FRA,ITA,AUS,DEU. (optional)
 
-SWGLIAPIGeoLifeServiceApi*apiInstance = [[SWGLIAPIGeoLifeServiceApi alloc] init];
+PBLIAPIGeoLifeServiceApi*apiInstance = [[PBLIAPIGeoLifeServiceApi alloc] init];
 
 // Segmentation By Address.
 [apiInstance getSegmentationByAddressWithAddress:address
               country:country
-          completionHandler: ^(SWGSegmentation* output, NSError* error) {
+          completionHandler: ^(PBSegmentation* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoLifeServiceApi->getSegmentationByAddress: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoLifeServiceApi->getSegmentationByAddress: %@", error);
                         }
                     }];
 ```
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGSegmentation***](SWGSegmentation.md)
+[**PBSegmentation***](PBSegmentation.md)
 
 ### Authorization
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) getSegmentationByLocationWithLongitude: (NSString*) longitude
     latitude: (NSString*) latitude
-        completionHandler: (void (^)(SWGSegmentation* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBSegmentation* output, NSError* error)) handler;
 ```
 
 Segmentation By Location.
@@ -216,7 +216,7 @@ Provides the segmentation details around a specified location. GeoLife 'segmenta
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -225,17 +225,17 @@ SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
 NSString* longitude = @"longitude_example"; // Longitude of the location.
 NSString* latitude = @"latitude_example"; // Latitude of the location.
 
-SWGLIAPIGeoLifeServiceApi*apiInstance = [[SWGLIAPIGeoLifeServiceApi alloc] init];
+PBLIAPIGeoLifeServiceApi*apiInstance = [[PBLIAPIGeoLifeServiceApi alloc] init];
 
 // Segmentation By Location.
 [apiInstance getSegmentationByLocationWithLongitude:longitude
               latitude:latitude
-          completionHandler: ^(SWGSegmentation* output, NSError* error) {
+          completionHandler: ^(PBSegmentation* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoLifeServiceApi->getSegmentationByLocation: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoLifeServiceApi->getSegmentationByLocation: %@", error);
                         }
                     }];
 ```
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGSegmentation***](SWGSegmentation.md)
+[**PBSegmentation***](PBSegmentation.md)
 
 ### Authorization
 

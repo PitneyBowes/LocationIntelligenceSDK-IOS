@@ -1,4 +1,4 @@
-# SWGAddress
+# PBAddress
 
 ## Properties
 Name | Type | Description | Notes

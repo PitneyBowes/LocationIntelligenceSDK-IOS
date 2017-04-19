@@ -1,4 +1,4 @@
-# SWGInputParameter
+# PBInputParameter
 
 ## Properties
 Name | Type | Description | Notes

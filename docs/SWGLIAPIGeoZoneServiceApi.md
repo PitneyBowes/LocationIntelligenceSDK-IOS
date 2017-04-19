@@ -1,11 +1,11 @@
-# SWGLIAPIGeoZoneServiceApi
+# PBLIAPIGeoZoneServiceApi
 
 All URIs are relative to *https://api.pitneybowes.com/location-intelligence*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getTravelBoundaryByDistance**](SWGLIAPIGeoZoneServiceApi.md#gettravelboundarybydistance) | **GET** /geozone/v1/travelboundary/bydistance | Gets travel Boundary by Distance
-[**getTravelBoundaryByTime**](SWGLIAPIGeoZoneServiceApi.md#gettravelboundarybytime) | **GET** /geozone/v1/travelboundary/bytime | Gets travel Boundary by Time
+[**getTravelBoundaryByDistance**](PBLIAPIGeoZoneServiceApi.md#gettravelboundarybydistance) | **GET** /geozone/v1/travelboundary/bydistance | Gets travel Boundary by Distance
+[**getTravelBoundaryByTime**](PBLIAPIGeoZoneServiceApi.md#gettravelboundarybytime) | **GET** /geozone/v1/travelboundary/bytime | Gets travel Boundary by Time
 
 
 # **getTravelBoundaryByDistance**
@@ -25,7 +25,7 @@ Method | HTTP request | Description
     simplificationFactor: (NSString*) simplificationFactor
     bandingStyle: (NSString*) bandingStyle
     historicTrafficTimeBucket: (NSString*) historicTrafficTimeBucket
-        completionHandler: (void (^)(SWGTravelBoundaries* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBTravelBoundaries* output, NSError* error)) handler;
 ```
 
 Gets travel Boundary by Distance
@@ -34,7 +34,7 @@ Returns the travel boundary based on travel distance.
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -56,7 +56,7 @@ NSString* simplificationFactor = @"0.5"; // Number between 0.0 and 1.0 where 0.0
 NSString* bandingStyle = @"Donut"; // Style of banding to be used in the result. (optional) (default to Donut)
 NSString* historicTrafficTimeBucket = @"None"; // Whether routing calculation uses the historic traffic speeds. (optional) (default to None)
 
-SWGLIAPIGeoZoneServiceApi*apiInstance = [[SWGLIAPIGeoZoneServiceApi alloc] init];
+PBLIAPIGeoZoneServiceApi*apiInstance = [[PBLIAPIGeoZoneServiceApi alloc] init];
 
 // Gets travel Boundary by Distance
 [apiInstance getTravelBoundaryByDistanceWithCosts:costs
@@ -74,12 +74,12 @@ SWGLIAPIGeoZoneServiceApi*apiInstance = [[SWGLIAPIGeoZoneServiceApi alloc] init]
               simplificationFactor:simplificationFactor
               bandingStyle:bandingStyle
               historicTrafficTimeBucket:historicTrafficTimeBucket
-          completionHandler: ^(SWGTravelBoundaries* output, NSError* error) {
+          completionHandler: ^(PBTravelBoundaries* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoZoneServiceApi->getTravelBoundaryByDistance: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoZoneServiceApi->getTravelBoundaryByDistance: %@", error);
                         }
                     }];
 ```
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGTravelBoundaries***](SWGTravelBoundaries.md)
+[**PBTravelBoundaries***](PBTravelBoundaries.md)
 
 ### Authorization
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
     simplificationFactor: (NSString*) simplificationFactor
     bandingStyle: (NSString*) bandingStyle
     historicTrafficTimeBucket: (NSString*) historicTrafficTimeBucket
-        completionHandler: (void (^)(SWGTravelBoundaries* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBTravelBoundaries* output, NSError* error)) handler;
 ```
 
 Gets travel Boundary by Time
@@ -145,7 +145,7 @@ Travel boundary based on travel time.
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -167,7 +167,7 @@ NSString* simplificationFactor = @"0.5"; // Number between 0.0 and 1.0 where 0.0
 NSString* bandingStyle = @"Donut"; // Style of banding to be used in the result. (optional) (default to Donut)
 NSString* historicTrafficTimeBucket = @"None"; // Whether routing calculation uses the historic traffic speeds. (optional) (default to None)
 
-SWGLIAPIGeoZoneServiceApi*apiInstance = [[SWGLIAPIGeoZoneServiceApi alloc] init];
+PBLIAPIGeoZoneServiceApi*apiInstance = [[PBLIAPIGeoZoneServiceApi alloc] init];
 
 // Gets travel Boundary by Time
 [apiInstance getTravelBoundaryByTimeWithCosts:costs
@@ -185,12 +185,12 @@ SWGLIAPIGeoZoneServiceApi*apiInstance = [[SWGLIAPIGeoZoneServiceApi alloc] init]
               simplificationFactor:simplificationFactor
               bandingStyle:bandingStyle
               historicTrafficTimeBucket:historicTrafficTimeBucket
-          completionHandler: ^(SWGTravelBoundaries* output, NSError* error) {
+          completionHandler: ^(PBTravelBoundaries* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoZoneServiceApi->getTravelBoundaryByTime: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoZoneServiceApi->getTravelBoundaryByTime: %@", error);
                         }
                     }];
 ```
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGTravelBoundaries***](SWGTravelBoundaries.md)
+[**PBTravelBoundaries***](PBTravelBoundaries.md)
 
 ### Authorization
 

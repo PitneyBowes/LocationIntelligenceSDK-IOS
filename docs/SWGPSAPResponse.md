@@ -1,4 +1,4 @@
-# SWGPSAPResponse
+# PBPSAPResponse
 
 ## Properties
 Name | Type | Description | Notes
@@ -8,11 +8,11 @@ Name | Type | Description | Notes
 **count** | **NSNumber*** |  | [optional] 
 **agency** | **NSString*** |  | [optional] 
 **phone** | **NSString*** |  | [optional] 
-**county** | [**SWGCounty***](SWGCounty.md) |  | [optional] 
-**coverage** | [**SWGCoverage***](SWGCoverage.md) |  | [optional] 
-**contactPerson** | [**SWGContactPerson***](SWGContactPerson.md) |  | [optional] 
-**siteDetails** | [**SWGSiteDetails***](SWGSiteDetails.md) |  | [optional] 
-**mailingAddress** | [**SWGAddress***](SWGAddress.md) |  | [optional] 
+**county** | [**PBCounty***](PBCounty.md) |  | [optional] 
+**coverage** | [**PBCoverage***](PBCoverage.md) |  | [optional] 
+**contactPerson** | [**PBContactPerson***](PBContactPerson.md) |  | [optional] 
+**siteDetails** | [**PBSiteDetails***](PBSiteDetails.md) |  | [optional] 
+**mailingAddress** | [**PBAddress***](PBAddress.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

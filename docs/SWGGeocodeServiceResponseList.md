@@ -1,9 +1,9 @@
-# SWGGeocodeServiceResponseList
+# PBGeocodeServiceResponseList
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**responses** | [**NSArray&lt;SWGGeocodeServiceResponse&gt;***](SWGGeocodeServiceResponse.md) |  | [optional] 
+**responses** | [**NSArray&lt;PBGeocodeServiceResponse&gt;***](PBGeocodeServiceResponse.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

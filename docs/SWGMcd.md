@@ -1,4 +1,4 @@
-# SWGMcd
+# PBMcd
 
 ## Properties
 Name | Type | Description | Notes

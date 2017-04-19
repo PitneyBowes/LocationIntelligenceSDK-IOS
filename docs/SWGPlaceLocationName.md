@@ -1,4 +1,4 @@
-# SWGPlaceLocationName
+# PBPlaceLocationName
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SWGFireDepartment
+# PBFireDepartment
 
 ## Properties
 Name | Type | Description | Notes
@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **type** | **NSString*** |  | [optional] 
 **numberOfStations** | **NSNumber*** |  | [optional] 
 **administrativeOfficeOnly** | **NSNumber*** |  | [optional] [default to @0]
-**contactDetails** | [**SWGContactDetails***](SWGContactDetails.md) |  | [optional] 
+**contactDetails** | [**PBContactDetails***](PBContactDetails.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

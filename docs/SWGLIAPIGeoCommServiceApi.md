@@ -1,11 +1,11 @@
-# SWGLIAPIGeoCommServiceApi
+# PBLIAPIGeoCommServiceApi
 
 All URIs are relative to *https://api.pitneybowes.com/location-intelligence*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getRateCenterByAddress**](SWGLIAPIGeoCommServiceApi.md#getratecenterbyaddress) | **GET** /geocomm/v1/ratecenter/byaddress | Rate Center By Address.
-[**getRateCenterByLocation**](SWGLIAPIGeoCommServiceApi.md#getratecenterbylocation) | **GET** /geocomm/v1/ratecenter/bylocation | Rate Center By Location.
+[**getRateCenterByAddress**](PBLIAPIGeoCommServiceApi.md#getratecenterbyaddress) | **GET** /geocomm/v1/ratecenter/byaddress | Rate Center By Address.
+[**getRateCenterByLocation**](PBLIAPIGeoCommServiceApi.md#getratecenterbylocation) | **GET** /geocomm/v1/ratecenter/bylocation | Rate Center By Location.
 
 
 # **getRateCenterByAddress**
@@ -14,7 +14,7 @@ Method | HTTP request | Description
     country: (NSString*) country
     areaCodeInfo: (NSString*) areaCodeInfo
     level: (NSString*) level
-        completionHandler: (void (^)(SWGRateCenterResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBRateCenterResponse* output, NSError* error)) handler;
 ```
 
 Rate Center By Address.
@@ -23,7 +23,7 @@ Accepts addresses as input and returns Incumbent Local Exchange Carrier (ILEC) d
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -34,19 +34,19 @@ NSString* country = @"USA"; // 3 letter ISO code of the country to be searched. 
 NSString* areaCodeInfo = @"False"; // Specifies whether area code information will be part of response.Allowed values True,False (optional) (default to False)
 NSString* level = @"basic"; // Level (basic/detail).Allowed values detail,basic. (optional) (default to basic)
 
-SWGLIAPIGeoCommServiceApi*apiInstance = [[SWGLIAPIGeoCommServiceApi alloc] init];
+PBLIAPIGeoCommServiceApi*apiInstance = [[PBLIAPIGeoCommServiceApi alloc] init];
 
 // Rate Center By Address.
 [apiInstance getRateCenterByAddressWithAddress:address
               country:country
               areaCodeInfo:areaCodeInfo
               level:level
-          completionHandler: ^(SWGRateCenterResponse* output, NSError* error) {
+          completionHandler: ^(PBRateCenterResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoCommServiceApi->getRateCenterByAddress: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoCommServiceApi->getRateCenterByAddress: %@", error);
                         }
                     }];
 ```
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGRateCenterResponse***](SWGRateCenterResponse.md)
+[**PBRateCenterResponse***](PBRateCenterResponse.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
     latitude: (NSString*) latitude
     areaCodeInfo: (NSString*) areaCodeInfo
     level: (NSString*) level
-        completionHandler: (void (^)(SWGRateCenterResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBRateCenterResponse* output, NSError* error)) handler;
 ```
 
 Rate Center By Location.
@@ -90,7 +90,7 @@ Accepts latitude & longitude as input and returns Incumbent Local Exchange Carri
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -101,19 +101,19 @@ NSString* latitude = @"latitude_example"; // Latitude of the location.
 NSString* areaCodeInfo = @"False"; // Specifies whether area code information will be part of response.Allowed values True,False. (optional) (default to False)
 NSString* level = @"basic"; // Level (basic/detail).Allowed values detail,basic. (optional) (default to basic)
 
-SWGLIAPIGeoCommServiceApi*apiInstance = [[SWGLIAPIGeoCommServiceApi alloc] init];
+PBLIAPIGeoCommServiceApi*apiInstance = [[PBLIAPIGeoCommServiceApi alloc] init];
 
 // Rate Center By Location.
 [apiInstance getRateCenterByLocationWithLongitude:longitude
               latitude:latitude
               areaCodeInfo:areaCodeInfo
               level:level
-          completionHandler: ^(SWGRateCenterResponse* output, NSError* error) {
+          completionHandler: ^(PBRateCenterResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoCommServiceApi->getRateCenterByLocation: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoCommServiceApi->getRateCenterByLocation: %@", error);
                         }
                     }];
 ```
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGRateCenterResponse***](SWGRateCenterResponse.md)
+[**PBRateCenterResponse***](PBRateCenterResponse.md)
 
 ### Authorization
 

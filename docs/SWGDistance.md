@@ -1,4 +1,4 @@
-# SWGDistance
+# PBDistance
 
 ## Properties
 Name | Type | Description | Notes

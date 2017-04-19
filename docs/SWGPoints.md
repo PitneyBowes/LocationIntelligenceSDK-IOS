@@ -1,10 +1,10 @@
-# SWGPoints
+# PBPoints
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **country** | **NSString*** |  | [optional] 
-**geometry** | [**SWGGeoPos***](SWGGeoPos.md) |  | 
+**geometry** | [**PBGeoPos***](PBGeoPos.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

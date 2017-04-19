@@ -1,4 +1,4 @@
-# SWGRouteDirection
+# PBRouteDirection
 
 ## Properties
 Name | Type | Description | Notes
@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **timeUnit** | **NSString*** |  | [optional] 
 **time** | **NSNumber*** |  | [optional] 
 **instruction** | **NSString*** |  | [optional] 
-**directionGeometry** | [**SWGRouteGeometry***](SWGRouteGeometry.md) |  | [optional] 
+**directionGeometry** | [**PBRouteGeometry***](PBRouteGeometry.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,4 +1,4 @@
-# SWGCandidate
+# PBCandidate
 
 ## Properties
 Name | Type | Description | Notes
@@ -9,10 +9,10 @@ Name | Type | Description | Notes
 **identifier** | **NSString*** |  | [optional] 
 **precisionCode** | **NSString*** |  | [optional] 
 **sourceDictionary** | **NSString*** |  | [optional] 
-**matching** | [**SWGFieldsMatching***](SWGFieldsMatching.md) |  | [optional] 
-**geometry** | [**SWGGeoPos***](SWGGeoPos.md) |  | [optional] 
-**address** | [**SWGGeocodeAddress***](SWGGeocodeAddress.md) |  | [optional] 
-**ranges** | [**NSArray&lt;SWGCandidateRange&gt;***](SWGCandidateRange.md) |  | [optional] 
+**matching** | [**PBFieldsMatching***](PBFieldsMatching.md) |  | [optional] 
+**geometry** | [**PBGeoPos***](PBGeoPos.md) |  | [optional] 
+**address** | [**PBGeocodeAddress***](PBGeocodeAddress.md) |  | [optional] 
+**ranges** | [**NSArray&lt;PBCandidateRange&gt;***](PBCandidateRange.md) |  | [optional] 
 **worldGeocoded** | **NSNumber*** |  | [optional] [default to @0]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,4 +1,4 @@
-# SWGName
+# PBName
 
 ## Properties
 Name | Type | Description | Notes

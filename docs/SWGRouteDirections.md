@@ -1,4 +1,4 @@
-# SWGRouteDirections
+# PBRouteDirections
 
 ## Properties
 Name | Type | Description | Notes

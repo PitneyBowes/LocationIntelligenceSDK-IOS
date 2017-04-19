@@ -1,4 +1,4 @@
-# SWGTravelCostMatrixResponseEndPointCrsProperties
+# PBTravelCostMatrixResponseEndPointCrsProperties
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SWGState
+# PBState
 
 ## Properties
 Name | Type | Description | Notes

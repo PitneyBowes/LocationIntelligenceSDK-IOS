@@ -1,4 +1,4 @@
-# SWGCrimeBoundary
+# PBCrimeBoundary
 
 ## Properties
 Name | Type | Description | Notes

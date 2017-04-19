@@ -1,4 +1,4 @@
-# SWGGeometry
+# PBGeometry
 
 ## Properties
 Name | Type | Description | Notes

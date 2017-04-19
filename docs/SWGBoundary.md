@@ -1,9 +1,9 @@
-# SWGBoundary
+# PBBoundary
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**geometry** | [**SWGGeometryPolygon***](SWGGeometryPolygon.md) |  | [optional] 
+**geometry** | [**PBGeometryPolygon***](PBGeometryPolygon.md) |  | [optional] 
 **boundaryId** | **NSString*** |  | [optional] 
 **boundaryType** | **NSString*** |  | [optional] 
 **url** | **NSString*** |  | [optional] 

@@ -1,9 +1,9 @@
-# SWGContactDetails
+# PBContactDetails
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | [**SWGAddress***](SWGAddress.md) |  | [optional] 
+**address** | [**PBAddress***](PBAddress.md) |  | [optional] 
 **phone** | **NSString*** |  | [optional] 
 **fax** | **NSString*** |  | [optional] 
 **email** | **NSString*** |  | [optional] 

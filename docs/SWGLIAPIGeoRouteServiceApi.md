@@ -1,13 +1,13 @@
-# SWGLIAPIGeoRouteServiceApi
+# PBLIAPIGeoRouteServiceApi
 
 All URIs are relative to *https://api.pitneybowes.com/location-intelligence*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getRouteByAddress**](SWGLIAPIGeoRouteServiceApi.md#getroutebyaddress) | **GET** /georoute/v1/route/byaddress | Gets Route by Address
-[**getRouteByLocation**](SWGLIAPIGeoRouteServiceApi.md#getroutebylocation) | **GET** /georoute/v1/route/bylocation | Gets Route by Location
-[**getTravelCostMatrixByAddress**](SWGLIAPIGeoRouteServiceApi.md#gettravelcostmatrixbyaddress) | **GET** /georoute/v1/travelcostmatrix/byaddress | Gets Cost Matrix by Address
-[**getTravelCostMatrixByLocation**](SWGLIAPIGeoRouteServiceApi.md#gettravelcostmatrixbylocation) | **GET** /georoute/v1/travelcostmatrix/bylocation | Gets Cost Matrix by Location
+[**getRouteByAddress**](PBLIAPIGeoRouteServiceApi.md#getroutebyaddress) | **GET** /georoute/v1/route/byaddress | Gets Route by Address
+[**getRouteByLocation**](PBLIAPIGeoRouteServiceApi.md#getroutebylocation) | **GET** /georoute/v1/route/bylocation | Gets Route by Location
+[**getTravelCostMatrixByAddress**](PBLIAPIGeoRouteServiceApi.md#gettravelcostmatrixbyaddress) | **GET** /georoute/v1/travelcostmatrix/byaddress | Gets Cost Matrix by Address
+[**getTravelCostMatrixByLocation**](PBLIAPIGeoRouteServiceApi.md#gettravelcostmatrixbylocation) | **GET** /georoute/v1/travelcostmatrix/bylocation | Gets Cost Matrix by Location
 
 
 # **getRouteByAddress**
@@ -31,7 +31,7 @@ Method | HTTP request | Description
     majorRoads: (NSString*) majorRoads
     historicTrafficTimeBucket: (NSString*) historicTrafficTimeBucket
     returnDirectionGeometry: (NSString*) returnDirectionGeometry
-        completionHandler: (void (^)(SWGGeoRouteResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBGeoRouteResponse* output, NSError* error)) handler;
 ```
 
 Gets Route by Address
@@ -40,7 +40,7 @@ Routing Directions for Single and Multiple Origin & Destination Inputs. Accepts 
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -66,7 +66,7 @@ NSString* majorRoads = @"false"; // Whether to include all roads in route calcul
 NSString* historicTrafficTimeBucket = @"None"; // Specifies whether routing calculation uses the historic traffic speeds. (optional) (default to None)
 NSString* returnDirectionGeometry = @"false"; // Whether to include geometry associated with each route instruction in response. (optional) (default to false)
 
-SWGLIAPIGeoRouteServiceApi*apiInstance = [[SWGLIAPIGeoRouteServiceApi alloc] init];
+PBLIAPIGeoRouteServiceApi*apiInstance = [[PBLIAPIGeoRouteServiceApi alloc] init];
 
 // Gets Route by Address
 [apiInstance getRouteByAddressWithStartAddress:startAddress
@@ -88,12 +88,12 @@ SWGLIAPIGeoRouteServiceApi*apiInstance = [[SWGLIAPIGeoRouteServiceApi alloc] ini
               majorRoads:majorRoads
               historicTrafficTimeBucket:historicTrafficTimeBucket
               returnDirectionGeometry:returnDirectionGeometry
-          completionHandler: ^(SWGGeoRouteResponse* output, NSError* error) {
+          completionHandler: ^(PBGeoRouteResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoRouteServiceApi->getRouteByAddress: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoRouteServiceApi->getRouteByAddress: %@", error);
                         }
                     }];
 ```
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGGeoRouteResponse***](SWGGeoRouteResponse.md)
+[**PBGeoRouteResponse***](PBGeoRouteResponse.md)
 
 ### Authorization
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
     majorRoads: (NSString*) majorRoads
     historicTrafficTimeBucket: (NSString*) historicTrafficTimeBucket
     returnDirectionGeometry: (NSString*) returnDirectionGeometry
-        completionHandler: (void (^)(SWGGeoRouteResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBGeoRouteResponse* output, NSError* error)) handler;
 ```
 
 Gets Route by Location
@@ -166,7 +166,7 @@ Returns the fastest or shortest route based on a starting and ending location wi
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -191,7 +191,7 @@ NSString* majorRoads = @"false"; // Whether to include all roads in route calcul
 NSString* historicTrafficTimeBucket = @"None"; // Specifies whether routing calculation uses the historic traffic speeds. (optional) (default to None)
 NSString* returnDirectionGeometry = @"false"; // Whether to include geometry associated with each route instruction in response. (optional) (default to false)
 
-SWGLIAPIGeoRouteServiceApi*apiInstance = [[SWGLIAPIGeoRouteServiceApi alloc] init];
+PBLIAPIGeoRouteServiceApi*apiInstance = [[PBLIAPIGeoRouteServiceApi alloc] init];
 
 // Gets Route by Location
 [apiInstance getRouteByLocationWithStartPoint:startPoint
@@ -212,12 +212,12 @@ SWGLIAPIGeoRouteServiceApi*apiInstance = [[SWGLIAPIGeoRouteServiceApi alloc] ini
               majorRoads:majorRoads
               historicTrafficTimeBucket:historicTrafficTimeBucket
               returnDirectionGeometry:returnDirectionGeometry
-          completionHandler: ^(SWGGeoRouteResponse* output, NSError* error) {
+          completionHandler: ^(PBGeoRouteResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoRouteServiceApi->getRouteByLocation: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoRouteServiceApi->getRouteByLocation: %@", error);
                         }
                     }];
 ```
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGGeoRouteResponse***](SWGGeoRouteResponse.md)
+[**PBGeoRouteResponse***](PBGeoRouteResponse.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
     majorRoads: (NSString*) majorRoads
     returnOptimalRoutesOnly: (NSString*) returnOptimalRoutesOnly
     historicTrafficTimeBucket: (NSString*) historicTrafficTimeBucket
-        completionHandler: (void (^)(SWGTravelCostMatrixResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBTravelCostMatrixResponse* output, NSError* error)) handler;
 ```
 
 Gets Cost Matrix by Address
@@ -284,7 +284,7 @@ Calculates the travel time and distances between an array of start and end addre
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -304,7 +304,7 @@ NSString* majorRoads = @"false"; // Whether to include all roads in routes calcu
 NSString* returnOptimalRoutesOnly = @"true"; // Specifies whether to return only the optimized route for each start and end point combination. (optional) (default to true)
 NSString* historicTrafficTimeBucket = @"None"; // Specifies whether routing calculation uses the historic traffic speeds. (optional) (default to None)
 
-SWGLIAPIGeoRouteServiceApi*apiInstance = [[SWGLIAPIGeoRouteServiceApi alloc] init];
+PBLIAPIGeoRouteServiceApi*apiInstance = [[PBLIAPIGeoRouteServiceApi alloc] init];
 
 // Gets Cost Matrix by Address
 [apiInstance getTravelCostMatrixByAddressWithStartAddresses:startAddresses
@@ -320,12 +320,12 @@ SWGLIAPIGeoRouteServiceApi*apiInstance = [[SWGLIAPIGeoRouteServiceApi alloc] ini
               majorRoads:majorRoads
               returnOptimalRoutesOnly:returnOptimalRoutesOnly
               historicTrafficTimeBucket:historicTrafficTimeBucket
-          completionHandler: ^(SWGTravelCostMatrixResponse* output, NSError* error) {
+          completionHandler: ^(PBTravelCostMatrixResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoRouteServiceApi->getTravelCostMatrixByAddress: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoRouteServiceApi->getTravelCostMatrixByAddress: %@", error);
                         }
                     }];
 ```
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGTravelCostMatrixResponse***](SWGTravelCostMatrixResponse.md)
+[**PBTravelCostMatrixResponse***](PBTravelCostMatrixResponse.md)
 
 ### Authorization
 
@@ -377,7 +377,7 @@ Name | Type | Description  | Notes
     majorRoads: (NSString*) majorRoads
     returnOptimalRoutesOnly: (NSString*) returnOptimalRoutesOnly
     historicTrafficTimeBucket: (NSString*) historicTrafficTimeBucket
-        completionHandler: (void (^)(SWGTravelCostMatrixResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBTravelCostMatrixResponse* output, NSError* error)) handler;
 ```
 
 Gets Cost Matrix by Location
@@ -386,7 +386,7 @@ GeoRoute's 'Travel Cost Matrix By Location' service calculates the travel time a
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -405,7 +405,7 @@ NSString* majorRoads = @"false"; // Whether to include all roads in routes calcu
 NSString* returnOptimalRoutesOnly = @"true"; // Specifies whether to return only the optimized route for each start and end point combination. (optional) (default to true)
 NSString* historicTrafficTimeBucket = @"None"; // Specifies whether routing calculation uses the historic traffic speeds. (optional) (default to None)
 
-SWGLIAPIGeoRouteServiceApi*apiInstance = [[SWGLIAPIGeoRouteServiceApi alloc] init];
+PBLIAPIGeoRouteServiceApi*apiInstance = [[PBLIAPIGeoRouteServiceApi alloc] init];
 
 // Gets Cost Matrix by Location
 [apiInstance getTravelCostMatrixByLocationWithStartPoints:startPoints
@@ -420,12 +420,12 @@ SWGLIAPIGeoRouteServiceApi*apiInstance = [[SWGLIAPIGeoRouteServiceApi alloc] ini
               majorRoads:majorRoads
               returnOptimalRoutesOnly:returnOptimalRoutesOnly
               historicTrafficTimeBucket:historicTrafficTimeBucket
-          completionHandler: ^(SWGTravelCostMatrixResponse* output, NSError* error) {
+          completionHandler: ^(PBTravelCostMatrixResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoRouteServiceApi->getTravelCostMatrixByLocation: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoRouteServiceApi->getTravelCostMatrixByLocation: %@", error);
                         }
                     }];
 ```
@@ -449,7 +449,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGTravelCostMatrixResponse***](SWGTravelCostMatrixResponse.md)
+[**PBTravelCostMatrixResponse***](PBTravelCostMatrixResponse.md)
 
 ### Authorization
 

@@ -1,4 +1,4 @@
-# SWGTime
+# PBTime
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SWGTimezone
+# PBTimezone
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,10 +1,10 @@
-# SWGAHJPlusPSAPResponse
+# PBAHJPlusPSAPResponse
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ahjs** | [**SWGAHJList***](SWGAHJList.md) |  | [optional] 
-**psap** | [**SWGPSAPResponse***](SWGPSAPResponse.md) |  | [optional] 
+**ahjs** | [**PBAHJList***](PBAHJList.md) |  | [optional] 
+**psap** | [**PBPSAPResponse***](PBPSAPResponse.md) |  | [optional] 
 **count** | **NSNumber*** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

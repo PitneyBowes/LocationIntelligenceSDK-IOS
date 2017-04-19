@@ -1,4 +1,4 @@
-# SWGOutputParameter
+# PBOutputParameter
 
 ## Properties
 Name | Type | Description | Notes

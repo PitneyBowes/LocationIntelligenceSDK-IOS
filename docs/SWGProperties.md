@@ -1,4 +1,4 @@
-# SWGProperties
+# PBProperties
 
 ## Properties
 Name | Type | Description | Notes

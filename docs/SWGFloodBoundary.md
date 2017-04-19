@@ -1,4 +1,4 @@
-# SWGFloodBoundary
+# PBFloodBoundary
 
 ## Properties
 Name | Type | Description | Notes

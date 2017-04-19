@@ -1,4 +1,4 @@
-# SWGLatLongFields
+# PBLatLongFields
 
 ## Properties
 Name | Type | Description | Notes
@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **matchLevel** | **NSString*** |  | [optional] 
 **streetMatchCode** | **NSString*** |  | [optional] 
 **streetMatchLevel** | **NSString*** |  | [optional] 
-**geometry** | [**SWGGeometry***](SWGGeometry.md) |  | [optional] 
+**geometry** | [**PBGeometry***](PBGeometry.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

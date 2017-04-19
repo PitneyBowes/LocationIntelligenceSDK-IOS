@@ -1,4 +1,4 @@
-# SWGEventsCount
+# PBEventsCount
 
 ## Properties
 Name | Type | Description | Notes

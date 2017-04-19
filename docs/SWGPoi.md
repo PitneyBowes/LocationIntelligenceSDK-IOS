@@ -1,4 +1,4 @@
-# SWGPoi
+# PBPoi
 
 ## Properties
 Name | Type | Description | Notes
@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **brandName** | **NSString*** |  | [optional] 
 **categoryCode** | **NSNumber*** |  | [optional] 
 **open24Hours** | **NSString*** |  | [optional] 
-**contactDetails** | [**SWGContactDetails***](SWGContactDetails.md) |  | [optional] 
-**distance** | [**SWGDistance***](SWGDistance.md) |  | [optional] 
+**contactDetails** | [**PBContactDetails***](PBContactDetails.md) |  | [optional] 
+**distance** | [**PBDistance***](PBDistance.md) |  | [optional] 
 **latitude** | **NSString*** |  | [optional] 
 **longitude** | **NSString*** |  | [optional] 
 **customValue1** | **NSString*** |  | [optional] 

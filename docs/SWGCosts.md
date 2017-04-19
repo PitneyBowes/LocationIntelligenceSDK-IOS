@@ -1,4 +1,4 @@
-# SWGCosts
+# PBCosts
 
 ## Properties
 Name | Type | Description | Notes

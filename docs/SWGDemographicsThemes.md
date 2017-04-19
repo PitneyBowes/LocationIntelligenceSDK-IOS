@@ -1,22 +1,22 @@
-# SWGDemographicsThemes
+# PBDemographicsThemes
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ageTheme** | [**SWGAgeTheme***](SWGAgeTheme.md) |  | [optional] 
-**genderTheme** | [**SWGGenderTheme***](SWGGenderTheme.md) |  | [optional] 
-**incomeTheme** | [**SWGIncomeTheme***](SWGIncomeTheme.md) |  | [optional] 
-**raceTheme** | [**SWGRaceTheme***](SWGRaceTheme.md) |  | [optional] 
-**ethnicityTheme** | [**SWGEthnicityTheme***](SWGEthnicityTheme.md) |  | [optional] 
-**maritalStatusTheme** | [**SWGMaritalStatusTheme***](SWGMaritalStatusTheme.md) |  | [optional] 
-**automobileTheme** | [**SWGAutomobileTheme***](SWGAutomobileTheme.md) |  | [optional] 
-**purchasingBehaviorTheme** | [**SWGPurchasingBehaviorTheme***](SWGPurchasingBehaviorTheme.md) |  | [optional] 
-**educationalAttainmentTheme** | [**SWGEducationalAttainmentTheme***](SWGEducationalAttainmentTheme.md) |  | [optional] 
-**financialProductsTheme** | [**SWGFinancialProductsTheme***](SWGFinancialProductsTheme.md) |  | [optional] 
-**commuterPatternsTheme** | [**SWGCommuterPatternsTheme***](SWGCommuterPatternsTheme.md) |  | [optional] 
-**attitudesAndMotivationTheme** | [**SWGAttitudesAndMotivationTheme***](SWGAttitudesAndMotivationTheme.md) |  | [optional] 
-**channelPreferencesTheme** | [**SWGChannelPreferencesTheme***](SWGChannelPreferencesTheme.md) |  | [optional] 
-**householdSizeTheme** | [**SWGHouseholdSizeTheme***](SWGHouseholdSizeTheme.md) |  | [optional] 
+**ageTheme** | [**PBAgeTheme***](PBAgeTheme.md) |  | [optional] 
+**genderTheme** | [**PBGenderTheme***](PBGenderTheme.md) |  | [optional] 
+**incomeTheme** | [**PBIncomeTheme***](PBIncomeTheme.md) |  | [optional] 
+**raceTheme** | [**PBRaceTheme***](PBRaceTheme.md) |  | [optional] 
+**ethnicityTheme** | [**PBEthnicityTheme***](PBEthnicityTheme.md) |  | [optional] 
+**maritalStatusTheme** | [**PBMaritalStatusTheme***](PBMaritalStatusTheme.md) |  | [optional] 
+**automobileTheme** | [**PBAutomobileTheme***](PBAutomobileTheme.md) |  | [optional] 
+**purchasingBehaviorTheme** | [**PBPurchasingBehaviorTheme***](PBPurchasingBehaviorTheme.md) |  | [optional] 
+**educationalAttainmentTheme** | [**PBEducationalAttainmentTheme***](PBEducationalAttainmentTheme.md) |  | [optional] 
+**financialProductsTheme** | [**PBFinancialProductsTheme***](PBFinancialProductsTheme.md) |  | [optional] 
+**commuterPatternsTheme** | [**PBCommuterPatternsTheme***](PBCommuterPatternsTheme.md) |  | [optional] 
+**attitudesAndMotivationTheme** | [**PBAttitudesAndMotivationTheme***](PBAttitudesAndMotivationTheme.md) |  | [optional] 
+**channelPreferencesTheme** | [**PBChannelPreferencesTheme***](PBChannelPreferencesTheme.md) |  | [optional] 
+**householdSizeTheme** | [**PBHouseholdSizeTheme***](PBHouseholdSizeTheme.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

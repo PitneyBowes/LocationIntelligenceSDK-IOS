@@ -1,9 +1,9 @@
-# SWGPolygon
+# PBPolygon
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**point** | [**NSArray&lt;SWGPoint&gt;***](SWGPoint.md) |  | 
+**point** | [**NSArray&lt;PBPoint&gt;***](PBPoint.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

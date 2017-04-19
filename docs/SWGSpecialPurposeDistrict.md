@@ -1,4 +1,4 @@
-# SWGSpecialPurposeDistrict
+# PBSpecialPurposeDistrict
 
 ## Properties
 Name | Type | Description | Notes

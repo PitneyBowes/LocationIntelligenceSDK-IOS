@@ -1,10 +1,10 @@
-# SWGLIAPIGeoSearchServiceApi
+# PBLIAPIGeoSearchServiceApi
 
 All URIs are relative to *https://api.pitneybowes.com/location-intelligence*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**geoSearch**](SWGLIAPIGeoSearchServiceApi.md#geosearch) | **GET** /geosearch/v1/locations | Gets LocationList
+[**geoSearch**](PBLIAPIGeoSearchServiceApi.md#geosearch) | **GET** /geosearch/v1/locations | Gets LocationList
 
 
 # **geoSearch**
@@ -16,7 +16,7 @@ Method | HTTP request | Description
     searchRadiusUnit: (NSString*) searchRadiusUnit
     maxCandidates: (NSString*) maxCandidates
     country: (NSString*) country
-        completionHandler: (void (^)(SWGLocations* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBLocations* output, NSError* error)) handler;
 ```
 
 Gets LocationList
@@ -25,7 +25,7 @@ Gets LocationList
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -39,7 +39,7 @@ NSString* searchRadiusUnit = @"searchRadiusUnit_example"; // Radius unit such as
 NSString* maxCandidates = @"maxCandidates_example"; // Maximum number of addresses that can be retrieved. (optional)
 NSString* country = @"country_example"; // Country ISO code. We need to make sure that either Lat/Lng or Country is provided to API (optional)
 
-SWGLIAPIGeoSearchServiceApi*apiInstance = [[SWGLIAPIGeoSearchServiceApi alloc] init];
+PBLIAPIGeoSearchServiceApi*apiInstance = [[PBLIAPIGeoSearchServiceApi alloc] init];
 
 // Gets LocationList
 [apiInstance geoSearchWithSearchText:searchText
@@ -49,12 +49,12 @@ SWGLIAPIGeoSearchServiceApi*apiInstance = [[SWGLIAPIGeoSearchServiceApi alloc] i
               searchRadiusUnit:searchRadiusUnit
               maxCandidates:maxCandidates
               country:country
-          completionHandler: ^(SWGLocations* output, NSError* error) {
+          completionHandler: ^(PBLocations* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoSearchServiceApi->geoSearch: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoSearchServiceApi->geoSearch: %@", error);
                         }
                     }];
 ```
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGLocations***](SWGLocations.md)
+[**PBLocations***](PBLocations.md)
 
 ### Authorization
 

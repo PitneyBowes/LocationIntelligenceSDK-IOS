@@ -1,4 +1,4 @@
-# SWGFieldsMatching
+# PBFieldsMatching
 
 ## Properties
 Name | Type | Description | Notes

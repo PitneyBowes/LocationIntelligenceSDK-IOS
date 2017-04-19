@@ -1,19 +1,19 @@
-# SWGLIAPIGeoServiceApi
+# PBLIAPIGeoServiceApi
 
 All URIs are relative to *https://api.pitneybowes.com/location-intelligence*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAHJPlusPSAPByAddress**](SWGLIAPIGeoServiceApi.md#getahjpluspsapbyaddress) | **GET** /geo911/v1/ahj-psap/byaddress | AHJ &amp; PSAP By Address.
-[**getAHJPlusPSAPByLocation**](SWGLIAPIGeoServiceApi.md#getahjpluspsapbylocation) | **GET** /geo911/v1/ahj-psap/bylocation | AHJ &amp; PSAP By Location
-[**getPSAPByAddress**](SWGLIAPIGeoServiceApi.md#getpsapbyaddress) | **GET** /geo911/v1/psap/byaddress | PSAP By Address.
-[**getPSAPByLocation**](SWGLIAPIGeoServiceApi.md#getpsapbylocation) | **GET** /geo911/v1/psap/bylocation | PSAP By Location.
+[**getAHJPlusPSAPByAddress**](PBLIAPIGeoServiceApi.md#getahjpluspsapbyaddress) | **GET** /geo911/v1/ahj-psap/byaddress | AHJ &amp; PSAP By Address.
+[**getAHJPlusPSAPByLocation**](PBLIAPIGeoServiceApi.md#getahjpluspsapbylocation) | **GET** /geo911/v1/ahj-psap/bylocation | AHJ &amp; PSAP By Location
+[**getPSAPByAddress**](PBLIAPIGeoServiceApi.md#getpsapbyaddress) | **GET** /geo911/v1/psap/byaddress | PSAP By Address.
+[**getPSAPByLocation**](PBLIAPIGeoServiceApi.md#getpsapbylocation) | **GET** /geo911/v1/psap/bylocation | PSAP By Location.
 
 
 # **getAHJPlusPSAPByAddress**
 ```objc
 -(NSNumber*) getAHJPlusPSAPByAddressWithAddress: (NSString*) address
-        completionHandler: (void (^)(SWGAHJPlusPSAPResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBAHJPlusPSAPResponse* output, NSError* error)) handler;
 ```
 
 AHJ & PSAP By Address.
@@ -22,7 +22,7 @@ Accepts addresses as input and Returns contact details for Authorities Having Ju
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -30,16 +30,16 @@ SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
 
 NSString* address = @"address_example"; // The address to be searched.
 
-SWGLIAPIGeoServiceApi*apiInstance = [[SWGLIAPIGeoServiceApi alloc] init];
+PBLIAPIGeoServiceApi*apiInstance = [[PBLIAPIGeoServiceApi alloc] init];
 
 // AHJ & PSAP By Address.
 [apiInstance getAHJPlusPSAPByAddressWithAddress:address
-          completionHandler: ^(SWGAHJPlusPSAPResponse* output, NSError* error) {
+          completionHandler: ^(PBAHJPlusPSAPResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoServiceApi->getAHJPlusPSAPByAddress: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoServiceApi->getAHJPlusPSAPByAddress: %@", error);
                         }
                     }];
 ```
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGAHJPlusPSAPResponse***](SWGAHJPlusPSAPResponse.md)
+[**PBAHJPlusPSAPResponse***](PBAHJPlusPSAPResponse.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) getAHJPlusPSAPByLocationWithLongitude: (NSString*) longitude
     latitude: (NSString*) latitude
-        completionHandler: (void (^)(SWGAHJPlusPSAPResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBAHJPlusPSAPResponse* output, NSError* error)) handler;
 ```
 
 AHJ & PSAP By Location
@@ -78,7 +78,7 @@ Accepts latitude & longitude as input and Returns contact details for Authoritie
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -87,17 +87,17 @@ SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
 NSString* longitude = @"longitude_example"; // Latitude of the location.
 NSString* latitude = @"latitude_example"; // Longitude of the location.
 
-SWGLIAPIGeoServiceApi*apiInstance = [[SWGLIAPIGeoServiceApi alloc] init];
+PBLIAPIGeoServiceApi*apiInstance = [[PBLIAPIGeoServiceApi alloc] init];
 
 // AHJ & PSAP By Location
 [apiInstance getAHJPlusPSAPByLocationWithLongitude:longitude
               latitude:latitude
-          completionHandler: ^(SWGAHJPlusPSAPResponse* output, NSError* error) {
+          completionHandler: ^(PBAHJPlusPSAPResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoServiceApi->getAHJPlusPSAPByLocation: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoServiceApi->getAHJPlusPSAPByLocation: %@", error);
                         }
                     }];
 ```
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGAHJPlusPSAPResponse***](SWGAHJPlusPSAPResponse.md)
+[**PBAHJPlusPSAPResponse***](PBAHJPlusPSAPResponse.md)
 
 ### Authorization
 
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 # **getPSAPByAddress**
 ```objc
 -(NSNumber*) getPSAPByAddressWithAddress: (NSString*) address
-        completionHandler: (void (^)(SWGPSAPResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBPSAPResponse* output, NSError* error)) handler;
 ```
 
 PSAP By Address.
@@ -136,7 +136,7 @@ Accepts addresses as input and returns contact details for local Public Safety A
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -144,16 +144,16 @@ SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
 
 NSString* address = @"address_example"; // The address to be searched.
 
-SWGLIAPIGeoServiceApi*apiInstance = [[SWGLIAPIGeoServiceApi alloc] init];
+PBLIAPIGeoServiceApi*apiInstance = [[PBLIAPIGeoServiceApi alloc] init];
 
 // PSAP By Address.
 [apiInstance getPSAPByAddressWithAddress:address
-          completionHandler: ^(SWGPSAPResponse* output, NSError* error) {
+          completionHandler: ^(PBPSAPResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoServiceApi->getPSAPByAddress: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoServiceApi->getPSAPByAddress: %@", error);
                         }
                     }];
 ```
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGPSAPResponse***](SWGPSAPResponse.md)
+[**PBPSAPResponse***](PBPSAPResponse.md)
 
 ### Authorization
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) getPSAPByLocationWithLongitude: (NSString*) longitude
     latitude: (NSString*) latitude
-        completionHandler: (void (^)(SWGPSAPResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBPSAPResponse* output, NSError* error)) handler;
 ```
 
 PSAP By Location.
@@ -192,7 +192,7 @@ Accepts latitude & longitude as input and Returns contact details for local Publ
 
 ### Example 
 ```objc
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -201,17 +201,17 @@ SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
 NSString* longitude = @"longitude_example"; // Longitude of the location.
 NSString* latitude = @"latitude_example"; // Latitude of the location.
 
-SWGLIAPIGeoServiceApi*apiInstance = [[SWGLIAPIGeoServiceApi alloc] init];
+PBLIAPIGeoServiceApi*apiInstance = [[PBLIAPIGeoServiceApi alloc] init];
 
 // PSAP By Location.
 [apiInstance getPSAPByLocationWithLongitude:longitude
               latitude:latitude
-          completionHandler: ^(SWGPSAPResponse* output, NSError* error) {
+          completionHandler: ^(PBPSAPResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SWGLIAPIGeoServiceApi->getPSAPByLocation: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoServiceApi->getPSAPByLocation: %@", error);
                         }
                     }];
 ```
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SWGPSAPResponse***](SWGPSAPResponse.md)
+[**PBPSAPResponse***](PBPSAPResponse.md)
 
 ### Authorization
 

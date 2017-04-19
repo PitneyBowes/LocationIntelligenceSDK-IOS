@@ -1,4 +1,4 @@
-# SWGPoint
+# PBPoint
 
 ## Properties
 Name | Type | Description | Notes

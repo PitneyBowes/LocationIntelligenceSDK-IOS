@@ -1,4 +1,4 @@
-# SWGPreferences
+# PBPreferences
 
 ## Properties
 Name | Type | Description | Notes
@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 **distanceUnits** | **NSString*** |  | [optional] 
 **streetOffsetUnits** | **NSString*** |  | [optional] 
 **cornerOffsetUnits** | **NSString*** |  | [optional] 
-**mustMatchFields** | [**SWGFieldsMatching***](SWGFieldsMatching.md) |  | [optional] 
-**returnFieldsDescriptor** | [**SWGReturnFieldsDescriptor***](SWGReturnFieldsDescriptor.md) |  | [optional] 
+**mustMatchFields** | [**PBFieldsMatching***](PBFieldsMatching.md) |  | [optional] 
+**returnFieldsDescriptor** | [**PBReturnFieldsDescriptor***](PBReturnFieldsDescriptor.md) |  | [optional] 
 **outputRecordType** | **NSString*** |  | [optional] 
 **customPreferences** | **NSDictionary&lt;NSString*, NSObject*&gt;*** |  | [optional] 
 **preferredDictionaryOrders** | **NSArray&lt;NSString*&gt;*** |  | [optional] 

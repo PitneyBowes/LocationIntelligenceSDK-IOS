@@ -1,12 +1,12 @@
-# SWGTravelCostMatrixResponseMatrix
+# PBTravelCostMatrixResponseMatrix
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **distance** | **NSNumber*** |  | [optional] 
 **distanceUnit** | **NSString*** |  | [optional] 
-**endPoint** | [**SWGTravelCostMatrixResponseEndPoint***](SWGTravelCostMatrixResponseEndPoint.md) |  | [optional] 
-**startPoint** | [**SWGTravelCostMatrixResponseEndPoint***](SWGTravelCostMatrixResponseEndPoint.md) |  | [optional] 
+**endPoint** | [**PBTravelCostMatrixResponseEndPoint***](PBTravelCostMatrixResponseEndPoint.md) |  | [optional] 
+**startPoint** | [**PBTravelCostMatrixResponseEndPoint***](PBTravelCostMatrixResponseEndPoint.md) |  | [optional] 
 **time** | **NSNumber*** |  | [optional] 
 **timeUnit** | **NSString*** |  | [optional] 
 

@@ -1,4 +1,4 @@
-# SWGIndexVariable
+# PBIndexVariable
 
 ## Properties
 Name | Type | Description | Notes
