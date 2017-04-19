@@ -78,153 +78,153 @@ pod 'LocationIntelligenceIOSSDK', :path => 'Vendor/LocationIntelligenceIOSSDK'
 Import the following:
 
 ```objc
-#import <SwaggerClient/SWGApiClient.h>
-#import <SwaggerClient/SWGConfiguration.h>
+#import  <LocationIntelligenceIOSSDK/PBApiClient.h>
+#import  <LocationIntelligenceIOSSDK/PBConfiguration.h>
 // load models
-#import <SwaggerClient/SWGAHJ.h>
-#import <SwaggerClient/SWGAHJList.h>
-#import <SwaggerClient/SWGAHJPlusPSAPResponse.h>
-#import <SwaggerClient/SWGAddress.h>
-#import <SwaggerClient/SWGAgeTheme.h>
-#import <SwaggerClient/SWGAreaCodeInfo.h>
-#import <SwaggerClient/SWGAttitudesAndMotivationTheme.h>
-#import <SwaggerClient/SWGAutomobileTheme.h>
-#import <SwaggerClient/SWGBaseFloodElevation.h>
-#import <SwaggerClient/SWGBoundaries.h>
-#import <SwaggerClient/SWGBoundary.h>
-#import <SwaggerClient/SWGCandidate.h>
-#import <SwaggerClient/SWGCandidateRange.h>
-#import <SwaggerClient/SWGCandidateRangeUnit.h>
-#import <SwaggerClient/SWGCbsa.h>
-#import <SwaggerClient/SWGCensus.h>
-#import <SwaggerClient/SWGChannelPreferencesTheme.h>
-#import <SwaggerClient/SWGCommunity.h>
-#import <SwaggerClient/SWGCommuterPatternsTheme.h>
-#import <SwaggerClient/SWGConfiguredDictionaryResponse.h>
-#import <SwaggerClient/SWGContactDetails.h>
-#import <SwaggerClient/SWGContactPerson.h>
-#import <SwaggerClient/SWGCost.h>
-#import <SwaggerClient/SWGCosts.h>
-#import <SwaggerClient/SWGCountrySupport.h>
-#import <SwaggerClient/SWGCounty.h>
-#import <SwaggerClient/SWGCoverage.h>
-#import <SwaggerClient/SWGCrimeBoundary.h>
-#import <SwaggerClient/SWGCrimeIndexTheme.h>
-#import <SwaggerClient/SWGCrimeRiskResponse.h>
-#import <SwaggerClient/SWGCrs.h>
-#import <SwaggerClient/SWGCustomObject.h>
-#import <SwaggerClient/SWGCustomObjectMember.h>
-#import <SwaggerClient/SWGDemographics.h>
-#import <SwaggerClient/SWGDemographicsThemes.h>
-#import <SwaggerClient/SWGDictionary.h>
-#import <SwaggerClient/SWGDirectionGeometry.h>
-#import <SwaggerClient/SWGDistance.h>
-#import <SwaggerClient/SWGEarthquakeRiskResponse.h>
-#import <SwaggerClient/SWGEducationalAttainmentTheme.h>
-#import <SwaggerClient/SWGEthnicityTheme.h>
-#import <SwaggerClient/SWGEventsCount.h>
-#import <SwaggerClient/SWGField.h>
-#import <SwaggerClient/SWGFieldsMatching.h>
-#import <SwaggerClient/SWGFinancialProductsTheme.h>
-#import <SwaggerClient/SWGFireDepartment.h>
-#import <SwaggerClient/SWGFireRiskResponse.h>
-#import <SwaggerClient/SWGFireShed.h>
-#import <SwaggerClient/SWGFireStation.h>
-#import <SwaggerClient/SWGFireStations.h>
-#import <SwaggerClient/SWGFloodBoundary.h>
-#import <SwaggerClient/SWGFloodRiskResponse.h>
-#import <SwaggerClient/SWGFloodZone.h>
-#import <SwaggerClient/SWGGenderTheme.h>
-#import <SwaggerClient/SWGGeoPos.h>
-#import <SwaggerClient/SWGGeoRiskBoundaries.h>
-#import <SwaggerClient/SWGGeoRiskCrimeTheme.h>
-#import <SwaggerClient/SWGGeoRouteResponse.h>
-#import <SwaggerClient/SWGGeoTaxLocations.h>
-#import <SwaggerClient/SWGGeocodeAddress.h>
-#import <SwaggerClient/SWGGeocodeCapabilitiesResponse.h>
-#import <SwaggerClient/SWGGeocodeRequest.h>
-#import <SwaggerClient/SWGGeocodeServiceResponse.h>
-#import <SwaggerClient/SWGGeocodeServiceResponseList.h>
-#import <SwaggerClient/SWGGeometry.h>
-#import <SwaggerClient/SWGGeometryPolygon.h>
-#import <SwaggerClient/SWGGrid.h>
-#import <SwaggerClient/SWGHouseholdSizeTheme.h>
-#import <SwaggerClient/SWGIncomeTheme.h>
-#import <SwaggerClient/SWGIndexVariable.h>
-#import <SwaggerClient/SWGIndividualValueVariable.h>
-#import <SwaggerClient/SWGInputParameter.h>
-#import <SwaggerClient/SWGLatLongFields.h>
-#import <SwaggerClient/SWGLifeStyleTheme.h>
-#import <SwaggerClient/SWGLocation.h>
-#import <SwaggerClient/SWGLocations.h>
-#import <SwaggerClient/SWGMaritalStatusTheme.h>
-#import <SwaggerClient/SWGMatch.h>
-#import <SwaggerClient/SWGMcd.h>
-#import <SwaggerClient/SWGName.h>
-#import <SwaggerClient/SWGOperation.h>
-#import <SwaggerClient/SWGOutputParameter.h>
-#import <SwaggerClient/SWGPSAPResponse.h>
-#import <SwaggerClient/SWGPlace.h>
-#import <SwaggerClient/SWGPlaceByLocations.h>
-#import <SwaggerClient/SWGPlaceByLocationsLocation.h>
-#import <SwaggerClient/SWGPlaceLocation.h>
-#import <SwaggerClient/SWGPlaceLocationName.h>
-#import <SwaggerClient/SWGPoi.h>
-#import <SwaggerClient/SWGPoint.h>
-#import <SwaggerClient/SWGPoints.h>
-#import <SwaggerClient/SWGPolygon.h>
-#import <SwaggerClient/SWGPreferences.h>
-#import <SwaggerClient/SWGPrimaryZone.h>
-#import <SwaggerClient/SWGProperties.h>
-#import <SwaggerClient/SWGPurchasingBehaviorTheme.h>
-#import <SwaggerClient/SWGRaceTheme.h>
-#import <SwaggerClient/SWGRangeVariable.h>
-#import <SwaggerClient/SWGRateCenterResponse.h>
-#import <SwaggerClient/SWGReturnFieldsDescriptor.h>
-#import <SwaggerClient/SWGReverseGeocodeRequest.h>
-#import <SwaggerClient/SWGRisk.h>
-#import <SwaggerClient/SWGRouteDirection.h>
-#import <SwaggerClient/SWGRouteDirections.h>
-#import <SwaggerClient/SWGRouteGeometry.h>
-#import <SwaggerClient/SWGSalesTax.h>
-#import <SwaggerClient/SWGSegmentation.h>
-#import <SwaggerClient/SWGSegmentationThemes.h>
-#import <SwaggerClient/SWGSiteDetails.h>
-#import <SwaggerClient/SWGSpecialPurposeDistrict.h>
-#import <SwaggerClient/SWGSpecialPurposeDistrictTax.h>
-#import <SwaggerClient/SWGState.h>
-#import <SwaggerClient/SWGStatus.h>
-#import <SwaggerClient/SWGSupportLevel.h>
-#import <SwaggerClient/SWGTaxAddress.h>
-#import <SwaggerClient/SWGTaxAddressRequest.h>
-#import <SwaggerClient/SWGTaxJurisdiction.h>
-#import <SwaggerClient/SWGTaxLocationRequest.h>
-#import <SwaggerClient/SWGTaxRateAddress.h>
-#import <SwaggerClient/SWGTaxRateAddressRequest.h>
-#import <SwaggerClient/SWGTaxRateLocationRequest.h>
-#import <SwaggerClient/SWGTaxResponse.h>
-#import <SwaggerClient/SWGTaxResponses.h>
-#import <SwaggerClient/SWGTime.h>
-#import <SwaggerClient/SWGTimezone.h>
-#import <SwaggerClient/SWGTravelBoundaries.h>
-#import <SwaggerClient/SWGTravelBoundary.h>
-#import <SwaggerClient/SWGTravelCostMatrixResponse.h>
-#import <SwaggerClient/SWGTravelCostMatrixResponseEndPoint.h>
-#import <SwaggerClient/SWGTravelCostMatrixResponseEndPointCrs.h>
-#import <SwaggerClient/SWGTravelCostMatrixResponseEndPointCrsProperties.h>
-#import <SwaggerClient/SWGTravelCostMatrixResponseMatrix.h>
-#import <SwaggerClient/SWGUseTax.h>
+#import  <LocationIntelligenceIOSSDK/PBAHJ.h>
+#import  <LocationIntelligenceIOSSDK/PBAHJList.h>
+#import  <LocationIntelligenceIOSSDK/PBAHJPlusPSAPResponse.h>
+#import  <LocationIntelligenceIOSSDK/PBAddress.h>
+#import  <LocationIntelligenceIOSSDK/PBAgeTheme.h>
+#import  <LocationIntelligenceIOSSDK/PBAreaCodeInfo.h>
+#import  <LocationIntelligenceIOSSDK/PBAttitudesAndMotivationTheme.h>
+#import  <LocationIntelligenceIOSSDK/PBAutomobileTheme.h>
+#import  <LocationIntelligenceIOSSDK/PBBaseFloodElevation.h>
+#import  <LocationIntelligenceIOSSDK/PBBoundaries.h>
+#import  <LocationIntelligenceIOSSDK/PBBoundary.h>
+#import  <LocationIntelligenceIOSSDK/PBCandidate.h>
+#import  <LocationIntelligenceIOSSDK/PBCandidateRange.h>
+#import  <LocationIntelligenceIOSSDK/PBCandidateRangeUnit.h>
+#import  <LocationIntelligenceIOSSDK/PBCbsa.h>
+#import  <LocationIntelligenceIOSSDK/PBCensus.h>
+#import  <LocationIntelligenceIOSSDK/PBChannelPreferencesTheme.h>
+#import  <LocationIntelligenceIOSSDK/PBCommunity.h>
+#import  <LocationIntelligenceIOSSDK/PBCommuterPatternsTheme.h>
+#import  <LocationIntelligenceIOSSDK/PBConfiguredDictionaryResponse.h>
+#import  <LocationIntelligenceIOSSDK/PBContactDetails.h>
+#import  <LocationIntelligenceIOSSDK/PBContactPerson.h>
+#import  <LocationIntelligenceIOSSDK/PBCost.h>
+#import  <LocationIntelligenceIOSSDK/PBCosts.h>
+#import  <LocationIntelligenceIOSSDK/PBCountrySupport.h>
+#import  <LocationIntelligenceIOSSDK/PBCounty.h>
+#import  <LocationIntelligenceIOSSDK/PBCoverage.h>
+#import  <LocationIntelligenceIOSSDK/PBCrimeBoundary.h>
+#import  <LocationIntelligenceIOSSDK/PBCrimeIndexTheme.h>
+#import  <LocationIntelligenceIOSSDK/PBCrimeRiskResponse.h>
+#import  <LocationIntelligenceIOSSDK/PBCrs.h>
+#import  <LocationIntelligenceIOSSDK/PBCustomObject.h>
+#import  <LocationIntelligenceIOSSDK/PBCustomObjectMember.h>
+#import  <LocationIntelligenceIOSSDK/PBDemographics.h>
+#import  <LocationIntelligenceIOSSDK/PBDemographicsThemes.h>
+#import  <LocationIntelligenceIOSSDK/PBDictionary.h>
+#import  <LocationIntelligenceIOSSDK/PBDirectionGeometry.h>
+#import  <LocationIntelligenceIOSSDK/PBDistance.h>
+#import  <LocationIntelligenceIOSSDK/PBEarthquakeRiskResponse.h>
+#import  <LocationIntelligenceIOSSDK/PBEducationalAttainmentTheme.h>
+#import  <LocationIntelligenceIOSSDK/PBEthnicityTheme.h>
+#import  <LocationIntelligenceIOSSDK/PBEventsCount.h>
+#import  <LocationIntelligenceIOSSDK/PBField.h>
+#import  <LocationIntelligenceIOSSDK/PBFieldsMatching.h>
+#import  <LocationIntelligenceIOSSDK/PBFinancialProductsTheme.h>
+#import  <LocationIntelligenceIOSSDK/PBFireDepartment.h>
+#import  <LocationIntelligenceIOSSDK/PBFireRiskResponse.h>
+#import  <LocationIntelligenceIOSSDK/PBFireShed.h>
+#import  <LocationIntelligenceIOSSDK/PBFireStation.h>
+#import  <LocationIntelligenceIOSSDK/PBFireStations.h>
+#import  <LocationIntelligenceIOSSDK/PBFloodBoundary.h>
+#import  <LocationIntelligenceIOSSDK/PBFloodRiskResponse.h>
+#import  <LocationIntelligenceIOSSDK/PBFloodZone.h>
+#import  <LocationIntelligenceIOSSDK/PBGenderTheme.h>
+#import  <LocationIntelligenceIOSSDK/PBGeoPos.h>
+#import  <LocationIntelligenceIOSSDK/PBGeoRiskBoundaries.h>
+#import  <LocationIntelligenceIOSSDK/PBGeoRiskCrimeTheme.h>
+#import  <LocationIntelligenceIOSSDK/PBGeoRouteResponse.h>
+#import  <LocationIntelligenceIOSSDK/PBGeoTaxLocations.h>
+#import  <LocationIntelligenceIOSSDK/PBGeocodeAddress.h>
+#import  <LocationIntelligenceIOSSDK/PBGeocodeCapabilitiesResponse.h>
+#import  <LocationIntelligenceIOSSDK/PBGeocodeRequest.h>
+#import  <LocationIntelligenceIOSSDK/PBGeocodeServiceResponse.h>
+#import  <LocationIntelligenceIOSSDK/PBGeocodeServiceResponseList.h>
+#import  <LocationIntelligenceIOSSDK/PBGeometry.h>
+#import  <LocationIntelligenceIOSSDK/PBGeometryPolygon.h>
+#import  <LocationIntelligenceIOSSDK/PBGrid.h>
+#import  <LocationIntelligenceIOSSDK/PBHouseholdSizeTheme.h>
+#import  <LocationIntelligenceIOSSDK/PBIncomeTheme.h>
+#import  <LocationIntelligenceIOSSDK/PBIndexVariable.h>
+#import  <LocationIntelligenceIOSSDK/PBIndividualValueVariable.h>
+#import  <LocationIntelligenceIOSSDK/PBInputParameter.h>
+#import  <LocationIntelligenceIOSSDK/PBLatLongFields.h>
+#import  <LocationIntelligenceIOSSDK/PBLifeStyleTheme.h>
+#import  <LocationIntelligenceIOSSDK/PBLocation.h>
+#import  <LocationIntelligenceIOSSDK/PBLocations.h>
+#import  <LocationIntelligenceIOSSDK/PBMaritalStatusTheme.h>
+#import  <LocationIntelligenceIOSSDK/PBMatch.h>
+#import  <LocationIntelligenceIOSSDK/PBMcd.h>
+#import  <LocationIntelligenceIOSSDK/PBName.h>
+#import  <LocationIntelligenceIOSSDK/PBOperation.h>
+#import  <LocationIntelligenceIOSSDK/PBOutputParameter.h>
+#import  <LocationIntelligenceIOSSDK/PBPSAPResponse.h>
+#import  <LocationIntelligenceIOSSDK/PBPlace.h>
+#import  <LocationIntelligenceIOSSDK/PBPlaceByLocations.h>
+#import  <LocationIntelligenceIOSSDK/PBPlaceByLocationsLocation.h>
+#import  <LocationIntelligenceIOSSDK/PBPlaceLocation.h>
+#import  <LocationIntelligenceIOSSDK/PBPlaceLocationName.h>
+#import  <LocationIntelligenceIOSSDK/PBPoi.h>
+#import  <LocationIntelligenceIOSSDK/PBPoint.h>
+#import  <LocationIntelligenceIOSSDK/PBPoints.h>
+#import  <LocationIntelligenceIOSSDK/PBPolygon.h>
+#import  <LocationIntelligenceIOSSDK/PBPreferences.h>
+#import  <LocationIntelligenceIOSSDK/PBPrimaryZone.h>
+#import  <LocationIntelligenceIOSSDK/PBProperties.h>
+#import  <LocationIntelligenceIOSSDK/PBPurchasingBehaviorTheme.h>
+#import  <LocationIntelligenceIOSSDK/PBRaceTheme.h>
+#import  <LocationIntelligenceIOSSDK/PBRangeVariable.h>
+#import  <LocationIntelligenceIOSSDK/PBRateCenterResponse.h>
+#import  <LocationIntelligenceIOSSDK/PBReturnFieldsDescriptor.h>
+#import  <LocationIntelligenceIOSSDK/PBReverseGeocodeRequest.h>
+#import  <LocationIntelligenceIOSSDK/PBRisk.h>
+#import  <LocationIntelligenceIOSSDK/PBRouteDirection.h>
+#import  <LocationIntelligenceIOSSDK/PBRouteDirections.h>
+#import  <LocationIntelligenceIOSSDK/PBRouteGeometry.h>
+#import  <LocationIntelligenceIOSSDK/PBSalesTax.h>
+#import  <LocationIntelligenceIOSSDK/PBSegmentation.h>
+#import  <LocationIntelligenceIOSSDK/PBSegmentationThemes.h>
+#import  <LocationIntelligenceIOSSDK/PBSiteDetails.h>
+#import  <LocationIntelligenceIOSSDK/PBSpecialPurposeDistrict.h>
+#import  <LocationIntelligenceIOSSDK/PBSpecialPurposeDistrictTax.h>
+#import  <LocationIntelligenceIOSSDK/PBState.h>
+#import  <LocationIntelligenceIOSSDK/PBStatus.h>
+#import  <LocationIntelligenceIOSSDK/PBSupportLevel.h>
+#import  <LocationIntelligenceIOSSDK/PBTaxAddress.h>
+#import  <LocationIntelligenceIOSSDK/PBTaxAddressRequest.h>
+#import  <LocationIntelligenceIOSSDK/PBTaxJurisdiction.h>
+#import  <LocationIntelligenceIOSSDK/PBTaxLocationRequest.h>
+#import  <LocationIntelligenceIOSSDK/PBTaxRateAddress.h>
+#import  <LocationIntelligenceIOSSDK/PBTaxRateAddressRequest.h>
+#import  <LocationIntelligenceIOSSDK/PBTaxRateLocationRequest.h>
+#import  <LocationIntelligenceIOSSDK/PBTaxResponse.h>
+#import  <LocationIntelligenceIOSSDK/PBTaxResponses.h>
+#import  <LocationIntelligenceIOSSDK/PBTime.h>
+#import  <LocationIntelligenceIOSSDK/PBTimezone.h>
+#import  <LocationIntelligenceIOSSDK/PBTravelBoundaries.h>
+#import  <LocationIntelligenceIOSSDK/PBTravelBoundary.h>
+#import  <LocationIntelligenceIOSSDK/PBTravelCostMatrixResponse.h>
+#import  <LocationIntelligenceIOSSDK/PBTravelCostMatrixResponseEndPoint.h>
+#import  <LocationIntelligenceIOSSDK/PBTravelCostMatrixResponseEndPointCrs.h>
+#import  <LocationIntelligenceIOSSDK/PBTravelCostMatrixResponseEndPointCrsProperties.h>
+#import  <LocationIntelligenceIOSSDK/PBTravelCostMatrixResponseMatrix.h>
+#import  <LocationIntelligenceIOSSDK/PBUseTax.h>
 // load API classes for accessing endpoints
-#import <SwaggerClient/SWGLIAPIGeoCommServiceApi.h>
-#import <SwaggerClient/SWGLIAPIGeoEnhanceServiceApi.h>
-#import <SwaggerClient/SWGLIAPIGeoLifeServiceApi.h>
-#import <SwaggerClient/SWGLIAPIGeoRiskServiceApi.h>
-#import <SwaggerClient/SWGLIAPIGeoRouteServiceApi.h>
-#import <SwaggerClient/SWGLIAPIGeoSearchServiceApi.h>
-#import <SwaggerClient/SWGLIAPIGeoServiceApi.h>
-#import <SwaggerClient/SWGLIAPIGeoTaxServiceApi.h>
-#import <SwaggerClient/SWGLIAPIGeoZoneServiceApi.h>
-#import <SwaggerClient/SWGLIAPIGeocodeServiceApi.h>
+#import  <LocationIntelligenceIOSSDK/PBLIAPIGeoCommServiceApi.h>
+#import  <LocationIntelligenceIOSSDK/PBLIAPIGeoEnhanceServiceApi.h>
+#import  <LocationIntelligenceIOSSDK/PBLIAPIGeoLifeServiceApi.h>
+#import  <LocationIntelligenceIOSSDK/PBLIAPIGeoRiskServiceApi.h>
+#import  <LocationIntelligenceIOSSDK/PBLIAPIGeoRouteServiceApi.h>
+#import  <LocationIntelligenceIOSSDK/PBLIAPIGeoSearchServiceApi.h>
+#import  <LocationIntelligenceIOSSDK/PBLIAPIGeoServiceApi.h>
+#import  <LocationIntelligenceIOSSDK/PBLIAPIGeoTaxServiceApi.h>
+#import  <LocationIntelligenceIOSSDK/PBLIAPIGeoZoneServiceApi.h>
+#import  <LocationIntelligenceIOSSDK/PBLIAPIGeocodeServiceApi.h>
 
 ```
 
@@ -238,7 +238,7 @@ Please follow the [installation procedure](#installation--usage) and then run th
 
 ```objc
 
-SWGConfiguration *apiConfig = [SWGConfiguration sharedConfig];
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 // Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
@@ -249,14 +249,14 @@ NSString* *country = @"USA"; // 3 letter ISO code of the country to be searched.
 NSString* *areaCodeInfo = @"False"; // Specifies whether area code information will be part of response.Allowed values True,False (optional) (default to False)
 NSString* *level = @"basic"; // Level (basic/detail).Allowed values detail,basic. (optional) (default to basic)
 
-SWGLIAPIGeoCommServiceApi *apiInstance = [[SWGLIAPIGeoCommServiceApi alloc] init];
+PBLIAPIGeoCommServiceApi *apiInstance = [[PBLIAPIGeoCommServiceApi alloc] init];
 
 // Rate Center By Address.
 [apiInstance getRateCenterByAddressWithAddress:address
     country:country
     areaCodeInfo:areaCodeInfo
     level:level
-              completionHandler: ^(SWGRateCenterResponse* output, NSError* error) {
+              completionHandler: ^(PBRateCenterResponse* output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
                             }
@@ -273,188 +273,188 @@ All URIs are relative to *https://api.pitneybowes.com/location-intelligence*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*SWGLIAPIGeoCommServiceApi* | [**getRateCenterByAddress**](docs/SWGLIAPIGeoCommServiceApi.md#getratecenterbyaddress) | **GET** /geocomm/v1/ratecenter/byaddress | Rate Center By Address.
-*SWGLIAPIGeoCommServiceApi* | [**getRateCenterByLocation**](docs/SWGLIAPIGeoCommServiceApi.md#getratecenterbylocation) | **GET** /geocomm/v1/ratecenter/bylocation | Rate Center By Location.
-*SWGLIAPIGeoEnhanceServiceApi* | [**getAddress**](docs/SWGLIAPIGeoEnhanceServiceApi.md#getaddress) | **GET** /geoenhance/v1/address/bylocation | Address By Location.
-*SWGLIAPIGeoEnhanceServiceApi* | [**getEntityByLocation**](docs/SWGLIAPIGeoEnhanceServiceApi.md#getentitybylocation) | **GET** /geoenhance/v1/poi/bylocation | Points Of Interest By Location.
-*SWGLIAPIGeoEnhanceServiceApi* | [**getPlaceByLocation**](docs/SWGLIAPIGeoEnhanceServiceApi.md#getplacebylocation) | **GET** /geoenhance/v1/place/bylocation | Place By Location.
-*SWGLIAPIGeoEnhanceServiceApi* | [**getTimezoneByLocation**](docs/SWGLIAPIGeoEnhanceServiceApi.md#gettimezonebylocation) | **GET** /geoenhance/v1/timezone/bylocation | Timezone By Location.
-*SWGLIAPIGeoLifeServiceApi* | [**getDemographicsByAddress**](docs/SWGLIAPIGeoLifeServiceApi.md#getdemographicsbyaddress) | **GET** /geolife/v1/demographics/byaddress | Demographics By Address.
-*SWGLIAPIGeoLifeServiceApi* | [**getDemographicsByLocation**](docs/SWGLIAPIGeoLifeServiceApi.md#getdemographicsbylocation) | **GET** /geolife/v1/demographics/bylocation | Demographics By Location.
-*SWGLIAPIGeoLifeServiceApi* | [**getSegmentationByAddress**](docs/SWGLIAPIGeoLifeServiceApi.md#getsegmentationbyaddress) | **GET** /geolife/v1/segmentation/byaddress | Segmentation By Address.
-*SWGLIAPIGeoLifeServiceApi* | [**getSegmentationByLocation**](docs/SWGLIAPIGeoLifeServiceApi.md#getsegmentationbylocation) | **GET** /geolife/v1/segmentation/bylocation | Segmentation By Location.
-*SWGLIAPIGeoRiskServiceApi* | [**getCrimeRiskByAddress**](docs/SWGLIAPIGeoRiskServiceApi.md#getcrimeriskbyaddress) | **GET** /georisk/v1/crime/byaddress | Gets CrimeRiskResponse
-*SWGLIAPIGeoRiskServiceApi* | [**getCrimeRiskByLocation**](docs/SWGLIAPIGeoRiskServiceApi.md#getcrimeriskbylocation) | **GET** /georisk/v1/crime/bylocation | Gets CrimeRiskResponse
-*SWGLIAPIGeoRiskServiceApi* | [**getEarthquakeRiskByAddress**](docs/SWGLIAPIGeoRiskServiceApi.md#getearthquakeriskbyaddress) | **GET** /georisk/v1/earthquake/byaddress | Gets EarthquakeRiskResponse
-*SWGLIAPIGeoRiskServiceApi* | [**getEarthquakeRiskByLocation**](docs/SWGLIAPIGeoRiskServiceApi.md#getearthquakeriskbylocation) | **GET** /georisk/v1/earthquake/bylocation | Gets EarthquakeRiskResponse
-*SWGLIAPIGeoRiskServiceApi* | [**getFireRiskByAddress**](docs/SWGLIAPIGeoRiskServiceApi.md#getfireriskbyaddress) | **GET** /georisk/v1/fire/byaddress | Gets FireRiskResponse
-*SWGLIAPIGeoRiskServiceApi* | [**getFireRiskByLocation**](docs/SWGLIAPIGeoRiskServiceApi.md#getfireriskbylocation) | **GET** /georisk/v1/fire/bylocation | Gets FireRiskResponse
-*SWGLIAPIGeoRiskServiceApi* | [**getFireStationByAddress**](docs/SWGLIAPIGeoRiskServiceApi.md#getfirestationbyaddress) | **GET** /georisk/v1/firestation/byaddress | Gets FireStationResponse
-*SWGLIAPIGeoRiskServiceApi* | [**getFireStationByLocation**](docs/SWGLIAPIGeoRiskServiceApi.md#getfirestationbylocation) | **GET** /georisk/v1/firestation/bylocation | Gets FireStationResponse
-*SWGLIAPIGeoRiskServiceApi* | [**getFloodRiskByAddress**](docs/SWGLIAPIGeoRiskServiceApi.md#getfloodriskbyaddress) | **GET** /georisk/v1/flood/byaddress | Gets FloodRiskResponse
-*SWGLIAPIGeoRiskServiceApi* | [**getFloodRiskByLocation**](docs/SWGLIAPIGeoRiskServiceApi.md#getfloodriskbylocation) | **GET** /georisk/v1/flood/bylocation | Gets FloodRiskResponse
-*SWGLIAPIGeoRouteServiceApi* | [**getRouteByAddress**](docs/SWGLIAPIGeoRouteServiceApi.md#getroutebyaddress) | **GET** /georoute/v1/route/byaddress | Gets Route by Address
-*SWGLIAPIGeoRouteServiceApi* | [**getRouteByLocation**](docs/SWGLIAPIGeoRouteServiceApi.md#getroutebylocation) | **GET** /georoute/v1/route/bylocation | Gets Route by Location
-*SWGLIAPIGeoRouteServiceApi* | [**getTravelCostMatrixByAddress**](docs/SWGLIAPIGeoRouteServiceApi.md#gettravelcostmatrixbyaddress) | **GET** /georoute/v1/travelcostmatrix/byaddress | Gets Cost Matrix by Address
-*SWGLIAPIGeoRouteServiceApi* | [**getTravelCostMatrixByLocation**](docs/SWGLIAPIGeoRouteServiceApi.md#gettravelcostmatrixbylocation) | **GET** /georoute/v1/travelcostmatrix/bylocation | Gets Cost Matrix by Location
-*SWGLIAPIGeoSearchServiceApi* | [**geoSearch**](docs/SWGLIAPIGeoSearchServiceApi.md#geosearch) | **GET** /geosearch/v1/locations | Gets LocationList
-*SWGLIAPIGeoServiceApi* | [**getAHJPlusPSAPByAddress**](docs/SWGLIAPIGeoServiceApi.md#getahjpluspsapbyaddress) | **GET** /geo911/v1/ahj-psap/byaddress | AHJ &amp; PSAP By Address.
+*PBLIAPIGeoCommServiceApi* | [**getRateCenterByAddress**](docs/SWGLIAPIGeoCommServiceApi.md#getratecenterbyaddress) | **GET** /geocomm/v1/ratecenter/byaddress | Rate Center By Address.
+*PBLIAPIGeoCommServiceApi* | [**getRateCenterByLocation**](docs/SWGLIAPIGeoCommServiceApi.md#getratecenterbylocation) | **GET** /geocomm/v1/ratecenter/bylocation | Rate Center By Location.
+*PBLIAPIGeoEnhanceServiceApi* | [**getAddress**](docs/SWGLIAPIGeoEnhanceServiceApi.md#getaddress) | **GET** /geoenhance/v1/address/bylocation | Address By Location.
+*PBLIAPIGeoEnhanceServiceApi* | [**getEntityByLocation**](docs/SWGLIAPIGeoEnhanceServiceApi.md#getentitybylocation) | **GET** /geoenhance/v1/poi/bylocation | Points Of Interest By Location.
+*PBLIAPIGeoEnhanceServiceApi* | [**getPlaceByLocation**](docs/SWGLIAPIGeoEnhanceServiceApi.md#getplacebylocation) | **GET** /geoenhance/v1/place/bylocation | Place By Location.
+*PBLIAPIGeoEnhanceServiceApi* | [**getTimezoneByLocation**](docs/SWGLIAPIGeoEnhanceServiceApi.md#gettimezonebylocation) | **GET** /geoenhance/v1/timezone/bylocation | Timezone By Location.
+*PBLIAPIGeoLifeServiceApi* | [**getDemographicsByAddress**](docs/SWGLIAPIGeoLifeServiceApi.md#getdemographicsbyaddress) | **GET** /geolife/v1/demographics/byaddress | Demographics By Address.
+*PBLIAPIGeoLifeServiceApi* | [**getDemographicsByLocation**](docs/SWGLIAPIGeoLifeServiceApi.md#getdemographicsbylocation) | **GET** /geolife/v1/demographics/bylocation | Demographics By Location.
+*PBLIAPIGeoLifeServiceApi* | [**getSegmentationByAddress**](docs/SWGLIAPIGeoLifeServiceApi.md#getsegmentationbyaddress) | **GET** /geolife/v1/segmentation/byaddress | Segmentation By Address.
+*PBLIAPIGeoLifeServiceApi* | [**getSegmentationByLocation**](docs/SWGLIAPIGeoLifeServiceApi.md#getsegmentationbylocation) | **GET** /geolife/v1/segmentation/bylocation | Segmentation By Location.
+*PBLIAPIGeoRiskServiceApi* | [**getCrimeRiskByAddress**](docs/SWGLIAPIGeoRiskServiceApi.md#getcrimeriskbyaddress) | **GET** /georisk/v1/crime/byaddress | Gets CrimeRiskResponse
+*PBLIAPIGeoRiskServiceApi* | [**getCrimeRiskByLocation**](docs/SWGLIAPIGeoRiskServiceApi.md#getcrimeriskbylocation) | **GET** /georisk/v1/crime/bylocation | Gets CrimeRiskResponse
+*PBLIAPIGeoRiskServiceApi* | [**getEarthquakeRiskByAddress**](docs/SWGLIAPIGeoRiskServiceApi.md#getearthquakeriskbyaddress) | **GET** /georisk/v1/earthquake/byaddress | Gets EarthquakeRiskResponse
+*PBLIAPIGeoRiskServiceApi* | [**getEarthquakeRiskByLocation**](docs/SWGLIAPIGeoRiskServiceApi.md#getearthquakeriskbylocation) | **GET** /georisk/v1/earthquake/bylocation | Gets EarthquakeRiskResponse
+*PBLIAPIGeoRiskServiceApi* | [**getFireRiskByAddress**](docs/SWGLIAPIGeoRiskServiceApi.md#getfireriskbyaddress) | **GET** /georisk/v1/fire/byaddress | Gets FireRiskResponse
+*PBLIAPIGeoRiskServiceApi* | [**getFireRiskByLocation**](docs/SWGLIAPIGeoRiskServiceApi.md#getfireriskbylocation) | **GET** /georisk/v1/fire/bylocation | Gets FireRiskResponse
+*PBLIAPIGeoRiskServiceApi* | [**getFireStationByAddress**](docs/SWGLIAPIGeoRiskServiceApi.md#getfirestationbyaddress) | **GET** /georisk/v1/firestation/byaddress | Gets FireStationResponse
+*PBLIAPIGeoRiskServiceApi* | [**getFireStationByLocation**](docs/SWGLIAPIGeoRiskServiceApi.md#getfirestationbylocation) | **GET** /georisk/v1/firestation/bylocation | Gets FireStationResponse
+*PBLIAPIGeoRiskServiceApi* | [**getFloodRiskByAddress**](docs/SWGLIAPIGeoRiskServiceApi.md#getfloodriskbyaddress) | **GET** /georisk/v1/flood/byaddress | Gets FloodRiskResponse
+*PBLIAPIGeoRiskServiceApi* | [**getFloodRiskByLocation**](docs/SWGLIAPIGeoRiskServiceApi.md#getfloodriskbylocation) | **GET** /georisk/v1/flood/bylocation | Gets FloodRiskResponse
+*PBLIAPIGeoRouteServiceApi* | [**getRouteByAddress**](docs/SWGLIAPIGeoRouteServiceApi.md#getroutebyaddress) | **GET** /georoute/v1/route/byaddress | Gets Route by Address
+*PBLIAPIGeoRouteServiceApi* | [**getRouteByLocation**](docs/SWGLIAPIGeoRouteServiceApi.md#getroutebylocation) | **GET** /georoute/v1/route/bylocation | Gets Route by Location
+*PBLIAPIGeoRouteServiceApi* | [**getTravelCostMatrixByAddress**](docs/SWGLIAPIGeoRouteServiceApi.md#gettravelcostmatrixbyaddress) | **GET** /georoute/v1/travelcostmatrix/byaddress | Gets Cost Matrix by Address
+*PBLIAPIGeoRouteServiceApi* | [**getTravelCostMatrixByLocation**](docs/SWGLIAPIGeoRouteServiceApi.md#gettravelcostmatrixbylocation) | **GET** /georoute/v1/travelcostmatrix/bylocation | Gets Cost Matrix by Location
+*PBLIAPIGeoSearchServiceApi* | [**geoSearch**](docs/SWGLIAPIGeoSearchServiceApi.md#geosearch) | **GET** /geosearch/v1/locations | Gets LocationList
+*PBLIAPIGeoServiceApi* | [**getAHJPlusPSASWGyAddress**](docs/PBLIAPIGeoServiceApi.md#getahjpluspsapbyaddress) | **GET** /geo911/v1/ahj-psap/byaddress | AHJ &amp; PSAP By Address.
 *SWGLIAPIGeoServiceApi* | [**getAHJPlusPSAPByLocation**](docs/SWGLIAPIGeoServiceApi.md#getahjpluspsapbylocation) | **GET** /geo911/v1/ahj-psap/bylocation | AHJ &amp; PSAP By Location
-*SWGLIAPIGeoServiceApi* | [**getPSAPByAddress**](docs/SWGLIAPIGeoServiceApi.md#getpsapbyaddress) | **GET** /geo911/v1/psap/byaddress | PSAP By Address.
+*PBLIAPIGeoServiceApi* | [**getPSASWGyAddress**](docs/PBLIAPIGeoServiceApi.md#getpsapbyaddress) | **GET** /geo911/v1/psap/byaddress | PSAP By Address.
 *SWGLIAPIGeoServiceApi* | [**getPSAPByLocation**](docs/SWGLIAPIGeoServiceApi.md#getpsapbylocation) | **GET** /geo911/v1/psap/bylocation | PSAP By Location.
-*SWGLIAPIGeoTaxServiceApi* | [**getBatchTaxByAddress**](docs/SWGLIAPIGeoTaxServiceApi.md#getbatchtaxbyaddress) | **POST** /geotax/v1/tax/{taxRateTypeId}/byaddress | Post Tax By Address
-*SWGLIAPIGeoTaxServiceApi* | [**getBatchTaxByLocation**](docs/SWGLIAPIGeoTaxServiceApi.md#getbatchtaxbylocation) | **POST** /geotax/v1/tax/{taxRateTypeId}/bylocation | Post Tax By Location
-*SWGLIAPIGeoTaxServiceApi* | [**getBatchTaxRateByAddress**](docs/SWGLIAPIGeoTaxServiceApi.md#getbatchtaxratebyaddress) | **POST** /geotax/v1/taxrate/{taxRateTypeId}/byaddress | Post Taxrate By Address
-*SWGLIAPIGeoTaxServiceApi* | [**getBatchTaxRateByLocation**](docs/SWGLIAPIGeoTaxServiceApi.md#getbatchtaxratebylocation) | **POST** /geotax/v1/taxrate/{taxRateTypeId}/bylocation | Post Taxrate By Location
-*SWGLIAPIGeoTaxServiceApi* | [**getSpecificTaxByAddress**](docs/SWGLIAPIGeoTaxServiceApi.md#getspecifictaxbyaddress) | **GET** /geotax/v1/tax/{taxRateTypeId}/byaddress | Get Tax By Address
-*SWGLIAPIGeoTaxServiceApi* | [**getSpecificTaxByLocation**](docs/SWGLIAPIGeoTaxServiceApi.md#getspecifictaxbylocation) | **GET** /geotax/v1/tax/{taxRateTypeId}/bylocation | Get Tax By Location
-*SWGLIAPIGeoTaxServiceApi* | [**getSpecificTaxRateByAddress**](docs/SWGLIAPIGeoTaxServiceApi.md#getspecifictaxratebyaddress) | **GET** /geotax/v1/taxrate/{taxRateTypeId}/byaddress | Get Taxrate By Address
-*SWGLIAPIGeoTaxServiceApi* | [**getSpecificTaxRateByLocation**](docs/SWGLIAPIGeoTaxServiceApi.md#getspecifictaxratebylocation) | **GET** /geotax/v1/taxrate/{taxRateTypeId}/bylocation | Get Taxrate By Location
-*SWGLIAPIGeoZoneServiceApi* | [**getTravelBoundaryByDistance**](docs/SWGLIAPIGeoZoneServiceApi.md#gettravelboundarybydistance) | **GET** /geozone/v1/travelboundary/bydistance | Gets travel Boundary by Distance
-*SWGLIAPIGeoZoneServiceApi* | [**getTravelBoundaryByTime**](docs/SWGLIAPIGeoZoneServiceApi.md#gettravelboundarybytime) | **GET** /geozone/v1/travelboundary/bytime | Gets travel Boundary by Time
-*SWGLIAPIGeocodeServiceApi* | [**geocode**](docs/SWGLIAPIGeocodeServiceApi.md#geocode) | **GET** /geocode-service/v1/transient/{datapackBundle}/geocode | Gets Geocode
-*SWGLIAPIGeocodeServiceApi* | [**geocodeBatch**](docs/SWGLIAPIGeocodeServiceApi.md#geocodebatch) | **POST** /geocode-service/v1/transient/{datapackBundle}/geocode | Gets Geocode
-*SWGLIAPIGeocodeServiceApi* | [**geocodeServiceV1TransientDatapackBundleReverseGeocodePost**](docs/SWGLIAPIGeocodeServiceApi.md#geocodeservicev1transientdatapackbundlereversegeocodepost) | **POST** /geocode-service/v1/transient/{datapackBundle}/reverseGeocode | reverse Geocode
-*SWGLIAPIGeocodeServiceApi* | [**getCapabilities**](docs/SWGLIAPIGeocodeServiceApi.md#getcapabilities) | **GET** /geocode-service/v1/transient/{datapackBundle}/capabilities | Gets Capabilities
-*SWGLIAPIGeocodeServiceApi* | [**getDictionaries**](docs/SWGLIAPIGeocodeServiceApi.md#getdictionaries) | **GET** /geocode-service/v1/transient/{datapackBundle}/dictionaries | Gets installed Dictionaries
-*SWGLIAPIGeocodeServiceApi* | [**reverseGeocode**](docs/SWGLIAPIGeocodeServiceApi.md#reversegeocode) | **GET** /geocode-service/v1/transient/{datapackBundle}/reverseGeocode | reverse Geocode
+*PBLIAPIGeoTaxServiceApi* | [**getBatchTaxByAddress**](docs/SWGLIAPIGeoTaxServiceApi.md#getbatchtaxbyaddress) | **POST** /geotax/v1/tax/{taxRateTypeId}/byaddress | Post Tax By Address
+*PBLIAPIGeoTaxServiceApi* | [**getBatchTaxByLocation**](docs/SWGLIAPIGeoTaxServiceApi.md#getbatchtaxbylocation) | **POST** /geotax/v1/tax/{taxRateTypeId}/bylocation | Post Tax By Location
+*PBLIAPIGeoTaxServiceApi* | [**getBatchTaxRateByAddress**](docs/SWGLIAPIGeoTaxServiceApi.md#getbatchtaxratebyaddress) | **POST** /geotax/v1/taxrate/{taxRateTypeId}/byaddress | Post Taxrate By Address
+*PBLIAPIGeoTaxServiceApi* | [**getBatchTaxRateByLocation**](docs/SWGLIAPIGeoTaxServiceApi.md#getbatchtaxratebylocation) | **POST** /geotax/v1/taxrate/{taxRateTypeId}/bylocation | Post Taxrate By Location
+*PBLIAPIGeoTaxServiceApi* | [**getSpecificTaxByAddress**](docs/SWGLIAPIGeoTaxServiceApi.md#getspecifictaxbyaddress) | **GET** /geotax/v1/tax/{taxRateTypeId}/byaddress | Get Tax By Address
+*PBLIAPIGeoTaxServiceApi* | [**getSpecificTaxByLocation**](docs/SWGLIAPIGeoTaxServiceApi.md#getspecifictaxbylocation) | **GET** /geotax/v1/tax/{taxRateTypeId}/bylocation | Get Tax By Location
+*PBLIAPIGeoTaxServiceApi* | [**getSpecificTaxRateByAddress**](docs/SWGLIAPIGeoTaxServiceApi.md#getspecifictaxratebyaddress) | **GET** /geotax/v1/taxrate/{taxRateTypeId}/byaddress | Get Taxrate By Address
+*PBLIAPIGeoTaxServiceApi* | [**getSpecificTaxRateByLocation**](docs/SWGLIAPIGeoTaxServiceApi.md#getspecifictaxratebylocation) | **GET** /geotax/v1/taxrate/{taxRateTypeId}/bylocation | Get Taxrate By Location
+*PBLIAPIGeoZoneServiceApi* | [**getTravelBoundaryByDistance**](docs/SWGLIAPIGeoZoneServiceApi.md#gettravelboundarybydistance) | **GET** /geozone/v1/travelboundary/bydistance | Gets travel Boundary by Distance
+*PBLIAPIGeoZoneServiceApi* | [**getTravelBoundaryByTime**](docs/SWGLIAPIGeoZoneServiceApi.md#gettravelboundarybytime) | **GET** /geozone/v1/travelboundary/bytime | Gets travel Boundary by Time
+*PBLIAPIGeocodeServiceApi* | [**geocode**](docs/SWGLIAPIGeocodeServiceApi.md#geocode) | **GET** /geocode-service/v1/transient/{datapackBundle}/geocode | Gets Geocode
+*PBLIAPIGeocodeServiceApi* | [**geocodeBatch**](docs/SWGLIAPIGeocodeServiceApi.md#geocodebatch) | **POST** /geocode-service/v1/transient/{datapackBundle}/geocode | Gets Geocode
+*PBLIAPIGeocodeServiceApi* | [**geocodeServiceV1TransientDatapackBundleReverseGeocodePost**](docs/SWGLIAPIGeocodeServiceApi.md#geocodeservicev1transientdatapackbundlereversegeocodepost) | **POST** /geocode-service/v1/transient/{datapackBundle}/reverseGeocode | reverse Geocode
+*PBLIAPIGeocodeServiceApi* | [**getCapabilities**](docs/SWGLIAPIGeocodeServiceApi.md#getcapabilities) | **GET** /geocode-service/v1/transient/{datapackBundle}/capabilities | Gets Capabilities
+*PBLIAPIGeocodeServiceApi* | [**getDictionaries**](docs/SWGLIAPIGeocodeServiceApi.md#getdictionaries) | **GET** /geocode-service/v1/transient/{datapackBundle}/dictionaries | Gets installed Dictionaries
+*PBLIAPIGeocodeServiceApi* | [**reverseGeocode**](docs/SWGLIAPIGeocodeServiceApi.md#reversegeocode) | **GET** /geocode-service/v1/transient/{datapackBundle}/reverseGeocode | reverse Geocode
 
 
 ## Documentation For Models
 
- - [SWGAHJ](docs/SWGAHJ.md)
- - [SWGAHJList](docs/SWGAHJList.md)
- - [SWGAHJPlusPSAPResponse](docs/SWGAHJPlusPSAPResponse.md)
- - [SWGAddress](docs/SWGAddress.md)
- - [SWGAgeTheme](docs/SWGAgeTheme.md)
- - [SWGAreaCodeInfo](docs/SWGAreaCodeInfo.md)
- - [SWGAttitudesAndMotivationTheme](docs/SWGAttitudesAndMotivationTheme.md)
- - [SWGAutomobileTheme](docs/SWGAutomobileTheme.md)
- - [SWGBaseFloodElevation](docs/SWGBaseFloodElevation.md)
- - [SWGBoundaries](docs/SWGBoundaries.md)
- - [SWGBoundary](docs/SWGBoundary.md)
- - [SWGCandidate](docs/SWGCandidate.md)
- - [SWGCandidateRange](docs/SWGCandidateRange.md)
- - [SWGCandidateRangeUnit](docs/SWGCandidateRangeUnit.md)
- - [SWGCbsa](docs/SWGCbsa.md)
- - [SWGCensus](docs/SWGCensus.md)
- - [SWGChannelPreferencesTheme](docs/SWGChannelPreferencesTheme.md)
- - [SWGCommunity](docs/SWGCommunity.md)
- - [SWGCommuterPatternsTheme](docs/SWGCommuterPatternsTheme.md)
- - [SWGConfiguredDictionaryResponse](docs/SWGConfiguredDictionaryResponse.md)
- - [SWGContactDetails](docs/SWGContactDetails.md)
- - [SWGContactPerson](docs/SWGContactPerson.md)
- - [SWGCost](docs/SWGCost.md)
- - [SWGCosts](docs/SWGCosts.md)
- - [SWGCountrySupport](docs/SWGCountrySupport.md)
- - [SWGCounty](docs/SWGCounty.md)
- - [SWGCoverage](docs/SWGCoverage.md)
- - [SWGCrimeBoundary](docs/SWGCrimeBoundary.md)
- - [SWGCrimeIndexTheme](docs/SWGCrimeIndexTheme.md)
- - [SWGCrimeRiskResponse](docs/SWGCrimeRiskResponse.md)
- - [SWGCrs](docs/SWGCrs.md)
- - [SWGCustomObject](docs/SWGCustomObject.md)
- - [SWGCustomObjectMember](docs/SWGCustomObjectMember.md)
- - [SWGDemographics](docs/SWGDemographics.md)
- - [SWGDemographicsThemes](docs/SWGDemographicsThemes.md)
- - [SWGDictionary](docs/SWGDictionary.md)
- - [SWGDirectionGeometry](docs/SWGDirectionGeometry.md)
- - [SWGDistance](docs/SWGDistance.md)
- - [SWGEarthquakeRiskResponse](docs/SWGEarthquakeRiskResponse.md)
- - [SWGEducationalAttainmentTheme](docs/SWGEducationalAttainmentTheme.md)
- - [SWGEthnicityTheme](docs/SWGEthnicityTheme.md)
- - [SWGEventsCount](docs/SWGEventsCount.md)
- - [SWGField](docs/SWGField.md)
- - [SWGFieldsMatching](docs/SWGFieldsMatching.md)
- - [SWGFinancialProductsTheme](docs/SWGFinancialProductsTheme.md)
- - [SWGFireDepartment](docs/SWGFireDepartment.md)
- - [SWGFireRiskResponse](docs/SWGFireRiskResponse.md)
- - [SWGFireShed](docs/SWGFireShed.md)
- - [SWGFireStation](docs/SWGFireStation.md)
- - [SWGFireStations](docs/SWGFireStations.md)
- - [SWGFloodBoundary](docs/SWGFloodBoundary.md)
- - [SWGFloodRiskResponse](docs/SWGFloodRiskResponse.md)
- - [SWGFloodZone](docs/SWGFloodZone.md)
- - [SWGGenderTheme](docs/SWGGenderTheme.md)
- - [SWGGeoPos](docs/SWGGeoPos.md)
- - [SWGGeoRiskBoundaries](docs/SWGGeoRiskBoundaries.md)
- - [SWGGeoRiskCrimeTheme](docs/SWGGeoRiskCrimeTheme.md)
- - [SWGGeoRouteResponse](docs/SWGGeoRouteResponse.md)
- - [SWGGeoTaxLocations](docs/SWGGeoTaxLocations.md)
- - [SWGGeocodeAddress](docs/SWGGeocodeAddress.md)
- - [SWGGeocodeCapabilitiesResponse](docs/SWGGeocodeCapabilitiesResponse.md)
- - [SWGGeocodeRequest](docs/SWGGeocodeRequest.md)
- - [SWGGeocodeServiceResponse](docs/SWGGeocodeServiceResponse.md)
- - [SWGGeocodeServiceResponseList](docs/SWGGeocodeServiceResponseList.md)
- - [SWGGeometry](docs/SWGGeometry.md)
- - [SWGGeometryPolygon](docs/SWGGeometryPolygon.md)
- - [SWGGrid](docs/SWGGrid.md)
- - [SWGHouseholdSizeTheme](docs/SWGHouseholdSizeTheme.md)
- - [SWGIncomeTheme](docs/SWGIncomeTheme.md)
- - [SWGIndexVariable](docs/SWGIndexVariable.md)
- - [SWGIndividualValueVariable](docs/SWGIndividualValueVariable.md)
- - [SWGInputParameter](docs/SWGInputParameter.md)
- - [SWGLatLongFields](docs/SWGLatLongFields.md)
- - [SWGLifeStyleTheme](docs/SWGLifeStyleTheme.md)
- - [SWGLocation](docs/SWGLocation.md)
- - [SWGLocations](docs/SWGLocations.md)
- - [SWGMaritalStatusTheme](docs/SWGMaritalStatusTheme.md)
- - [SWGMatch](docs/SWGMatch.md)
- - [SWGMcd](docs/SWGMcd.md)
- - [SWGName](docs/SWGName.md)
- - [SWGOperation](docs/SWGOperation.md)
- - [SWGOutputParameter](docs/SWGOutputParameter.md)
- - [SWGPSAPResponse](docs/SWGPSAPResponse.md)
- - [SWGPlace](docs/SWGPlace.md)
- - [SWGPlaceByLocations](docs/SWGPlaceByLocations.md)
- - [SWGPlaceByLocationsLocation](docs/SWGPlaceByLocationsLocation.md)
- - [SWGPlaceLocation](docs/SWGPlaceLocation.md)
- - [SWGPlaceLocationName](docs/SWGPlaceLocationName.md)
- - [SWGPoi](docs/SWGPoi.md)
- - [SWGPoint](docs/SWGPoint.md)
- - [SWGPoints](docs/SWGPoints.md)
- - [SWGPolygon](docs/SWGPolygon.md)
- - [SWGPreferences](docs/SWGPreferences.md)
- - [SWGPrimaryZone](docs/SWGPrimaryZone.md)
- - [SWGProperties](docs/SWGProperties.md)
- - [SWGPurchasingBehaviorTheme](docs/SWGPurchasingBehaviorTheme.md)
- - [SWGRaceTheme](docs/SWGRaceTheme.md)
- - [SWGRangeVariable](docs/SWGRangeVariable.md)
- - [SWGRateCenterResponse](docs/SWGRateCenterResponse.md)
- - [SWGReturnFieldsDescriptor](docs/SWGReturnFieldsDescriptor.md)
- - [SWGReverseGeocodeRequest](docs/SWGReverseGeocodeRequest.md)
- - [SWGRisk](docs/SWGRisk.md)
- - [SWGRouteDirection](docs/SWGRouteDirection.md)
- - [SWGRouteDirections](docs/SWGRouteDirections.md)
- - [SWGRouteGeometry](docs/SWGRouteGeometry.md)
- - [SWGSalesTax](docs/SWGSalesTax.md)
- - [SWGSegmentation](docs/SWGSegmentation.md)
- - [SWGSegmentationThemes](docs/SWGSegmentationThemes.md)
- - [SWGSiteDetails](docs/SWGSiteDetails.md)
- - [SWGSpecialPurposeDistrict](docs/SWGSpecialPurposeDistrict.md)
- - [SWGSpecialPurposeDistrictTax](docs/SWGSpecialPurposeDistrictTax.md)
- - [SWGState](docs/SWGState.md)
- - [SWGStatus](docs/SWGStatus.md)
- - [SWGSupportLevel](docs/SWGSupportLevel.md)
- - [SWGTaxAddress](docs/SWGTaxAddress.md)
- - [SWGTaxAddressRequest](docs/SWGTaxAddressRequest.md)
- - [SWGTaxJurisdiction](docs/SWGTaxJurisdiction.md)
- - [SWGTaxLocationRequest](docs/SWGTaxLocationRequest.md)
- - [SWGTaxRateAddress](docs/SWGTaxRateAddress.md)
- - [SWGTaxRateAddressRequest](docs/SWGTaxRateAddressRequest.md)
- - [SWGTaxRateLocationRequest](docs/SWGTaxRateLocationRequest.md)
- - [SWGTaxResponse](docs/SWGTaxResponse.md)
- - [SWGTaxResponses](docs/SWGTaxResponses.md)
- - [SWGTime](docs/SWGTime.md)
- - [SWGTimezone](docs/SWGTimezone.md)
- - [SWGTravelBoundaries](docs/SWGTravelBoundaries.md)
- - [SWGTravelBoundary](docs/SWGTravelBoundary.md)
- - [SWGTravelCostMatrixResponse](docs/SWGTravelCostMatrixResponse.md)
- - [SWGTravelCostMatrixResponseEndPoint](docs/SWGTravelCostMatrixResponseEndPoint.md)
- - [SWGTravelCostMatrixResponseEndPointCrs](docs/SWGTravelCostMatrixResponseEndPointCrs.md)
- - [SWGTravelCostMatrixResponseEndPointCrsProperties](docs/SWGTravelCostMatrixResponseEndPointCrsProperties.md)
- - [SWGTravelCostMatrixResponseMatrix](docs/SWGTravelCostMatrixResponseMatrix.md)
- - [SWGUseTax](docs/SWGUseTax.md)
+ - [PBAHJ](docs/SWGAHJ.md)
+ - [PBAHJList](docs/SWGAHJList.md)
+ - [PBAHJPlusPSAPResponse](docs/SWGAHJPlusPSAPResponse.md)
+ - [PBAddress](docs/SWGAddress.md)
+ - [PBAgeTheme](docs/SWGAgeTheme.md)
+ - [PBAreaCodeInfo](docs/SWGAreaCodeInfo.md)
+ - [PBAttitudesAndMotivationTheme](docs/SWGAttitudesAndMotivationTheme.md)
+ - [PBAutomobileTheme](docs/SWGAutomobileTheme.md)
+ - [PBBaseFloodElevation](docs/SWGBaseFloodElevation.md)
+ - [PBBoundaries](docs/SWGBoundaries.md)
+ - [PBBoundary](docs/SWGBoundary.md)
+ - [PBCandidate](docs/SWGCandidate.md)
+ - [PBCandidateRange](docs/SWGCandidateRange.md)
+ - [PBCandidateRangeUnit](docs/SWGCandidateRangeUnit.md)
+ - [PBCbsa](docs/SWGCbsa.md)
+ - [PBCensus](docs/SWGCensus.md)
+ - [PBChannelPreferencesTheme](docs/SWGChannelPreferencesTheme.md)
+ - [PBCommunity](docs/SWGCommunity.md)
+ - [PBCommuterPatternsTheme](docs/SWGCommuterPatternsTheme.md)
+ - [PBConfiguredDictionaryResponse](docs/SWGConfiguredDictionaryResponse.md)
+ - [PBContactDetails](docs/SWGContactDetails.md)
+ - [PBContactPerson](docs/SWGContactPerson.md)
+ - [PBCost](docs/SWGCost.md)
+ - [PBCosts](docs/SWGCosts.md)
+ - [PBCountrySupport](docs/SWGCountrySupport.md)
+ - [PBCounty](docs/SWGCounty.md)
+ - [PBCoverage](docs/SWGCoverage.md)
+ - [PBCrimeBoundary](docs/SWGCrimeBoundary.md)
+ - [PBCrimeIndexTheme](docs/SWGCrimeIndexTheme.md)
+ - [PBCrimeRiskResponse](docs/SWGCrimeRiskResponse.md)
+ - [PBCrs](docs/SWGCrs.md)
+ - [PBCustomObject](docs/SWGCustomObject.md)
+ - [PBCustomObjectMember](docs/SWGCustomObjectMember.md)
+ - [PBDemographics](docs/SWGDemographics.md)
+ - [PBDemographicsThemes](docs/SWGDemographicsThemes.md)
+ - [PBDictionary](docs/SWGDictionary.md)
+ - [PBDirectionGeometry](docs/SWGDirectionGeometry.md)
+ - [PBDistance](docs/SWGDistance.md)
+ - [PBEarthquakeRiskResponse](docs/SWGEarthquakeRiskResponse.md)
+ - [PBEducationalAttainmentTheme](docs/SWGEducationalAttainmentTheme.md)
+ - [PBEthnicityTheme](docs/SWGEthnicityTheme.md)
+ - [PBEventsCount](docs/SWGEventsCount.md)
+ - [PBField](docs/SWGField.md)
+ - [PBFieldsMatching](docs/SWGFieldsMatching.md)
+ - [PBFinancialProductsTheme](docs/SWGFinancialProductsTheme.md)
+ - [PBFireDepartment](docs/SWGFireDepartment.md)
+ - [PBFireRiskResponse](docs/SWGFireRiskResponse.md)
+ - [PBFireShed](docs/SWGFireShed.md)
+ - [PBFireStation](docs/SWGFireStation.md)
+ - [PBFireStations](docs/SWGFireStations.md)
+ - [PBFloodBoundary](docs/SWGFloodBoundary.md)
+ - [PBFloodRiskResponse](docs/SWGFloodRiskResponse.md)
+ - [PBFloodZone](docs/SWGFloodZone.md)
+ - [PBGenderTheme](docs/SWGGenderTheme.md)
+ - [PBGeoPos](docs/SWGGeoPos.md)
+ - [PBGeoRiskBoundaries](docs/SWGGeoRiskBoundaries.md)
+ - [PBGeoRiskCrimeTheme](docs/SWGGeoRiskCrimeTheme.md)
+ - [PBGeoRouteResponse](docs/SWGGeoRouteResponse.md)
+ - [PBGeoTaxLocations](docs/SWGGeoTaxLocations.md)
+ - [PBGeocodeAddress](docs/SWGGeocodeAddress.md)
+ - [PBGeocodeCapabilitiesResponse](docs/SWGGeocodeCapabilitiesResponse.md)
+ - [PBGeocodeRequest](docs/SWGGeocodeRequest.md)
+ - [PBGeocodeServiceResponse](docs/SWGGeocodeServiceResponse.md)
+ - [PBGeocodeServiceResponseList](docs/SWGGeocodeServiceResponseList.md)
+ - [PBGeometry](docs/SWGGeometry.md)
+ - [PBGeometryPolygon](docs/SWGGeometryPolygon.md)
+ - [PBGrid](docs/SWGGrid.md)
+ - [PBHouseholdSizeTheme](docs/SWGHouseholdSizeTheme.md)
+ - [PBIncomeTheme](docs/SWGIncomeTheme.md)
+ - [PBIndexVariable](docs/SWGIndexVariable.md)
+ - [PBIndividualValueVariable](docs/SWGIndividualValueVariable.md)
+ - [PBInputParameter](docs/SWGInputParameter.md)
+ - [PBLatLongFields](docs/SWGLatLongFields.md)
+ - [PBLifeStyleTheme](docs/SWGLifeStyleTheme.md)
+ - [PBLocation](docs/SWGLocation.md)
+ - [PBLocations](docs/SWGLocations.md)
+ - [PBMaritalStatusTheme](docs/SWGMaritalStatusTheme.md)
+ - [PBMatch](docs/SWGMatch.md)
+ - [PBMcd](docs/SWGMcd.md)
+ - [PBName](docs/SWGName.md)
+ - [PBOperation](docs/SWGOperation.md)
+ - [PBOutputParameter](docs/SWGOutputParameter.md)
+ - [PBPSAPResponse](docs/SWGPSAPResponse.md)
+ - [PBPlace](docs/SWGPlace.md)
+ - [PBPlaceByLocations](docs/SWGPlaceByLocations.md)
+ - [PBPlaceByLocationsLocation](docs/SWGPlaceByLocationsLocation.md)
+ - [PBPlaceLocation](docs/SWGPlaceLocation.md)
+ - [PBPlaceLocationName](docs/SWGPlaceLocationName.md)
+ - [PBPoi](docs/SWGPoi.md)
+ - [PBPoint](docs/SWGPoint.md)
+ - [PBPoints](docs/SWGPoints.md)
+ - [PBPolygon](docs/SWGPolygon.md)
+ - [PBPreferences](docs/SWGPreferences.md)
+ - [PBPrimaryZone](docs/SWGPrimaryZone.md)
+ - [PBProperties](docs/SWGProperties.md)
+ - [PBPurchasingBehaviorTheme](docs/SWGPurchasingBehaviorTheme.md)
+ - [PBRaceTheme](docs/SWGRaceTheme.md)
+ - [PBRangeVariable](docs/SWGRangeVariable.md)
+ - [PBRateCenterResponse](docs/SWGRateCenterResponse.md)
+ - [PBReturnFieldsDescriptor](docs/SWGReturnFieldsDescriptor.md)
+ - [PBReverseGeocodeRequest](docs/SWGReverseGeocodeRequest.md)
+ - [PBRisk](docs/SWGRisk.md)
+ - [PBRouteDirection](docs/SWGRouteDirection.md)
+ - [PBRouteDirections](docs/SWGRouteDirections.md)
+ - [PBRouteGeometry](docs/SWGRouteGeometry.md)
+ - [PBSalesTax](docs/SWGSalesTax.md)
+ - [PBSegmentation](docs/SWGSegmentation.md)
+ - [PBSegmentationThemes](docs/SWGSegmentationThemes.md)
+ - [PBSiteDetails](docs/SWGSiteDetails.md)
+ - [PBSpecialPurposeDistrict](docs/SWGSpecialPurposeDistrict.md)
+ - [PBSpecialPurposeDistrictTax](docs/SWGSpecialPurposeDistrictTax.md)
+ - [PBState](docs/SWGState.md)
+ - [PBStatus](docs/SWGStatus.md)
+ - [PBSupportLevel](docs/SWGSupportLevel.md)
+ - [PBTaxAddress](docs/SWGTaxAddress.md)
+ - [PBTaxAddressRequest](docs/SWGTaxAddressRequest.md)
+ - [PBTaxJurisdiction](docs/SWGTaxJurisdiction.md)
+ - [PBTaxLocationRequest](docs/SWGTaxLocationRequest.md)
+ - [PBTaxRateAddress](docs/SWGTaxRateAddress.md)
+ - [PBTaxRateAddressRequest](docs/SWGTaxRateAddressRequest.md)
+ - [PBTaxRateLocationRequest](docs/SWGTaxRateLocationRequest.md)
+ - [PBTaxResponse](docs/SWGTaxResponse.md)
+ - [PBTaxResponses](docs/SWGTaxResponses.md)
+ - [PBTime](docs/SWGTime.md)
+ - [PBTimezone](docs/SWGTimezone.md)
+ - [PBTravelBoundaries](docs/SWGTravelBoundaries.md)
+ - [PBTravelBoundary](docs/SWGTravelBoundary.md)
+ - [PBTravelCostMatrixResponse](docs/SWGTravelCostMatrixResponse.md)
+ - [PBTravelCostMatrixResponseEndPoint](docs/SWGTravelCostMatrixResponseEndPoint.md)
+ - [PBTravelCostMatrixResponseEndPointCrs](docs/SWGTravelCostMatrixResponseEndPointCrs.md)
+ - [PBTravelCostMatrixResponseEndPointCrsProperties](docs/SWGTravelCostMatrixResponseEndPointCrsProperties.md)
+ - [PBTravelCostMatrixResponseMatrix](docs/SWGTravelCostMatrixResponseMatrix.md)
+ - [PBUseTax](docs/SWGUseTax.md)
 
 
 ## Documentation For Authorization
