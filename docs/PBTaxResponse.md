@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**objectId** | **NSString*** |  | [optional] 
 **gnisCode** | **NSString*** |  | [optional] 
 **confidence** | **NSNumber*** |  | [optional] 
 **jurisdiction** | [**PBTaxJurisdiction***](PBTaxJurisdiction.md) |  | [optional] 

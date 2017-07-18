@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**objectId** | **NSString*** |  | [optional] 
 **country** | **NSString*** |  | [optional] 
 **geometry** | [**PBGeoPos***](PBGeoPos.md) |  | 
 

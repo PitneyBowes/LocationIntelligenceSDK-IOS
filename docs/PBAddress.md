@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**objectId** | **NSString*** |  | [optional] 
 **displayName** | **NSString*** |  | [optional] 
 **streetSide** | **NSString*** |  | [optional] 
 **businessName** | **NSString*** |  | [optional] 

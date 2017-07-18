@@ -86,6 +86,12 @@ NSInteger kPBLIAPIGeoSearchServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param country Country ISO code. We need to make sure that either Lat/Lng or Country is provided to API (optional)
 ///
+///  @param matchOnAddressNumber Option so that we force api to match on address number (optional)
+///
+///  @param autoDetectLocation Option to allow API to detect origin of API request automatically (optional, default to true)
+///
+///  @param ipAddress  (optional)
+///
 ///  @returns PBLocations*
 ///
 -(NSNumber*) geoSearchWithSearchText: (NSString*) searchText
@@ -95,6 +101,9 @@ NSInteger kPBLIAPIGeoSearchServiceApiMissingParamErrorCode = 234513;
     searchRadiusUnit: (NSString*) searchRadiusUnit
     maxCandidates: (NSString*) maxCandidates
     country: (NSString*) country
+    matchOnAddressNumber: (NSString*) matchOnAddressNumber
+    autoDetectLocation: (NSString*) autoDetectLocation
+    ipAddress: (NSString*) ipAddress
     completionHandler: (void (^)(PBLocations* output, NSError* error)) handler {
     // verify the required parameter 'searchText' is set
     if (searchText == nil) {
@@ -135,6 +144,15 @@ NSInteger kPBLIAPIGeoSearchServiceApiMissingParamErrorCode = 234513;
     }
     if (country != nil) {
         queryParams[@"country"] = country;
+    }
+    if (matchOnAddressNumber != nil) {
+        queryParams[@"matchOnAddressNumber"] = matchOnAddressNumber;
+    }
+    if (autoDetectLocation != nil) {
+        queryParams[@"autoDetectLocation"] = autoDetectLocation;
+    }
+    if (ipAddress != nil) {
+        queryParams[@"ipAddress"] = ipAddress;
     }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];

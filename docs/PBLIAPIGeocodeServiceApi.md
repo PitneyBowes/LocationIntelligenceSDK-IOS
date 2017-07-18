@@ -6,9 +6,11 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**geocode**](PBLIAPIGeocodeServiceApi.md#geocode) | **GET** /geocode-service/v1/transient/{datapackBundle}/geocode | Gets Geocode
 [**geocodeBatch**](PBLIAPIGeocodeServiceApi.md#geocodebatch) | **POST** /geocode-service/v1/transient/{datapackBundle}/geocode | Gets Geocode
-[**geocodeServiceV1TransientDatapackBundleReverseGeocodePost**](PBLIAPIGeocodeServiceApi.md#geocodeservicev1transientdatapackbundlereversegeocodepost) | **POST** /geocode-service/v1/transient/{datapackBundle}/reverseGeocode | reverse Geocode
 [**getCapabilities**](PBLIAPIGeocodeServiceApi.md#getcapabilities) | **GET** /geocode-service/v1/transient/{datapackBundle}/capabilities | Gets Capabilities
 [**getDictionaries**](PBLIAPIGeocodeServiceApi.md#getdictionaries) | **GET** /geocode-service/v1/transient/{datapackBundle}/dictionaries | Gets installed Dictionaries
+[**getPBKey**](PBLIAPIGeocodeServiceApi.md#getpbkey) | **GET** /geocode-service/v1/key/byaddress | Gets PBKey
+[**getPBKeys**](PBLIAPIGeocodeServiceApi.md#getpbkeys) | **POST** /geocode-service/v1/key/byaddress | Gets PBKeys
+[**reverseGeocodBatch**](PBLIAPIGeocodeServiceApi.md#reversegeocodbatch) | **POST** /geocode-service/v1/transient/{datapackBundle}/reverseGeocode | reverse Geocode
 [**reverseGeocode**](PBLIAPIGeocodeServiceApi.md#reversegeocode) | **GET** /geocode-service/v1/transient/{datapackBundle}/reverseGeocode | reverse Geocode
 
 
@@ -194,65 +196,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **geocodeServiceV1TransientDatapackBundleReverseGeocodePost**
-```objc
--(NSNumber*) geocodeServiceV1TransientDatapackBundleReverseGeocodePostWithDatapackBundle: (NSString*) datapackBundle
-    body: (PBReverseGeocodeRequest*) body
-        completionHandler: (void (^)(PBGeocodeServiceResponseList* output, NSError* error)) handler;
-```
-
-reverse Geocode
-
-reverse Geocode
-
-### Example 
-```objc
-PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
-
-// Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
-[apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
-
-
-NSString* datapackBundle = @"datapackBundle_example"; // value of datapackBundle
-PBReverseGeocodeRequest* body = [[PBReverseGeocodeRequest alloc] init]; // Reverse Geocode Request object (optional)
-
-PBLIAPIGeocodeServiceApi*apiInstance = [[PBLIAPIGeocodeServiceApi alloc] init];
-
-// reverse Geocode
-[apiInstance geocodeServiceV1TransientDatapackBundleReverseGeocodePostWithDatapackBundle:datapackBundle
-              body:body
-          completionHandler: ^(PBGeocodeServiceResponseList* output, NSError* error) {
-                        if (output) {
-                            NSLog(@"%@", output);
-                        }
-                        if (error) {
-                            NSLog(@"Error calling PBLIAPIGeocodeServiceApi->geocodeServiceV1TransientDatapackBundleReverseGeocodePost: %@", error);
-                        }
-                    }];
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **datapackBundle** | **NSString***| value of datapackBundle | 
- **body** | [**PBReverseGeocodeRequest***](PBReverseGeocodeRequest*.md)| Reverse Geocode Request object | [optional] 
-
-### Return type
-
-[**PBGeocodeServiceResponseList***](PBGeocodeServiceResponseList.md)
-
-### Authorization
-
-[oAuth2Password](../README.md#oAuth2Password)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/xml
- - **Accept**: application/xml, application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **getCapabilities**
 ```objc
 -(NSNumber*) getCapabilitiesWithDatapackBundle: (NSString*) datapackBundle
@@ -363,6 +306,175 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PBConfiguredDictionaryResponse***](PBConfiguredDictionaryResponse.md)
+
+### Authorization
+
+[oAuth2Password](../README.md#oAuth2Password)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getPBKey**
+```objc
+-(NSNumber*) getPBKeyWithAddress: (NSString*) address
+        completionHandler: (void (^)(PBPBKeyResponse* output, NSError* error)) handler;
+```
+
+Gets PBKey
+
+Gets PBKey for an input free form address text
+
+### Example 
+```objc
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
+
+// Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
+[apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
+
+
+NSString* address = @"address_example"; // free form address text
+
+PBLIAPIGeocodeServiceApi*apiInstance = [[PBLIAPIGeocodeServiceApi alloc] init];
+
+// Gets PBKey
+[apiInstance getPBKeyWithAddress:address
+          completionHandler: ^(PBPBKeyResponse* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling PBLIAPIGeocodeServiceApi->getPBKey: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **address** | **NSString***| free form address text | 
+
+### Return type
+
+[**PBPBKeyResponse***](PBPBKeyResponse.md)
+
+### Authorization
+
+[oAuth2Password](../README.md#oAuth2Password)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getPBKeys**
+```objc
+-(NSNumber*) getPBKeysWithBody: (PBPBKeyAddressRequest*) body
+        completionHandler: (void (^)(PBPBKeyResponseList* output, NSError* error)) handler;
+```
+
+Gets PBKeys
+
+Gets PBKeys for multiple input addresses
+
+### Example 
+```objc
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
+
+// Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
+[apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
+
+
+PBPBKeyAddressRequest* body = [[PBPBKeyAddressRequest alloc] init]; //  (optional)
+
+PBLIAPIGeocodeServiceApi*apiInstance = [[PBLIAPIGeocodeServiceApi alloc] init];
+
+// Gets PBKeys
+[apiInstance getPBKeysWithBody:body
+          completionHandler: ^(PBPBKeyResponseList* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling PBLIAPIGeocodeServiceApi->getPBKeys: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PBPBKeyAddressRequest***](PBPBKeyAddressRequest*.md)|  | [optional] 
+
+### Return type
+
+[**PBPBKeyResponseList***](PBPBKeyResponseList.md)
+
+### Authorization
+
+[oAuth2Password](../README.md#oAuth2Password)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **reverseGeocodBatch**
+```objc
+-(NSNumber*) reverseGeocodBatchWithDatapackBundle: (NSString*) datapackBundle
+    body: (PBReverseGeocodeRequest*) body
+        completionHandler: (void (^)(PBGeocodeServiceResponseList* output, NSError* error)) handler;
+```
+
+reverse Geocode
+
+reverse Geocode
+
+### Example 
+```objc
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
+
+// Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
+[apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
+
+
+NSString* datapackBundle = @"datapackBundle_example"; // value of datapackBundle
+PBReverseGeocodeRequest* body = [[PBReverseGeocodeRequest alloc] init]; // Reverse Geocode Request object (optional)
+
+PBLIAPIGeocodeServiceApi*apiInstance = [[PBLIAPIGeocodeServiceApi alloc] init];
+
+// reverse Geocode
+[apiInstance reverseGeocodBatchWithDatapackBundle:datapackBundle
+              body:body
+          completionHandler: ^(PBGeocodeServiceResponseList* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling PBLIAPIGeocodeServiceApi->reverseGeocodBatch: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **datapackBundle** | **NSString***| value of datapackBundle | 
+ **body** | [**PBReverseGeocodeRequest***](PBReverseGeocodeRequest*.md)| Reverse Geocode Request object | [optional] 
+
+### Return type
+
+[**PBGeocodeServiceResponseList***](PBGeocodeServiceResponseList.md)
 
 ### Authorization
 

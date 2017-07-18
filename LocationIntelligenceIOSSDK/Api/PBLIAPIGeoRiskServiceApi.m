@@ -1,10 +1,19 @@
 #import "PBLIAPIGeoRiskServiceApi.h"
 #import "PBQueryParamCollection.h"
 #import "PBCrimeRiskResponse.h"
+#import "PBWaterBodyResponse.h"
+#import "PBEarthquakeHistory.h"
 #import "PBEarthquakeRiskResponse.h"
+#import "PBFireHistory.h"
 #import "PBFireRiskResponse.h"
+#import "PBFireRiskByAddressRequest.h"
+#import "PBFireRiskResponseList.h"
+#import "PBFireRiskByLocationRequest.h"
 #import "PBFireStations.h"
 #import "PBFloodRiskResponse.h"
+#import "PBFloodRiskByAddressRequest.h"
+#import "PBFloodRiskResponseList.h"
+#import "PBFloodRiskByLocationRequest.h"
 
 
 @interface PBLIAPIGeoRiskServiceApi ()
@@ -80,10 +89,13 @@ NSInteger kPBLIAPIGeoRiskServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param type Type of crime like violent crime, property crime, etc., multiple crime type indexes could be requested as comma separated values with 'all' as default.) (optional)
 ///
+///  @param includeGeometry Y or N (default is N) - if it is Y, then geometry will be part of response (optional)
+///
 ///  @returns PBCrimeRiskResponse*
 ///
 -(NSNumber*) getCrimeRiskByAddressWithAddress: (NSString*) address
     type: (NSString*) type
+    includeGeometry: (NSString*) includeGeometry
     completionHandler: (void (^)(PBCrimeRiskResponse* output, NSError* error)) handler {
     // verify the required parameter 'address' is set
     if (address == nil) {
@@ -109,6 +121,9 @@ NSInteger kPBLIAPIGeoRiskServiceApiMissingParamErrorCode = 234513;
     }
     if (type != nil) {
         queryParams[@"type"] = type;
+    }
+    if (includeGeometry != nil) {
+        queryParams[@"includeGeometry"] = includeGeometry;
     }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
@@ -160,11 +175,14 @@ NSInteger kPBLIAPIGeoRiskServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param type Refers to crime type. Valid values are following 11 crime types with 'all' as default (more than one can also be given as comma separated types) (optional)
 ///
+///  @param includeGeometry Y or N (default is N) - if it is Y, then geometry will be part of response (optional)
+///
 ///  @returns PBCrimeRiskResponse*
 ///
 -(NSNumber*) getCrimeRiskByLocationWithLongitude: (NSString*) longitude
     latitude: (NSString*) latitude
     type: (NSString*) type
+    includeGeometry: (NSString*) includeGeometry
     completionHandler: (void (^)(PBCrimeRiskResponse* output, NSError* error)) handler {
     // verify the required parameter 'longitude' is set
     if (longitude == nil) {
@@ -204,6 +222,9 @@ NSInteger kPBLIAPIGeoRiskServiceApiMissingParamErrorCode = 234513;
     }
     if (type != nil) {
         queryParams[@"type"] = type;
+    }
+    if (includeGeometry != nil) {
+        queryParams[@"includeGeometry"] = includeGeometry;
     }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
@@ -247,16 +268,330 @@ NSInteger kPBLIAPIGeoRiskServiceApiMissingParamErrorCode = 234513;
 }
 
 ///
+/// Gets WaterBodyResponse
+/// Gets WaterBodyResponse
+///  @param address The address of the location 
+///
+///  @param maxCandidates 1 (default value), Maximum value is 3 (optional)
+///
+///  @param waterBodyType all (default value), oceanandsea,lake,others,unknown,intermittent (optional)
+///
+///  @param searchDistance 5000 miles (default value), minimum should be 0 (optional)
+///
+///  @param searchDistanceUnit miles (default value),feet, kilometers, meters (optional)
+///
+///  @returns PBWaterBodyResponse*
+///
+-(NSNumber*) getDistanceToCoastByAddressWithAddress: (NSString*) address
+    maxCandidates: (NSString*) maxCandidates
+    waterBodyType: (NSString*) waterBodyType
+    searchDistance: (NSString*) searchDistance
+    searchDistanceUnit: (NSString*) searchDistanceUnit
+    completionHandler: (void (^)(PBWaterBodyResponse* output, NSError* error)) handler {
+    // verify the required parameter 'address' is set
+    if (address == nil) {
+        NSParameterAssert(address);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"address"] };
+            NSError* error = [NSError errorWithDomain:kPBLIAPIGeoRiskServiceApiErrorDomain code:kPBLIAPIGeoRiskServiceApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/georisk/v1/shoreline/distancetocoast/byaddress"];
+
+    // remove format in URL if needed
+    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (address != nil) {
+        queryParams[@"address"] = address;
+    }
+    if (maxCandidates != nil) {
+        queryParams[@"maxCandidates"] = maxCandidates;
+    }
+    if (waterBodyType != nil) {
+        queryParams[@"waterBodyType"] = waterBodyType;
+    }
+    if (searchDistance != nil) {
+        queryParams[@"searchDistance"] = searchDistance;
+    }
+    if (searchDistanceUnit != nil) {
+        queryParams[@"searchDistanceUnit"] = searchDistanceUnit;
+    }
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/xml", @"application/json"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json", @"application/xml"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"oAuth2Password"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PBWaterBodyResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((PBWaterBodyResponse*)data, error);
+                                }
+                           }
+          ];
+}
+
+///
+/// Gets WaterBodyResponse
+/// Gets WaterBodyResponse
+///  @param longitude The longitude of the location 
+///
+///  @param latitude The latitude of the location 
+///
+///  @param maxCandidates 1 (default value), Maximum value is 3 (optional)
+///
+///  @param waterBodyType all (default value), oceanandsea,lake,others,unknown,intermittent (optional)
+///
+///  @param searchDistance This specifies the search distance (optional)
+///
+///  @param searchDistanceUnit miles (default value),feet, kilometers, meters (optional)
+///
+///  @returns PBWaterBodyResponse*
+///
+-(NSNumber*) getDistanceToCoastByLocationWithLongitude: (NSString*) longitude
+    latitude: (NSString*) latitude
+    maxCandidates: (NSString*) maxCandidates
+    waterBodyType: (NSString*) waterBodyType
+    searchDistance: (NSString*) searchDistance
+    searchDistanceUnit: (NSString*) searchDistanceUnit
+    completionHandler: (void (^)(PBWaterBodyResponse* output, NSError* error)) handler {
+    // verify the required parameter 'longitude' is set
+    if (longitude == nil) {
+        NSParameterAssert(longitude);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"longitude"] };
+            NSError* error = [NSError errorWithDomain:kPBLIAPIGeoRiskServiceApiErrorDomain code:kPBLIAPIGeoRiskServiceApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    // verify the required parameter 'latitude' is set
+    if (latitude == nil) {
+        NSParameterAssert(latitude);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"latitude"] };
+            NSError* error = [NSError errorWithDomain:kPBLIAPIGeoRiskServiceApiErrorDomain code:kPBLIAPIGeoRiskServiceApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/georisk/v1/shoreline/distancetocoast/bylocation"];
+
+    // remove format in URL if needed
+    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (longitude != nil) {
+        queryParams[@"longitude"] = longitude;
+    }
+    if (latitude != nil) {
+        queryParams[@"latitude"] = latitude;
+    }
+    if (maxCandidates != nil) {
+        queryParams[@"maxCandidates"] = maxCandidates;
+    }
+    if (waterBodyType != nil) {
+        queryParams[@"waterBodyType"] = waterBodyType;
+    }
+    if (searchDistance != nil) {
+        queryParams[@"searchDistance"] = searchDistance;
+    }
+    if (searchDistanceUnit != nil) {
+        queryParams[@"searchDistanceUnit"] = searchDistanceUnit;
+    }
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/xml", @"application/json"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json", @"application/xml"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"oAuth2Password"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PBWaterBodyResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((PBWaterBodyResponse*)data, error);
+                                }
+                           }
+          ];
+}
+
+///
+/// Gets EarthquakeHistory
+/// Gets EarthquakeHistory
+///  @param postCode 5 digit Postal code to search 
+///
+///  @param startDate Start time in milliseconds(UTC) (optional)
+///
+///  @param endDate End time in milliseconds(UTC) (optional)
+///
+///  @param minMagnitude Minimum richter scale magnitude (optional)
+///
+///  @param maxMagnitude Maximum Richter scale magnitude (optional)
+///
+///  @param maxCandidates Maximum response events (optional, default to 1)
+///
+///  @returns PBEarthquakeHistory*
+///
+-(NSNumber*) getEarthquakeHistoryWithPostCode: (NSString*) postCode
+    startDate: (NSString*) startDate
+    endDate: (NSString*) endDate
+    minMagnitude: (NSString*) minMagnitude
+    maxMagnitude: (NSString*) maxMagnitude
+    maxCandidates: (NSString*) maxCandidates
+    completionHandler: (void (^)(PBEarthquakeHistory* output, NSError* error)) handler {
+    // verify the required parameter 'postCode' is set
+    if (postCode == nil) {
+        NSParameterAssert(postCode);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"postCode"] };
+            NSError* error = [NSError errorWithDomain:kPBLIAPIGeoRiskServiceApiErrorDomain code:kPBLIAPIGeoRiskServiceApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/georisk/v1/earthquakehistory"];
+
+    // remove format in URL if needed
+    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (postCode != nil) {
+        queryParams[@"postCode"] = postCode;
+    }
+    if (startDate != nil) {
+        queryParams[@"startDate"] = startDate;
+    }
+    if (endDate != nil) {
+        queryParams[@"endDate"] = endDate;
+    }
+    if (minMagnitude != nil) {
+        queryParams[@"minMagnitude"] = minMagnitude;
+    }
+    if (maxMagnitude != nil) {
+        queryParams[@"maxMagnitude"] = maxMagnitude;
+    }
+    if (maxCandidates != nil) {
+        queryParams[@"maxCandidates"] = maxCandidates;
+    }
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/xml", @"application/json"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json", @"application/xml"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"oAuth2Password"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PBEarthquakeHistory*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((PBEarthquakeHistory*)data, error);
+                                }
+                           }
+          ];
+}
+
+///
 /// Gets EarthquakeRiskResponse
 /// Returns the count of earthquake events for various richter measurements and values for an input address.
 ///  @param address Free-form address text 
 ///
 ///  @param richterValue Richter values like R5 (count of richter scale 5 events), R7 (count of richter scale 7 events), R6_GE (count of events >= richter scale 6), etc., multiple richter scales could be requested as comma separated values with 'all' as default. Valid values: All (default value), R0, R1, R2, R3, R4, R5, R6, R7, R0_GE, R1_GE, R2_GE, R3_GE, R4_GE, R5_GE, R6_GE, R7_GE (optional)
 ///
+///  @param includeGeometry Y or N (default is N) - if it is Y, then geometry will be part of response (optional)
+///
 ///  @returns PBEarthquakeRiskResponse*
 ///
 -(NSNumber*) getEarthquakeRiskByAddressWithAddress: (NSString*) address
     richterValue: (NSString*) richterValue
+    includeGeometry: (NSString*) includeGeometry
     completionHandler: (void (^)(PBEarthquakeRiskResponse* output, NSError* error)) handler {
     // verify the required parameter 'address' is set
     if (address == nil) {
@@ -282,6 +617,9 @@ NSInteger kPBLIAPIGeoRiskServiceApiMissingParamErrorCode = 234513;
     }
     if (richterValue != nil) {
         queryParams[@"richterValue"] = richterValue;
+    }
+    if (includeGeometry != nil) {
+        queryParams[@"includeGeometry"] = includeGeometry;
     }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
@@ -333,11 +671,14 @@ NSInteger kPBLIAPIGeoRiskServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param richterValue Richter values like R5 (count of richter scale 5 events), R7 (count of richter scale 7 events), R6_GE (count of events >= richter scale 6), etc., multiple richter scales could be requested as comma separated values with 'all' as default. Valid values: All (default value), R0, R1, R2, R3, R4, R5, R6, R7, R0_GE, R1_GE, R2_GE, R3_GE, R4_GE, R5_GE, R6_GE, R7_GE (optional)
 ///
+///  @param includeGeometry Y or N (default is N) - if it is Y, then geometry will be part of response (optional)
+///
 ///  @returns PBEarthquakeRiskResponse*
 ///
 -(NSNumber*) getEarthquakeRiskByLocationWithLongitude: (NSString*) longitude
     latitude: (NSString*) latitude
     richterValue: (NSString*) richterValue
+    includeGeometry: (NSString*) includeGeometry
     completionHandler: (void (^)(PBEarthquakeRiskResponse* output, NSError* error)) handler {
     // verify the required parameter 'longitude' is set
     if (longitude == nil) {
@@ -378,6 +719,9 @@ NSInteger kPBLIAPIGeoRiskServiceApiMissingParamErrorCode = 234513;
     if (richterValue != nil) {
         queryParams[@"richterValue"] = richterValue;
     }
+    if (includeGeometry != nil) {
+        queryParams[@"includeGeometry"] = includeGeometry;
+    }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
     // HTTP header `Accept`
@@ -414,6 +758,96 @@ NSInteger kPBLIAPIGeoRiskServiceApiMissingParamErrorCode = 234513;
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
                                     handler((PBEarthquakeRiskResponse*)data, error);
+                                }
+                           }
+          ];
+}
+
+///
+/// Gets FireHistory
+/// Gets FireHistory
+///  @param postCode 5 digit Postal code to search 
+///
+///  @param startDate Start time in milliseconds(UTC) (optional)
+///
+///  @param endDate End time in milliseconds(UTC) (optional)
+///
+///  @param maxCandidates Maximum response events (optional, default to 1)
+///
+///  @returns PBFireHistory*
+///
+-(NSNumber*) getFireHistoryWithPostCode: (NSString*) postCode
+    startDate: (NSString*) startDate
+    endDate: (NSString*) endDate
+    maxCandidates: (NSString*) maxCandidates
+    completionHandler: (void (^)(PBFireHistory* output, NSError* error)) handler {
+    // verify the required parameter 'postCode' is set
+    if (postCode == nil) {
+        NSParameterAssert(postCode);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"postCode"] };
+            NSError* error = [NSError errorWithDomain:kPBLIAPIGeoRiskServiceApiErrorDomain code:kPBLIAPIGeoRiskServiceApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/georisk/v1/firehistory"];
+
+    // remove format in URL if needed
+    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (postCode != nil) {
+        queryParams[@"postCode"] = postCode;
+    }
+    if (startDate != nil) {
+        queryParams[@"startDate"] = startDate;
+    }
+    if (endDate != nil) {
+        queryParams[@"endDate"] = endDate;
+    }
+    if (maxCandidates != nil) {
+        queryParams[@"maxCandidates"] = maxCandidates;
+    }
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/xml", @"application/json"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json", @"application/xml"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"oAuth2Password"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PBFireHistory*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((PBFireHistory*)data, error);
                                 }
                            }
           ];
@@ -486,6 +920,65 @@ NSInteger kPBLIAPIGeoRiskServiceApiMissingParamErrorCode = 234513;
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
                                     handler((PBFireRiskResponse*)data, error);
+                                }
+                           }
+          ];
+}
+
+///
+/// Batch method for getting fire risk by address
+/// Batch method for getting fire risk by address
+///  @param body  (optional)
+///
+///  @returns PBFireRiskResponseList*
+///
+-(NSNumber*) getFireRiskByAddressBatchWithBody: (PBFireRiskByAddressRequest*) body
+    completionHandler: (void (^)(PBFireRiskResponseList* output, NSError* error)) handler {
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/georisk/v1/fire/byaddress"];
+
+    // remove format in URL if needed
+    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/xml", @"application/json"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json", @"application/xml"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"oAuth2Password"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    bodyParam = body;
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PBFireRiskResponseList*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((PBFireRiskResponseList*)data, error);
                                 }
                            }
           ];
@@ -575,6 +1068,65 @@ NSInteger kPBLIAPIGeoRiskServiceApiMissingParamErrorCode = 234513;
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
                                     handler((PBFireRiskResponse*)data, error);
+                                }
+                           }
+          ];
+}
+
+///
+/// Batch method for getting fire risk by location
+/// Batch method for getting fire risk by location
+///  @param body  (optional)
+///
+///  @returns PBFireRiskResponseList*
+///
+-(NSNumber*) getFireRiskByLocationBatchWithBody: (PBFireRiskByLocationRequest*) body
+    completionHandler: (void (^)(PBFireRiskResponseList* output, NSError* error)) handler {
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/georisk/v1/fire/bylocation"];
+
+    // remove format in URL if needed
+    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/xml", @"application/json"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json", @"application/xml"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"oAuth2Password"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    bodyParam = body;
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PBFireRiskResponseList*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((PBFireRiskResponseList*)data, error);
                                 }
                            }
           ];
@@ -820,10 +1372,13 @@ NSInteger kPBLIAPIGeoRiskServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param includeZoneDesc Specifies primary zone description. Valid Values: 'Y' or 'N'. (optional)
 ///
+///  @param includeGeometry Y or N (default is N) - if it is Y, then geometry will be part of response (optional)
+///
 ///  @returns PBFloodRiskResponse*
 ///
 -(NSNumber*) getFloodRiskByAddressWithAddress: (NSString*) address
     includeZoneDesc: (NSString*) includeZoneDesc
+    includeGeometry: (NSString*) includeGeometry
     completionHandler: (void (^)(PBFloodRiskResponse* output, NSError* error)) handler {
     // verify the required parameter 'address' is set
     if (address == nil) {
@@ -849,6 +1404,9 @@ NSInteger kPBLIAPIGeoRiskServiceApiMissingParamErrorCode = 234513;
     }
     if (includeZoneDesc != nil) {
         queryParams[@"includeZoneDesc"] = includeZoneDesc;
+    }
+    if (includeGeometry != nil) {
+        queryParams[@"includeGeometry"] = includeGeometry;
     }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
@@ -892,6 +1450,65 @@ NSInteger kPBLIAPIGeoRiskServiceApiMissingParamErrorCode = 234513;
 }
 
 ///
+/// Batch method for getting flood risk by address
+/// Batch method for getting flood risk by address
+///  @param body  (optional)
+///
+///  @returns PBFloodRiskResponseList*
+///
+-(NSNumber*) getFloodRiskByAddressBatchWithBody: (PBFloodRiskByAddressRequest*) body
+    completionHandler: (void (^)(PBFloodRiskResponseList* output, NSError* error)) handler {
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/georisk/v1/flood/byaddress"];
+
+    // remove format in URL if needed
+    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/xml", @"application/json"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json", @"application/xml"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"oAuth2Password"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    bodyParam = body;
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PBFloodRiskResponseList*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((PBFloodRiskResponseList*)data, error);
+                                }
+                           }
+          ];
+}
+
+///
 /// Gets FloodRiskResponse
 /// Returns the Flood Risk data for Flood Zones and Base Flood Elevation, based on location.
 ///  @param longitude Longitude of Location 
@@ -900,11 +1517,14 @@ NSInteger kPBLIAPIGeoRiskServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param includeZoneDesc Specifies primary zone description. Valid Values: 'Y' or 'N'. Default: 'Y' (optional)
 ///
+///  @param includeGeometry Y or N (default is N) - if it is Y, then geometry will be part of response (optional)
+///
 ///  @returns PBFloodRiskResponse*
 ///
 -(NSNumber*) getFloodRiskByLocationWithLongitude: (NSString*) longitude
     latitude: (NSString*) latitude
     includeZoneDesc: (NSString*) includeZoneDesc
+    includeGeometry: (NSString*) includeGeometry
     completionHandler: (void (^)(PBFloodRiskResponse* output, NSError* error)) handler {
     // verify the required parameter 'longitude' is set
     if (longitude == nil) {
@@ -945,6 +1565,9 @@ NSInteger kPBLIAPIGeoRiskServiceApiMissingParamErrorCode = 234513;
     if (includeZoneDesc != nil) {
         queryParams[@"includeZoneDesc"] = includeZoneDesc;
     }
+    if (includeGeometry != nil) {
+        queryParams[@"includeGeometry"] = includeGeometry;
+    }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
     // HTTP header `Accept`
@@ -981,6 +1604,65 @@ NSInteger kPBLIAPIGeoRiskServiceApiMissingParamErrorCode = 234513;
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
                                     handler((PBFloodRiskResponse*)data, error);
+                                }
+                           }
+          ];
+}
+
+///
+/// Batch method for getting flood risk by location
+/// Batch method for getting flood risk by location
+///  @param body  (optional)
+///
+///  @returns PBFloodRiskResponseList*
+///
+-(NSNumber*) getFloodRiskByLocationBatchWithBody: (PBFloodRiskByLocationRequest*) body
+    completionHandler: (void (^)(PBFloodRiskResponseList* output, NSError* error)) handler {
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/georisk/v1/flood/bylocation"];
+
+    // remove format in URL if needed
+    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/xml", @"application/json"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json", @"application/xml"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"oAuth2Password"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    bodyParam = body;
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PBFloodRiskResponseList*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((PBFloodRiskResponseList*)data, error);
                                 }
                            }
           ];

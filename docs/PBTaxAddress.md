@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**objectId** | **NSString*** |  | [optional] 
 **mainAddressLine** | **NSString*** |  | [optional] 
 **addressLastLine** | **NSString*** |  | [optional] 
 **placeName** | **NSString*** |  | [optional] 

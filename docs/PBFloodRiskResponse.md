@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**count** | **NSNumber*** |  | [optional] 
+**objectId** | **NSString*** |  | [optional] 
 **state** | [**PBState***](PBState.md) |  | [optional] 
 **floodZone** | [**PBFloodZone***](PBFloodZone.md) |  | [optional] 
 **community** | [**PBCommunity***](PBCommunity.md) |  | [optional] 

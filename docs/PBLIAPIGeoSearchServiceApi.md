@@ -16,6 +16,9 @@ Method | HTTP request | Description
     searchRadiusUnit: (NSString*) searchRadiusUnit
     maxCandidates: (NSString*) maxCandidates
     country: (NSString*) country
+    matchOnAddressNumber: (NSString*) matchOnAddressNumber
+    autoDetectLocation: (NSString*) autoDetectLocation
+    ipAddress: (NSString*) ipAddress
         completionHandler: (void (^)(PBLocations* output, NSError* error)) handler;
 ```
 
@@ -38,6 +41,9 @@ NSString* searchRadius = @"searchRadius_example"; // Radius range within which s
 NSString* searchRadiusUnit = @"searchRadiusUnit_example"; // Radius unit such as Feet, Kilometers, Miles or Meters. (optional)
 NSString* maxCandidates = @"maxCandidates_example"; // Maximum number of addresses that can be retrieved. (optional)
 NSString* country = @"country_example"; // Country ISO code. We need to make sure that either Lat/Lng or Country is provided to API (optional)
+NSString* matchOnAddressNumber = @"matchOnAddressNumber_example"; // Option so that we force api to match on address number (optional)
+NSString* autoDetectLocation = @"true"; // Option to allow API to detect origin of API request automatically (optional) (default to true)
+NSString* ipAddress = @"ipAddress_example"; //  (optional)
 
 PBLIAPIGeoSearchServiceApi*apiInstance = [[PBLIAPIGeoSearchServiceApi alloc] init];
 
@@ -49,6 +55,9 @@ PBLIAPIGeoSearchServiceApi*apiInstance = [[PBLIAPIGeoSearchServiceApi alloc] ini
               searchRadiusUnit:searchRadiusUnit
               maxCandidates:maxCandidates
               country:country
+              matchOnAddressNumber:matchOnAddressNumber
+              autoDetectLocation:autoDetectLocation
+              ipAddress:ipAddress
           completionHandler: ^(PBLocations* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -70,6 +79,9 @@ Name | Type | Description  | Notes
  **searchRadiusUnit** | **NSString***| Radius unit such as Feet, Kilometers, Miles or Meters. | [optional] 
  **maxCandidates** | **NSString***| Maximum number of addresses that can be retrieved. | [optional] 
  **country** | **NSString***| Country ISO code. We need to make sure that either Lat/Lng or Country is provided to API | [optional] 
+ **matchOnAddressNumber** | **NSString***| Option so that we force api to match on address number | [optional] 
+ **autoDetectLocation** | **NSString***| Option to allow API to detect origin of API request automatically | [optional] [default to true]
+ **ipAddress** | **NSString***|  | [optional] 
 
 ### Return type
 
