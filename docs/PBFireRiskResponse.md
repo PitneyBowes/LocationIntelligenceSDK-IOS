@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**objectId** | **NSString*** |  | [optional] 
 **count** | **NSNumber*** |  | [optional] 
 **state** | [**PBState***](PBState.md) |  | [optional] 
 **fireShed** | [**PBFireShed***](PBFireShed.md) |  | [optional] 

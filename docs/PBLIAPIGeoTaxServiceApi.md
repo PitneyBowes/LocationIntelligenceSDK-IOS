@@ -8,6 +8,8 @@ Method | HTTP request | Description
 [**getBatchTaxByLocation**](PBLIAPIGeoTaxServiceApi.md#getbatchtaxbylocation) | **POST** /geotax/v1/tax/{taxRateTypeId}/bylocation | Post Tax By Location
 [**getBatchTaxRateByAddress**](PBLIAPIGeoTaxServiceApi.md#getbatchtaxratebyaddress) | **POST** /geotax/v1/taxrate/{taxRateTypeId}/byaddress | Post Taxrate By Address
 [**getBatchTaxRateByLocation**](PBLIAPIGeoTaxServiceApi.md#getbatchtaxratebylocation) | **POST** /geotax/v1/taxrate/{taxRateTypeId}/bylocation | Post Taxrate By Location
+[**getIPDTaxByAddress**](PBLIAPIGeoTaxServiceApi.md#getipdtaxbyaddress) | **GET** /geotax/v1/taxdistrict/ipd/byaddress | Get IPD Tax by Address
+[**getIPDTaxByAddressBatch**](PBLIAPIGeoTaxServiceApi.md#getipdtaxbyaddressbatch) | **POST** /geotax/v1/taxdistrict/ipd/byaddress | Get IPD Tax for batch requests
 [**getSpecificTaxByAddress**](PBLIAPIGeoTaxServiceApi.md#getspecifictaxbyaddress) | **GET** /geotax/v1/tax/{taxRateTypeId}/byaddress | Get Tax By Address
 [**getSpecificTaxByLocation**](PBLIAPIGeoTaxServiceApi.md#getspecifictaxbylocation) | **GET** /geotax/v1/tax/{taxRateTypeId}/bylocation | Get Tax By Location
 [**getSpecificTaxRateByAddress**](PBLIAPIGeoTaxServiceApi.md#getspecifictaxratebyaddress) | **GET** /geotax/v1/taxrate/{taxRateTypeId}/byaddress | Get Taxrate By Address
@@ -247,6 +249,116 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getIPDTaxByAddress**
+```objc
+-(NSNumber*) getIPDTaxByAddressWithAddress: (NSString*) address
+        completionHandler: (void (^)(PBTaxDistrictResponse* output, NSError* error)) handler;
+```
+
+Get IPD Tax by Address
+
+This will accept 'address' as a parameter and will return one or many IPDs details for that region in which address will fall.
+
+### Example 
+```objc
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
+
+// Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
+[apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
+
+
+NSString* address = @"address_example"; // The address to be searched.
+
+PBLIAPIGeoTaxServiceApi*apiInstance = [[PBLIAPIGeoTaxServiceApi alloc] init];
+
+// Get IPD Tax by Address
+[apiInstance getIPDTaxByAddressWithAddress:address
+          completionHandler: ^(PBTaxDistrictResponse* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling PBLIAPIGeoTaxServiceApi->getIPDTaxByAddress: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **address** | **NSString***| The address to be searched. | 
+
+### Return type
+
+[**PBTaxDistrictResponse***](PBTaxDistrictResponse.md)
+
+### Authorization
+
+[oAuth2Password](../README.md#oAuth2Password)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getIPDTaxByAddressBatch**
+```objc
+-(NSNumber*) getIPDTaxByAddressBatchWithBody: (PBIPDTaxByAddressBatchRequest*) body
+        completionHandler: (void (^)(PBTaxDistrictResponseList* output, NSError* error)) handler;
+```
+
+Get IPD Tax for batch requests
+
+Get IPD Tax for batch requests
+
+### Example 
+```objc
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
+
+// Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
+[apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
+
+
+PBIPDTaxByAddressBatchRequest* body = [[PBIPDTaxByAddressBatchRequest alloc] init]; // IPDTaxByAddressBatchRequest Class Object having IPD tax request
+
+PBLIAPIGeoTaxServiceApi*apiInstance = [[PBLIAPIGeoTaxServiceApi alloc] init];
+
+// Get IPD Tax for batch requests
+[apiInstance getIPDTaxByAddressBatchWithBody:body
+          completionHandler: ^(PBTaxDistrictResponseList* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling PBLIAPIGeoTaxServiceApi->getIPDTaxByAddressBatch: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PBIPDTaxByAddressBatchRequest***](PBIPDTaxByAddressBatchRequest*.md)| IPDTaxByAddressBatchRequest Class Object having IPD tax request | 
+
+### Return type
+
+[**PBTaxDistrictResponseList***](PBTaxDistrictResponseList.md)
+
+### Authorization
+
+[oAuth2Password](../README.md#oAuth2Password)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -6,8 +6,8 @@
 #import "PBGeocodeCapabilitiesResponse.h"
 #import "PBConfiguredDictionaryResponse.h"
 #import "PBPBKeyResponse.h"
-#import "PBPBKeyAddressRequest.h"
 #import "PBPBKeyResponseList.h"
+#import "PBPBKeyAddressRequest.h"
 #import "PBReverseGeocodeRequest.h"
 
 

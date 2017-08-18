@@ -19,6 +19,9 @@ Method | HTTP request | Description
     matchOnAddressNumber: (NSString*) matchOnAddressNumber
     autoDetectLocation: (NSString*) autoDetectLocation
     ipAddress: (NSString*) ipAddress
+    areaName1: (NSString*) areaName1
+    areaName3: (NSString*) areaName3
+    postCode: (NSString*) postCode
         completionHandler: (void (^)(PBLocations* output, NSError* error)) handler;
 ```
 
@@ -44,6 +47,9 @@ NSString* country = @"country_example"; // Country ISO code. We need to make sur
 NSString* matchOnAddressNumber = @"matchOnAddressNumber_example"; // Option so that we force api to match on address number (optional)
 NSString* autoDetectLocation = @"true"; // Option to allow API to detect origin of API request automatically (optional) (default to true)
 NSString* ipAddress = @"ipAddress_example"; //  (optional)
+NSString* areaName1 = @"areaName1_example"; // State province of the input to be searched (optional)
+NSString* areaName3 = @"areaName3_example"; // City of the input to be searched (optional)
+NSString* postCode = @"postCode_example"; // Postal Code of the input to be searched (optional)
 
 PBLIAPIGeoSearchServiceApi*apiInstance = [[PBLIAPIGeoSearchServiceApi alloc] init];
 
@@ -58,6 +64,9 @@ PBLIAPIGeoSearchServiceApi*apiInstance = [[PBLIAPIGeoSearchServiceApi alloc] ini
               matchOnAddressNumber:matchOnAddressNumber
               autoDetectLocation:autoDetectLocation
               ipAddress:ipAddress
+              areaName1:areaName1
+              areaName3:areaName3
+              postCode:postCode
           completionHandler: ^(PBLocations* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -82,6 +91,9 @@ Name | Type | Description  | Notes
  **matchOnAddressNumber** | **NSString***| Option so that we force api to match on address number | [optional] 
  **autoDetectLocation** | **NSString***| Option to allow API to detect origin of API request automatically | [optional] [default to true]
  **ipAddress** | **NSString***|  | [optional] 
+ **areaName1** | **NSString***| State province of the input to be searched | [optional] 
+ **areaName3** | **NSString***| City of the input to be searched | [optional] 
+ **postCode** | **NSString***| Postal Code of the input to be searched | [optional] 
 
 ### Return type
 

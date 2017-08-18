@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"country": @"country", @"tzValidFrom": @"tzValidFrom", @"tzValidUntill": @"tzValidUntill", @"dstRule": @"dstRule", @"dstValidFrom": @"dstValidFrom", @"dstValidUntill": @"dstValidUntill", @"dstStartDateFormat": @"dstStartDateFormat", @"dstEndDateFormat": @"dstEndDateFormat", @"dstStartDate": @"dstStartDate", @"dstStartTime": @"dstStartTime", @"dstEndTime": @"dstEndTime", @"dstEndDate": @"dstEndDate", @"timezoneName": @"timezoneName", @"utcOffset": @"utcOffset", @"dstOffset": @"dstOffset", @"timestamp": @"timestamp" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"country": @"country", @"tzValidFrom": @"tzValidFrom", @"tzValidUntill": @"tzValidUntill", @"dstRule": @"dstRule", @"dstValidFrom": @"dstValidFrom", @"dstValidUntill": @"dstValidUntill", @"dstStartDateFormat": @"dstStartDateFormat", @"dstEndDateFormat": @"dstEndDateFormat", @"dstStartDate": @"dstStartDate", @"dstStartTime": @"dstStartTime", @"dstEndTime": @"dstEndTime", @"dstEndDate": @"dstEndDate", @"timezoneName": @"timezoneName", @"utcOffset": @"utcOffset", @"dstOffset": @"dstOffset", @"timestamp": @"timestamp", @"matchedAddress": @"matchedAddress" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"country", @"tzValidFrom", @"tzValidUntill", @"dstRule", @"dstValidFrom", @"dstValidUntill", @"dstStartDateFormat", @"dstEndDateFormat", @"dstStartDate", @"dstStartTime", @"dstEndTime", @"dstEndDate", @"timezoneName", @"utcOffset", @"dstOffset", @"timestamp"];
+  NSArray *optionalProperties = @[@"country", @"tzValidFrom", @"tzValidUntill", @"dstRule", @"dstValidFrom", @"dstValidUntill", @"dstStartDateFormat", @"dstEndDateFormat", @"dstStartDate", @"dstStartTime", @"dstEndTime", @"dstEndDate", @"timezoneName", @"utcOffset", @"dstOffset", @"timestamp", @"matchedAddress"];
   return [optionalProperties containsObject:propertyName];
 }
 

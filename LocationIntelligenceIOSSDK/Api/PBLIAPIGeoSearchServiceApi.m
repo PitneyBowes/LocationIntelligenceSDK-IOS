@@ -92,6 +92,12 @@ NSInteger kPBLIAPIGeoSearchServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param ipAddress  (optional)
 ///
+///  @param areaName1 State province of the input to be searched (optional)
+///
+///  @param areaName3 City of the input to be searched (optional)
+///
+///  @param postCode Postal Code of the input to be searched (optional)
+///
 ///  @returns PBLocations*
 ///
 -(NSNumber*) geoSearchWithSearchText: (NSString*) searchText
@@ -104,6 +110,9 @@ NSInteger kPBLIAPIGeoSearchServiceApiMissingParamErrorCode = 234513;
     matchOnAddressNumber: (NSString*) matchOnAddressNumber
     autoDetectLocation: (NSString*) autoDetectLocation
     ipAddress: (NSString*) ipAddress
+    areaName1: (NSString*) areaName1
+    areaName3: (NSString*) areaName3
+    postCode: (NSString*) postCode
     completionHandler: (void (^)(PBLocations* output, NSError* error)) handler {
     // verify the required parameter 'searchText' is set
     if (searchText == nil) {
@@ -153,6 +162,15 @@ NSInteger kPBLIAPIGeoSearchServiceApiMissingParamErrorCode = 234513;
     }
     if (ipAddress != nil) {
         queryParams[@"ipAddress"] = ipAddress;
+    }
+    if (areaName1 != nil) {
+        queryParams[@"areaName1"] = areaName1;
+    }
+    if (areaName3 != nil) {
+        queryParams[@"areaName3"] = areaName3;
+    }
+    if (postCode != nil) {
+        queryParams[@"postCode"] = postCode;
     }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
