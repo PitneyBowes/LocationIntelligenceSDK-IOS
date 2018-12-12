@@ -1,0 +1,10 @@
+# PBGeoPropertyPBKeyResponses
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**propertyAttributes** | [**NSArray&lt;PBGeoPropertyPBKeyResponse&gt;***](PBGeoPropertyPBKeyResponse.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
