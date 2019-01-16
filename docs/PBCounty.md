@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **NSString*** |  | [optional] 
 **name** | **NSString*** |  | [optional] 
 **fips** | **NSString*** |  | [optional] 
 

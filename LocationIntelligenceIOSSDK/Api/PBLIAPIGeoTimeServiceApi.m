@@ -1,6 +1,7 @@
 #import "PBLIAPIGeoTimeServiceApi.h"
 #import "PBQueryParamCollection.h"
 #import "PBTimezone.h"
+#import "PBTimezoneLocation.h"
 
 
 @interface PBLIAPIGeoTimeServiceApi ()
@@ -76,10 +77,16 @@ NSInteger kPBLIAPIGeoTimeServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param address The address to be searched. 
 ///
+///  @param matchMode Match modes determine the leniency used to make a match between the input address and the reference data. (optional, default to Relaxed)
+///
+///  @param country Country ISO code. (optional, default to USA)
+///
 ///  @returns PBTimezone*
 ///
 -(NSNumber*) getTimezoneByAddressWithTimestamp: (NSString*) timestamp
     address: (NSString*) address
+    matchMode: (NSString*) matchMode
+    country: (NSString*) country
     completionHandler: (void (^)(PBTimezone* output, NSError* error)) handler {
     // verify the required parameter 'timestamp' is set
     if (timestamp == nil) {
@@ -116,6 +123,12 @@ NSInteger kPBLIAPIGeoTimeServiceApiMissingParamErrorCode = 234513;
     }
     if (address != nil) {
         queryParams[@"address"] = address;
+    }
+    if (matchMode != nil) {
+        queryParams[@"matchMode"] = matchMode;
+    }
+    if (country != nil) {
+        queryParams[@"country"] = country;
     }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
@@ -167,12 +180,12 @@ NSInteger kPBLIAPIGeoTimeServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param latitude Latitude of the location. 
 ///
-///  @returns PBTimezone*
+///  @returns PBTimezoneLocation*
 ///
 -(NSNumber*) getTimezoneByLocationWithTimestamp: (NSString*) timestamp
     longitude: (NSString*) longitude
     latitude: (NSString*) latitude
-    completionHandler: (void (^)(PBTimezone* output, NSError* error)) handler {
+    completionHandler: (void (^)(PBTimezoneLocation* output, NSError* error)) handler {
     // verify the required parameter 'timestamp' is set
     if (timestamp == nil) {
         NSParameterAssert(timestamp);
@@ -255,10 +268,10 @@ NSInteger kPBLIAPIGeoTimeServiceApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PBTimezone*"
+                              responseType: @"PBTimezoneLocation*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((PBTimezone*)data, error);
+                                    handler((PBTimezoneLocation*)data, error);
                                 }
                            }
           ];

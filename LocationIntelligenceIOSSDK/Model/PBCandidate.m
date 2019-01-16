@@ -6,7 +6,6 @@
   self = [super init];
   if (self) {
     // initialize property's default value, if any
-    self.worldGeocoded = @0;
     
   }
   return self;
@@ -18,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"precisionLevel": @"precisionLevel", @"formattedStreetAddress": @"formattedStreetAddress", @"formattedLocationAddress": @"formattedLocationAddress", @"identifier": @"identifier", @"precisionCode": @"precisionCode", @"sourceDictionary": @"sourceDictionary", @"matching": @"matching", @"geometry": @"geometry", @"address": @"address", @"ranges": @"ranges", @"worldGeocoded": @"worldGeocoded" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"precisionLevel": @"precisionLevel", @"formattedStreetAddress": @"formattedStreetAddress", @"formattedLocationAddress": @"formattedLocationAddress", @"identifier": @"identifier", @"precisionCode": @"precisionCode", @"sourceDictionary": @"sourceDictionary", @"matching": @"matching", @"geometry": @"geometry", @"address": @"address", @"ranges": @"ranges" }];
 }
 
 /**
@@ -28,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"precisionLevel", @"formattedStreetAddress", @"formattedLocationAddress", @"identifier", @"precisionCode", @"sourceDictionary", @"matching", @"geometry", @"address", @"ranges", @"worldGeocoded"];
+  NSArray *optionalProperties = @[@"precisionLevel", @"formattedStreetAddress", @"formattedLocationAddress", @"identifier", @"precisionCode", @"sourceDictionary", @"matching", @"geometry", @"address", @"ranges"];
   return [optionalProperties containsObject:propertyName];
 }
 

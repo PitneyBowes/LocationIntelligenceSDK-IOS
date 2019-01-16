@@ -54,7 +54,7 @@ NSString* country = @"USA"; // Country name or ISO code. (optional) (default to 
 NSString* placeName = @"placeName_example"; // Building name, place name, Point of Interest (POI), company or firm name associated with the input address. (optional)
 NSString* mainAddress = @"4750 Walnut St., Boulder CO, 80301"; // Single line input, treated as collection of field elements. (optional) (default to 4750 Walnut St., Boulder CO, 80301)
 NSString* lastLine = @"lastLine_example"; // The last line of the address. (optional)
-NSString* areaName1 = @"areaName1_example"; // Specifies the largest geographic area, typically a state or province. (optional)
+NSString* areaName1 = @"areaName1_example"; // Specifies the largest geographical area, typically a state or province. (optional)
 NSString* areaName2 = @"areaName2_example"; // Specifies the secondary geographic area, typically a county or district. (optional)
 NSString* areaName3 = @"areaName3_example"; // Specifies a city or town name. (optional)
 NSString* areaName4 = @"areaName4_example"; // Specifies a city subdivision or locality. (optional)
@@ -62,7 +62,7 @@ NSNumber* postalCode = @56; // The postal code in the appropriate format for the
 NSString* matchMode = @"Standard"; // Match modes determine the leniency used to make a match between the input address and the reference data. (optional) (default to Standard)
 NSNumber* fallbackGeo = @true; // Specifies whether to attempt to determine a geographic region centroid when an address-level geocode cannot be determined. (optional) (default to true)
 NSNumber* fallbackPostal = @true; // Specifies whether to attempt to determine a post code centroid when an address-level geocode cannot be determined. (optional) (default to true)
-NSNumber* maxCands = @1; // The maximum number of candidates to return. Must be an integer value. (optional) (default to 1)
+NSNumber* maxCands = @1; // The maximum number of candidates to return. (optional) (default to 1)
 NSNumber* streetOffset = @7; // Indicates the offset distance from the street segments to use in street-level geocoding. (optional) (default to 7)
 NSString* streetOffsetUnits = @"METERS"; // Specifies the unit of measurement for the street offset. (optional) (default to METERS)
 NSNumber* cornerOffset = @7; // Specifies the distance to offset the street end points in street-level matching. (optional) (default to 7)
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
  **placeName** | **NSString***| Building name, place name, Point of Interest (POI), company or firm name associated with the input address. | [optional] 
  **mainAddress** | **NSString***| Single line input, treated as collection of field elements. | [optional] [default to 4750 Walnut St., Boulder CO, 80301]
  **lastLine** | **NSString***| The last line of the address. | [optional] 
- **areaName1** | **NSString***| Specifies the largest geographic area, typically a state or province. | [optional] 
+ **areaName1** | **NSString***| Specifies the largest geographical area, typically a state or province. | [optional] 
  **areaName2** | **NSString***| Specifies the secondary geographic area, typically a county or district. | [optional] 
  **areaName3** | **NSString***| Specifies a city or town name. | [optional] 
  **areaName4** | **NSString***| Specifies a city subdivision or locality. | [optional] 
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
  **matchMode** | **NSString***| Match modes determine the leniency used to make a match between the input address and the reference data. | [optional] [default to Standard]
  **fallbackGeo** | **NSNumber***| Specifies whether to attempt to determine a geographic region centroid when an address-level geocode cannot be determined. | [optional] [default to true]
  **fallbackPostal** | **NSNumber***| Specifies whether to attempt to determine a post code centroid when an address-level geocode cannot be determined. | [optional] [default to true]
- **maxCands** | **NSNumber***| The maximum number of candidates to return. Must be an integer value. | [optional] [default to 1]
+ **maxCands** | **NSNumber***| The maximum number of candidates to return. | [optional] [default to 1]
  **streetOffset** | **NSNumber***| Indicates the offset distance from the street segments to use in street-level geocoding. | [optional] [default to 7]
  **streetOffsetUnits** | **NSString***| Specifies the unit of measurement for the street offset. | [optional] [default to METERS]
  **cornerOffset** | **NSNumber***| Specifies the distance to offset the street end points in street-level matching. | [optional] [default to 7]
@@ -139,8 +139,8 @@ Name | Type | Description  | Notes
 
 # **geocodeBatch**
 ```objc
--(NSNumber*) geocodeBatchWithDatapackBundle: (NSString*) datapackBundle
-    body: (PBGeocodeRequest*) body
+-(NSNumber*) geocodeBatchWithBody: (PBGeocodeRequest*) body
+    datapackBundle: (NSString*) datapackBundle
         completionHandler: (void (^)(PBGeocodeServiceResponseList* output, NSError* error)) handler;
 ```
 
@@ -156,14 +156,14 @@ PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
 
 
+PBGeocodeRequest* body = [[PBGeocodeRequest alloc] init]; // Geocode Request Object
 NSString* datapackBundle = @"datapackBundle_example"; // value of datapackBundle
-PBGeocodeRequest* body = [[PBGeocodeRequest alloc] init]; // Geocode Request Object (optional)
 
 PBLIAPIGeocodeServiceApi*apiInstance = [[PBLIAPIGeocodeServiceApi alloc] init];
 
 // Gets Geocode
-[apiInstance geocodeBatchWithDatapackBundle:datapackBundle
-              body:body
+[apiInstance geocodeBatchWithBody:body
+              datapackBundle:datapackBundle
           completionHandler: ^(PBGeocodeServiceResponseList* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -178,8 +178,8 @@ PBLIAPIGeocodeServiceApi*apiInstance = [[PBLIAPIGeocodeServiceApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**PBGeocodeRequest***](PBGeocodeRequest*.md)| Geocode Request Object | 
  **datapackBundle** | **NSString***| value of datapackBundle | 
- **body** | [**PBGeocodeRequest***](PBGeocodeRequest*.md)| Geocode Request Object | [optional] 
 
 ### Return type
 
@@ -391,7 +391,7 @@ PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
 
 
-PBPBKeyAddressRequest* body = [[PBPBKeyAddressRequest alloc] init]; //  (optional)
+PBPBKeyAddressRequest* body = [[PBPBKeyAddressRequest alloc] init]; // 
 
 PBLIAPIGeocodeServiceApi*apiInstance = [[PBLIAPIGeocodeServiceApi alloc] init];
 
@@ -411,7 +411,7 @@ PBLIAPIGeocodeServiceApi*apiInstance = [[PBLIAPIGeocodeServiceApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PBPBKeyAddressRequest***](PBPBKeyAddressRequest*.md)|  | [optional] 
+ **body** | [**PBPBKeyAddressRequest***](PBPBKeyAddressRequest*.md)|  | 
 
 ### Return type
 
@@ -448,7 +448,7 @@ PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 
 NSString* datapackBundle = @"datapackBundle_example"; // value of datapackBundle
-PBReverseGeocodeRequest* body = [[PBReverseGeocodeRequest alloc] init]; // Reverse Geocode Request object (optional)
+PBReverseGeocodeRequest* body = [[PBReverseGeocodeRequest alloc] init]; // Request for Reverse Geocode (optional)
 
 PBLIAPIGeocodeServiceApi*apiInstance = [[PBLIAPIGeocodeServiceApi alloc] init];
 
@@ -470,7 +470,7 @@ PBLIAPIGeocodeServiceApi*apiInstance = [[PBLIAPIGeocodeServiceApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **datapackBundle** | **NSString***| value of datapackBundle | 
- **body** | [**PBReverseGeocodeRequest***](PBReverseGeocodeRequest*.md)| Reverse Geocode Request object | [optional] 
+ **body** | [**PBReverseGeocodeRequest***](PBReverseGeocodeRequest*.md)| Request for Reverse Geocode | [optional] 
 
 ### Return type
 
@@ -515,9 +515,9 @@ NSString* datapackBundle = @"datapackBundle_example"; // value of datapackBundle
 NSNumber* x = @-105.240976; // Longitude of the location. (default to -105.240976)
 NSNumber* y = @40.018301; // Latitude of the location. (default to 40.018301)
 NSString* country = @"country_example"; // Country name or ISO code. (optional)
-NSString* coordSysName = @"EPSG:4326"; // Coordinate system to convert geometry in format codespace:code. (optional) (default to EPSG:4326)
+NSString* coordSysName = @"EPSG:4326"; // Coordinate system to convert geometry to in format codespace:code. (optional) (default to EPSG:4326)
 NSNumber* distance = @150; // Radius in which search is performed. (optional) (default to 150)
-NSString* distanceUnits = @"METERS"; // Unit of measurement for the search distance. (optional) (default to METERS)
+NSString* distanceUnits = @"METERS"; // Unit of measurement. (optional) (default to METERS)
 
 PBLIAPIGeocodeServiceApi*apiInstance = [[PBLIAPIGeocodeServiceApi alloc] init];
 
@@ -547,9 +547,9 @@ Name | Type | Description  | Notes
  **x** | **NSNumber***| Longitude of the location. | [default to -105.240976]
  **y** | **NSNumber***| Latitude of the location. | [default to 40.018301]
  **country** | **NSString***| Country name or ISO code. | [optional] 
- **coordSysName** | **NSString***| Coordinate system to convert geometry in format codespace:code. | [optional] [default to EPSG:4326]
+ **coordSysName** | **NSString***| Coordinate system to convert geometry to in format codespace:code. | [optional] [default to EPSG:4326]
  **distance** | **NSNumber***| Radius in which search is performed. | [optional] [default to 150]
- **distanceUnits** | **NSString***| Unit of measurement for the search distance. | [optional] [default to METERS]
+ **distanceUnits** | **NSString***| Unit of measurement. | [optional] [default to METERS]
 
 ### Return type
 

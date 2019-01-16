@@ -6,8 +6,8 @@
 #import "PBGeocodeCapabilitiesResponse.h"
 #import "PBConfiguredDictionaryResponse.h"
 #import "PBPBKeyResponse.h"
-#import "PBPBKeyResponseList.h"
 #import "PBPBKeyAddressRequest.h"
+#import "PBPBKeyResponseList.h"
 #import "PBReverseGeocodeRequest.h"
 
 
@@ -90,7 +90,7 @@ NSInteger kPBLIAPIGeocodeServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param lastLine The last line of the address. (optional)
 ///
-///  @param areaName1 Specifies the largest geographic area, typically a state or province. (optional)
+///  @param areaName1 Specifies the largest geographical area, typically a state or province. (optional)
 ///
 ///  @param areaName2 Specifies the secondary geographic area, typically a county or district. (optional)
 ///
@@ -106,7 +106,7 @@ NSInteger kPBLIAPIGeocodeServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param fallbackPostal Specifies whether to attempt to determine a post code centroid when an address-level geocode cannot be determined. (optional, default to true)
 ///
-///  @param maxCands The maximum number of candidates to return. Must be an integer value. (optional, default to 1)
+///  @param maxCands The maximum number of candidates to return. (optional, default to 1)
 ///
 ///  @param streetOffset Indicates the offset distance from the street segments to use in street-level geocoding. (optional, default to 7)
 ///
@@ -254,15 +254,26 @@ NSInteger kPBLIAPIGeocodeServiceApiMissingParamErrorCode = 234513;
 ///
 /// Gets Geocode
 /// Gets Geocode
-///  @param datapackBundle value of datapackBundle 
+///  @param body Geocode Request Object 
 ///
-///  @param body Geocode Request Object (optional)
+///  @param datapackBundle value of datapackBundle 
 ///
 ///  @returns PBGeocodeServiceResponseList*
 ///
--(NSNumber*) geocodeBatchWithDatapackBundle: (NSString*) datapackBundle
-    body: (PBGeocodeRequest*) body
+-(NSNumber*) geocodeBatchWithBody: (PBGeocodeRequest*) body
+    datapackBundle: (NSString*) datapackBundle
     completionHandler: (void (^)(PBGeocodeServiceResponseList* output, NSError* error)) handler {
+    // verify the required parameter 'body' is set
+    if (body == nil) {
+        NSParameterAssert(body);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"body"] };
+            NSError* error = [NSError errorWithDomain:kPBLIAPIGeocodeServiceApiErrorDomain code:kPBLIAPIGeocodeServiceApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
     // verify the required parameter 'datapackBundle' is set
     if (datapackBundle == nil) {
         NSParameterAssert(datapackBundle);
@@ -564,12 +575,23 @@ NSInteger kPBLIAPIGeocodeServiceApiMissingParamErrorCode = 234513;
 ///
 /// Gets PBKeys
 /// Gets PBKeys for multiple input addresses
-///  @param body  (optional)
+///  @param body  
 ///
 ///  @returns PBPBKeyResponseList*
 ///
 -(NSNumber*) getPBKeysWithBody: (PBPBKeyAddressRequest*) body
     completionHandler: (void (^)(PBPBKeyResponseList* output, NSError* error)) handler {
+    // verify the required parameter 'body' is set
+    if (body == nil) {
+        NSParameterAssert(body);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"body"] };
+            NSError* error = [NSError errorWithDomain:kPBLIAPIGeocodeServiceApiErrorDomain code:kPBLIAPIGeocodeServiceApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/geocode-service/v1/key/byaddress"];
 
     // remove format in URL if needed
@@ -625,7 +647,7 @@ NSInteger kPBLIAPIGeocodeServiceApiMissingParamErrorCode = 234513;
 /// reverse Geocode
 ///  @param datapackBundle value of datapackBundle 
 ///
-///  @param body Reverse Geocode Request object (optional)
+///  @param body Request for Reverse Geocode (optional)
 ///
 ///  @returns PBGeocodeServiceResponseList*
 ///
@@ -707,11 +729,11 @@ NSInteger kPBLIAPIGeocodeServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param country Country name or ISO code. (optional)
 ///
-///  @param coordSysName Coordinate system to convert geometry in format codespace:code. (optional, default to EPSG:4326)
+///  @param coordSysName Coordinate system to convert geometry to in format codespace:code. (optional, default to EPSG:4326)
 ///
 ///  @param distance Radius in which search is performed. (optional, default to 150)
 ///
-///  @param distanceUnits Unit of measurement for the search distance. (optional, default to METERS)
+///  @param distanceUnits Unit of measurement. (optional, default to METERS)
 ///
 ///  @returns PBGeocodeServiceResponse*
 ///

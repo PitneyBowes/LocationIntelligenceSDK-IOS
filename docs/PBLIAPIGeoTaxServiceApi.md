@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) getBatchTaxByLocationWithTaxRateTypeId: (NSString*) taxRateTypeId
     body: (PBTaxLocationRequest*) body
-        completionHandler: (void (^)(PBTaxResponses* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBTaxLocationResponses* output, NSError* error)) handler;
 ```
 
 Post Tax By Location
@@ -102,7 +102,7 @@ PBLIAPIGeoTaxServiceApi*apiInstance = [[PBLIAPIGeoTaxServiceApi alloc] init];
 // Post Tax By Location
 [apiInstance getBatchTaxByLocationWithTaxRateTypeId:taxRateTypeId
               body:body
-          completionHandler: ^(PBTaxResponses* output, NSError* error) {
+          completionHandler: ^(PBTaxLocationResponses* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PBTaxResponses***](PBTaxResponses.md)
+[**PBTaxLocationResponses***](PBTaxLocationResponses.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) getBatchTaxRateByAddressWithTaxRateTypeId: (NSString*) taxRateTypeId
     body: (PBTaxRateAddressRequest*) body
-        completionHandler: (void (^)(PBTaxResponses* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBTaxRateResponses* output, NSError* error)) handler;
 ```
 
 Post Taxrate By Address
@@ -161,7 +161,7 @@ PBLIAPIGeoTaxServiceApi*apiInstance = [[PBLIAPIGeoTaxServiceApi alloc] init];
 // Post Taxrate By Address
 [apiInstance getBatchTaxRateByAddressWithTaxRateTypeId:taxRateTypeId
               body:body
-          completionHandler: ^(PBTaxResponses* output, NSError* error) {
+          completionHandler: ^(PBTaxRateResponses* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PBTaxResponses***](PBTaxResponses.md)
+[**PBTaxRateResponses***](PBTaxRateResponses.md)
 
 ### Authorization
 
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) getBatchTaxRateByLocationWithTaxRateTypeId: (NSString*) taxRateTypeId
     body: (PBTaxRateLocationRequest*) body
-        completionHandler: (void (^)(PBTaxResponses* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBTaxRateLocationResponses* output, NSError* error)) handler;
 ```
 
 Post Taxrate By Location
@@ -220,7 +220,7 @@ PBLIAPIGeoTaxServiceApi*apiInstance = [[PBLIAPIGeoTaxServiceApi alloc] init];
 // Post Taxrate By Location
 [apiInstance getBatchTaxRateByLocationWithTaxRateTypeId:taxRateTypeId
               body:body
-          completionHandler: ^(PBTaxResponses* output, NSError* error) {
+          completionHandler: ^(PBTaxRateLocationResponses* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PBTaxResponses***](PBTaxResponses.md)
+[**PBTaxRateLocationResponses***](PBTaxRateLocationResponses.md)
 
 ### Authorization
 
@@ -255,6 +255,8 @@ Name | Type | Description  | Notes
 # **getIPDTaxByAddress**
 ```objc
 -(NSNumber*) getIPDTaxByAddressWithAddress: (NSString*) address
+    returnLatLongFields: (NSString*) returnLatLongFields
+    latLongFormat: (NSString*) latLongFormat
         completionHandler: (void (^)(PBTaxDistrictResponse* output, NSError* error)) handler;
 ```
 
@@ -271,11 +273,15 @@ PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 
 NSString* address = @"address_example"; // The address to be searched.
+NSString* returnLatLongFields = @"returnLatLongFields_example"; // Y or N (default is N) - Returns Latitude Longitude Fields (optional)
+NSString* latLongFormat = @"latLongFormat_example"; // (default is Decimal) - Returns Desired Latitude Longitude Format (optional)
 
 PBLIAPIGeoTaxServiceApi*apiInstance = [[PBLIAPIGeoTaxServiceApi alloc] init];
 
 // Get IPD Tax by Address
 [apiInstance getIPDTaxByAddressWithAddress:address
+              returnLatLongFields:returnLatLongFields
+              latLongFormat:latLongFormat
           completionHandler: ^(PBTaxDistrictResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -291,6 +297,8 @@ PBLIAPIGeoTaxServiceApi*apiInstance = [[PBLIAPIGeoTaxServiceApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **address** | **NSString***| The address to be searched. | 
+ **returnLatLongFields** | **NSString***| Y or N (default is N) - Returns Latitude Longitude Fields | [optional] 
+ **latLongFormat** | **NSString***| (default is Decimal) - Returns Desired Latitude Longitude Format | [optional] 
 
 ### Return type
 
@@ -496,7 +504,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) getSpecificTaxRateByAddressWithTaxRateTypeId: (NSString*) taxRateTypeId
     address: (NSString*) address
-        completionHandler: (void (^)(PBTaxResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBTaxRateResponse* output, NSError* error)) handler;
 ```
 
 Get Taxrate By Address
@@ -519,7 +527,7 @@ PBLIAPIGeoTaxServiceApi*apiInstance = [[PBLIAPIGeoTaxServiceApi alloc] init];
 // Get Taxrate By Address
 [apiInstance getSpecificTaxRateByAddressWithTaxRateTypeId:taxRateTypeId
               address:address
-          completionHandler: ^(PBTaxResponse* output, NSError* error) {
+          completionHandler: ^(PBTaxRateResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -538,7 +546,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PBTaxResponse***](PBTaxResponse.md)
+[**PBTaxRateResponse***](PBTaxRateResponse.md)
 
 ### Authorization
 
@@ -556,7 +564,7 @@ Name | Type | Description  | Notes
 -(NSNumber*) getSpecificTaxRateByLocationWithTaxRateTypeId: (NSString*) taxRateTypeId
     latitude: (NSString*) latitude
     longitude: (NSString*) longitude
-        completionHandler: (void (^)(PBTaxResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBTaxRateResponse* output, NSError* error)) handler;
 ```
 
 Get Taxrate By Location
@@ -581,7 +589,7 @@ PBLIAPIGeoTaxServiceApi*apiInstance = [[PBLIAPIGeoTaxServiceApi alloc] init];
 [apiInstance getSpecificTaxRateByLocationWithTaxRateTypeId:taxRateTypeId
               latitude:latitude
               longitude:longitude
-          completionHandler: ^(PBTaxResponse* output, NSError* error) {
+          completionHandler: ^(PBTaxRateResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -601,7 +609,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PBTaxResponse***](PBTaxResponse.md)
+[**PBTaxRateResponse***](PBTaxRateResponse.md)
 
 ### Authorization
 

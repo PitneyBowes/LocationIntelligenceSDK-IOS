@@ -1,14 +1,18 @@
 #import "PBLIAPIGeoTaxServiceApi.h"
 #import "PBQueryParamCollection.h"
-#import "PBTaxResponses.h"
 #import "PBTaxAddressRequest.h"
+#import "PBTaxResponses.h"
+#import "PBTaxLocationResponses.h"
 #import "PBTaxLocationRequest.h"
+#import "PBTaxRateResponses.h"
 #import "PBTaxRateAddressRequest.h"
+#import "PBTaxRateLocationResponses.h"
 #import "PBTaxRateLocationRequest.h"
 #import "PBTaxDistrictResponse.h"
-#import "PBTaxDistrictResponseList.h"
 #import "PBIPDTaxByAddressBatchRequest.h"
+#import "PBTaxDistrictResponseList.h"
 #import "PBTaxResponse.h"
+#import "PBTaxRateResponse.h"
 
 
 @interface PBLIAPIGeoTaxServiceApi ()
@@ -171,11 +175,11 @@ NSInteger kPBLIAPIGeoTaxServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param body TaxAddressRequest Class Object having tax request. 
 ///
-///  @returns PBTaxResponses*
+///  @returns PBTaxLocationResponses*
 ///
 -(NSNumber*) getBatchTaxByLocationWithTaxRateTypeId: (NSString*) taxRateTypeId
     body: (PBTaxLocationRequest*) body
-    completionHandler: (void (^)(PBTaxResponses* output, NSError* error)) handler {
+    completionHandler: (void (^)(PBTaxLocationResponses* output, NSError* error)) handler {
     // verify the required parameter 'taxRateTypeId' is set
     if (taxRateTypeId == nil) {
         NSParameterAssert(taxRateTypeId);
@@ -242,10 +246,10 @@ NSInteger kPBLIAPIGeoTaxServiceApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PBTaxResponses*"
+                              responseType: @"PBTaxLocationResponses*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((PBTaxResponses*)data, error);
+                                    handler((PBTaxLocationResponses*)data, error);
                                 }
                            }
           ];
@@ -258,11 +262,11 @@ NSInteger kPBLIAPIGeoTaxServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param body TaxRateAddressRequest Class Object having tax rate request. 
 ///
-///  @returns PBTaxResponses*
+///  @returns PBTaxRateResponses*
 ///
 -(NSNumber*) getBatchTaxRateByAddressWithTaxRateTypeId: (NSString*) taxRateTypeId
     body: (PBTaxRateAddressRequest*) body
-    completionHandler: (void (^)(PBTaxResponses* output, NSError* error)) handler {
+    completionHandler: (void (^)(PBTaxRateResponses* output, NSError* error)) handler {
     // verify the required parameter 'taxRateTypeId' is set
     if (taxRateTypeId == nil) {
         NSParameterAssert(taxRateTypeId);
@@ -329,10 +333,10 @@ NSInteger kPBLIAPIGeoTaxServiceApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PBTaxResponses*"
+                              responseType: @"PBTaxRateResponses*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((PBTaxResponses*)data, error);
+                                    handler((PBTaxRateResponses*)data, error);
                                 }
                            }
           ];
@@ -345,11 +349,11 @@ NSInteger kPBLIAPIGeoTaxServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param body TaxRateLocationRequest Class Object having tax rate request. 
 ///
-///  @returns PBTaxResponses*
+///  @returns PBTaxRateLocationResponses*
 ///
 -(NSNumber*) getBatchTaxRateByLocationWithTaxRateTypeId: (NSString*) taxRateTypeId
     body: (PBTaxRateLocationRequest*) body
-    completionHandler: (void (^)(PBTaxResponses* output, NSError* error)) handler {
+    completionHandler: (void (^)(PBTaxRateLocationResponses* output, NSError* error)) handler {
     // verify the required parameter 'taxRateTypeId' is set
     if (taxRateTypeId == nil) {
         NSParameterAssert(taxRateTypeId);
@@ -416,10 +420,10 @@ NSInteger kPBLIAPIGeoTaxServiceApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PBTaxResponses*"
+                              responseType: @"PBTaxRateLocationResponses*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((PBTaxResponses*)data, error);
+                                    handler((PBTaxRateLocationResponses*)data, error);
                                 }
                            }
           ];
@@ -430,9 +434,15 @@ NSInteger kPBLIAPIGeoTaxServiceApiMissingParamErrorCode = 234513;
 /// This will accept 'address' as a parameter and will return one or many IPDs details for that region in which address will fall.
 ///  @param address The address to be searched. 
 ///
+///  @param returnLatLongFields Y or N (default is N) - Returns Latitude Longitude Fields (optional)
+///
+///  @param latLongFormat (default is Decimal) - Returns Desired Latitude Longitude Format (optional)
+///
 ///  @returns PBTaxDistrictResponse*
 ///
 -(NSNumber*) getIPDTaxByAddressWithAddress: (NSString*) address
+    returnLatLongFields: (NSString*) returnLatLongFields
+    latLongFormat: (NSString*) latLongFormat
     completionHandler: (void (^)(PBTaxDistrictResponse* output, NSError* error)) handler {
     // verify the required parameter 'address' is set
     if (address == nil) {
@@ -455,6 +465,12 @@ NSInteger kPBLIAPIGeoTaxServiceApiMissingParamErrorCode = 234513;
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     if (address != nil) {
         queryParams[@"address"] = address;
+    }
+    if (returnLatLongFields != nil) {
+        queryParams[@"returnLatLongFields"] = returnLatLongFields;
+    }
+    if (latLongFormat != nil) {
+        queryParams[@"latLongFormat"] = latLongFormat;
     }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
@@ -803,11 +819,11 @@ NSInteger kPBLIAPIGeoTaxServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param address The address to be searched. 
 ///
-///  @returns PBTaxResponse*
+///  @returns PBTaxRateResponse*
 ///
 -(NSNumber*) getSpecificTaxRateByAddressWithTaxRateTypeId: (NSString*) taxRateTypeId
     address: (NSString*) address
-    completionHandler: (void (^)(PBTaxResponse* output, NSError* error)) handler {
+    completionHandler: (void (^)(PBTaxRateResponse* output, NSError* error)) handler {
     // verify the required parameter 'taxRateTypeId' is set
     if (taxRateTypeId == nil) {
         NSParameterAssert(taxRateTypeId);
@@ -876,10 +892,10 @@ NSInteger kPBLIAPIGeoTaxServiceApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PBTaxResponse*"
+                              responseType: @"PBTaxRateResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((PBTaxResponse*)data, error);
+                                    handler((PBTaxRateResponse*)data, error);
                                 }
                            }
           ];
@@ -894,12 +910,12 @@ NSInteger kPBLIAPIGeoTaxServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param longitude Longitude of the location. 
 ///
-///  @returns PBTaxResponse*
+///  @returns PBTaxRateResponse*
 ///
 -(NSNumber*) getSpecificTaxRateByLocationWithTaxRateTypeId: (NSString*) taxRateTypeId
     latitude: (NSString*) latitude
     longitude: (NSString*) longitude
-    completionHandler: (void (^)(PBTaxResponse* output, NSError* error)) handler {
+    completionHandler: (void (^)(PBTaxRateResponse* output, NSError* error)) handler {
     // verify the required parameter 'taxRateTypeId' is set
     if (taxRateTypeId == nil) {
         NSParameterAssert(taxRateTypeId);
@@ -982,10 +998,10 @@ NSInteger kPBLIAPIGeoTaxServiceApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PBTaxResponse*"
+                              responseType: @"PBTaxRateResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((PBTaxResponse*)data, error);
+                                    handler((PBTaxRateResponse*)data, error);
                                 }
                            }
           ];

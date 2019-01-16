@@ -84,8 +84,8 @@ PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
 
 
-NSString* longitude = @"longitude_example"; // Latitude of the location.
-NSString* latitude = @"latitude_example"; // Longitude of the location.
+NSString* longitude = @"longitude_example"; // Longitude of the location.
+NSString* latitude = @"latitude_example"; // Latitude of the location.
 
 PBLIAPIGeo911ServiceApi*apiInstance = [[PBLIAPIGeo911ServiceApi alloc] init];
 
@@ -106,8 +106,8 @@ PBLIAPIGeo911ServiceApi*apiInstance = [[PBLIAPIGeo911ServiceApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **longitude** | **NSString***| Latitude of the location. | 
- **latitude** | **NSString***| Longitude of the location. | 
+ **longitude** | **NSString***| Longitude of the location. | 
+ **latitude** | **NSString***| Latitude of the location. | 
 
 ### Return type
 

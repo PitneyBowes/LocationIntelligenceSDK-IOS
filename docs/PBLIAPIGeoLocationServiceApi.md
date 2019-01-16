@@ -4,15 +4,75 @@ All URIs are relative to *https://api.pitneybowes.com/location-intelligence*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**getDeviceStatus**](PBLIAPIGeoLocationServiceApi.md#getdevicestatus) | **GET** /geolocation/v1/devicestatus | Location By Device Status.
 [**getLocationByFixedLine**](PBLIAPIGeoLocationServiceApi.md#getlocationbyfixedline) | **GET** /geolocation/v1/location/byfixedline | Location By Fixed Line Network.
 [**getLocationByIPAddress**](PBLIAPIGeoLocationServiceApi.md#getlocationbyipaddress) | **GET** /geolocation/v1/location/byipaddress | Location By IP Address.
 [**getLocationByWiFiAccessPoint**](PBLIAPIGeoLocationServiceApi.md#getlocationbywifiaccesspoint) | **GET** /geolocation/v1/location/byaccesspoint | Location by WiFi Access Point.
 
 
+# **getDeviceStatus**
+```objc
+-(NSNumber*) getDeviceStatusWithDeviceId: (NSString*) deviceId
+    includeNetworkInfo_: (NSString*) includeNetworkInfo_
+        completionHandler: (void (^)(PBGeoLocationDeviceSatus* output, NSError* error)) handler;
+```
+
+Location By Device Status.
+
+This service accepts a phone number as input and returns details distinguishing landline and wireless numbers and also checks if a wireless number can be located.
+
+### Example 
+```objc
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
+
+// Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
+[apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
+
+
+NSString* deviceId = @"deviceId_example"; // Unique identifier for the intended device. Supported identifiers are fixed line and mobile number.
+NSString* includeNetworkInfo_ = @"includeNetworkInfo__example"; // Y or N (default is Y) – if it is N, then network/carrier details will not be added in the response. (optional)
+
+PBLIAPIGeoLocationServiceApi*apiInstance = [[PBLIAPIGeoLocationServiceApi alloc] init];
+
+// Location By Device Status.
+[apiInstance getDeviceStatusWithDeviceId:deviceId
+              includeNetworkInfo_:includeNetworkInfo_
+          completionHandler: ^(PBGeoLocationDeviceSatus* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling PBLIAPIGeoLocationServiceApi->getDeviceStatus: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **deviceId** | **NSString***| Unique identifier for the intended device. Supported identifiers are fixed line and mobile number. | 
+ **includeNetworkInfo_** | **NSString***| Y or N (default is Y) – if it is N, then network/carrier details will not be added in the response. | [optional] 
+
+### Return type
+
+[**PBGeoLocationDeviceSatus***](PBGeoLocationDeviceSatus.md)
+
+### Authorization
+
+[oAuth2Password](../README.md#oAuth2Password)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getLocationByFixedLine**
 ```objc
 -(NSNumber*) getLocationByFixedLineWithDeviceId: (NSString*) deviceId
-        completionHandler: (void (^)(PBGeoLocation* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBGeoLocationFixedLine* output, NSError* error)) handler;
 ```
 
 Location By Fixed Line Network.
@@ -33,7 +93,7 @@ PBLIAPIGeoLocationServiceApi*apiInstance = [[PBLIAPIGeoLocationServiceApi alloc]
 
 // Location By Fixed Line Network.
 [apiInstance getLocationByFixedLineWithDeviceId:deviceId
-          completionHandler: ^(PBGeoLocation* output, NSError* error) {
+          completionHandler: ^(PBGeoLocationFixedLine* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -51,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PBGeoLocation***](PBGeoLocation.md)
+[**PBGeoLocationFixedLine***](PBGeoLocationFixedLine.md)
 
 ### Authorization
 
@@ -67,7 +127,7 @@ Name | Type | Description  | Notes
 # **getLocationByIPAddress**
 ```objc
 -(NSNumber*) getLocationByIPAddressWithIpAddress: (NSString*) ipAddress
-        completionHandler: (void (^)(PBGeoLocation* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBGeoLocationIpAddr* output, NSError* error)) handler;
 ```
 
 Location By IP Address.
@@ -88,7 +148,7 @@ PBLIAPIGeoLocationServiceApi*apiInstance = [[PBLIAPIGeoLocationServiceApi alloc]
 
 // Location By IP Address.
 [apiInstance getLocationByIPAddressWithIpAddress:ipAddress
-          completionHandler: ^(PBGeoLocation* output, NSError* error) {
+          completionHandler: ^(PBGeoLocationIpAddr* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -106,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PBGeoLocation***](PBGeoLocation.md)
+[**PBGeoLocationIpAddr***](PBGeoLocationIpAddr.md)
 
 ### Authorization
 
@@ -126,7 +186,7 @@ Name | Type | Description  | Notes
     rsid: (NSString*) rsid
     speed: (NSString*) speed
     accessPoint: (NSString*) accessPoint
-        completionHandler: (void (^)(PBGeoLocation* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBGeoLocationAccessPoint* output, NSError* error)) handler;
 ```
 
 Location by WiFi Access Point.
@@ -155,7 +215,7 @@ PBLIAPIGeoLocationServiceApi*apiInstance = [[PBLIAPIGeoLocationServiceApi alloc]
               rsid:rsid
               speed:speed
               accessPoint:accessPoint
-          completionHandler: ^(PBGeoLocation* output, NSError* error) {
+          completionHandler: ^(PBGeoLocationAccessPoint* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -177,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PBGeoLocation***](PBGeoLocation.md)
+[**PBGeoLocationAccessPoint***](PBGeoLocationAccessPoint.md)
 
 ### Authorization
 

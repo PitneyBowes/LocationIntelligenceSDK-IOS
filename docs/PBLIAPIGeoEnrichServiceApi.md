@@ -4,23 +4,22 @@ All URIs are relative to *https://api.pitneybowes.com/location-intelligence*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAddress**](PBLIAPIGeoEnrichServiceApi.md#getaddress) | **GET** /geoenrich/v1/address/bylocation | Address By Location.
-[**getEntityByLocation**](PBLIAPIGeoEnrichServiceApi.md#getentitybylocation) | **GET** /geoenrich/v1/poi/bylocation | Points Of Interest By Location.
+[**getCategoryCodeMetadata**](PBLIAPIGeoEnrichServiceApi.md#getcategorycodemetadata) | **GET** /geoenrich/v1/metadata/category | Returns Category Codes with their sub-categories (if exist), descriptions and SIC Codes mapping
+[**getPOIsByAddress**](PBLIAPIGeoEnrichServiceApi.md#getpoisbyaddress) | **GET** /geoenrich/v1/poi/byaddress | Point of Interests By Address.
+[**getPOIsByLocation**](PBLIAPIGeoEnrichServiceApi.md#getpoisbylocation) | **GET** /geoenrich/v1/poi/bylocation | Point of Interests By Location.
 [**getPlaceByLocation**](PBLIAPIGeoEnrichServiceApi.md#getplacebylocation) | **GET** /geoenrich/v1/place/bylocation | Place By Location.
+[**getSICMetadata**](PBLIAPIGeoEnrichServiceApi.md#getsicmetadata) | **GET** /geoenrich/v1/metadata/sic | Returns SIC Codes with their Industry Titles and Category Codes mapping
 
 
-# **getAddress**
+# **getCategoryCodeMetadata**
 ```objc
--(NSNumber*) getAddressWithLatitude: (NSString*) latitude
-    longitude: (NSString*) longitude
-    searchRadius: (NSString*) searchRadius
-    searchRadiusUnit: (NSString*) searchRadiusUnit
-        completionHandler: (void (^)(PBLocations* output, NSError* error)) handler;
+-(NSNumber*) getCategoryCodeMetadataWithCategoryCode: (NSString*) categoryCode
+        completionHandler: (void (^)(PBGeoEnrichMetadataResponse* output, NSError* error)) handler;
 ```
 
-Address By Location.
+Returns Category Codes with their sub-categories (if exist), descriptions and SIC Codes mapping
 
-This service accepts longitude and latitude as input and returns an address for that location.
+Accepts first partial digits or full category codes to filter the response
 
 ### Example 
 ```objc
@@ -30,24 +29,18 @@ PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 [apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
 
 
-NSString* latitude = @"latitude_example"; // Latitude of the location.
-NSString* longitude = @"longitude_example"; // Longitude of the location.
-NSString* searchRadius = @"searchRadius_example"; // Radius range within which search is performed. (optional)
-NSString* searchRadiusUnit = @"searchRadiusUnit_example"; // Radius unit such as feet, kilometers, miles or meters. (optional)
+NSString* categoryCode = @"categoryCode_example"; // Specify starting digits or full category code to filter the response (optional)
 
 PBLIAPIGeoEnrichServiceApi*apiInstance = [[PBLIAPIGeoEnrichServiceApi alloc] init];
 
-// Address By Location.
-[apiInstance getAddressWithLatitude:latitude
-              longitude:longitude
-              searchRadius:searchRadius
-              searchRadiusUnit:searchRadiusUnit
-          completionHandler: ^(PBLocations* output, NSError* error) {
+// Returns Category Codes with their sub-categories (if exist), descriptions and SIC Codes mapping
+[apiInstance getCategoryCodeMetadataWithCategoryCode:categoryCode
+          completionHandler: ^(PBGeoEnrichMetadataResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling PBLIAPIGeoEnrichServiceApi->getAddress: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoEnrichServiceApi->getCategoryCodeMetadata: %@", error);
                         }
                     }];
 ```
@@ -56,14 +49,11 @@ PBLIAPIGeoEnrichServiceApi*apiInstance = [[PBLIAPIGeoEnrichServiceApi alloc] ini
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **latitude** | **NSString***| Latitude of the location. | 
- **longitude** | **NSString***| Longitude of the location. | 
- **searchRadius** | **NSString***| Radius range within which search is performed. | [optional] 
- **searchRadiusUnit** | **NSString***| Radius unit such as feet, kilometers, miles or meters. | [optional] 
+ **categoryCode** | **NSString***| Specify starting digits or full category code to filter the response | [optional] 
 
 ### Return type
 
-[**PBLocations***](PBLocations.md)
+[**PBGeoEnrichMetadataResponse***](PBGeoEnrichMetadataResponse.md)
 
 ### Authorization
 
@@ -72,32 +62,144 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, application/xml
- - **Accept**: application/xml, application/json
+ - **Accept**: application/json, application/xml, text/csv
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getEntityByLocation**
+# **getPOIsByAddress**
 ```objc
--(NSNumber*) getEntityByLocationWithLongitude: (NSString*) longitude
-    latitude: (NSString*) latitude
-    brandName: (NSString*) brandName
-    category: (NSString*) category
+-(NSNumber*) getPOIsByAddressWithAddress: (NSString*) address
+    country: (NSString*) country
+    name: (NSString*) name
+    type: (NSString*) type
+    categoryCode: (NSString*) categoryCode
+    sicCode: (NSString*) sicCode
     maxCandidates: (NSString*) maxCandidates
     searchRadius: (NSString*) searchRadius
     searchRadiusUnit: (NSString*) searchRadiusUnit
-    searchDataset: (NSString*) searchDataset
-    searchPriority: (NSString*) searchPriority
     travelTime: (NSString*) travelTime
     travelTimeUnit: (NSString*) travelTimeUnit
     travelDistance: (NSString*) travelDistance
     travelDistanceUnit: (NSString*) travelDistanceUnit
-    mode: (NSString*) mode
-        completionHandler: (void (^)(PBLocations* output, NSError* error)) handler;
+    travelMode: (NSString*) travelMode
+    sortBy: (NSString*) sortBy
+        completionHandler: (void (^)(PBGeoEnrichResponse* output, NSError* error)) handler;
 ```
 
-Points Of Interest By Location.
+Point of Interests By Address.
 
-Identifies and retrieves Points of Interest that exist around a specific location (ordered by distance from the location).
+Accepts address as an input to retrieve nearby point of interests.
+
+### Example 
+```objc
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
+
+// Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
+[apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
+
+
+NSString* address = @"address_example"; // Address
+NSString* country = @"country_example"; // Country (optional)
+NSString* name = @"name_example"; // Matched against Name, BrandName and Trade Name. Partial terms are also matched with fuzziness (max edit distance is 1) (optional)
+NSString* type = @"type_example"; // Matched against the content which defines the type of the poi.  (optional)
+NSString* categoryCode = @"categoryCode_example"; // Specific Category/Categories Codes for the desired POIs. Accepts a mix of 4 digit (Top Category), 6 digit (Second-Level Category) and 11 digit (Low-Level Category) Category Codes. https://developer2.pitneybowes.com/docs/location-intelligence/v1/en/poicategory/LiApiPOICategoryCodes.xlsx  (optional)
+NSString* sicCode = @"sicCode_example"; // Specific SIC Codes/Codes for the desired POIs. Accepts a mix of 4 digit (Top Category) and 8 digit (Low-Level Category) SIC Codes. (optional)
+NSString* maxCandidates = @"maxCandidates_example"; // Maximum number of POIs that can be retrieved. (optional)
+NSString* searchRadius = @"searchRadius_example"; // Radius range within which search is performed. (optional)
+NSString* searchRadiusUnit = @"searchRadiusUnit_example"; // Radius unit such as Feet, Kilometers, Miles or Meters. (optional)
+NSString* travelTime = @"travelTime_example"; // Specifies the travel time within which method searches for results (POIs which can be reached within travel time)the search boundary in terms of time mentioned in 'travelTimeUnit'. The results are retrieved from the polygon formed based on the travel time specified. This means search can be done in the mentioned time results be from the mentioned time. (optional)
+NSString* travelTimeUnit = @"travelTimeUnit_example"; // Specifies acceptable time units.Allowed values Minutes,Hours,Seconds and Milliseconds (optional)
+NSString* travelDistance = @"travelDistance_example"; // Specifies the search boundary in terms of distance mentioned in 'travelDistanceUnit'. The results are retrieved from the polygon formed based on the travel distance specified. (optional)
+NSString* travelDistanceUnit = @"travelDistanceUnit_example"; // Specifies acceptable time units.Allowed values Feet,Kilometers,Miles and Meters (optional)
+NSString* travelMode = @"travelMode_example"; // Specifies the available mode of commute. This is required when u r trying to do search by travel distance or travel time. Allowed values driving and walking (optional)
+NSString* sortBy = @"distance"; // Specifies the order in which POIs are retrieved. (optional) (default to distance)
+
+PBLIAPIGeoEnrichServiceApi*apiInstance = [[PBLIAPIGeoEnrichServiceApi alloc] init];
+
+// Point of Interests By Address.
+[apiInstance getPOIsByAddressWithAddress:address
+              country:country
+              name:name
+              type:type
+              categoryCode:categoryCode
+              sicCode:sicCode
+              maxCandidates:maxCandidates
+              searchRadius:searchRadius
+              searchRadiusUnit:searchRadiusUnit
+              travelTime:travelTime
+              travelTimeUnit:travelTimeUnit
+              travelDistance:travelDistance
+              travelDistanceUnit:travelDistanceUnit
+              travelMode:travelMode
+              sortBy:sortBy
+          completionHandler: ^(PBGeoEnrichResponse* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling PBLIAPIGeoEnrichServiceApi->getPOIsByAddress: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **address** | **NSString***| Address | 
+ **country** | **NSString***| Country | [optional] 
+ **name** | **NSString***| Matched against Name, BrandName and Trade Name. Partial terms are also matched with fuzziness (max edit distance is 1) | [optional] 
+ **type** | **NSString***| Matched against the content which defines the type of the poi.  | [optional] 
+ **categoryCode** | **NSString***| Specific Category/Categories Codes for the desired POIs. Accepts a mix of 4 digit (Top Category), 6 digit (Second-Level Category) and 11 digit (Low-Level Category) Category Codes. https://developer2.pitneybowes.com/docs/location-intelligence/v1/en/poicategory/LiApiPOICategoryCodes.xlsx  | [optional] 
+ **sicCode** | **NSString***| Specific SIC Codes/Codes for the desired POIs. Accepts a mix of 4 digit (Top Category) and 8 digit (Low-Level Category) SIC Codes. | [optional] 
+ **maxCandidates** | **NSString***| Maximum number of POIs that can be retrieved. | [optional] 
+ **searchRadius** | **NSString***| Radius range within which search is performed. | [optional] 
+ **searchRadiusUnit** | **NSString***| Radius unit such as Feet, Kilometers, Miles or Meters. | [optional] 
+ **travelTime** | **NSString***| Specifies the travel time within which method searches for results (POIs which can be reached within travel time)the search boundary in terms of time mentioned in &#39;travelTimeUnit&#39;. The results are retrieved from the polygon formed based on the travel time specified. This means search can be done in the mentioned time results be from the mentioned time. | [optional] 
+ **travelTimeUnit** | **NSString***| Specifies acceptable time units.Allowed values Minutes,Hours,Seconds and Milliseconds | [optional] 
+ **travelDistance** | **NSString***| Specifies the search boundary in terms of distance mentioned in &#39;travelDistanceUnit&#39;. The results are retrieved from the polygon formed based on the travel distance specified. | [optional] 
+ **travelDistanceUnit** | **NSString***| Specifies acceptable time units.Allowed values Feet,Kilometers,Miles and Meters | [optional] 
+ **travelMode** | **NSString***| Specifies the available mode of commute. This is required when u r trying to do search by travel distance or travel time. Allowed values driving and walking | [optional] 
+ **sortBy** | **NSString***| Specifies the order in which POIs are retrieved. | [optional] [default to distance]
+
+### Return type
+
+[**PBGeoEnrichResponse***](PBGeoEnrichResponse.md)
+
+### Authorization
+
+[oAuth2Password](../README.md#oAuth2Password)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml, text/csv
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getPOIsByLocation**
+```objc
+-(NSNumber*) getPOIsByLocationWithLongitude: (NSString*) longitude
+    latitude: (NSString*) latitude
+    name: (NSString*) name
+    type: (NSString*) type
+    categoryCode: (NSString*) categoryCode
+    sicCode: (NSString*) sicCode
+    maxCandidates: (NSString*) maxCandidates
+    searchRadius: (NSString*) searchRadius
+    searchRadiusUnit: (NSString*) searchRadiusUnit
+    travelTime: (NSString*) travelTime
+    travelTimeUnit: (NSString*) travelTimeUnit
+    travelDistance: (NSString*) travelDistance
+    travelDistanceUnit: (NSString*) travelDistanceUnit
+    travelMode: (NSString*) travelMode
+    sortBy: (NSString*) sortBy
+        completionHandler: (void (^)(PBGeoEnrichResponse* output, NSError* error)) handler;
+```
+
+Point of Interests By Location.
+
+Accepts longitude and latitude as an input to retrieve nearby point of interests.
 
 ### Example 
 ```objc
@@ -109,42 +211,44 @@ PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 NSString* longitude = @"longitude_example"; // Longitude of the location.
 NSString* latitude = @"latitude_example"; // Latitude of the location.
-NSString* brandName = @"brandName_example"; // Specifies the name of the brand to be searched. Also performs search on partially specified brand names. (optional)
-NSString* category = @"category_example"; // Specific Category/Categories for which the POI search is performed. (Categories 10020102,10020103 are for Chinese and Italian Restaurants .https://developer2.pitneybowes.com/docs/location-intelligence/v1/en/poicategory/EightDigitPOICategoryCodes.xlsx  (optional)
+NSString* name = @"name_example"; // Matched against Name, BrandName and Trade Name. Partial terms are also matched with fuzziness (max edit distance is 1) (optional)
+NSString* type = @"type_example"; // Matched against the content which defines the type of the poi.  (optional)
+NSString* categoryCode = @"categoryCode_example"; // Specific Category/Categories Codes for the desired POIs. Accepts a mix of 4 digit (Top Category), 6 digit (Second-Level Category) and 11 digit (Low-Level Category) Category Codes. https://locate.pitneybowes.com/docs/location-intelligence/v1/en/poicategory/LiApiPOICategoryCodes.xlsx  (optional)
+NSString* sicCode = @"sicCode_example"; // Specific SIC Codes/Codes for the desired POIs. Accepts a mix of 4 digit (Top Category) and 8 digit (Low-Level Category) SIC Codes. (optional)
 NSString* maxCandidates = @"maxCandidates_example"; // Maximum number of POIs that can be retrieved. (optional)
 NSString* searchRadius = @"searchRadius_example"; // Radius range within which search is performed. (optional)
 NSString* searchRadiusUnit = @"searchRadiusUnit_example"; // Radius unit such as Feet, Kilometers, Miles or Meters. (optional)
-NSString* searchDataset = @"searchDataset_example"; // The datasets upon which the POI search can be performed. (optional)
-NSString* searchPriority = @"searchPriority_example"; // Search order of POI datasets mentioned in searchDataset. (optional)
 NSString* travelTime = @"travelTime_example"; // Specifies the travel time within which method searches for results (POIs which can be reached within travel time)the search boundary in terms of time mentioned in 'travelTimeUnit'. The results are retrieved from the polygon formed based on the travel time specified. This means search can be done in the mentioned time results be from the mentioned time. (optional)
 NSString* travelTimeUnit = @"travelTimeUnit_example"; // Specifies acceptable time units.Allowed values Minutes,Hours,Seconds and Milliseconds (optional)
 NSString* travelDistance = @"travelDistance_example"; // Specifies the search boundary in terms of distance mentioned in 'travelDistanceUnit'. The results are retrieved from the polygon formed based on the travel distance specified. (optional)
 NSString* travelDistanceUnit = @"travelDistanceUnit_example"; // Specifies acceptable time units.Allowed values Feet,Kilometers,Miles and Meters (optional)
-NSString* mode = @"mode_example"; // Specifies the available mode of commute. This is required when u r trying to do search by travel distance or travel time.Allowed values driving and walking (optional)
+NSString* travelMode = @"travelMode_example"; // Specifies the available mode of commute. This is required when u r trying to do search by travel distance or travel time. Allowed values driving and walking (optional)
+NSString* sortBy = @"distance"; // Specifies the order in which POIs are retrieved. (optional) (default to distance)
 
 PBLIAPIGeoEnrichServiceApi*apiInstance = [[PBLIAPIGeoEnrichServiceApi alloc] init];
 
-// Points Of Interest By Location.
-[apiInstance getEntityByLocationWithLongitude:longitude
+// Point of Interests By Location.
+[apiInstance getPOIsByLocationWithLongitude:longitude
               latitude:latitude
-              brandName:brandName
-              category:category
+              name:name
+              type:type
+              categoryCode:categoryCode
+              sicCode:sicCode
               maxCandidates:maxCandidates
               searchRadius:searchRadius
               searchRadiusUnit:searchRadiusUnit
-              searchDataset:searchDataset
-              searchPriority:searchPriority
               travelTime:travelTime
               travelTimeUnit:travelTimeUnit
               travelDistance:travelDistance
               travelDistanceUnit:travelDistanceUnit
-              mode:mode
-          completionHandler: ^(PBLocations* output, NSError* error) {
+              travelMode:travelMode
+              sortBy:sortBy
+          completionHandler: ^(PBGeoEnrichResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling PBLIAPIGeoEnrichServiceApi->getEntityByLocation: %@", error);
+                            NSLog(@"Error calling PBLIAPIGeoEnrichServiceApi->getPOIsByLocation: %@", error);
                         }
                     }];
 ```
@@ -155,22 +259,23 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **longitude** | **NSString***| Longitude of the location. | 
  **latitude** | **NSString***| Latitude of the location. | 
- **brandName** | **NSString***| Specifies the name of the brand to be searched. Also performs search on partially specified brand names. | [optional] 
- **category** | **NSString***| Specific Category/Categories for which the POI search is performed. (Categories 10020102,10020103 are for Chinese and Italian Restaurants .https://developer2.pitneybowes.com/docs/location-intelligence/v1/en/poicategory/EightDigitPOICategoryCodes.xlsx  | [optional] 
+ **name** | **NSString***| Matched against Name, BrandName and Trade Name. Partial terms are also matched with fuzziness (max edit distance is 1) | [optional] 
+ **type** | **NSString***| Matched against the content which defines the type of the poi.  | [optional] 
+ **categoryCode** | **NSString***| Specific Category/Categories Codes for the desired POIs. Accepts a mix of 4 digit (Top Category), 6 digit (Second-Level Category) and 11 digit (Low-Level Category) Category Codes. https://locate.pitneybowes.com/docs/location-intelligence/v1/en/poicategory/LiApiPOICategoryCodes.xlsx  | [optional] 
+ **sicCode** | **NSString***| Specific SIC Codes/Codes for the desired POIs. Accepts a mix of 4 digit (Top Category) and 8 digit (Low-Level Category) SIC Codes. | [optional] 
  **maxCandidates** | **NSString***| Maximum number of POIs that can be retrieved. | [optional] 
  **searchRadius** | **NSString***| Radius range within which search is performed. | [optional] 
  **searchRadiusUnit** | **NSString***| Radius unit such as Feet, Kilometers, Miles or Meters. | [optional] 
- **searchDataset** | **NSString***| The datasets upon which the POI search can be performed. | [optional] 
- **searchPriority** | **NSString***| Search order of POI datasets mentioned in searchDataset. | [optional] 
  **travelTime** | **NSString***| Specifies the travel time within which method searches for results (POIs which can be reached within travel time)the search boundary in terms of time mentioned in &#39;travelTimeUnit&#39;. The results are retrieved from the polygon formed based on the travel time specified. This means search can be done in the mentioned time results be from the mentioned time. | [optional] 
  **travelTimeUnit** | **NSString***| Specifies acceptable time units.Allowed values Minutes,Hours,Seconds and Milliseconds | [optional] 
  **travelDistance** | **NSString***| Specifies the search boundary in terms of distance mentioned in &#39;travelDistanceUnit&#39;. The results are retrieved from the polygon formed based on the travel distance specified. | [optional] 
  **travelDistanceUnit** | **NSString***| Specifies acceptable time units.Allowed values Feet,Kilometers,Miles and Meters | [optional] 
- **mode** | **NSString***| Specifies the available mode of commute. This is required when u r trying to do search by travel distance or travel time.Allowed values driving and walking | [optional] 
+ **travelMode** | **NSString***| Specifies the available mode of commute. This is required when u r trying to do search by travel distance or travel time. Allowed values driving and walking | [optional] 
+ **sortBy** | **NSString***| Specifies the order in which POIs are retrieved. | [optional] [default to distance]
 
 ### Return type
 
-[**PBLocations***](PBLocations.md)
+[**PBGeoEnrichResponse***](PBGeoEnrichResponse.md)
 
 ### Authorization
 
@@ -179,7 +284,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, application/xml
- - **Accept**: application/xml, application/json
+ - **Accept**: application/json, application/xml, text/csv
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -243,6 +348,61 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json, application/xml
  - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getSICMetadata**
+```objc
+-(NSNumber*) getSICMetadataWithSicCode: (NSString*) sicCode
+        completionHandler: (void (^)(PBGeoEnrichMetadataResponse* output, NSError* error)) handler;
+```
+
+Returns SIC Codes with their Industry Titles and Category Codes mapping
+
+Accepts first few partial digits or full SIC codes to filter the response
+
+### Example 
+```objc
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
+
+// Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
+[apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
+
+
+NSString* sicCode = @"sicCode_example"; // Specify starting digits or full sic code to filter the response (optional)
+
+PBLIAPIGeoEnrichServiceApi*apiInstance = [[PBLIAPIGeoEnrichServiceApi alloc] init];
+
+// Returns SIC Codes with their Industry Titles and Category Codes mapping
+[apiInstance getSICMetadataWithSicCode:sicCode
+          completionHandler: ^(PBGeoEnrichMetadataResponse* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling PBLIAPIGeoEnrichServiceApi->getSICMetadata: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sicCode** | **NSString***| Specify starting digits or full sic code to filter the response | [optional] 
+
+### Return type
+
+[**PBGeoEnrichMetadataResponse***](PBGeoEnrichMetadataResponse.md)
+
+### Authorization
+
+[oAuth2Password](../README.md#oAuth2Password)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml, text/csv
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

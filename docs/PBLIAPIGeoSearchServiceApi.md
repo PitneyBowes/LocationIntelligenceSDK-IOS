@@ -4,7 +4,7 @@ All URIs are relative to *https://api.pitneybowes.com/location-intelligence*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**geoSearch**](PBLIAPIGeoSearchServiceApi.md#geosearch) | **GET** /geosearch/v1/locations | Gets LocationList
+[**geoSearch**](PBLIAPIGeoSearchServiceApi.md#geosearch) | **GET** /geosearch/v2/locations | Gets LocationList
 
 
 # **geoSearch**
@@ -22,7 +22,10 @@ Method | HTTP request | Description
     areaName1: (NSString*) areaName1
     areaName3: (NSString*) areaName3
     postCode: (NSString*) postCode
-        completionHandler: (void (^)(PBLocations* output, NSError* error)) handler;
+    returnAdminAreasOnly: (NSString*) returnAdminAreasOnly
+    includeRangesDetails: (NSString*) includeRangesDetails
+    searchType: (NSString*) searchType
+        completionHandler: (void (^)(PBGeosearchLocations* output, NSError* error)) handler;
 ```
 
 Gets LocationList
@@ -50,6 +53,9 @@ NSString* ipAddress = @"ipAddress_example"; //  (optional)
 NSString* areaName1 = @"areaName1_example"; // State province of the input to be searched (optional)
 NSString* areaName3 = @"areaName3_example"; // City of the input to be searched (optional)
 NSString* postCode = @"postCode_example"; // Postal Code of the input to be searched (optional)
+NSString* returnAdminAreasOnly = @"N"; // if value set 'Y' then it will only do a matching on postcode or areaName1, areaName2, areaName3 and areaName4 fields in the data (optional) (default to N)
+NSString* includeRangesDetails = @"Y"; // if value set 'Y' then display all unit info of ranges, if value set 'N' then don't show ranges (optional) (default to Y)
+NSString* searchType = @"ADDRESS"; // Preference to control search type of interactive requests. (optional) (default to ADDRESS)
 
 PBLIAPIGeoSearchServiceApi*apiInstance = [[PBLIAPIGeoSearchServiceApi alloc] init];
 
@@ -67,7 +73,10 @@ PBLIAPIGeoSearchServiceApi*apiInstance = [[PBLIAPIGeoSearchServiceApi alloc] ini
               areaName1:areaName1
               areaName3:areaName3
               postCode:postCode
-          completionHandler: ^(PBLocations* output, NSError* error) {
+              returnAdminAreasOnly:returnAdminAreasOnly
+              includeRangesDetails:includeRangesDetails
+              searchType:searchType
+          completionHandler: ^(PBGeosearchLocations* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -94,10 +103,13 @@ Name | Type | Description  | Notes
  **areaName1** | **NSString***| State province of the input to be searched | [optional] 
  **areaName3** | **NSString***| City of the input to be searched | [optional] 
  **postCode** | **NSString***| Postal Code of the input to be searched | [optional] 
+ **returnAdminAreasOnly** | **NSString***| if value set &#39;Y&#39; then it will only do a matching on postcode or areaName1, areaName2, areaName3 and areaName4 fields in the data | [optional] [default to N]
+ **includeRangesDetails** | **NSString***| if value set &#39;Y&#39; then display all unit info of ranges, if value set &#39;N&#39; then don&#39;t show ranges | [optional] [default to Y]
+ **searchType** | **NSString***| Preference to control search type of interactive requests. | [optional] [default to ADDRESS]
 
 ### Return type
 
-[**PBLocations***](PBLocations.md)
+[**PBGeosearchLocations***](PBGeosearchLocations.md)
 
 ### Authorization
 

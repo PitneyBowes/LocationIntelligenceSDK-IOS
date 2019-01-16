@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **geometry** | [**PBGeoPos***](PBGeoPos.md) |  | [optional] 
 **address** | [**PBGeocodeAddress***](PBGeocodeAddress.md) |  | [optional] 
 **ranges** | [**NSArray&lt;PBCandidateRange&gt;***](PBCandidateRange.md) |  | [optional] 
-**worldGeocoded** | **NSNumber*** |  | [optional] [default to @0]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

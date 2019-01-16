@@ -4,9 +4,165 @@ All URIs are relative to *https://api.pitneybowes.com/location-intelligence*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**getBasicBoundaryByAddress**](PBLIAPIGeoZoneServiceApi.md#getbasicboundarybyaddress) | **GET** /geozone/v1/basicboundary/byaddress | Gets Basic Boundary by Address
+[**getBasicBoundaryByLocation**](PBLIAPIGeoZoneServiceApi.md#getbasicboundarybylocation) | **GET** /geozone/v1/basicboundary/bylocation | Gets Basic Boundary by Location
 [**getTravelBoundaryByDistance**](PBLIAPIGeoZoneServiceApi.md#gettravelboundarybydistance) | **GET** /geozone/v1/travelboundary/bydistance | Gets travel Boundary by Distance
 [**getTravelBoundaryByTime**](PBLIAPIGeoZoneServiceApi.md#gettravelboundarybytime) | **GET** /geozone/v1/travelboundary/bytime | Gets travel Boundary by Time
 
+
+# **getBasicBoundaryByAddress**
+```objc
+-(NSNumber*) getBasicBoundaryByAddressWithAddress: (NSString*) address
+    distance: (NSString*) distance
+    country: (NSString*) country
+    distanceUnit: (NSString*) distanceUnit
+    resolution: (NSString*) resolution
+    responseSrs: (NSString*) responseSrs
+        completionHandler: (void (^)(PBBasicBoundaryAddress* output, NSError* error)) handler;
+```
+
+Gets Basic Boundary by Address
+
+Gets Basic Boundary by Address
+
+### Example 
+```objc
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
+
+// Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
+[apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
+
+
+NSString* address = @"address_example"; // Address around which Basic Boundary is requested
+NSString* distance = @"distance_example"; // This is width of the buffer (in a complete circular buffer, it would be radius of the buffer). This has to be a positive number.
+NSString* country = @"USA"; // Three digit ISO country code (optional) (default to USA)
+NSString* distanceUnit = @"feet"; // Longitude around which Basic Boundary is requested (optional) (default to feet)
+NSString* resolution = @"resolution_example"; // This is resolution of the buffer. Curves generated in buffer are approximated by line segments and it is measured in segments per circle. The higher the resolution, the smoother the curves of the buffer but more points would be required in the boundary geometry. Number greater than 0 and in multiple of 4. If not in 4, then it is approximated to nearest multiple of 4. (optional)
+NSString* responseSrs = @"epsg:4326"; // The spatial reference system to express the response in. By default, it would be epsg:4326 (optional) (default to epsg:4326)
+
+PBLIAPIGeoZoneServiceApi*apiInstance = [[PBLIAPIGeoZoneServiceApi alloc] init];
+
+// Gets Basic Boundary by Address
+[apiInstance getBasicBoundaryByAddressWithAddress:address
+              distance:distance
+              country:country
+              distanceUnit:distanceUnit
+              resolution:resolution
+              responseSrs:responseSrs
+          completionHandler: ^(PBBasicBoundaryAddress* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling PBLIAPIGeoZoneServiceApi->getBasicBoundaryByAddress: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **address** | **NSString***| Address around which Basic Boundary is requested | 
+ **distance** | **NSString***| This is width of the buffer (in a complete circular buffer, it would be radius of the buffer). This has to be a positive number. | 
+ **country** | **NSString***| Three digit ISO country code | [optional] [default to USA]
+ **distanceUnit** | **NSString***| Longitude around which Basic Boundary is requested | [optional] [default to feet]
+ **resolution** | **NSString***| This is resolution of the buffer. Curves generated in buffer are approximated by line segments and it is measured in segments per circle. The higher the resolution, the smoother the curves of the buffer but more points would be required in the boundary geometry. Number greater than 0 and in multiple of 4. If not in 4, then it is approximated to nearest multiple of 4. | [optional] 
+ **responseSrs** | **NSString***| The spatial reference system to express the response in. By default, it would be epsg:4326 | [optional] [default to epsg:4326]
+
+### Return type
+
+[**PBBasicBoundaryAddress***](PBBasicBoundaryAddress.md)
+
+### Authorization
+
+[oAuth2Password](../README.md#oAuth2Password)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getBasicBoundaryByLocation**
+```objc
+-(NSNumber*) getBasicBoundaryByLocationWithLatitude: (NSString*) latitude
+    longitude: (NSString*) longitude
+    distance: (NSString*) distance
+    distanceUnit: (NSString*) distanceUnit
+    resolution: (NSString*) resolution
+    responseSrs: (NSString*) responseSrs
+    srsName: (NSString*) srsName
+        completionHandler: (void (^)(PBBasicBoundary* output, NSError* error)) handler;
+```
+
+Gets Basic Boundary by Location
+
+Gets Basic Boundary by Location
+
+### Example 
+```objc
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
+
+// Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
+[apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
+
+
+NSString* latitude = @"latitude_example"; // Latitude around which Basic Boundary is requested
+NSString* longitude = @"longitude_example"; // Longitude around which Basic Boundary is requested
+NSString* distance = @"distance_example"; // This is width of the buffer (in a complete circular buffer, it would be radius of the buffer). This has to be a positive number.
+NSString* distanceUnit = @"feet"; // Longitude around which Basic Boundary is requested (optional) (default to feet)
+NSString* resolution = @"resolution_example"; // This is resolution of the buffer. Curves generated in buffer are approximated by line segments and it is measured in segments per circle. The higher the resolution, the smoother the curves of the buffer but more points would be required in the boundary geometry. Number greater than 0 and in multiple of 4. If not in 4, then it is approximated to nearest multiple of 4. (optional)
+NSString* responseSrs = @"epsg:4326"; // The spatial reference system to express the response in. By default, it would be epsg:4326 (optional) (default to epsg:4326)
+NSString* srsName = @"epsg:4326"; // The spatial reference system for input. By default, it would be epsg:4326 (optional) (default to epsg:4326)
+
+PBLIAPIGeoZoneServiceApi*apiInstance = [[PBLIAPIGeoZoneServiceApi alloc] init];
+
+// Gets Basic Boundary by Location
+[apiInstance getBasicBoundaryByLocationWithLatitude:latitude
+              longitude:longitude
+              distance:distance
+              distanceUnit:distanceUnit
+              resolution:resolution
+              responseSrs:responseSrs
+              srsName:srsName
+          completionHandler: ^(PBBasicBoundary* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling PBLIAPIGeoZoneServiceApi->getBasicBoundaryByLocation: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **latitude** | **NSString***| Latitude around which Basic Boundary is requested | 
+ **longitude** | **NSString***| Longitude around which Basic Boundary is requested | 
+ **distance** | **NSString***| This is width of the buffer (in a complete circular buffer, it would be radius of the buffer). This has to be a positive number. | 
+ **distanceUnit** | **NSString***| Longitude around which Basic Boundary is requested | [optional] [default to feet]
+ **resolution** | **NSString***| This is resolution of the buffer. Curves generated in buffer are approximated by line segments and it is measured in segments per circle. The higher the resolution, the smoother the curves of the buffer but more points would be required in the boundary geometry. Number greater than 0 and in multiple of 4. If not in 4, then it is approximated to nearest multiple of 4. | [optional] 
+ **responseSrs** | **NSString***| The spatial reference system to express the response in. By default, it would be epsg:4326 | [optional] [default to epsg:4326]
+ **srsName** | **NSString***| The spatial reference system for input. By default, it would be epsg:4326 | [optional] [default to epsg:4326]
+
+### Return type
+
+[**PBBasicBoundary***](PBBasicBoundary.md)
+
+### Authorization
+
+[oAuth2Password](../README.md#oAuth2Password)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTravelBoundaryByDistance**
 ```objc
@@ -25,6 +181,8 @@ Method | HTTP request | Description
     simplificationFactor: (NSString*) simplificationFactor
     bandingStyle: (NSString*) bandingStyle
     historicTrafficTimeBucket: (NSString*) historicTrafficTimeBucket
+    defaultAmbientSpeed: (NSString*) defaultAmbientSpeed
+    ambientSpeedUnit: (NSString*) ambientSpeedUnit
         completionHandler: (void (^)(PBTravelBoundaries* output, NSError* error)) handler;
 ```
 
@@ -55,6 +213,8 @@ NSString* returnIslands = @"false"; // Whether to return islands, which are smal
 NSString* simplificationFactor = @"0.5"; // Number between 0.0 and 1.0 where 0.0 is very simple and 1.0 means the most complex. (optional) (default to 0.5)
 NSString* bandingStyle = @"Donut"; // Style of banding to be used in the result. (optional) (default to Donut)
 NSString* historicTrafficTimeBucket = @"None"; // Whether routing calculation uses the historic traffic speeds. (optional) (default to None)
+NSString* defaultAmbientSpeed = @"defaultAmbientSpeed_example"; // The speed to travel when going off a network road to find the travel boundary (for all road types). (optional)
+NSString* ambientSpeedUnit = @"MPH"; // The unit of measure to use to calculate the ambient speed. (optional) (default to MPH)
 
 PBLIAPIGeoZoneServiceApi*apiInstance = [[PBLIAPIGeoZoneServiceApi alloc] init];
 
@@ -74,6 +234,8 @@ PBLIAPIGeoZoneServiceApi*apiInstance = [[PBLIAPIGeoZoneServiceApi alloc] init];
               simplificationFactor:simplificationFactor
               bandingStyle:bandingStyle
               historicTrafficTimeBucket:historicTrafficTimeBucket
+              defaultAmbientSpeed:defaultAmbientSpeed
+              ambientSpeedUnit:ambientSpeedUnit
           completionHandler: ^(PBTravelBoundaries* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -103,6 +265,8 @@ Name | Type | Description  | Notes
  **simplificationFactor** | **NSString***| Number between 0.0 and 1.0 where 0.0 is very simple and 1.0 means the most complex. | [optional] [default to 0.5]
  **bandingStyle** | **NSString***| Style of banding to be used in the result. | [optional] [default to Donut]
  **historicTrafficTimeBucket** | **NSString***| Whether routing calculation uses the historic traffic speeds. | [optional] [default to None]
+ **defaultAmbientSpeed** | **NSString***| The speed to travel when going off a network road to find the travel boundary (for all road types). | [optional] 
+ **ambientSpeedUnit** | **NSString***| The unit of measure to use to calculate the ambient speed. | [optional] [default to MPH]
 
 ### Return type
 
@@ -136,6 +300,8 @@ Name | Type | Description  | Notes
     simplificationFactor: (NSString*) simplificationFactor
     bandingStyle: (NSString*) bandingStyle
     historicTrafficTimeBucket: (NSString*) historicTrafficTimeBucket
+    defaultAmbientSpeed: (NSString*) defaultAmbientSpeed
+    ambientSpeedUnit: (NSString*) ambientSpeedUnit
         completionHandler: (void (^)(PBTravelBoundaries* output, NSError* error)) handler;
 ```
 
@@ -166,6 +332,8 @@ NSString* returnIslands = @"false"; // Whether to return islands, which are smal
 NSString* simplificationFactor = @"0.5"; // Number between 0.0 and 1.0 where 0.0 is very simple and 1.0 means the most complex. (optional) (default to 0.5)
 NSString* bandingStyle = @"Donut"; // Style of banding to be used in the result. (optional) (default to Donut)
 NSString* historicTrafficTimeBucket = @"None"; // Whether routing calculation uses the historic traffic speeds. (optional) (default to None)
+NSString* defaultAmbientSpeed = @"defaultAmbientSpeed_example"; // The speed to travel when going off a network road to find the travel boundary (for all road types). (optional)
+NSString* ambientSpeedUnit = @"MPH"; // The unit of measure to use to calculate the ambient speed. (optional) (default to MPH)
 
 PBLIAPIGeoZoneServiceApi*apiInstance = [[PBLIAPIGeoZoneServiceApi alloc] init];
 
@@ -185,6 +353,8 @@ PBLIAPIGeoZoneServiceApi*apiInstance = [[PBLIAPIGeoZoneServiceApi alloc] init];
               simplificationFactor:simplificationFactor
               bandingStyle:bandingStyle
               historicTrafficTimeBucket:historicTrafficTimeBucket
+              defaultAmbientSpeed:defaultAmbientSpeed
+              ambientSpeedUnit:ambientSpeedUnit
           completionHandler: ^(PBTravelBoundaries* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -214,6 +384,8 @@ Name | Type | Description  | Notes
  **simplificationFactor** | **NSString***| Number between 0.0 and 1.0 where 0.0 is very simple and 1.0 means the most complex. | [optional] [default to 0.5]
  **bandingStyle** | **NSString***| Style of banding to be used in the result. | [optional] [default to Donut]
  **historicTrafficTimeBucket** | **NSString***| Whether routing calculation uses the historic traffic speeds. | [optional] [default to None]
+ **defaultAmbientSpeed** | **NSString***| The speed to travel when going off a network road to find the travel boundary (for all road types). | [optional] 
+ **ambientSpeedUnit** | **NSString***| The unit of measure to use to calculate the ambient speed. | [optional] [default to MPH]
 
 ### Return type
 

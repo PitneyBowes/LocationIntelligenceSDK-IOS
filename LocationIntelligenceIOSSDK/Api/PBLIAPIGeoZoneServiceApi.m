@@ -1,5 +1,7 @@
 #import "PBLIAPIGeoZoneServiceApi.h"
 #import "PBQueryParamCollection.h"
+#import "PBBasicBoundaryAddress.h"
+#import "PBBasicBoundary.h"
 #import "PBTravelBoundaries.h"
 
 
@@ -70,6 +72,249 @@ NSInteger kPBLIAPIGeoZoneServiceApiMissingParamErrorCode = 234513;
 #pragma mark - Api Methods
 
 ///
+/// Gets Basic Boundary by Address
+/// Gets Basic Boundary by Address
+///  @param address Address around which Basic Boundary is requested 
+///
+///  @param distance This is width of the buffer (in a complete circular buffer, it would be radius of the buffer). This has to be a positive number. 
+///
+///  @param country Three digit ISO country code (optional, default to USA)
+///
+///  @param distanceUnit Longitude around which Basic Boundary is requested (optional, default to feet)
+///
+///  @param resolution This is resolution of the buffer. Curves generated in buffer are approximated by line segments and it is measured in segments per circle. The higher the resolution, the smoother the curves of the buffer but more points would be required in the boundary geometry. Number greater than 0 and in multiple of 4. If not in 4, then it is approximated to nearest multiple of 4. (optional)
+///
+///  @param responseSrs The spatial reference system to express the response in. By default, it would be epsg:4326 (optional, default to epsg:4326)
+///
+///  @returns PBBasicBoundaryAddress*
+///
+-(NSNumber*) getBasicBoundaryByAddressWithAddress: (NSString*) address
+    distance: (NSString*) distance
+    country: (NSString*) country
+    distanceUnit: (NSString*) distanceUnit
+    resolution: (NSString*) resolution
+    responseSrs: (NSString*) responseSrs
+    completionHandler: (void (^)(PBBasicBoundaryAddress* output, NSError* error)) handler {
+    // verify the required parameter 'address' is set
+    if (address == nil) {
+        NSParameterAssert(address);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"address"] };
+            NSError* error = [NSError errorWithDomain:kPBLIAPIGeoZoneServiceApiErrorDomain code:kPBLIAPIGeoZoneServiceApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    // verify the required parameter 'distance' is set
+    if (distance == nil) {
+        NSParameterAssert(distance);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"distance"] };
+            NSError* error = [NSError errorWithDomain:kPBLIAPIGeoZoneServiceApiErrorDomain code:kPBLIAPIGeoZoneServiceApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/geozone/v1/basicboundary/byaddress"];
+
+    // remove format in URL if needed
+    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (address != nil) {
+        queryParams[@"address"] = address;
+    }
+    if (country != nil) {
+        queryParams[@"country"] = country;
+    }
+    if (distance != nil) {
+        queryParams[@"distance"] = distance;
+    }
+    if (distanceUnit != nil) {
+        queryParams[@"distanceUnit"] = distanceUnit;
+    }
+    if (resolution != nil) {
+        queryParams[@"resolution"] = resolution;
+    }
+    if (responseSrs != nil) {
+        queryParams[@"responseSrs"] = responseSrs;
+    }
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json", @"application/xml"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"oAuth2Password"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PBBasicBoundaryAddress*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((PBBasicBoundaryAddress*)data, error);
+                                }
+                           }
+          ];
+}
+
+///
+/// Gets Basic Boundary by Location
+/// Gets Basic Boundary by Location
+///  @param latitude Latitude around which Basic Boundary is requested 
+///
+///  @param longitude Longitude around which Basic Boundary is requested 
+///
+///  @param distance This is width of the buffer (in a complete circular buffer, it would be radius of the buffer). This has to be a positive number. 
+///
+///  @param distanceUnit Longitude around which Basic Boundary is requested (optional, default to feet)
+///
+///  @param resolution This is resolution of the buffer. Curves generated in buffer are approximated by line segments and it is measured in segments per circle. The higher the resolution, the smoother the curves of the buffer but more points would be required in the boundary geometry. Number greater than 0 and in multiple of 4. If not in 4, then it is approximated to nearest multiple of 4. (optional)
+///
+///  @param responseSrs The spatial reference system to express the response in. By default, it would be epsg:4326 (optional, default to epsg:4326)
+///
+///  @param srsName The spatial reference system for input. By default, it would be epsg:4326 (optional, default to epsg:4326)
+///
+///  @returns PBBasicBoundary*
+///
+-(NSNumber*) getBasicBoundaryByLocationWithLatitude: (NSString*) latitude
+    longitude: (NSString*) longitude
+    distance: (NSString*) distance
+    distanceUnit: (NSString*) distanceUnit
+    resolution: (NSString*) resolution
+    responseSrs: (NSString*) responseSrs
+    srsName: (NSString*) srsName
+    completionHandler: (void (^)(PBBasicBoundary* output, NSError* error)) handler {
+    // verify the required parameter 'latitude' is set
+    if (latitude == nil) {
+        NSParameterAssert(latitude);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"latitude"] };
+            NSError* error = [NSError errorWithDomain:kPBLIAPIGeoZoneServiceApiErrorDomain code:kPBLIAPIGeoZoneServiceApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    // verify the required parameter 'longitude' is set
+    if (longitude == nil) {
+        NSParameterAssert(longitude);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"longitude"] };
+            NSError* error = [NSError errorWithDomain:kPBLIAPIGeoZoneServiceApiErrorDomain code:kPBLIAPIGeoZoneServiceApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    // verify the required parameter 'distance' is set
+    if (distance == nil) {
+        NSParameterAssert(distance);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"distance"] };
+            NSError* error = [NSError errorWithDomain:kPBLIAPIGeoZoneServiceApiErrorDomain code:kPBLIAPIGeoZoneServiceApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/geozone/v1/basicboundary/bylocation"];
+
+    // remove format in URL if needed
+    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (latitude != nil) {
+        queryParams[@"latitude"] = latitude;
+    }
+    if (longitude != nil) {
+        queryParams[@"longitude"] = longitude;
+    }
+    if (distance != nil) {
+        queryParams[@"distance"] = distance;
+    }
+    if (distanceUnit != nil) {
+        queryParams[@"distanceUnit"] = distanceUnit;
+    }
+    if (resolution != nil) {
+        queryParams[@"resolution"] = resolution;
+    }
+    if (responseSrs != nil) {
+        queryParams[@"responseSrs"] = responseSrs;
+    }
+    if (srsName != nil) {
+        queryParams[@"srsName"] = srsName;
+    }
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json", @"application/xml"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"oAuth2Password"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PBBasicBoundary*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((PBBasicBoundary*)data, error);
+                                }
+                           }
+          ];
+}
+
+///
 /// Gets travel Boundary by Distance
 /// Returns the travel boundary based on travel distance.
 ///  @param costs Travel distance(s) 
@@ -102,6 +347,10 @@ NSInteger kPBLIAPIGeoZoneServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param historicTrafficTimeBucket Whether routing calculation uses the historic traffic speeds. (optional, default to None)
 ///
+///  @param defaultAmbientSpeed The speed to travel when going off a network road to find the travel boundary (for all road types). (optional)
+///
+///  @param ambientSpeedUnit The unit of measure to use to calculate the ambient speed. (optional, default to MPH)
+///
 ///  @returns PBTravelBoundaries*
 ///
 -(NSNumber*) getTravelBoundaryByDistanceWithCosts: (NSString*) costs
@@ -119,6 +368,8 @@ NSInteger kPBLIAPIGeoZoneServiceApiMissingParamErrorCode = 234513;
     simplificationFactor: (NSString*) simplificationFactor
     bandingStyle: (NSString*) bandingStyle
     historicTrafficTimeBucket: (NSString*) historicTrafficTimeBucket
+    defaultAmbientSpeed: (NSString*) defaultAmbientSpeed
+    ambientSpeedUnit: (NSString*) ambientSpeedUnit
     completionHandler: (void (^)(PBTravelBoundaries* output, NSError* error)) handler {
     // verify the required parameter 'costs' is set
     if (costs == nil) {
@@ -183,6 +434,12 @@ NSInteger kPBLIAPIGeoZoneServiceApiMissingParamErrorCode = 234513;
     }
     if (historicTrafficTimeBucket != nil) {
         queryParams[@"historicTrafficTimeBucket"] = historicTrafficTimeBucket;
+    }
+    if (defaultAmbientSpeed != nil) {
+        queryParams[@"defaultAmbientSpeed"] = defaultAmbientSpeed;
+    }
+    if (ambientSpeedUnit != nil) {
+        queryParams[@"ambientSpeedUnit"] = ambientSpeedUnit;
     }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
@@ -258,6 +515,10 @@ NSInteger kPBLIAPIGeoZoneServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param historicTrafficTimeBucket Whether routing calculation uses the historic traffic speeds. (optional, default to None)
 ///
+///  @param defaultAmbientSpeed The speed to travel when going off a network road to find the travel boundary (for all road types). (optional)
+///
+///  @param ambientSpeedUnit The unit of measure to use to calculate the ambient speed. (optional, default to MPH)
+///
 ///  @returns PBTravelBoundaries*
 ///
 -(NSNumber*) getTravelBoundaryByTimeWithCosts: (NSString*) costs
@@ -275,6 +536,8 @@ NSInteger kPBLIAPIGeoZoneServiceApiMissingParamErrorCode = 234513;
     simplificationFactor: (NSString*) simplificationFactor
     bandingStyle: (NSString*) bandingStyle
     historicTrafficTimeBucket: (NSString*) historicTrafficTimeBucket
+    defaultAmbientSpeed: (NSString*) defaultAmbientSpeed
+    ambientSpeedUnit: (NSString*) ambientSpeedUnit
     completionHandler: (void (^)(PBTravelBoundaries* output, NSError* error)) handler {
     // verify the required parameter 'costs' is set
     if (costs == nil) {
@@ -339,6 +602,12 @@ NSInteger kPBLIAPIGeoZoneServiceApiMissingParamErrorCode = 234513;
     }
     if (historicTrafficTimeBucket != nil) {
         queryParams[@"historicTrafficTimeBucket"] = historicTrafficTimeBucket;
+    }
+    if (defaultAmbientSpeed != nil) {
+        queryParams[@"defaultAmbientSpeed"] = defaultAmbientSpeed;
+    }
+    if (ambientSpeedUnit != nil) {
+        queryParams[@"ambientSpeedUnit"] = ambientSpeedUnit;
     }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];

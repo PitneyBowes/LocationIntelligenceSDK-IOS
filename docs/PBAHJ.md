@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **comments** | **NSString*** |  | [optional] 
 **coverage** | [**PBCoverage***](PBCoverage.md) |  | [optional] 
 **contactPerson** | [**PBContactPerson***](PBContactPerson.md) |  | [optional] 
-**mailingAddress** | [**PBAddress***](PBAddress.md) |  | [optional] 
+**mailingAddress** | [**PBAHJmailingAddress***](PBAHJmailingAddress.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

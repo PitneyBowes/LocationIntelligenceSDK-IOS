@@ -113,7 +113,7 @@ NSInteger kPBLIAPIGeoCommServiceApiMissingParamErrorCode = 234513;
         queryParams[@"country"] = country;
     }
     if (areaCodeInfo != nil) {
-        queryParams[@"areaCodeInfo"] = areaCodeInfo;
+        queryParams[@"AreaCodeInfo"] = areaCodeInfo;
     }
     if (level != nil) {
         queryParams[@"level"] = level;
@@ -214,7 +214,7 @@ NSInteger kPBLIAPIGeoCommServiceApiMissingParamErrorCode = 234513;
         queryParams[@"latitude"] = latitude;
     }
     if (areaCodeInfo != nil) {
-        queryParams[@"areaCodeInfo"] = areaCodeInfo;
+        queryParams[@"AreaCodeInfo"] = areaCodeInfo;
     }
     if (level != nil) {
         queryParams[@"level"] = level;

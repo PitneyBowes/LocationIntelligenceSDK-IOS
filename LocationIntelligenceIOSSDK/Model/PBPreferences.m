@@ -6,7 +6,12 @@
   self = [super init];
   if (self) {
     // initialize property's default value, if any
-    self.returnAllCandidateInfo = @"false";
+    self.matchMode = @"EXACT";
+    self.latLongOffset = @"40";
+    self.latLongFormat = @"Decimal";
+    self.defaultBufferWidth = @"0";
+    self.distanceUnits = @"Feet";
+    self.outputCasing = @"M";
     
   }
   return self;
@@ -18,7 +23,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"returnAllCandidateInfo": @"returnAllCandidateInfo", @"fallbackToGeographic": @"fallbackToGeographic", @"fallbackToPostal": @"fallbackToPostal", @"maxReturnedCandidates": @"maxReturnedCandidates", @"distance": @"distance", @"streetOffset": @"streetOffset", @"cornerOffset": @"cornerOffset", @"matchMode": @"matchMode", @"clientLocale": @"clientLocale", @"clientCoordSysName": @"clientCoordSysName", @"distanceUnits": @"distanceUnits", @"streetOffsetUnits": @"streetOffsetUnits", @"cornerOffsetUnits": @"cornerOffsetUnits", @"mustMatchFields": @"mustMatchFields", @"returnFieldsDescriptor": @"returnFieldsDescriptor", @"outputRecordType": @"outputRecordType", @"customPreferences": @"customPreferences", @"preferredDictionaryOrders": @"preferredDictionaryOrders", @"outputCasing": @"outputCasing", @"latLongOffset": @"latLongOffset", @"squeeze": @"squeeze", @"returnLatLongFields": @"returnLatLongFields", @"useGeoTaxAuxiliaryFile": @"useGeoTaxAuxiliaryFile", @"latLongFormat": @"latLongFormat", @"defaultBufferWidth": @"defaultBufferWidth", @"returnCensusFields": @"returnCensusFields", @"taxRatetypeID": @"taxRatetypeID" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"fallbackToGeographic": @"fallbackToGeographic", @"useGeoTaxAuxiliaryFile": @"useGeoTaxAuxiliaryFile", @"matchMode": @"matchMode", @"latLongOffset": @"latLongOffset", @"squeeze": @"squeeze", @"latLongFormat": @"latLongFormat", @"defaultBufferWidth": @"defaultBufferWidth", @"distanceUnits": @"distanceUnits", @"outputCasing": @"outputCasing", @"returnCensusFields": @"returnCensusFields", @"returnLatLongFields": @"returnLatLongFields", @"customPreferences": @"customPreferences" }];
 }
 
 /**
@@ -28,7 +33,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"returnAllCandidateInfo", @"fallbackToGeographic", @"fallbackToPostal", @"maxReturnedCandidates", @"distance", @"streetOffset", @"cornerOffset", @"matchMode", @"clientLocale", @"clientCoordSysName", @"distanceUnits", @"streetOffsetUnits", @"cornerOffsetUnits", @"mustMatchFields", @"returnFieldsDescriptor", @"outputRecordType", @"customPreferences", @"preferredDictionaryOrders", @"outputCasing", @"latLongOffset", @"squeeze", @"returnLatLongFields", @"useGeoTaxAuxiliaryFile", @"latLongFormat", @"defaultBufferWidth", @"returnCensusFields", @"taxRatetypeID"];
+  NSArray *optionalProperties = @[@"fallbackToGeographic", @"useGeoTaxAuxiliaryFile", @"matchMode", @"latLongOffset", @"squeeze", @"latLongFormat", @"defaultBufferWidth", @"distanceUnits", @"outputCasing", @"returnCensusFields", @"returnLatLongFields", @"customPreferences"];
   return [optionalProperties containsObject:propertyName];
 }
 

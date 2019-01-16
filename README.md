@@ -98,7 +98,6 @@ Import the following:
 #import <LocationIntelligenceIOSSDK/PBAHJmailingAddress.h>
 #import <LocationIntelligenceIOSSDK/PBAccuracy.h>
 #import <LocationIntelligenceIOSSDK/PBAddress.h>
-#import <LocationIntelligenceIOSSDK/PBAddressBylocation.h>
 #import <LocationIntelligenceIOSSDK/PBAge.h>
 #import <LocationIntelligenceIOSSDK/PBAgeTheme.h>
 #import <LocationIntelligenceIOSSDK/PBArea.h>
@@ -135,7 +134,6 @@ Import the following:
 #import <LocationIntelligenceIOSSDK/PBCommunity.h>
 #import <LocationIntelligenceIOSSDK/PBCommuterPatternsTheme.h>
 #import <LocationIntelligenceIOSSDK/PBConfiguredDictionaryResponse.h>
-#import <LocationIntelligenceIOSSDK/PBContactDetails.h>
 #import <LocationIntelligenceIOSSDK/PBContactPerson.h>
 #import <LocationIntelligenceIOSSDK/PBCost.h>
 #import <LocationIntelligenceIOSSDK/PBCosts.h>
@@ -156,7 +154,6 @@ Import the following:
 #import <LocationIntelligenceIOSSDK/PBCustomObjectMember.h>
 #import <LocationIntelligenceIOSSDK/PBCustomPreferences.h>
 #import <LocationIntelligenceIOSSDK/PBDateTimeEarthQuake.h>
-#import <LocationIntelligenceIOSSDK/PBDemographics.h>
 #import <LocationIntelligenceIOSSDK/PBDemographicsThemes.h>
 #import <LocationIntelligenceIOSSDK/PBDemographicsThemesV2.h>
 #import <LocationIntelligenceIOSSDK/PBDemographicsV2.h>
@@ -225,6 +222,8 @@ Import the following:
 #import <LocationIntelligenceIOSSDK/PBFloodRiskResponseList.h>
 #import <LocationIntelligenceIOSSDK/PBFloodZone.h>
 #import <LocationIntelligenceIOSSDK/PBGenderTheme.h>
+#import <LocationIntelligenceIOSSDK/PBGeoEnrichMetadataResponse.h>
+#import <LocationIntelligenceIOSSDK/PBGeoEnrichResponse.h>
 #import <LocationIntelligenceIOSSDK/PBGeoIdentityName.h>
 #import <LocationIntelligenceIOSSDK/PBGeoIdentityPlace.h>
 #import <LocationIntelligenceIOSSDK/PBGeoIdentityResponse.h>
@@ -236,7 +235,6 @@ Import the following:
 #import <LocationIntelligenceIOSSDK/PBGeoLocationIpAddr.h>
 #import <LocationIntelligenceIOSSDK/PBGeoLocationPlace.h>
 #import <LocationIntelligenceIOSSDK/PBGeoLocationState.h>
-#import <LocationIntelligenceIOSSDK/PBGeoPlaceMetadataResponse.h>
 #import <LocationIntelligenceIOSSDK/PBGeoPos.h>
 #import <LocationIntelligenceIOSSDK/PBGeoPostGeometry.h>
 #import <LocationIntelligenceIOSSDK/PBGeoPropertyAddressRequest.h>
@@ -261,7 +259,6 @@ Import the following:
 #import <LocationIntelligenceIOSSDK/PBGeocodeServiceResponse.h>
 #import <LocationIntelligenceIOSSDK/PBGeocodeServiceResponseList.h>
 #import <LocationIntelligenceIOSSDK/PBGeometry.h>
-#import <LocationIntelligenceIOSSDK/PBGeoplacesResponse.h>
 #import <LocationIntelligenceIOSSDK/PBGeosearchLocation.h>
 #import <LocationIntelligenceIOSSDK/PBGeosearchLocations.h>
 #import <LocationIntelligenceIOSSDK/PBGlobalUltimateBusiness.h>
@@ -288,14 +285,12 @@ Import the following:
 #import <LocationIntelligenceIOSSDK/PBLifeStyleTheme.h>
 #import <LocationIntelligenceIOSSDK/PBLifestyle.h>
 #import <LocationIntelligenceIOSSDK/PBLocation.h>
-#import <LocationIntelligenceIOSSDK/PBLocations.h>
 #import <LocationIntelligenceIOSSDK/PBMagnitude.h>
 #import <LocationIntelligenceIOSSDK/PBMaritalStatusTheme.h>
 #import <LocationIntelligenceIOSSDK/PBMatch.h>
 #import <LocationIntelligenceIOSSDK/PBMatchedAddress.h>
 #import <LocationIntelligenceIOSSDK/PBMatrix.h>
 #import <LocationIntelligenceIOSSDK/PBMcd.h>
-#import <LocationIntelligenceIOSSDK/PBName.h>
 #import <LocationIntelligenceIOSSDK/PBNeighborhood.h>
 #import <LocationIntelligenceIOSSDK/PBNetwork.h>
 #import <LocationIntelligenceIOSSDK/PBOperation.h>
@@ -309,16 +304,12 @@ Import the following:
 #import <LocationIntelligenceIOSSDK/PBParentBusiness.h>
 #import <LocationIntelligenceIOSSDK/PBPbKey.h>
 #import <LocationIntelligenceIOSSDK/PBPhoto.h>
-#import <LocationIntelligenceIOSSDK/PBPlace.h>
 #import <LocationIntelligenceIOSSDK/PBPlaceByLocations.h>
 #import <LocationIntelligenceIOSSDK/PBPlaceByLocationsLocation.h>
 #import <LocationIntelligenceIOSSDK/PBPlaceLocation.h>
 #import <LocationIntelligenceIOSSDK/PBPlaceLocationName.h>
-#import <LocationIntelligenceIOSSDK/PBPoi.h>
-#import <LocationIntelligenceIOSSDK/PBPoiByLocation.h>
 #import <LocationIntelligenceIOSSDK/PBPoiClassification.h>
 #import <LocationIntelligenceIOSSDK/PBPoiContactDetails.h>
-#import <LocationIntelligenceIOSSDK/PBPoiLocation.h>
 #import <LocationIntelligenceIOSSDK/PBPoints.h>
 #import <LocationIntelligenceIOSSDK/PBPolygonGeometry.h>
 #import <LocationIntelligenceIOSSDK/PBPopulationTheme.h>
@@ -405,7 +396,6 @@ Import the following:
 #import <LocationIntelligenceIOSSDK/PBLIAPIGeoIdentityServiceApi.h>
 #import <LocationIntelligenceIOSSDK/PBLIAPIGeoLifeServiceApi.h>
 #import <LocationIntelligenceIOSSDK/PBLIAPIGeoLocationServiceApi.h>
-#import <LocationIntelligenceIOSSDK/PBLIAPIGeoPlacesServiceApi.h>
 #import <LocationIntelligenceIOSSDK/PBLIAPIGeoPostServiceApi.h>
 #import <LocationIntelligenceIOSSDK/PBLIAPIGeoPropertyServiceApi.h>
 #import <LocationIntelligenceIOSSDK/PBLIAPIGeoRiskServiceApi.h>
@@ -463,9 +453,11 @@ Class | Method | HTTP request | Description
 *PBLIAPIGeo911ServiceApi* | [**getPSAPByLocation**](docs/PBLIAPIGeo911ServiceApi.md#getpsapbylocation) | **GET** /geo911/v1/psap/bylocation | PSAP By Location.
 *PBLIAPIGeoCommServiceApi* | [**getRateCenterByAddress**](docs/PBLIAPIGeoCommServiceApi.md#getratecenterbyaddress) | **GET** /geocomm/v1/ratecenter/byaddress | Rate Center By Address.
 *PBLIAPIGeoCommServiceApi* | [**getRateCenterByLocation**](docs/PBLIAPIGeoCommServiceApi.md#getratecenterbylocation) | **GET** /geocomm/v1/ratecenter/bylocation | Rate Center By Location.
-*PBLIAPIGeoEnrichServiceApi* | [**getAddress**](docs/PBLIAPIGeoEnrichServiceApi.md#getaddress) | **GET** /geoenrich/v1/address/bylocation | Address By Location.
-*PBLIAPIGeoEnrichServiceApi* | [**getEntityByLocation**](docs/PBLIAPIGeoEnrichServiceApi.md#getentitybylocation) | **GET** /geoenrich/v1/poi/bylocation | Points Of Interest By Location.
+*PBLIAPIGeoEnrichServiceApi* | [**getCategoryCodeMetadata**](docs/PBLIAPIGeoEnrichServiceApi.md#getcategorycodemetadata) | **GET** /geoenrich/v1/metadata/category | Returns Category Codes with their sub-categories (if exist), descriptions and SIC Codes mapping
+*PBLIAPIGeoEnrichServiceApi* | [**getPOIsByAddress**](docs/PBLIAPIGeoEnrichServiceApi.md#getpoisbyaddress) | **GET** /geoenrich/v1/poi/byaddress | Point of Interests By Address.
+*PBLIAPIGeoEnrichServiceApi* | [**getPOIsByLocation**](docs/PBLIAPIGeoEnrichServiceApi.md#getpoisbylocation) | **GET** /geoenrich/v1/poi/bylocation | Point of Interests By Location.
 *PBLIAPIGeoEnrichServiceApi* | [**getPlaceByLocation**](docs/PBLIAPIGeoEnrichServiceApi.md#getplacebylocation) | **GET** /geoenrich/v1/place/bylocation | Place By Location.
+*PBLIAPIGeoEnrichServiceApi* | [**getSICMetadata**](docs/PBLIAPIGeoEnrichServiceApi.md#getsicmetadata) | **GET** /geoenrich/v1/metadata/sic | Returns SIC Codes with their Industry Titles and Category Codes mapping
 *PBLIAPIGeoIdentityServiceApi* | [**getIdentityByAddress**](docs/PBLIAPIGeoIdentityServiceApi.md#getidentitybyaddress) | **GET** /geoidentity/v1/identity/byaddress | Gets GeoIdentityResponse
 *PBLIAPIGeoIdentityServiceApi* | [**getIdentityByEmail**](docs/PBLIAPIGeoIdentityServiceApi.md#getidentitybyemail) | **GET** /geoidentity/v1/identity/byemail | Gets Identity
 *PBLIAPIGeoIdentityServiceApi* | [**getIdentityByPBKey**](docs/PBLIAPIGeoIdentityServiceApi.md#getidentitybypbkey) | **GET** /geoidentity/v1/identity/bypbkey | Gets GeoIdentityResponse
@@ -479,10 +471,6 @@ Class | Method | HTTP request | Description
 *PBLIAPIGeoLocationServiceApi* | [**getLocationByFixedLine**](docs/PBLIAPIGeoLocationServiceApi.md#getlocationbyfixedline) | **GET** /geolocation/v1/location/byfixedline | Location By Fixed Line Network.
 *PBLIAPIGeoLocationServiceApi* | [**getLocationByIPAddress**](docs/PBLIAPIGeoLocationServiceApi.md#getlocationbyipaddress) | **GET** /geolocation/v1/location/byipaddress | Location By IP Address.
 *PBLIAPIGeoLocationServiceApi* | [**getLocationByWiFiAccessPoint**](docs/PBLIAPIGeoLocationServiceApi.md#getlocationbywifiaccesspoint) | **GET** /geolocation/v1/location/byaccesspoint | Location by WiFi Access Point.
-*PBLIAPIGeoPlacesServiceApi* | [**getCategoryCodeMetadata**](docs/PBLIAPIGeoPlacesServiceApi.md#getcategorycodemetadata) | **GET** /geoplaces/v1/metadata/category | Returns Category Codes with their sub-categories (if exist), descriptions and SIC Codes mapping
-*PBLIAPIGeoPlacesServiceApi* | [**getPOIsByAddress**](docs/PBLIAPIGeoPlacesServiceApi.md#getpoisbyaddress) | **GET** /geoplaces/v1/poi/byaddress | Point of Interests By Address.
-*PBLIAPIGeoPlacesServiceApi* | [**getPOIsByLocation**](docs/PBLIAPIGeoPlacesServiceApi.md#getpoisbylocation) | **GET** /geoplaces/v1/poi/bylocation | Point of Interests By Location.
-*PBLIAPIGeoPlacesServiceApi* | [**getSICMetadata**](docs/PBLIAPIGeoPlacesServiceApi.md#getsicmetadata) | **GET** /geoplaces/v1/metadata/sic | Returns SIC Codes with their Industry Titles and Category Codes mapping
 *PBLIAPIGeoPostServiceApi* | [**getCarrierRoutesByAddress**](docs/PBLIAPIGeoPostServiceApi.md#getcarrierroutesbyaddress) | **GET** /geopost/v1/carrierroute/byaddress | Carrier Route By Address.
 *PBLIAPIGeoPostServiceApi* | [**getCarrierRoutesByAddressBatch**](docs/PBLIAPIGeoPostServiceApi.md#getcarrierroutesbyaddressbatch) | **POST** /geopost/v1/carrierroute/byaddress | Gets GeoPost Carrier Routes for Multiple Addresses
 *PBLIAPIGeoPropertyServiceApi* | [**getGeoPropertyByAddress**](docs/PBLIAPIGeoPropertyServiceApi.md#getgeopropertybyaddress) | **GET** /geoproperty/v1/all/attributes/byaddress | Gets GeoPropertyResponse
@@ -546,13 +534,12 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [PBAHJ](docs/PBAHJ.md)
+- [PBAHJ](docs/PBAHJ.md)
  - [PBAHJList](docs/PBAHJList.md)
  - [PBAHJPlusPSAPResponse](docs/PBAHJPlusPSAPResponse.md)
  - [PBAHJmailingAddress](docs/PBAHJmailingAddress.md)
  - [PBAccuracy](docs/PBAccuracy.md)
  - [PBAddress](docs/PBAddress.md)
- - [PBAddressBylocation](docs/PBAddressBylocation.md)
  - [PBAge](docs/PBAge.md)
  - [PBAgeTheme](docs/PBAgeTheme.md)
  - [PBArea](docs/PBArea.md)
@@ -589,7 +576,6 @@ Class | Method | HTTP request | Description
  - [PBCommunity](docs/PBCommunity.md)
  - [PBCommuterPatternsTheme](docs/PBCommuterPatternsTheme.md)
  - [PBConfiguredDictionaryResponse](docs/PBConfiguredDictionaryResponse.md)
- - [PBContactDetails](docs/PBContactDetails.md)
  - [PBContactPerson](docs/PBContactPerson.md)
  - [PBCost](docs/PBCost.md)
  - [PBCosts](docs/PBCosts.md)
@@ -610,7 +596,6 @@ Class | Method | HTTP request | Description
  - [PBCustomObjectMember](docs/PBCustomObjectMember.md)
  - [PBCustomPreferences](docs/PBCustomPreferences.md)
  - [PBDateTimeEarthQuake](docs/PBDateTimeEarthQuake.md)
- - [PBDemographics](docs/PBDemographics.md)
  - [PBDemographicsThemes](docs/PBDemographicsThemes.md)
  - [PBDemographicsThemesV2](docs/PBDemographicsThemesV2.md)
  - [PBDemographicsV2](docs/PBDemographicsV2.md)
@@ -679,6 +664,8 @@ Class | Method | HTTP request | Description
  - [PBFloodRiskResponseList](docs/PBFloodRiskResponseList.md)
  - [PBFloodZone](docs/PBFloodZone.md)
  - [PBGenderTheme](docs/PBGenderTheme.md)
+ - [PBGeoEnrichMetadataResponse](docs/PBGeoEnrichMetadataResponse.md)
+ - [PBGeoEnrichResponse](docs/PBGeoEnrichResponse.md)
  - [PBGeoIdentityName](docs/PBGeoIdentityName.md)
  - [PBGeoIdentityPlace](docs/PBGeoIdentityPlace.md)
  - [PBGeoIdentityResponse](docs/PBGeoIdentityResponse.md)
@@ -690,7 +677,6 @@ Class | Method | HTTP request | Description
  - [PBGeoLocationIpAddr](docs/PBGeoLocationIpAddr.md)
  - [PBGeoLocationPlace](docs/PBGeoLocationPlace.md)
  - [PBGeoLocationState](docs/PBGeoLocationState.md)
- - [PBGeoPlaceMetadataResponse](docs/PBGeoPlaceMetadataResponse.md)
  - [PBGeoPos](docs/PBGeoPos.md)
  - [PBGeoPostGeometry](docs/PBGeoPostGeometry.md)
  - [PBGeoPropertyAddressRequest](docs/PBGeoPropertyAddressRequest.md)
@@ -715,7 +701,6 @@ Class | Method | HTTP request | Description
  - [PBGeocodeServiceResponse](docs/PBGeocodeServiceResponse.md)
  - [PBGeocodeServiceResponseList](docs/PBGeocodeServiceResponseList.md)
  - [PBGeometry](docs/PBGeometry.md)
- - [PBGeoplacesResponse](docs/PBGeoplacesResponse.md)
  - [PBGeosearchLocation](docs/PBGeosearchLocation.md)
  - [PBGeosearchLocations](docs/PBGeosearchLocations.md)
  - [PBGlobalUltimateBusiness](docs/PBGlobalUltimateBusiness.md)
@@ -742,14 +727,12 @@ Class | Method | HTTP request | Description
  - [PBLifeStyleTheme](docs/PBLifeStyleTheme.md)
  - [PBLifestyle](docs/PBLifestyle.md)
  - [PBLocation](docs/PBLocation.md)
- - [PBLocations](docs/PBLocations.md)
  - [PBMagnitude](docs/PBMagnitude.md)
  - [PBMaritalStatusTheme](docs/PBMaritalStatusTheme.md)
  - [PBMatch](docs/PBMatch.md)
  - [PBMatchedAddress](docs/PBMatchedAddress.md)
  - [PBMatrix](docs/PBMatrix.md)
  - [PBMcd](docs/PBMcd.md)
- - [PBName](docs/PBName.md)
  - [PBNeighborhood](docs/PBNeighborhood.md)
  - [PBNetwork](docs/PBNetwork.md)
  - [PBOperation](docs/PBOperation.md)
@@ -763,16 +746,12 @@ Class | Method | HTTP request | Description
  - [PBParentBusiness](docs/PBParentBusiness.md)
  - [PBPbKey](docs/PBPbKey.md)
  - [PBPhoto](docs/PBPhoto.md)
- - [PBPlace](docs/PBPlace.md)
  - [PBPlaceByLocations](docs/PBPlaceByLocations.md)
  - [PBPlaceByLocationsLocation](docs/PBPlaceByLocationsLocation.md)
  - [PBPlaceLocation](docs/PBPlaceLocation.md)
  - [PBPlaceLocationName](docs/PBPlaceLocationName.md)
- - [PBPoi](docs/PBPoi.md)
- - [PBPoiByLocation](docs/PBPoiByLocation.md)
  - [PBPoiClassification](docs/PBPoiClassification.md)
  - [PBPoiContactDetails](docs/PBPoiContactDetails.md)
- - [PBPoiLocation](docs/PBPoiLocation.md)
  - [PBPoints](docs/PBPoints.md)
  - [PBPolygonGeometry](docs/PBPolygonGeometry.md)
  - [PBPopulationTheme](docs/PBPopulationTheme.md)

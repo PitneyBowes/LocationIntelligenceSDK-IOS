@@ -3,6 +3,8 @@
 #import "PBGeoPropertyResponse.h"
 #import "PBGeoPropertyResponses.h"
 #import "PBGeoPropertyAddressRequest.h"
+#import "PBGeoPropertyPBKeyResponse.h"
+#import "PBGeoPropertyPBKeyResponses.h"
 #import "PBGeoPropertyPBKeyRequest.h"
 
 
@@ -208,10 +210,10 @@ NSInteger kPBLIAPIGeoPropertyServiceApiMissingParamErrorCode = 234513;
 /// Gets GeoPropertyResponse
 ///  @param pbKey free form text 
 ///
-///  @returns PBGeoPropertyResponse*
+///  @returns PBGeoPropertyPBKeyResponse*
 ///
 -(NSNumber*) getGeoPropertyByPBKeyWithPbKey: (NSString*) pbKey
-    completionHandler: (void (^)(PBGeoPropertyResponse* output, NSError* error)) handler {
+    completionHandler: (void (^)(PBGeoPropertyPBKeyResponse* output, NSError* error)) handler {
     // verify the required parameter 'pbKey' is set
     if (pbKey == nil) {
         NSParameterAssert(pbKey);
@@ -266,10 +268,10 @@ NSInteger kPBLIAPIGeoPropertyServiceApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PBGeoPropertyResponse*"
+                              responseType: @"PBGeoPropertyPBKeyResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((PBGeoPropertyResponse*)data, error);
+                                    handler((PBGeoPropertyPBKeyResponse*)data, error);
                                 }
                            }
           ];
@@ -280,10 +282,10 @@ NSInteger kPBLIAPIGeoPropertyServiceApiMissingParamErrorCode = 234513;
 /// Gets GeoPropertyResponses
 ///  @param body  (optional)
 ///
-///  @returns PBGeoPropertyResponses*
+///  @returns PBGeoPropertyPBKeyResponses*
 ///
 -(NSNumber*) getGeoPropertyByPBKeyBatchWithBody: (PBGeoPropertyPBKeyRequest*) body
-    completionHandler: (void (^)(PBGeoPropertyResponses* output, NSError* error)) handler {
+    completionHandler: (void (^)(PBGeoPropertyPBKeyResponses* output, NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/geoproperty/v1/all/attributes/bypbkey"];
 
     // remove format in URL if needed
@@ -325,10 +327,10 @@ NSInteger kPBLIAPIGeoPropertyServiceApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PBGeoPropertyResponses*"
+                              responseType: @"PBGeoPropertyPBKeyResponses*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((PBGeoPropertyResponses*)data, error);
+                                    handler((PBGeoPropertyPBKeyResponses*)data, error);
                                 }
                            }
           ];

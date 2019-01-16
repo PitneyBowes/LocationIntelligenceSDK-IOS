@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **locationReference** | **NSString*** |  | [optional] 
 **travelDistance** | [**PBDistance***](PBDistance.md) |  | [optional] 
 **travelTime** | [**PBTime***](PBTime.md) |  | [optional] 
-**contactDetails** | [**PBContactDetails***](PBContactDetails.md) |  | [optional] 
+**contactDetails** | [**PBFireStationContactDetails***](PBFireStationContactDetails.md) |  | [optional] 
 **fireDepartment** | [**PBFireDepartment***](PBFireDepartment.md) |  | [optional] 
 **geometry** | [**PBGeometry***](PBGeometry.md) |  | [optional] 
 

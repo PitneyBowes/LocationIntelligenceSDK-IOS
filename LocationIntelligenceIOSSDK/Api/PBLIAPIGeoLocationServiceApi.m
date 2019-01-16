@@ -1,6 +1,9 @@
 #import "PBLIAPIGeoLocationServiceApi.h"
 #import "PBQueryParamCollection.h"
-#import "PBGeoLocation.h"
+#import "PBGeoLocationDeviceSatus.h"
+#import "PBGeoLocationFixedLine.h"
+#import "PBGeoLocationIpAddr.h"
+#import "PBGeoLocationAccessPoint.h"
 
 
 @interface PBLIAPIGeoLocationServiceApi ()
@@ -70,14 +73,92 @@ NSInteger kPBLIAPIGeoLocationServiceApiMissingParamErrorCode = 234513;
 #pragma mark - Api Methods
 
 ///
+/// Location By Device Status.
+/// This service accepts a phone number as input and returns details distinguishing landline and wireless numbers and also checks if a wireless number can be located.
+///  @param deviceId Unique identifier for the intended device. Supported identifiers are fixed line and mobile number. 
+///
+///  @param includeNetworkInfo_ Y or N (default is Y) – if it is N, then network/carrier details will not be added in the response. (optional)
+///
+///  @returns PBGeoLocationDeviceSatus*
+///
+-(NSNumber*) getDeviceStatusWithDeviceId: (NSString*) deviceId
+    includeNetworkInfo_: (NSString*) includeNetworkInfo_
+    completionHandler: (void (^)(PBGeoLocationDeviceSatus* output, NSError* error)) handler {
+    // verify the required parameter 'deviceId' is set
+    if (deviceId == nil) {
+        NSParameterAssert(deviceId);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"deviceId"] };
+            NSError* error = [NSError errorWithDomain:kPBLIAPIGeoLocationServiceApiErrorDomain code:kPBLIAPIGeoLocationServiceApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/geolocation/v1/devicestatus"];
+
+    // remove format in URL if needed
+    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (deviceId != nil) {
+        queryParams[@"deviceId"] = deviceId;
+    }
+    if (includeNetworkInfo_ != nil) {
+        queryParams[@"includeNetworkInfo "] = includeNetworkInfo_;
+    }
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/xml", @"application/json"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json", @"application/xml"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"oAuth2Password"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PBGeoLocationDeviceSatus*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((PBGeoLocationDeviceSatus*)data, error);
+                                }
+                           }
+          ];
+}
+
+///
 /// Location By Fixed Line Network.
 /// This service accepts a fixed line phone number and returns the location coordinates corresponding to that phone number.
 ///  @param deviceId This is the fixed line phone number (US only). This is a mandatory parameter. 
 ///
-///  @returns PBGeoLocation*
+///  @returns PBGeoLocationFixedLine*
 ///
 -(NSNumber*) getLocationByFixedLineWithDeviceId: (NSString*) deviceId
-    completionHandler: (void (^)(PBGeoLocation* output, NSError* error)) handler {
+    completionHandler: (void (^)(PBGeoLocationFixedLine* output, NSError* error)) handler {
     // verify the required parameter 'deviceId' is set
     if (deviceId == nil) {
         NSParameterAssert(deviceId);
@@ -132,10 +213,10 @@ NSInteger kPBLIAPIGeoLocationServiceApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PBGeoLocation*"
+                              responseType: @"PBGeoLocationFixedLine*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((PBGeoLocation*)data, error);
+                                    handler((PBGeoLocationFixedLine*)data, error);
                                 }
                            }
           ];
@@ -146,10 +227,10 @@ NSInteger kPBLIAPIGeoLocationServiceApiMissingParamErrorCode = 234513;
 /// This service accepts an IP address and returns the location coordinates corresponding to that IP address.
 ///  @param ipAddress This is the ip address of network connected device. It must be a standard IPv4 octet and a valid external address. 
 ///
-///  @returns PBGeoLocation*
+///  @returns PBGeoLocationIpAddr*
 ///
 -(NSNumber*) getLocationByIPAddressWithIpAddress: (NSString*) ipAddress
-    completionHandler: (void (^)(PBGeoLocation* output, NSError* error)) handler {
+    completionHandler: (void (^)(PBGeoLocationIpAddr* output, NSError* error)) handler {
     // verify the required parameter 'ipAddress' is set
     if (ipAddress == nil) {
         NSParameterAssert(ipAddress);
@@ -204,10 +285,10 @@ NSInteger kPBLIAPIGeoLocationServiceApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PBGeoLocation*"
+                              responseType: @"PBGeoLocationIpAddr*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((PBGeoLocation*)data, error);
+                                    handler((PBGeoLocationIpAddr*)data, error);
                                 }
                            }
           ];
@@ -226,14 +307,14 @@ NSInteger kPBLIAPIGeoLocationServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param accessPoint This is the JSON based list of wifi access points in the vicinity of device to be located. This parameter is helpful in case, multiple wifi points are visible and we want to make sure that the location of device is best calculated considering all the access points location. (optional)
 ///
-///  @returns PBGeoLocation*
+///  @returns PBGeoLocationAccessPoint*
 ///
 -(NSNumber*) getLocationByWiFiAccessPointWithMac: (NSString*) mac
     ssid: (NSString*) ssid
     rsid: (NSString*) rsid
     speed: (NSString*) speed
     accessPoint: (NSString*) accessPoint
-    completionHandler: (void (^)(PBGeoLocation* output, NSError* error)) handler {
+    completionHandler: (void (^)(PBGeoLocationAccessPoint* output, NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/geolocation/v1/location/byaccesspoint"];
 
     // remove format in URL if needed
@@ -289,10 +370,10 @@ NSInteger kPBLIAPIGeoLocationServiceApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PBGeoLocation*"
+                              responseType: @"PBGeoLocationAccessPoint*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((PBGeoLocation*)data, error);
+                                    handler((PBGeoLocationAccessPoint*)data, error);
                                 }
                            }
           ];

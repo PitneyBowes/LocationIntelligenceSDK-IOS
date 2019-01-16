@@ -12,6 +12,8 @@ Method | HTTP request | Description
 ```objc
 -(NSNumber*) getTimezoneByAddressWithTimestamp: (NSString*) timestamp
     address: (NSString*) address
+    matchMode: (NSString*) matchMode
+    country: (NSString*) country
         completionHandler: (void (^)(PBTimezone* output, NSError* error)) handler;
 ```
 
@@ -29,12 +31,16 @@ PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 NSString* timestamp = @"timestamp_example"; // Timestamp in miliseconds.
 NSString* address = @"address_example"; // The address to be searched.
+NSString* matchMode = @"Relaxed"; // Match modes determine the leniency used to make a match between the input address and the reference data. (optional) (default to Relaxed)
+NSString* country = @"USA"; // Country ISO code. (optional) (default to USA)
 
 PBLIAPIGeoTimeServiceApi*apiInstance = [[PBLIAPIGeoTimeServiceApi alloc] init];
 
 // Timezone By Address.
 [apiInstance getTimezoneByAddressWithTimestamp:timestamp
               address:address
+              matchMode:matchMode
+              country:country
           completionHandler: ^(PBTimezone* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -51,6 +57,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **timestamp** | **NSString***| Timestamp in miliseconds. | 
  **address** | **NSString***| The address to be searched. | 
+ **matchMode** | **NSString***| Match modes determine the leniency used to make a match between the input address and the reference data. | [optional] [default to Relaxed]
+ **country** | **NSString***| Country ISO code. | [optional] [default to USA]
 
 ### Return type
 
@@ -72,7 +80,7 @@ Name | Type | Description  | Notes
 -(NSNumber*) getTimezoneByLocationWithTimestamp: (NSString*) timestamp
     longitude: (NSString*) longitude
     latitude: (NSString*) latitude
-        completionHandler: (void (^)(PBTimezone* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBTimezoneLocation* output, NSError* error)) handler;
 ```
 
 Timezone By Location.
@@ -97,7 +105,7 @@ PBLIAPIGeoTimeServiceApi*apiInstance = [[PBLIAPIGeoTimeServiceApi alloc] init];
 [apiInstance getTimezoneByLocationWithTimestamp:timestamp
               longitude:longitude
               latitude:latitude
-          completionHandler: ^(PBTimezone* output, NSError* error) {
+          completionHandler: ^(PBTimezoneLocation* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -117,7 +125,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PBTimezone***](PBTimezone.md)
+[**PBTimezoneLocation***](PBTimezoneLocation.md)
 
 ### Authorization
 

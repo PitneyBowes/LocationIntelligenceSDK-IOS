@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**state** | [**PBState***](PBState.md) |  | [optional] 
-**county** | [**PBCounty***](PBCounty.md) |  | [optional] 
-**place** | [**PBPlace***](PBPlace.md) |  | [optional] 
+**state** | [**PBTaxState***](PBTaxState.md) |  | [optional] 
+**county** | [**PBTaxCounty***](PBTaxCounty.md) |  | [optional] 
+**place** | [**PBTaxPlace***](PBTaxPlace.md) |  | [optional] 
 **spds** | [**NSArray&lt;PBSpecialPurposeDistrict&gt;***](PBSpecialPurposeDistrict.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

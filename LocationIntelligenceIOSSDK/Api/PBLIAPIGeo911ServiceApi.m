@@ -145,9 +145,9 @@ NSInteger kPBLIAPIGeo911ServiceApiMissingParamErrorCode = 234513;
 ///
 /// AHJ & PSAP By Location
 /// Accepts latitude & longitude as input and Returns contact details for Authorities Having Jurisdiction (AHJ) on-behalf-of local Public Safety Answering Points (PSAP). Geo911 accepts a location coordinate and returns PSAP contact data plus contact data for an AHJ to communicate directly with a PSAP. Details include agency name, phone number, city name, coverage, contact person's details, site details and mailing addresses for EMS, Fire, and Police PSAP contacts.
-///  @param longitude Latitude of the location. 
+///  @param longitude Longitude of the location. 
 ///
-///  @param latitude Longitude of the location. 
+///  @param latitude Latitude of the location. 
 ///
 ///  @returns PBAHJPlusPSAPResponse*
 ///

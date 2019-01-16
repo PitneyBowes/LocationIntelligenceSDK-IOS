@@ -1,6 +1,6 @@
 #import "PBLIAPIGeoSearchServiceApi.h"
 #import "PBQueryParamCollection.h"
-#import "PBLocations.h"
+#import "PBGeosearchLocations.h"
 
 
 @interface PBLIAPIGeoSearchServiceApi ()
@@ -98,7 +98,13 @@ NSInteger kPBLIAPIGeoSearchServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param postCode Postal Code of the input to be searched (optional)
 ///
-///  @returns PBLocations*
+///  @param returnAdminAreasOnly if value set 'Y' then it will only do a matching on postcode or areaName1, areaName2, areaName3 and areaName4 fields in the data (optional, default to N)
+///
+///  @param includeRangesDetails if value set 'Y' then display all unit info of ranges, if value set 'N' then don't show ranges (optional, default to Y)
+///
+///  @param searchType Preference to control search type of interactive requests. (optional, default to ADDRESS)
+///
+///  @returns PBGeosearchLocations*
 ///
 -(NSNumber*) geoSearchWithSearchText: (NSString*) searchText
     latitude: (NSString*) latitude
@@ -113,7 +119,10 @@ NSInteger kPBLIAPIGeoSearchServiceApiMissingParamErrorCode = 234513;
     areaName1: (NSString*) areaName1
     areaName3: (NSString*) areaName3
     postCode: (NSString*) postCode
-    completionHandler: (void (^)(PBLocations* output, NSError* error)) handler {
+    returnAdminAreasOnly: (NSString*) returnAdminAreasOnly
+    includeRangesDetails: (NSString*) includeRangesDetails
+    searchType: (NSString*) searchType
+    completionHandler: (void (^)(PBGeosearchLocations* output, NSError* error)) handler {
     // verify the required parameter 'searchText' is set
     if (searchText == nil) {
         NSParameterAssert(searchText);
@@ -125,7 +134,7 @@ NSInteger kPBLIAPIGeoSearchServiceApiMissingParamErrorCode = 234513;
         return nil;
     }
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/geosearch/v1/locations"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/geosearch/v2/locations"];
 
     // remove format in URL if needed
     [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
@@ -172,6 +181,15 @@ NSInteger kPBLIAPIGeoSearchServiceApiMissingParamErrorCode = 234513;
     if (postCode != nil) {
         queryParams[@"postCode"] = postCode;
     }
+    if (returnAdminAreasOnly != nil) {
+        queryParams[@"returnAdminAreasOnly"] = returnAdminAreasOnly;
+    }
+    if (includeRangesDetails != nil) {
+        queryParams[@"includeRangesDetails"] = includeRangesDetails;
+    }
+    if (searchType != nil) {
+        queryParams[@"searchType"] = searchType;
+    }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
     // HTTP header `Accept`
@@ -204,10 +222,10 @@ NSInteger kPBLIAPIGeoSearchServiceApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PBLocations*"
+                              responseType: @"PBGeosearchLocations*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((PBLocations*)data, error);
+                                    handler((PBGeosearchLocations*)data, error);
                                 }
                            }
           ];

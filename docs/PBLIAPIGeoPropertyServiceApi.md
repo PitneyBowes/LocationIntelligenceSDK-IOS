@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 # **getGeoPropertyByPBKey**
 ```objc
 -(NSNumber*) getGeoPropertyByPBKeyWithPbKey: (NSString*) pbKey
-        completionHandler: (void (^)(PBGeoPropertyResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBGeoPropertyPBKeyResponse* output, NSError* error)) handler;
 ```
 
 Gets GeoPropertyResponse
@@ -144,7 +144,7 @@ PBLIAPIGeoPropertyServiceApi*apiInstance = [[PBLIAPIGeoPropertyServiceApi alloc]
 
 // Gets GeoPropertyResponse
 [apiInstance getGeoPropertyByPBKeyWithPbKey:pbKey
-          completionHandler: ^(PBGeoPropertyResponse* output, NSError* error) {
+          completionHandler: ^(PBGeoPropertyPBKeyResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PBGeoPropertyResponse***](PBGeoPropertyResponse.md)
+[**PBGeoPropertyPBKeyResponse***](PBGeoPropertyPBKeyResponse.md)
 
 ### Authorization
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 # **getGeoPropertyByPBKeyBatch**
 ```objc
 -(NSNumber*) getGeoPropertyByPBKeyBatchWithBody: (PBGeoPropertyPBKeyRequest*) body
-        completionHandler: (void (^)(PBGeoPropertyResponses* output, NSError* error)) handler;
+        completionHandler: (void (^)(PBGeoPropertyPBKeyResponses* output, NSError* error)) handler;
 ```
 
 Gets GeoPropertyResponses
@@ -199,7 +199,7 @@ PBLIAPIGeoPropertyServiceApi*apiInstance = [[PBLIAPIGeoPropertyServiceApi alloc]
 
 // Gets GeoPropertyResponses
 [apiInstance getGeoPropertyByPBKeyBatchWithBody:body
-          completionHandler: ^(PBGeoPropertyResponses* output, NSError* error) {
+          completionHandler: ^(PBGeoPropertyPBKeyResponses* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PBGeoPropertyResponses***](PBGeoPropertyResponses.md)
+[**PBGeoPropertyPBKeyResponses***](PBGeoPropertyPBKeyResponses.md)
 
 ### Authorization
 

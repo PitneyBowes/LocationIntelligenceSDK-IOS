@@ -1,6 +1,6 @@
-#import "PBPbkey.h"
+#import "PBPbKey.h"
 
-@implementation PBPbkey
+@implementation PBPbKey
 
 - (instancetype)init {
   self = [super init];

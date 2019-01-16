@@ -1,6 +1,6 @@
 #import "PBLIAPIGeoLifeServiceApi.h"
 #import "PBQueryParamCollection.h"
-#import "PBDemographics.h"
+#import "PBDemographicsV2.h"
 #import "PBSegmentation.h"
 
 
@@ -75,19 +75,25 @@ NSInteger kPBLIAPIGeoLifeServiceApiMissingParamErrorCode = 234513;
 /// Provides the demographic details around a specified address. GeoLife 'byaddress' service accepts address as an input to return a specific population segment's age group, ethnicity, income, purchasing behaviour, commuter patterns and more.
 ///  @param address The address to be searched. 
 ///
+///  @param country 3 letter ISO code of the country to be searched.Allowed values USA,CAN,GBR,AUS. (optional)
+///
 ///  @param profile Retrieves the sorted demographic data on the basis of pre-defined profiles that can display the top 3 or top 5 results (by address) either in ascending or descending order.Allowed values Top5Ascending,Top5Descending,Top3Ascending,Top3Descending (optional)
 ///
 ///  @param filter The 'filter' parameter retrieves the demographic data based upon specified input themes. (optional)
 ///
-///  @param country 3 letter ISO code of the country to be searched.Allowed values USA,CAN,GBR,FRA,IND,ITA,AUS,DEU. (optional)
+///  @param valueFormat The 'valueFormat' parameter is applicable for few ranged variables where percent & count both are available and filter response based on the input value. (optional, default to PercentAsAvailable)
 ///
-///  @returns PBDemographics*
+///  @param variableLevel The 'variableLevel' retrieves demographic facts in response based on the input value (optional, default to Key)
 ///
--(NSNumber*) getDemographicsByAddressWithAddress: (NSString*) address
+///  @returns PBDemographicsV2*
+///
+-(NSNumber*) getDemographicsByAddressV2WithAddress: (NSString*) address
+    country: (NSString*) country
     profile: (NSString*) profile
     filter: (NSString*) filter
-    country: (NSString*) country
-    completionHandler: (void (^)(PBDemographics* output, NSError* error)) handler {
+    valueFormat: (NSString*) valueFormat
+    variableLevel: (NSString*) variableLevel
+    completionHandler: (void (^)(PBDemographicsV2* output, NSError* error)) handler {
     // verify the required parameter 'address' is set
     if (address == nil) {
         NSParameterAssert(address);
@@ -99,7 +105,7 @@ NSInteger kPBLIAPIGeoLifeServiceApiMissingParamErrorCode = 234513;
         return nil;
     }
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/geolife/v1/demographics/byaddress"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/geolife/v2/demographics/byaddress"];
 
     // remove format in URL if needed
     [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
@@ -110,14 +116,20 @@ NSInteger kPBLIAPIGeoLifeServiceApiMissingParamErrorCode = 234513;
     if (address != nil) {
         queryParams[@"address"] = address;
     }
+    if (country != nil) {
+        queryParams[@"country"] = country;
+    }
     if (profile != nil) {
         queryParams[@"profile"] = profile;
     }
     if (filter != nil) {
         queryParams[@"filter"] = filter;
     }
-    if (country != nil) {
-        queryParams[@"country"] = country;
+    if (valueFormat != nil) {
+        queryParams[@"valueFormat"] = valueFormat;
+    }
+    if (variableLevel != nil) {
+        queryParams[@"variableLevel"] = variableLevel;
     }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
@@ -151,10 +163,10 @@ NSInteger kPBLIAPIGeoLifeServiceApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PBDemographics*"
+                              responseType: @"PBDemographicsV2*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((PBDemographics*)data, error);
+                                    handler((PBDemographicsV2*)data, error);
                                 }
                            }
           ];
@@ -167,17 +179,23 @@ NSInteger kPBLIAPIGeoLifeServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param latitude Latitude of the location. 
 ///
-///  @param profile Retrieves the sorted demographic data on the basis of pre-defined profiles that can display the top 3 or top 5 results (by address) either in ascending or descending order.Allowed values Top5Ascending,Top5Descending,Top3Ascending,Top3Descending (optional)
+///  @param profile Retrieves the sorted demographic data on the basis of pre-defined profiles that can display the top 3 or top 5 results (by location) either in ascending or descending order.Allowed values Top5Ascending,Top5Descending,Top3Ascending,Top3Descending (optional)
 ///
 ///  @param filter The 'filter' parameter retrieves the demographic data based upon specified input themes. (optional)
 ///
-///  @returns PBDemographics*
+///  @param valueFormat The 'valueFormat' parameter is applicable for few ranged variables where percent & count both are available and filter response based on the input value. (optional, default to PercentAsAvailable)
 ///
--(NSNumber*) getDemographicsByLocationWithLongitude: (NSString*) longitude
+///  @param variableLevel The 'variableLevel' retrieves demographic facts in response based on the input value (optional, default to Key)
+///
+///  @returns PBDemographicsV2*
+///
+-(NSNumber*) getDemographicsByLocationV2WithLongitude: (NSString*) longitude
     latitude: (NSString*) latitude
     profile: (NSString*) profile
     filter: (NSString*) filter
-    completionHandler: (void (^)(PBDemographics* output, NSError* error)) handler {
+    valueFormat: (NSString*) valueFormat
+    variableLevel: (NSString*) variableLevel
+    completionHandler: (void (^)(PBDemographicsV2* output, NSError* error)) handler {
     // verify the required parameter 'longitude' is set
     if (longitude == nil) {
         NSParameterAssert(longitude);
@@ -200,7 +218,7 @@ NSInteger kPBLIAPIGeoLifeServiceApiMissingParamErrorCode = 234513;
         return nil;
     }
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/geolife/v1/demographics/bylocation"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/geolife/v2/demographics/bylocation"];
 
     // remove format in URL if needed
     [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
@@ -219,6 +237,12 @@ NSInteger kPBLIAPIGeoLifeServiceApiMissingParamErrorCode = 234513;
     }
     if (filter != nil) {
         queryParams[@"filter"] = filter;
+    }
+    if (valueFormat != nil) {
+        queryParams[@"valueFormat"] = valueFormat;
+    }
+    if (variableLevel != nil) {
+        queryParams[@"variableLevel"] = variableLevel;
     }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
@@ -252,10 +276,106 @@ NSInteger kPBLIAPIGeoLifeServiceApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PBDemographics*"
+                              responseType: @"PBDemographicsV2*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((PBDemographics*)data, error);
+                                    handler((PBDemographicsV2*)data, error);
+                                }
+                           }
+          ];
+}
+
+///
+/// Demographics By PBKey.
+/// Provides the demographic details for a specified PB Key. GeoLife 'bypbkey' service accepts pbkey as an input to return a specific population segment's age group, ethnicity, income, purchasing behaviour, commuter patterns and more.
+///  @param pbKey free form text 
+///
+///  @param profile Retrieves the sorted demographic data on the basis of pre-defined profiles that can display the top 3 or top 5 results (by address) either in ascending or descending order.Allowed values Top5Ascending,Top5Descending,Top3Ascending,Top3Descending (optional)
+///
+///  @param filter The 'filter' parameter retrieves the demographic data based upon specified input themes. (optional)
+///
+///  @param valueFormat The 'valueFormat' parameter is applicable for few ranged variables where percent & count both are available and filter response based on the input value. (optional, default to PercentAsAvailable)
+///
+///  @param variableLevel The 'variableLevel' retrieves demographic facts in response based on the input value (optional, default to Key)
+///
+///  @returns PBDemographicsV2*
+///
+-(NSNumber*) getDemographicsByPBKeyWithPbKey: (NSString*) pbKey
+    profile: (NSString*) profile
+    filter: (NSString*) filter
+    valueFormat: (NSString*) valueFormat
+    variableLevel: (NSString*) variableLevel
+    completionHandler: (void (^)(PBDemographicsV2* output, NSError* error)) handler {
+    // verify the required parameter 'pbKey' is set
+    if (pbKey == nil) {
+        NSParameterAssert(pbKey);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"pbKey"] };
+            NSError* error = [NSError errorWithDomain:kPBLIAPIGeoLifeServiceApiErrorDomain code:kPBLIAPIGeoLifeServiceApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/geolife/v2/demographics/bypbkey"];
+
+    // remove format in URL if needed
+    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (pbKey != nil) {
+        queryParams[@"pbKey"] = pbKey;
+    }
+    if (profile != nil) {
+        queryParams[@"profile"] = profile;
+    }
+    if (filter != nil) {
+        queryParams[@"filter"] = filter;
+    }
+    if (valueFormat != nil) {
+        queryParams[@"valueFormat"] = valueFormat;
+    }
+    if (variableLevel != nil) {
+        queryParams[@"variableLevel"] = variableLevel;
+    }
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/xml", @"application/json"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json", @"application/xml"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"oAuth2Password"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PBDemographicsV2*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((PBDemographicsV2*)data, error);
                                 }
                            }
           ];
@@ -386,6 +506,78 @@ NSInteger kPBLIAPIGeoLifeServiceApiMissingParamErrorCode = 234513;
     }
     if (latitude != nil) {
         queryParams[@"latitude"] = latitude;
+    }
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/xml", @"application/json"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json", @"application/xml"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"oAuth2Password"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PBSegmentation*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((PBSegmentation*)data, error);
+                                }
+                           }
+          ];
+}
+
+///
+/// Segmentation By PB Key.
+/// Provides the segmentation details for a PB Key. GeoLife 'segmentation bypbkey' service accepts free form text PB Key as an input to return the lifestyle characteristics of households in terms of their family status, children characteristics, income behaviors, financial preferences and interests.
+///  @param pbKey free form text 
+///
+///  @returns PBSegmentation*
+///
+-(NSNumber*) getSegmentationByPBKeyWithPbKey: (NSString*) pbKey
+    completionHandler: (void (^)(PBSegmentation* output, NSError* error)) handler {
+    // verify the required parameter 'pbKey' is set
+    if (pbKey == nil) {
+        NSParameterAssert(pbKey);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"pbKey"] };
+            NSError* error = [NSError errorWithDomain:kPBLIAPIGeoLifeServiceApiErrorDomain code:kPBLIAPIGeoLifeServiceApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/geolife/v1/segmentation/bypbkey"];
+
+    // remove format in URL if needed
+    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (pbKey != nil) {
+        queryParams[@"pbKey"] = pbKey;
     }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];

@@ -18,7 +18,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"totalTaxRate": @"totalTaxRate", @"totalTaxAmount": @"totalTaxAmount", @"stateTaxRate": @"stateTaxRate", @"stateTaxAmount": @"stateTaxAmount", @"countyTaxRate": @"countyTaxRate", @"countyTaxAmount": @"countyTaxAmount", @"municipalTaxRate": @"municipalTaxRate", @"municipalTaxAmount": @"municipalTaxAmount", @"spdsTax": @"spdsTax", @"specialTaxRulesApplied": @"specialTaxRulesApplied", @"specialTaxRulesDescriptor": @"specialTaxRulesDescriptor" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"totalTax": @"totalTax", @"totalTaxRate": @"totalTaxRate", @"totalTaxAmount": @"totalTaxAmount", @"stateTax": @"stateTax", @"stateTaxRate": @"stateTaxRate", @"stateTaxAmount": @"stateTaxAmount", @"countyTax": @"countyTax", @"countyTaxRate": @"countyTaxRate", @"countyTaxAmount": @"countyTaxAmount", @"municipalTax": @"municipalTax", @"municipalTaxRate": @"municipalTaxRate", @"municipalTaxAmount": @"municipalTaxAmount", @"spdsTax": @"spdsTax", @"specialTaxRulesApplied": @"specialTaxRulesApplied", @"specialTaxRulesDescriptor": @"specialTaxRulesDescriptor" }];
 }
 
 /**
@@ -28,7 +28,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"totalTaxRate", @"totalTaxAmount", @"stateTaxRate", @"stateTaxAmount", @"countyTaxRate", @"countyTaxAmount", @"municipalTaxRate", @"municipalTaxAmount", @"spdsTax", @"specialTaxRulesApplied", @"specialTaxRulesDescriptor"];
+  NSArray *optionalProperties = @[@"totalTax", @"totalTaxRate", @"totalTaxAmount", @"stateTax", @"stateTaxRate", @"stateTaxAmount", @"countyTax", @"countyTaxRate", @"countyTaxAmount", @"municipalTax", @"municipalTaxRate", @"municipalTaxAmount", @"spdsTax", @"specialTaxRulesApplied", @"specialTaxRulesDescriptor"];
   return [optionalProperties containsObject:propertyName];
 }
 
