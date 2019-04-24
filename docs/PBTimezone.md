@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**objectId** | **NSString*** |  | [optional] 
 **timezoneName** | **NSString*** |  | [optional] 
 **zoneType** | **NSString*** |  | [optional] 
 **utcOffset** | **NSNumber*** |  | [optional] 

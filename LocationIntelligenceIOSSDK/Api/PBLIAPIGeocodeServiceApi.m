@@ -8,6 +8,7 @@
 #import "PBPBKeyResponse.h"
 #import "PBPBKeyAddressRequest.h"
 #import "PBPBKeyResponseList.h"
+#import "PBKeyLookupRequest.h"
 #import "PBReverseGeocodeRequest.h"
 
 
@@ -637,6 +638,149 @@ NSInteger kPBLIAPIGeocodeServiceApiMissingParamErrorCode = 234513;
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
                                     handler((PBPBKeyResponseList*)data, error);
+                                }
+                           }
+          ];
+}
+
+///
+/// Get Address
+/// Gets Address for an input free form PBKey text
+///  @param key free form text 
+///
+///  @param type  (optional)
+///
+///  @param country  (optional)
+///
+///  @returns PBGeocodeServiceResponse*
+///
+-(NSNumber*) keyLookupWithKey: (NSString*) key
+    type: (NSString*) type
+    country: (NSString*) country
+    completionHandler: (void (^)(PBGeocodeServiceResponse* output, NSError* error)) handler {
+    // verify the required parameter 'key' is set
+    if (key == nil) {
+        NSParameterAssert(key);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"key"] };
+            NSError* error = [NSError errorWithDomain:kPBLIAPIGeocodeServiceApiErrorDomain code:kPBLIAPIGeocodeServiceApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/geocode-service/v1/keylookup"];
+
+    // remove format in URL if needed
+    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (key != nil) {
+        queryParams[@"key"] = key;
+    }
+    if (type != nil) {
+        queryParams[@"type"] = type;
+    }
+    if (country != nil) {
+        queryParams[@"country"] = country;
+    }
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json", @"application/xml"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json", @"application/xml"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"oAuth2Password"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PBGeocodeServiceResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((PBGeocodeServiceResponse*)data, error);
+                                }
+                           }
+          ];
+}
+
+///
+/// Get List of Address
+/// Gets Address for an input free form PBKey text
+///  @param body  (optional)
+///
+///  @returns PBGeocodeServiceResponseList*
+///
+-(NSNumber*) keyLookupBatchWithBody: (PBKeyLookupRequest*) body
+    completionHandler: (void (^)(PBGeocodeServiceResponseList* output, NSError* error)) handler {
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/geocode-service/v1/keylookup"];
+
+    // remove format in URL if needed
+    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json", @"application/xml"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json", @"application/xml"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"oAuth2Password"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    bodyParam = body;
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PBGeocodeServiceResponseList*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((PBGeocodeServiceResponseList*)data, error);
                                 }
                            }
           ];

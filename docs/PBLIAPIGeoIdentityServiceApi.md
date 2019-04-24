@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**getIdentityByAddress**](PBLIAPIGeoIdentityServiceApi.md#getidentitybyaddress) | **GET** /geoidentity/v1/identity/byaddress | Gets GeoIdentityResponse
 [**getIdentityByEmail**](PBLIAPIGeoIdentityServiceApi.md#getidentitybyemail) | **GET** /geoidentity/v1/identity/byemail | Gets Identity
 [**getIdentityByPBKey**](PBLIAPIGeoIdentityServiceApi.md#getidentitybypbkey) | **GET** /geoidentity/v1/identity/bypbkey | Gets GeoIdentityResponse
+[**getIdentityByTwitter**](PBLIAPIGeoIdentityServiceApi.md#getidentitybytwitter) | **GET** /geoidentity/v1/identity/bytwitter | Gets Identity
 
 
 # **getIdentityByAddress**
@@ -215,6 +216,65 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json, application/xml
  - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getIdentityByTwitter**
+```objc
+-(NSNumber*) getIdentityByTwitterWithTwitter: (NSString*) twitter
+    confidence: (NSString*) confidence
+        completionHandler: (void (^)(PBIdentity* output, NSError* error)) handler;
+```
+
+Gets Identity
+
+Gets Identity
+
+### Example 
+```objc
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
+
+// Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
+[apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
+
+
+NSString* twitter = @"twitter_example"; // Twitter handle of the identity.
+NSString* confidence = @"confidence_example"; // To adjust quality threshold of data returned. Default is HIGH (optional)
+
+PBLIAPIGeoIdentityServiceApi*apiInstance = [[PBLIAPIGeoIdentityServiceApi alloc] init];
+
+// Gets Identity
+[apiInstance getIdentityByTwitterWithTwitter:twitter
+              confidence:confidence
+          completionHandler: ^(PBIdentity* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling PBLIAPIGeoIdentityServiceApi->getIdentityByTwitter: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **twitter** | **NSString***| Twitter handle of the identity. | 
+ **confidence** | **NSString***| To adjust quality threshold of data returned. Default is HIGH | [optional] 
+
+### Return type
+
+[**PBIdentity***](PBIdentity.md)
+
+### Authorization
+
+[oAuth2Password](../README.md#oAuth2Password)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -10,6 +10,8 @@ Method | HTTP request | Description
 [**getDictionaries**](PBLIAPIGeocodeServiceApi.md#getdictionaries) | **GET** /geocode-service/v1/transient/{datapackBundle}/dictionaries | Gets installed Dictionaries
 [**getPBKey**](PBLIAPIGeocodeServiceApi.md#getpbkey) | **GET** /geocode-service/v1/key/byaddress | Gets PBKey
 [**getPBKeys**](PBLIAPIGeocodeServiceApi.md#getpbkeys) | **POST** /geocode-service/v1/key/byaddress | Gets PBKeys
+[**keyLookup**](PBLIAPIGeocodeServiceApi.md#keylookup) | **GET** /geocode-service/v1/keylookup | Get Address
+[**keyLookupBatch**](PBLIAPIGeocodeServiceApi.md#keylookupbatch) | **POST** /geocode-service/v1/keylookup | Get List of Address
 [**reverseGeocodBatch**](PBLIAPIGeocodeServiceApi.md#reversegeocodbatch) | **POST** /geocode-service/v1/transient/{datapackBundle}/reverseGeocode | reverse Geocode
 [**reverseGeocode**](PBLIAPIGeocodeServiceApi.md#reversegeocode) | **GET** /geocode-service/v1/transient/{datapackBundle}/reverseGeocode | reverse Geocode
 
@@ -425,6 +427,124 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json, application/xml
  - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **keyLookup**
+```objc
+-(NSNumber*) keyLookupWithKey: (NSString*) key
+    type: (NSString*) type
+    country: (NSString*) country
+        completionHandler: (void (^)(PBGeocodeServiceResponse* output, NSError* error)) handler;
+```
+
+Get Address
+
+Gets Address for an input free form PBKey text
+
+### Example 
+```objc
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
+
+// Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
+[apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
+
+
+NSString* key = @"key_example"; // free form text
+NSString* type = @"type_example"; //  (optional)
+NSString* country = @"country_example"; //  (optional)
+
+PBLIAPIGeocodeServiceApi*apiInstance = [[PBLIAPIGeocodeServiceApi alloc] init];
+
+// Get Address
+[apiInstance keyLookupWithKey:key
+              type:type
+              country:country
+          completionHandler: ^(PBGeocodeServiceResponse* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling PBLIAPIGeocodeServiceApi->keyLookup: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **key** | **NSString***| free form text | 
+ **type** | **NSString***|  | [optional] 
+ **country** | **NSString***|  | [optional] 
+
+### Return type
+
+[**PBGeocodeServiceResponse***](PBGeocodeServiceResponse.md)
+
+### Authorization
+
+[oAuth2Password](../README.md#oAuth2Password)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **keyLookupBatch**
+```objc
+-(NSNumber*) keyLookupBatchWithBody: (PBKeyLookupRequest*) body
+        completionHandler: (void (^)(PBGeocodeServiceResponseList* output, NSError* error)) handler;
+```
+
+Get List of Address
+
+Gets Address for an input free form PBKey text
+
+### Example 
+```objc
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
+
+// Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
+[apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
+
+
+PBKeyLookupRequest* body = [[PBKeyLookupRequest alloc] init]; //  (optional)
+
+PBLIAPIGeocodeServiceApi*apiInstance = [[PBLIAPIGeocodeServiceApi alloc] init];
+
+// Get List of Address
+[apiInstance keyLookupBatchWithBody:body
+          completionHandler: ^(PBGeocodeServiceResponseList* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling PBLIAPIGeocodeServiceApi->keyLookupBatch: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PBKeyLookupRequest***](PBKeyLookupRequest*.md)|  | [optional] 
+
+### Return type
+
+[**PBGeocodeServiceResponseList***](PBGeocodeServiceResponseList.md)
+
+### Authorization
+
+[oAuth2Password](../README.md#oAuth2Password)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

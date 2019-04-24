@@ -3,6 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**page** | **NSString*** |  | [optional] 
+**candidates** | **NSString*** |  | [optional] 
+**totalMatchingCandidates** | **NSString*** |  | [optional] 
 **poi** | [**NSArray&lt;PBPOIPlaces&gt;***](PBPOIPlaces.md) |  | [optional] 
 **matchedAddress** | [**PBMatchedAddress***](PBMatchedAddress.md) |  | [optional] 
 

@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"timezoneName": @"timezoneName", @"zoneType": @"zoneType", @"utcOffset": @"utcOffset", @"dstOffset": @"dstOffset", @"timestamp": @"timestamp" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"objectId": @"objectId", @"timezoneName": @"timezoneName", @"zoneType": @"zoneType", @"utcOffset": @"utcOffset", @"dstOffset": @"dstOffset", @"timestamp": @"timestamp" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"timezoneName", @"zoneType", @"utcOffset", @"dstOffset", @"timestamp"];
+  NSArray *optionalProperties = @[@"objectId", @"timezoneName", @"zoneType", @"utcOffset", @"dstOffset", @"timestamp"];
   return [optionalProperties containsObject:propertyName];
 }
 
