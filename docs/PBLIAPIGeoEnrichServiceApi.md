@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) getPOIsByLocationWithLongitude: (NSString*) longitude
     latitude: (NSString*) latitude
-    name: (NSString*) name
+    searchText: (NSString*) searchText
     type: (NSString*) type
     categoryCode: (NSString*) categoryCode
     sicCode: (NSString*) sicCode
@@ -361,6 +361,7 @@ Name | Type | Description  | Notes
     sortBy: (NSString*) sortBy
     fuzzyOnName: (NSString*) fuzzyOnName
     page: (NSString*) page
+    searchOnNameOnly: (NSString*) searchOnNameOnly
         completionHandler: (void (^)(PBGeoEnrichResponse* output, NSError* error)) handler;
 ```
 
@@ -378,7 +379,7 @@ PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 NSString* longitude = @"longitude_example"; // Longitude of the location.
 NSString* latitude = @"latitude_example"; // Latitude of the location.
-NSString* name = @"name_example"; // Matched against Name, BrandName and Trade Name. Partial terms are also matched with fuzziness (max edit distance is 1) (optional)
+NSString* searchText = @"searchText_example"; // Matched against Name, BrandName and Trade Name. Partial terms are also matched with fuzziness (max edit distance is 1) (optional)
 NSString* type = @"type_example"; // Matched against the content which defines the type of the poi.  (optional)
 NSString* categoryCode = @"categoryCode_example"; // Specific Category/Categories Codes for the desired POIs. Accepts a mix of 4 digit (Top Category), 6 digit (Second-Level Category) and 11 digit (Low-Level Category) Category Codes. https://locate.pitneybowes.com/downloads/location-intelligence/v1/CategoryCodes.xlsx  (optional)
 NSString* sicCode = @"sicCode_example"; // Specific SIC Codes/Codes for the desired POIs. Accepts a mix of 4 digit (Top Category) and 8 digit (Low-Level Category) SIC Codes. (optional)
@@ -393,13 +394,14 @@ NSString* travelMode = @"travelMode_example"; // Specifies the available mode of
 NSString* sortBy = @"distance"; // Specifies the order in which POIs are retrieved. (optional) (default to distance)
 NSString* fuzzyOnName = @"fuzzyOnName_example"; // Allowed values are Y/N. If N, the search on name will not allow fuzziness. (optional)
 NSString* page = @"page_example"; // Will support pagination, by default 1st page with maxCandidates results are returned. (optional)
+NSString* searchOnNameOnly = @"searchOnNameOnly_example"; // search name description (optional)
 
 PBLIAPIGeoEnrichServiceApi*apiInstance = [[PBLIAPIGeoEnrichServiceApi alloc] init];
 
 // Points of Interest By Location.
 [apiInstance getPOIsByLocationWithLongitude:longitude
               latitude:latitude
-              name:name
+              searchText:searchText
               type:type
               categoryCode:categoryCode
               sicCode:sicCode
@@ -414,6 +416,7 @@ PBLIAPIGeoEnrichServiceApi*apiInstance = [[PBLIAPIGeoEnrichServiceApi alloc] ini
               sortBy:sortBy
               fuzzyOnName:fuzzyOnName
               page:page
+              searchOnNameOnly:searchOnNameOnly
           completionHandler: ^(PBGeoEnrichResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -430,7 +433,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **longitude** | **NSString***| Longitude of the location. | 
  **latitude** | **NSString***| Latitude of the location. | 
- **name** | **NSString***| Matched against Name, BrandName and Trade Name. Partial terms are also matched with fuzziness (max edit distance is 1) | [optional] 
+ **searchText** | **NSString***| Matched against Name, BrandName and Trade Name. Partial terms are also matched with fuzziness (max edit distance is 1) | [optional] 
  **type** | **NSString***| Matched against the content which defines the type of the poi.  | [optional] 
  **categoryCode** | **NSString***| Specific Category/Categories Codes for the desired POIs. Accepts a mix of 4 digit (Top Category), 6 digit (Second-Level Category) and 11 digit (Low-Level Category) Category Codes. https://locate.pitneybowes.com/downloads/location-intelligence/v1/CategoryCodes.xlsx  | [optional] 
  **sicCode** | **NSString***| Specific SIC Codes/Codes for the desired POIs. Accepts a mix of 4 digit (Top Category) and 8 digit (Low-Level Category) SIC Codes. | [optional] 
@@ -445,6 +448,7 @@ Name | Type | Description  | Notes
  **sortBy** | **NSString***| Specifies the order in which POIs are retrieved. | [optional] [default to distance]
  **fuzzyOnName** | **NSString***| Allowed values are Y/N. If N, the search on name will not allow fuzziness. | [optional] 
  **page** | **NSString***| Will support pagination, by default 1st page with maxCandidates results are returned. | [optional] 
+ **searchOnNameOnly** | **NSString***| search name description | [optional] 
 
 ### Return type
 
@@ -587,7 +591,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) poisAutocompleteWithLongitude: (NSString*) longitude
     latitude: (NSString*) latitude
-    name: (NSString*) name
+    searchText: (NSString*) searchText
     searchRadius: (NSString*) searchRadius
     searchRadiusUnit: (NSString*) searchRadiusUnit
     travelTime: (NSString*) travelTime
@@ -607,6 +611,7 @@ Name | Type | Description  | Notes
     sicCode: (NSString*) sicCode
     maxCandidates: (NSString*) maxCandidates
     sortBy: (NSString*) sortBy
+    searchOnNameOnly: (NSString*) searchOnNameOnly
         completionHandler: (void (^)(PBGeoEnrichResponse* output, NSError* error)) handler;
 ```
 
@@ -624,7 +629,7 @@ PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 NSString* longitude = @"longitude_example"; // Longitude of the location. (optional)
 NSString* latitude = @"latitude_example"; // Latitude of the location. (optional)
-NSString* name = @"name_example"; // Matched against Name, BrandName and Trade Name. Partial terms are also matched with fuzziness (max edit distance is 1) (optional)
+NSString* searchText = @"searchText_example"; // Matched against Name, BrandName and Trade Name. Partial terms are also matched with fuzziness (max edit distance is 1) (optional)
 NSString* searchRadius = @"searchRadius_example"; // Radius range within which search is performed. (optional)
 NSString* searchRadiusUnit = @"searchRadiusUnit_example"; // Radius unit such as Feet, Kilometers, Miles or Meters. (optional)
 NSString* travelTime = @"travelTime_example"; // Specifies the travel time within which method searches for results (POIs which can be reached within travel time)the search boundary in terms of time mentioned in 'travelTimeUnit'. The results are retrieved from the polygon formed based on the travel time specified. This means search can be done in the mentioned time results be from the mentioned time. (optional)
@@ -644,13 +649,14 @@ NSString* categoryCode = @"categoryCode_example"; // Specific Category/Categorie
 NSString* sicCode = @"sicCode_example"; // Specific SIC Codes/Codes for the desired POIs. Accepts a mix of 4 digit (Top Category) and 8 digit (Low-Level Category) SIC Codes. (optional)
 NSString* maxCandidates = @"maxCandidates_example"; // Maximum number of POIs that can be retrieved. (optional)
 NSString* sortBy = @"distance"; // Specifies the order in which POIs are retrieved. (optional) (default to distance)
+NSString* searchOnNameOnly = @"searchOnNameOnly_example"; // specifies search on name (optional)
 
 PBLIAPIGeoEnrichServiceApi*apiInstance = [[PBLIAPIGeoEnrichServiceApi alloc] init];
 
 // Points of Interest Autocomplete.
 [apiInstance poisAutocompleteWithLongitude:longitude
               latitude:latitude
-              name:name
+              searchText:searchText
               searchRadius:searchRadius
               searchRadiusUnit:searchRadiusUnit
               travelTime:travelTime
@@ -670,6 +676,7 @@ PBLIAPIGeoEnrichServiceApi*apiInstance = [[PBLIAPIGeoEnrichServiceApi alloc] ini
               sicCode:sicCode
               maxCandidates:maxCandidates
               sortBy:sortBy
+              searchOnNameOnly:searchOnNameOnly
           completionHandler: ^(PBGeoEnrichResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -686,7 +693,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **longitude** | **NSString***| Longitude of the location. | [optional] 
  **latitude** | **NSString***| Latitude of the location. | [optional] 
- **name** | **NSString***| Matched against Name, BrandName and Trade Name. Partial terms are also matched with fuzziness (max edit distance is 1) | [optional] 
+ **searchText** | **NSString***| Matched against Name, BrandName and Trade Name. Partial terms are also matched with fuzziness (max edit distance is 1) | [optional] 
  **searchRadius** | **NSString***| Radius range within which search is performed. | [optional] 
  **searchRadiusUnit** | **NSString***| Radius unit such as Feet, Kilometers, Miles or Meters. | [optional] 
  **travelTime** | **NSString***| Specifies the travel time within which method searches for results (POIs which can be reached within travel time)the search boundary in terms of time mentioned in &#39;travelTimeUnit&#39;. The results are retrieved from the polygon formed based on the travel time specified. This means search can be done in the mentioned time results be from the mentioned time. | [optional] 
@@ -706,6 +713,7 @@ Name | Type | Description  | Notes
  **sicCode** | **NSString***| Specific SIC Codes/Codes for the desired POIs. Accepts a mix of 4 digit (Top Category) and 8 digit (Low-Level Category) SIC Codes. | [optional] 
  **maxCandidates** | **NSString***| Maximum number of POIs that can be retrieved. | [optional] 
  **sortBy** | **NSString***| Specifies the order in which POIs are retrieved. | [optional] [default to distance]
+ **searchOnNameOnly** | **NSString***| specifies search on name | [optional] 
 
 ### Return type
 

@@ -17,7 +17,8 @@ Method | HTTP request | Description
     familyName: (NSString*) familyName
     confidence: (NSString*) confidence
     maxCandidates: (NSString*) maxCandidates
-    includeNeighborhoodDetails: (NSString*) includeNeighborhoodDetails
+    theme: (NSString*) theme
+    filter: (NSString*) filter
         completionHandler: (void (^)(PBGeoIdentityResponse* output, NSError* error)) handler;
 ```
 
@@ -38,7 +39,8 @@ NSString* givenName = @"givenName_example"; // This filters all the associated i
 NSString* familyName = @"familyName_example"; // This filters all the associated identities of address by family Name (optional)
 NSString* confidence = @"confidence_example"; // To adjust quality threshold of data returned. Default is HIGH (optional)
 NSString* maxCandidates = @"maxCandidates_example"; // Number of identities returned in response (optional)
-NSString* includeNeighborhoodDetails = @"includeNeighborhoodDetails_example"; // Whether to include neighborhood details in the response or not. Default is Y (optional)
+NSString* theme = @"theme_example"; // theme parameter for filtering results (optional)
+NSString* filter = @"filter_example"; // filter params (optional)
 
 PBLIAPIGeoIdentityServiceApi*apiInstance = [[PBLIAPIGeoIdentityServiceApi alloc] init];
 
@@ -48,7 +50,8 @@ PBLIAPIGeoIdentityServiceApi*apiInstance = [[PBLIAPIGeoIdentityServiceApi alloc]
               familyName:familyName
               confidence:confidence
               maxCandidates:maxCandidates
-              includeNeighborhoodDetails:includeNeighborhoodDetails
+              theme:theme
+              filter:filter
           completionHandler: ^(PBGeoIdentityResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -68,7 +71,8 @@ Name | Type | Description  | Notes
  **familyName** | **NSString***| This filters all the associated identities of address by family Name | [optional] 
  **confidence** | **NSString***| To adjust quality threshold of data returned. Default is HIGH | [optional] 
  **maxCandidates** | **NSString***| Number of identities returned in response | [optional] 
- **includeNeighborhoodDetails** | **NSString***| Whether to include neighborhood details in the response or not. Default is Y | [optional] 
+ **theme** | **NSString***| theme parameter for filtering results | [optional] 
+ **filter** | **NSString***| filter params | [optional] 
 
 ### Return type
 
@@ -89,6 +93,8 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) getIdentityByEmailWithEmail: (NSString*) email
     confidence: (NSString*) confidence
+    theme: (NSString*) theme
+    filter: (NSString*) filter
         completionHandler: (void (^)(PBIdentity* output, NSError* error)) handler;
 ```
 
@@ -106,12 +112,16 @@ PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 NSString* email = @"email_example"; // This specifies the email address
 NSString* confidence = @"confidence_example"; // To adjust quality threshold of data returned. Default is HIGH (optional)
+NSString* theme = @"theme_example"; // theme parameter for filtering results (optional)
+NSString* filter = @"filter_example"; // filter params (optional)
 
 PBLIAPIGeoIdentityServiceApi*apiInstance = [[PBLIAPIGeoIdentityServiceApi alloc] init];
 
 // Gets Identity
 [apiInstance getIdentityByEmailWithEmail:email
               confidence:confidence
+              theme:theme
+              filter:filter
           completionHandler: ^(PBIdentity* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -128,6 +138,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **email** | **NSString***| This specifies the email address | 
  **confidence** | **NSString***| To adjust quality threshold of data returned. Default is HIGH | [optional] 
+ **theme** | **NSString***| theme parameter for filtering results | [optional] 
+ **filter** | **NSString***| filter params | [optional] 
 
 ### Return type
 
@@ -151,7 +163,8 @@ Name | Type | Description  | Notes
     familyName: (NSString*) familyName
     confidence: (NSString*) confidence
     maxCandidates: (NSString*) maxCandidates
-    includeNeighborhoodDetails: (NSString*) includeNeighborhoodDetails
+    theme: (NSString*) theme
+    filter: (NSString*) filter
         completionHandler: (void (^)(PBGeoIdentityResponse* output, NSError* error)) handler;
 ```
 
@@ -172,7 +185,8 @@ NSString* givenName = @"givenName_example"; // This filters all the associated i
 NSString* familyName = @"familyName_example"; // This filters all the associated identities of address by family Name (optional)
 NSString* confidence = @"confidence_example"; // To adjust quality threshold of data returned. Default is HIGH (optional)
 NSString* maxCandidates = @"maxCandidates_example"; // Number of identities returned in response (optional)
-NSString* includeNeighborhoodDetails = @"includeNeighborhoodDetails_example"; // Whether to include neighborhood details in the response or not. Default is Y (optional)
+NSString* theme = @"theme_example"; // theme parameter for filtering results (optional)
+NSString* filter = @"filter_example"; // filter params (optional)
 
 PBLIAPIGeoIdentityServiceApi*apiInstance = [[PBLIAPIGeoIdentityServiceApi alloc] init];
 
@@ -182,7 +196,8 @@ PBLIAPIGeoIdentityServiceApi*apiInstance = [[PBLIAPIGeoIdentityServiceApi alloc]
               familyName:familyName
               confidence:confidence
               maxCandidates:maxCandidates
-              includeNeighborhoodDetails:includeNeighborhoodDetails
+              theme:theme
+              filter:filter
           completionHandler: ^(PBGeoIdentityResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -202,7 +217,8 @@ Name | Type | Description  | Notes
  **familyName** | **NSString***| This filters all the associated identities of address by family Name | [optional] 
  **confidence** | **NSString***| To adjust quality threshold of data returned. Default is HIGH | [optional] 
  **maxCandidates** | **NSString***| Number of identities returned in response | [optional] 
- **includeNeighborhoodDetails** | **NSString***| Whether to include neighborhood details in the response or not. Default is Y | [optional] 
+ **theme** | **NSString***| theme parameter for filtering results | [optional] 
+ **filter** | **NSString***| filter params | [optional] 
 
 ### Return type
 
@@ -223,6 +239,8 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) getIdentityByTwitterWithTwitter: (NSString*) twitter
     confidence: (NSString*) confidence
+    theme: (NSString*) theme
+    filter: (NSString*) filter
         completionHandler: (void (^)(PBIdentity* output, NSError* error)) handler;
 ```
 
@@ -240,12 +258,16 @@ PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
 
 NSString* twitter = @"twitter_example"; // Twitter handle of the identity.
 NSString* confidence = @"confidence_example"; // To adjust quality threshold of data returned. Default is HIGH (optional)
+NSString* theme = @"theme_example"; // theme parameter for filtering results (optional)
+NSString* filter = @"filter_example"; // filter params (optional)
 
 PBLIAPIGeoIdentityServiceApi*apiInstance = [[PBLIAPIGeoIdentityServiceApi alloc] init];
 
 // Gets Identity
 [apiInstance getIdentityByTwitterWithTwitter:twitter
               confidence:confidence
+              theme:theme
+              filter:filter
           completionHandler: ^(PBIdentity* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -262,6 +284,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **twitter** | **NSString***| Twitter handle of the identity. | 
  **confidence** | **NSString***| To adjust quality threshold of data returned. Default is HIGH | [optional] 
+ **theme** | **NSString***| theme parameter for filtering results | [optional] 
+ **filter** | **NSString***| filter params | [optional] 
 
 ### Return type
 

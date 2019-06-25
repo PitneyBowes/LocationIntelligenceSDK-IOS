@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
     s.name             = "LocationIntelligenceIOSSDK"
-    s.version          = "6.5.0"
+    s.version          = "7.0.0"
 
     s.summary          = "Location Intelligence APIs"
     s.description      = <<-DESC

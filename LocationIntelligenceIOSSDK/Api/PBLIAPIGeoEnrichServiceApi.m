@@ -518,7 +518,7 @@ NSInteger kPBLIAPIGeoEnrichServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param latitude Latitude of the location. 
 ///
-///  @param name Matched against Name, BrandName and Trade Name. Partial terms are also matched with fuzziness (max edit distance is 1) (optional)
+///  @param searchText Matched against Name, BrandName and Trade Name. Partial terms are also matched with fuzziness (max edit distance is 1) (optional)
 ///
 ///  @param type Matched against the content which defines the type of the poi.  (optional)
 ///
@@ -548,11 +548,13 @@ NSInteger kPBLIAPIGeoEnrichServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param page Will support pagination, by default 1st page with maxCandidates results are returned. (optional)
 ///
+///  @param searchOnNameOnly search name description (optional)
+///
 ///  @returns PBGeoEnrichResponse*
 ///
 -(NSNumber*) getPOIsByLocationWithLongitude: (NSString*) longitude
     latitude: (NSString*) latitude
-    name: (NSString*) name
+    searchText: (NSString*) searchText
     type: (NSString*) type
     categoryCode: (NSString*) categoryCode
     sicCode: (NSString*) sicCode
@@ -567,6 +569,7 @@ NSInteger kPBLIAPIGeoEnrichServiceApiMissingParamErrorCode = 234513;
     sortBy: (NSString*) sortBy
     fuzzyOnName: (NSString*) fuzzyOnName
     page: (NSString*) page
+    searchOnNameOnly: (NSString*) searchOnNameOnly
     completionHandler: (void (^)(PBGeoEnrichResponse* output, NSError* error)) handler {
     // verify the required parameter 'longitude' is set
     if (longitude == nil) {
@@ -604,8 +607,8 @@ NSInteger kPBLIAPIGeoEnrichServiceApiMissingParamErrorCode = 234513;
     if (latitude != nil) {
         queryParams[@"latitude"] = latitude;
     }
-    if (name != nil) {
-        queryParams[@"name"] = name;
+    if (searchText != nil) {
+        queryParams[@"searchText"] = searchText;
     }
     if (type != nil) {
         queryParams[@"type"] = type;
@@ -648,6 +651,9 @@ NSInteger kPBLIAPIGeoEnrichServiceApiMissingParamErrorCode = 234513;
     }
     if (page != nil) {
         queryParams[@"page"] = page;
+    }
+    if (searchOnNameOnly != nil) {
+        queryParams[@"searchOnNameOnly"] = searchOnNameOnly;
     }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
@@ -859,7 +865,7 @@ NSInteger kPBLIAPIGeoEnrichServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param latitude Latitude of the location. (optional)
 ///
-///  @param name Matched against Name, BrandName and Trade Name. Partial terms are also matched with fuzziness (max edit distance is 1) (optional)
+///  @param searchText Matched against Name, BrandName and Trade Name. Partial terms are also matched with fuzziness (max edit distance is 1) (optional)
 ///
 ///  @param searchRadius Radius range within which search is performed. (optional)
 ///
@@ -899,11 +905,13 @@ NSInteger kPBLIAPIGeoEnrichServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param sortBy Specifies the order in which POIs are retrieved. (optional, default to distance)
 ///
+///  @param searchOnNameOnly specifies search on name (optional)
+///
 ///  @returns PBGeoEnrichResponse*
 ///
 -(NSNumber*) poisAutocompleteWithLongitude: (NSString*) longitude
     latitude: (NSString*) latitude
-    name: (NSString*) name
+    searchText: (NSString*) searchText
     searchRadius: (NSString*) searchRadius
     searchRadiusUnit: (NSString*) searchRadiusUnit
     travelTime: (NSString*) travelTime
@@ -923,6 +931,7 @@ NSInteger kPBLIAPIGeoEnrichServiceApiMissingParamErrorCode = 234513;
     sicCode: (NSString*) sicCode
     maxCandidates: (NSString*) maxCandidates
     sortBy: (NSString*) sortBy
+    searchOnNameOnly: (NSString*) searchOnNameOnly
     completionHandler: (void (^)(PBGeoEnrichResponse* output, NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/geoenrich/v1/poi/autocomplete"];
 
@@ -938,8 +947,8 @@ NSInteger kPBLIAPIGeoEnrichServiceApiMissingParamErrorCode = 234513;
     if (latitude != nil) {
         queryParams[@"latitude"] = latitude;
     }
-    if (name != nil) {
-        queryParams[@"name"] = name;
+    if (searchText != nil) {
+        queryParams[@"searchText"] = searchText;
     }
     if (searchRadius != nil) {
         queryParams[@"searchRadius"] = searchRadius;
@@ -997,6 +1006,9 @@ NSInteger kPBLIAPIGeoEnrichServiceApiMissingParamErrorCode = 234513;
     }
     if (sortBy != nil) {
         queryParams[@"sortBy"] = sortBy;
+    }
+    if (searchOnNameOnly != nil) {
+        queryParams[@"searchOnNameOnly"] = searchOnNameOnly;
     }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];

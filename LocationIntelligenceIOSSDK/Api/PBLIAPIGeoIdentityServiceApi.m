@@ -83,7 +83,9 @@ NSInteger kPBLIAPIGeoIdentityServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param maxCandidates Number of identities returned in response (optional)
 ///
-///  @param includeNeighborhoodDetails Whether to include neighborhood details in the response or not. Default is Y (optional)
+///  @param theme theme parameter for filtering results (optional)
+///
+///  @param filter filter params (optional)
 ///
 ///  @returns PBGeoIdentityResponse*
 ///
@@ -92,7 +94,8 @@ NSInteger kPBLIAPIGeoIdentityServiceApiMissingParamErrorCode = 234513;
     familyName: (NSString*) familyName
     confidence: (NSString*) confidence
     maxCandidates: (NSString*) maxCandidates
-    includeNeighborhoodDetails: (NSString*) includeNeighborhoodDetails
+    theme: (NSString*) theme
+    filter: (NSString*) filter
     completionHandler: (void (^)(PBGeoIdentityResponse* output, NSError* error)) handler {
     // verify the required parameter 'address' is set
     if (address == nil) {
@@ -128,8 +131,11 @@ NSInteger kPBLIAPIGeoIdentityServiceApiMissingParamErrorCode = 234513;
     if (maxCandidates != nil) {
         queryParams[@"maxCandidates"] = maxCandidates;
     }
-    if (includeNeighborhoodDetails != nil) {
-        queryParams[@"includeNeighborhoodDetails"] = includeNeighborhoodDetails;
+    if (theme != nil) {
+        queryParams[@"theme"] = theme;
+    }
+    if (filter != nil) {
+        queryParams[@"filter"] = filter;
     }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
@@ -179,10 +185,16 @@ NSInteger kPBLIAPIGeoIdentityServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param confidence To adjust quality threshold of data returned. Default is HIGH (optional)
 ///
+///  @param theme theme parameter for filtering results (optional)
+///
+///  @param filter filter params (optional)
+///
 ///  @returns PBIdentity*
 ///
 -(NSNumber*) getIdentityByEmailWithEmail: (NSString*) email
     confidence: (NSString*) confidence
+    theme: (NSString*) theme
+    filter: (NSString*) filter
     completionHandler: (void (^)(PBIdentity* output, NSError* error)) handler {
     // verify the required parameter 'email' is set
     if (email == nil) {
@@ -208,6 +220,12 @@ NSInteger kPBLIAPIGeoIdentityServiceApiMissingParamErrorCode = 234513;
     }
     if (confidence != nil) {
         queryParams[@"confidence"] = confidence;
+    }
+    if (theme != nil) {
+        queryParams[@"theme"] = theme;
+    }
+    if (filter != nil) {
+        queryParams[@"filter"] = filter;
     }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
@@ -263,7 +281,9 @@ NSInteger kPBLIAPIGeoIdentityServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param maxCandidates Number of identities returned in response (optional)
 ///
-///  @param includeNeighborhoodDetails Whether to include neighborhood details in the response or not. Default is Y (optional)
+///  @param theme theme parameter for filtering results (optional)
+///
+///  @param filter filter params (optional)
 ///
 ///  @returns PBGeoIdentityResponse*
 ///
@@ -272,7 +292,8 @@ NSInteger kPBLIAPIGeoIdentityServiceApiMissingParamErrorCode = 234513;
     familyName: (NSString*) familyName
     confidence: (NSString*) confidence
     maxCandidates: (NSString*) maxCandidates
-    includeNeighborhoodDetails: (NSString*) includeNeighborhoodDetails
+    theme: (NSString*) theme
+    filter: (NSString*) filter
     completionHandler: (void (^)(PBGeoIdentityResponse* output, NSError* error)) handler {
     // verify the required parameter 'pbKey' is set
     if (pbKey == nil) {
@@ -308,8 +329,11 @@ NSInteger kPBLIAPIGeoIdentityServiceApiMissingParamErrorCode = 234513;
     if (maxCandidates != nil) {
         queryParams[@"maxCandidates"] = maxCandidates;
     }
-    if (includeNeighborhoodDetails != nil) {
-        queryParams[@"includeNeighborhoodDetails"] = includeNeighborhoodDetails;
+    if (theme != nil) {
+        queryParams[@"theme"] = theme;
+    }
+    if (filter != nil) {
+        queryParams[@"filter"] = filter;
     }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
@@ -359,10 +383,16 @@ NSInteger kPBLIAPIGeoIdentityServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param confidence To adjust quality threshold of data returned. Default is HIGH (optional)
 ///
+///  @param theme theme parameter for filtering results (optional)
+///
+///  @param filter filter params (optional)
+///
 ///  @returns PBIdentity*
 ///
 -(NSNumber*) getIdentityByTwitterWithTwitter: (NSString*) twitter
     confidence: (NSString*) confidence
+    theme: (NSString*) theme
+    filter: (NSString*) filter
     completionHandler: (void (^)(PBIdentity* output, NSError* error)) handler {
     // verify the required parameter 'twitter' is set
     if (twitter == nil) {
@@ -388,6 +418,12 @@ NSInteger kPBLIAPIGeoIdentityServiceApiMissingParamErrorCode = 234513;
     }
     if (confidence != nil) {
         queryParams[@"confidence"] = confidence;
+    }
+    if (theme != nil) {
+        queryParams[@"theme"] = theme;
+    }
+    if (filter != nil) {
+        queryParams[@"filter"] = filter;
     }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
