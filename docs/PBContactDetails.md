@@ -1,0 +1,11 @@
+# PBContactDetails
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**address** | [**PBMatchedAddress***](PBMatchedAddress.md) |  | [optional] 
+**propertyAddress** | [**PBMatchedAddress***](PBMatchedAddress.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
