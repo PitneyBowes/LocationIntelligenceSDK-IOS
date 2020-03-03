@@ -5,6 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **NSString*** |  | [optional] 
 **code** | **NSString*** |  | [optional] 
+**gnisCode** | **NSString*** |  | [optional] 
+**selfCollected** | **NSNumber*** |  | [optional] 
 **classCode** | **NSString*** |  | [optional] 
 **incorporatedFlag** | **NSString*** |  | [optional] 
 **lastAnnexedDate** | **NSString*** |  | [optional] 

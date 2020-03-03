@@ -7,8 +7,11 @@ Method | HTTP request | Description
 [**getBasicBoundaryByAddress**](PBLIAPIGeoZoneServiceApi.md#getbasicboundarybyaddress) | **GET** /geozone/v1/basicboundary/byaddress | Gets Basic Boundary by Address
 [**getBasicBoundaryByLocation**](PBLIAPIGeoZoneServiceApi.md#getbasicboundarybylocation) | **GET** /geozone/v1/basicboundary/bylocation | Gets Basic Boundary by Location
 [**getPOIBoundaryByAddress**](PBLIAPIGeoZoneServiceApi.md#getpoiboundarybyaddress) | **GET** /geozone/v1/poiboundary/byaddress | Get Point of Interests Boundary by Address
+[**getPOIBoundaryByAddressBatch**](PBLIAPIGeoZoneServiceApi.md#getpoiboundarybyaddressbatch) | **POST** /geozone/v1/poiboundary/byaddress | Batch method for getting Point of Interests Boundary by Address
 [**getPOIBoundaryByLocation**](PBLIAPIGeoZoneServiceApi.md#getpoiboundarybylocation) | **GET** /geozone/v1/poiboundary/bylocation | Get Point of Interests Boundary by Location
+[**getPOIBoundaryByLocationBatch**](PBLIAPIGeoZoneServiceApi.md#getpoiboundarybylocationbatch) | **POST** /geozone/v1/poiboundary/bylocation | Batch method for getting Point of Interests Boundary by Location
 [**getPOIBoundaryByPBKey**](PBLIAPIGeoZoneServiceApi.md#getpoiboundarybypbkey) | **GET** /geozone/v1/poiboundary/bypbkey | Gets Point of Interests Boundary by PBKey
+[**getPOIBoundaryByPBKeyBatch**](PBLIAPIGeoZoneServiceApi.md#getpoiboundarybypbkeybatch) | **POST** /geozone/v1/poiboundary/bypbkey | Batch method for getting Point of Interests Boundary by PBKey
 [**getTravelBoundaryByDistance**](PBLIAPIGeoZoneServiceApi.md#gettravelboundarybydistance) | **GET** /geozone/v1/travelboundary/bydistance | Gets travel Boundary by Distance
 [**getTravelBoundaryByTime**](PBLIAPIGeoZoneServiceApi.md#gettravelboundarybytime) | **GET** /geozone/v1/travelboundary/bytime | Gets travel Boundary by Time
 
@@ -234,6 +237,61 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getPOIBoundaryByAddressBatch**
+```objc
+-(NSNumber*) getPOIBoundaryByAddressBatchWithBody: (PBPOIBoundaryAddressRequest*) body
+        completionHandler: (void (^)(PBPOIBoundaryResponse* output, NSError* error)) handler;
+```
+
+Batch method for getting Point of Interests Boundary by Address
+
+Batch method for getting Point of Interests Boundary by Address
+
+### Example 
+```objc
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
+
+// Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
+[apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
+
+
+PBPOIBoundaryAddressRequest* body = [[PBPOIBoundaryAddressRequest alloc] init]; //  (optional)
+
+PBLIAPIGeoZoneServiceApi*apiInstance = [[PBLIAPIGeoZoneServiceApi alloc] init];
+
+// Batch method for getting Point of Interests Boundary by Address
+[apiInstance getPOIBoundaryByAddressBatchWithBody:body
+          completionHandler: ^(PBPOIBoundaryResponse* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling PBLIAPIGeoZoneServiceApi->getPOIBoundaryByAddressBatch: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PBPOIBoundaryAddressRequest***](PBPOIBoundaryAddressRequest*.md)|  | [optional] 
+
+### Return type
+
+[**PBPOIBoundaryResponse***](PBPOIBoundaryResponse.md)
+
+### Authorization
+
+[oAuth2Password](../README.md#oAuth2Password)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getPOIBoundaryByLocation**
 ```objc
 -(NSNumber*) getPOIBoundaryByLocationWithLatitude: (NSString*) latitude
@@ -305,6 +363,61 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getPOIBoundaryByLocationBatch**
+```objc
+-(NSNumber*) getPOIBoundaryByLocationBatchWithBody: (PBPOIBoundaryLocationRequest*) body
+        completionHandler: (void (^)(PBPOIBoundaryResponse* output, NSError* error)) handler;
+```
+
+Batch method for getting Point of Interests Boundary by Location
+
+Batch method for getting Point of Interests Boundary by Location
+
+### Example 
+```objc
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
+
+// Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
+[apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
+
+
+PBPOIBoundaryLocationRequest* body = [[PBPOIBoundaryLocationRequest alloc] init]; //  (optional)
+
+PBLIAPIGeoZoneServiceApi*apiInstance = [[PBLIAPIGeoZoneServiceApi alloc] init];
+
+// Batch method for getting Point of Interests Boundary by Location
+[apiInstance getPOIBoundaryByLocationBatchWithBody:body
+          completionHandler: ^(PBPOIBoundaryResponse* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling PBLIAPIGeoZoneServiceApi->getPOIBoundaryByLocationBatch: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PBPOIBoundaryLocationRequest***](PBPOIBoundaryLocationRequest*.md)|  | [optional] 
+
+### Return type
+
+[**PBPOIBoundaryResponse***](PBPOIBoundaryResponse.md)
+
+### Authorization
+
+[oAuth2Password](../README.md#oAuth2Password)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getPOIBoundaryByPBKey**
 ```objc
 -(NSNumber*) getPOIBoundaryByPBKeyWithPbKey: (NSString*) pbKey
@@ -368,6 +481,61 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getPOIBoundaryByPBKeyBatch**
+```objc
+-(NSNumber*) getPOIBoundaryByPBKeyBatchWithBody: (PBPOIBoundaryPBKeyRequest*) body
+        completionHandler: (void (^)(PBPOIBoundaryResponse* output, NSError* error)) handler;
+```
+
+Batch method for getting Point of Interests Boundary by PBKey
+
+Batch method for getting Point of Interests Boundary by PBKey
+
+### Example 
+```objc
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
+
+// Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
+[apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
+
+
+PBPOIBoundaryPBKeyRequest* body = [[PBPOIBoundaryPBKeyRequest alloc] init]; //  (optional)
+
+PBLIAPIGeoZoneServiceApi*apiInstance = [[PBLIAPIGeoZoneServiceApi alloc] init];
+
+// Batch method for getting Point of Interests Boundary by PBKey
+[apiInstance getPOIBoundaryByPBKeyBatchWithBody:body
+          completionHandler: ^(PBPOIBoundaryResponse* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling PBLIAPIGeoZoneServiceApi->getPOIBoundaryByPBKeyBatch: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PBPOIBoundaryPBKeyRequest***](PBPOIBoundaryPBKeyRequest*.md)|  | [optional] 
+
+### Return type
+
+[**PBPOIBoundaryResponse***](PBPOIBoundaryResponse.md)
+
+### Authorization
+
+[oAuth2Password](../README.md#oAuth2Password)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

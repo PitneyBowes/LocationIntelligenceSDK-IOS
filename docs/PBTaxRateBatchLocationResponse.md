@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **salesTax** | [**PBSalesTaxRate***](PBSalesTaxRate.md) |  | [optional] 
 **useTax** | [**PBUseTaxRate***](PBUseTaxRate.md) |  | [optional] 
 **census** | [**PBCensus***](PBCensus.md) |  | [optional] 
+**latLongFields** | [**PBLatLongFields***](PBLatLongFields.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

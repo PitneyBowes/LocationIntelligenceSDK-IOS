@@ -1,6 +1,7 @@
 #import "PBLIAPIGeoStreetsServiceApi.h"
 #import "PBQueryParamCollection.h"
 #import "PBIntersectionResponse.h"
+#import "PBSpeedLimit.h"
 
 
 @interface PBLIAPIGeoStreetsServiceApi ()
@@ -309,6 +310,78 @@ NSInteger kPBLIAPIGeoStreetsServiceApiMissingParamErrorCode = 234513;
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
                                     handler((PBIntersectionResponse*)data, error);
+                                }
+                           }
+          ];
+}
+
+///
+/// Gets NearestSpeedLimit
+/// GetNearestSpeedLimit Endpoint will take point coordinates of a path and will return the posted speed limit of the road segment on which this path will snap.
+///  @param path Accepts multiple points which will be snapped to the nearest road segment. Longitude and Latitude will be comma separated (longitude,latitude) and Point Coordinates will be separated by semi-colon(;) 
+///
+///  @returns PBSpeedLimit*
+///
+-(NSNumber*) getNearestSpeedLimitWithPath: (NSString*) path
+    completionHandler: (void (^)(PBSpeedLimit* output, NSError* error)) handler {
+    // verify the required parameter 'path' is set
+    if (path == nil) {
+        NSParameterAssert(path);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"path"] };
+            NSError* error = [NSError errorWithDomain:kPBLIAPIGeoStreetsServiceApiErrorDomain code:kPBLIAPIGeoStreetsServiceApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/geostreets/v1/speedlimit"];
+
+    // remove format in URL if needed
+    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (path != nil) {
+        queryParams[@"path"] = path;
+    }
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json", @"application/xml"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json", @"application/xml"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"oAuth2Password"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PBSpeedLimit*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((PBSpeedLimit*)data, error);
                                 }
                            }
           ];

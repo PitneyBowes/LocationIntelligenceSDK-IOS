@@ -31,6 +31,17 @@ Method | HTTP request | Description
     majorRoads: (NSString*) majorRoads
     historicTrafficTimeBucket: (NSString*) historicTrafficTimeBucket
     returnDirectionGeometry: (NSString*) returnDirectionGeometry
+    useCvr: (NSString*) useCvr
+    looseningBarrierRestrictions: (NSString*) looseningBarrierRestrictions
+    vehicleType: (NSString*) vehicleType
+    weight: (NSString*) weight
+    weightUnit: (NSString*) weightUnit
+    height: (NSString*) height
+    heightUnit: (NSString*) heightUnit
+    length: (NSString*) length
+    lengthUnit: (NSString*) lengthUnit
+    width: (NSString*) width
+    widthUnit: (NSString*) widthUnit
         completionHandler: (void (^)(PBGeoRouteResponse* output, NSError* error)) handler;
 ```
 
@@ -65,6 +76,17 @@ NSString* primaryNameOnly = @"false"; // If true then only the primary street na
 NSString* majorRoads = @"false"; // Whether to include all roads in route calculation or just major roads. (optional) (default to false)
 NSString* historicTrafficTimeBucket = @"None"; // Specifies whether routing calculation uses the historic traffic speeds. (optional) (default to None)
 NSString* returnDirectionGeometry = @"false"; // Whether to include geometry associated with each route instruction in response. (optional) (default to false)
+NSString* useCvr = @"N"; // This parameter will enable/disable CVR (Commercial Vehicle Restrictions) capability in our APIs (optional) (default to N)
+NSString* looseningBarrierRestrictions = @"Y"; // Specifies that barriers will be removed when determining the route (optional) (default to Y)
+NSString* vehicleType = @"ALL"; // vehicle type (optional) (default to ALL)
+NSString* weight = @"weight_example"; // Specifies the maximum weight of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+NSString* weightUnit = @"kg"; // The unit of weight eg. kg(kilogram), lb(pound), mt(metric ton), t(ton) (optional) (default to kg)
+NSString* height = @"height_example"; // Specifies the maximum height of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+NSString* heightUnit = @"ft"; // The unit of height e.g m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional) (default to ft)
+NSString* length = @"length_example"; // Specifies the maximum length of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+NSString* lengthUnit = @"ft"; // The unit of length eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional) (default to ft)
+NSString* width = @"width_example"; // Specifies the maximum width of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+NSString* widthUnit = @"ft"; // The unit of width eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional) (default to ft)
 
 PBLIAPIGeoRouteServiceApi*apiInstance = [[PBLIAPIGeoRouteServiceApi alloc] init];
 
@@ -88,6 +110,17 @@ PBLIAPIGeoRouteServiceApi*apiInstance = [[PBLIAPIGeoRouteServiceApi alloc] init]
               majorRoads:majorRoads
               historicTrafficTimeBucket:historicTrafficTimeBucket
               returnDirectionGeometry:returnDirectionGeometry
+              useCvr:useCvr
+              looseningBarrierRestrictions:looseningBarrierRestrictions
+              vehicleType:vehicleType
+              weight:weight
+              weightUnit:weightUnit
+              height:height
+              heightUnit:heightUnit
+              length:length
+              lengthUnit:lengthUnit
+              width:width
+              widthUnit:widthUnit
           completionHandler: ^(PBGeoRouteResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -121,6 +154,17 @@ Name | Type | Description  | Notes
  **majorRoads** | **NSString***| Whether to include all roads in route calculation or just major roads. | [optional] [default to false]
  **historicTrafficTimeBucket** | **NSString***| Specifies whether routing calculation uses the historic traffic speeds. | [optional] [default to None]
  **returnDirectionGeometry** | **NSString***| Whether to include geometry associated with each route instruction in response. | [optional] [default to false]
+ **useCvr** | **NSString***| This parameter will enable/disable CVR (Commercial Vehicle Restrictions) capability in our APIs | [optional] [default to N]
+ **looseningBarrierRestrictions** | **NSString***| Specifies that barriers will be removed when determining the route | [optional] [default to Y]
+ **vehicleType** | **NSString***| vehicle type | [optional] [default to ALL]
+ **weight** | **NSString***| Specifies the maximum weight of a vehicle. Any vehicles over this value will be restricted when determining the route. | [optional] 
+ **weightUnit** | **NSString***| The unit of weight eg. kg(kilogram), lb(pound), mt(metric ton), t(ton) | [optional] [default to kg]
+ **height** | **NSString***| Specifies the maximum height of a vehicle. Any vehicles over this value will be restricted when determining the route. | [optional] 
+ **heightUnit** | **NSString***| The unit of height e.g m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) | [optional] [default to ft]
+ **length** | **NSString***| Specifies the maximum length of a vehicle. Any vehicles over this value will be restricted when determining the route. | [optional] 
+ **lengthUnit** | **NSString***| The unit of length eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) | [optional] [default to ft]
+ **width** | **NSString***| Specifies the maximum width of a vehicle. Any vehicles over this value will be restricted when determining the route. | [optional] 
+ **widthUnit** | **NSString***| The unit of width eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) | [optional] [default to ft]
 
 ### Return type
 
@@ -157,6 +201,17 @@ Name | Type | Description  | Notes
     majorRoads: (NSString*) majorRoads
     historicTrafficTimeBucket: (NSString*) historicTrafficTimeBucket
     returnDirectionGeometry: (NSString*) returnDirectionGeometry
+    useCvr: (NSString*) useCvr
+    looseningBarrierRestrictions: (NSString*) looseningBarrierRestrictions
+    vehicleType: (NSString*) vehicleType
+    weight: (NSString*) weight
+    weightUnit: (NSString*) weightUnit
+    height: (NSString*) height
+    heightUnit: (NSString*) heightUnit
+    length: (NSString*) length
+    lengthUnit: (NSString*) lengthUnit
+    width: (NSString*) width
+    widthUnit: (NSString*) widthUnit
         completionHandler: (void (^)(PBGeoRouteResponse* output, NSError* error)) handler;
 ```
 
@@ -190,6 +245,17 @@ NSString* primaryNameOnly = @"false"; // If true then only the primary street na
 NSString* majorRoads = @"false"; // Whether to include all roads in route calculation or just major roads. (optional) (default to false)
 NSString* historicTrafficTimeBucket = @"None"; // Specifies whether routing calculation uses the historic traffic speeds. (optional) (default to None)
 NSString* returnDirectionGeometry = @"false"; // Whether to include geometry associated with each route instruction in response. (optional) (default to false)
+NSString* useCvr = @"N"; // This parameter will enable/disable CVR (Commercial Vehicle Restrictions) capability in our APIs (optional) (default to N)
+NSString* looseningBarrierRestrictions = @"Y"; // Specifies that barriers will be removed when determining the route (optional) (default to Y)
+NSString* vehicleType = @"ALL"; // vehicle type (optional) (default to ALL)
+NSString* weight = @"weight_example"; // Specifies the maximum weight of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+NSString* weightUnit = @"kg"; // The unit of weight eg. kg(kilogram), lb(pound), mt(metric ton), t(ton) (optional) (default to kg)
+NSString* height = @"height_example"; // Specifies the maximum height of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+NSString* heightUnit = @"ft"; // The unit of height e.g m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional) (default to ft)
+NSString* length = @"length_example"; // Specifies the maximum length of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+NSString* lengthUnit = @"ft"; // The unit of length eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional) (default to ft)
+NSString* width = @"width_example"; // Specifies the maximum width of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+NSString* widthUnit = @"ft"; // The unit of width eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional) (default to ft)
 
 PBLIAPIGeoRouteServiceApi*apiInstance = [[PBLIAPIGeoRouteServiceApi alloc] init];
 
@@ -212,6 +278,17 @@ PBLIAPIGeoRouteServiceApi*apiInstance = [[PBLIAPIGeoRouteServiceApi alloc] init]
               majorRoads:majorRoads
               historicTrafficTimeBucket:historicTrafficTimeBucket
               returnDirectionGeometry:returnDirectionGeometry
+              useCvr:useCvr
+              looseningBarrierRestrictions:looseningBarrierRestrictions
+              vehicleType:vehicleType
+              weight:weight
+              weightUnit:weightUnit
+              height:height
+              heightUnit:heightUnit
+              length:length
+              lengthUnit:lengthUnit
+              width:width
+              widthUnit:widthUnit
           completionHandler: ^(PBGeoRouteResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -244,6 +321,17 @@ Name | Type | Description  | Notes
  **majorRoads** | **NSString***| Whether to include all roads in route calculation or just major roads. | [optional] [default to false]
  **historicTrafficTimeBucket** | **NSString***| Specifies whether routing calculation uses the historic traffic speeds. | [optional] [default to None]
  **returnDirectionGeometry** | **NSString***| Whether to include geometry associated with each route instruction in response. | [optional] [default to false]
+ **useCvr** | **NSString***| This parameter will enable/disable CVR (Commercial Vehicle Restrictions) capability in our APIs | [optional] [default to N]
+ **looseningBarrierRestrictions** | **NSString***| Specifies that barriers will be removed when determining the route | [optional] [default to Y]
+ **vehicleType** | **NSString***| vehicle type | [optional] [default to ALL]
+ **weight** | **NSString***| Specifies the maximum weight of a vehicle. Any vehicles over this value will be restricted when determining the route. | [optional] 
+ **weightUnit** | **NSString***| The unit of weight eg. kg(kilogram), lb(pound), mt(metric ton), t(ton) | [optional] [default to kg]
+ **height** | **NSString***| Specifies the maximum height of a vehicle. Any vehicles over this value will be restricted when determining the route. | [optional] 
+ **heightUnit** | **NSString***| The unit of height e.g m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) | [optional] [default to ft]
+ **length** | **NSString***| Specifies the maximum length of a vehicle. Any vehicles over this value will be restricted when determining the route. | [optional] 
+ **lengthUnit** | **NSString***| The unit of length eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) | [optional] [default to ft]
+ **width** | **NSString***| Specifies the maximum width of a vehicle. Any vehicles over this value will be restricted when determining the route. | [optional] 
+ **widthUnit** | **NSString***| The unit of width eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) | [optional] [default to ft]
 
 ### Return type
 
@@ -275,6 +363,17 @@ Name | Type | Description  | Notes
     majorRoads: (NSString*) majorRoads
     returnOptimalRoutesOnly: (NSString*) returnOptimalRoutesOnly
     historicTrafficTimeBucket: (NSString*) historicTrafficTimeBucket
+    useCvr: (NSString*) useCvr
+    looseningBarrierRestrictions: (NSString*) looseningBarrierRestrictions
+    vehicleType: (NSString*) vehicleType
+    weight: (NSString*) weight
+    weightUnit: (NSString*) weightUnit
+    height: (NSString*) height
+    heightUnit: (NSString*) heightUnit
+    length: (NSString*) length
+    lengthUnit: (NSString*) lengthUnit
+    width: (NSString*) width
+    widthUnit: (NSString*) widthUnit
         completionHandler: (void (^)(PBTravelCostMatrixResponse* output, NSError* error)) handler;
 ```
 
@@ -303,6 +402,17 @@ NSString* timeUnit = @"min"; // Return time unit such as min(Minute), h(Hour), s
 NSString* majorRoads = @"false"; // Whether to include all roads in routes calculation or just major roads. (optional) (default to false)
 NSString* returnOptimalRoutesOnly = @"true"; // Specifies whether to return only the optimized route for each start and end point combination. (optional) (default to true)
 NSString* historicTrafficTimeBucket = @"None"; // Specifies whether routing calculation uses the historic traffic speeds. (optional) (default to None)
+NSString* useCvr = @"N"; // This parameter will enable/disable CVR (Commercial Vehicle Restrictions) capability in our APIs (optional) (default to N)
+NSString* looseningBarrierRestrictions = @"Y"; // Specifies that barriers will be removed when determining the route (optional) (default to Y)
+NSString* vehicleType = @"ALL"; // vehicle type (optional) (default to ALL)
+NSString* weight = @"weight_example"; // Specifies the maximum weight of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+NSString* weightUnit = @"kg"; // The unit of weight eg. kg(kilogram), lb(pound), mt(metric ton), t(ton) (optional) (default to kg)
+NSString* height = @"height_example"; // Specifies the maximum height of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+NSString* heightUnit = @"ft"; // The unit of height e.g m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional) (default to ft)
+NSString* length = @"length_example"; // Specifies the maximum length of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+NSString* lengthUnit = @"ft"; // The unit of length eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional) (default to ft)
+NSString* width = @"width_example"; // Specifies the maximum width of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+NSString* widthUnit = @"ft"; // The unit of width eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional) (default to ft)
 
 PBLIAPIGeoRouteServiceApi*apiInstance = [[PBLIAPIGeoRouteServiceApi alloc] init];
 
@@ -320,6 +430,17 @@ PBLIAPIGeoRouteServiceApi*apiInstance = [[PBLIAPIGeoRouteServiceApi alloc] init]
               majorRoads:majorRoads
               returnOptimalRoutesOnly:returnOptimalRoutesOnly
               historicTrafficTimeBucket:historicTrafficTimeBucket
+              useCvr:useCvr
+              looseningBarrierRestrictions:looseningBarrierRestrictions
+              vehicleType:vehicleType
+              weight:weight
+              weightUnit:weightUnit
+              height:height
+              heightUnit:heightUnit
+              length:length
+              lengthUnit:lengthUnit
+              width:width
+              widthUnit:widthUnit
           completionHandler: ^(PBTravelCostMatrixResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -347,6 +468,17 @@ Name | Type | Description  | Notes
  **majorRoads** | **NSString***| Whether to include all roads in routes calculation or just major roads. | [optional] [default to false]
  **returnOptimalRoutesOnly** | **NSString***| Specifies whether to return only the optimized route for each start and end point combination. | [optional] [default to true]
  **historicTrafficTimeBucket** | **NSString***| Specifies whether routing calculation uses the historic traffic speeds. | [optional] [default to None]
+ **useCvr** | **NSString***| This parameter will enable/disable CVR (Commercial Vehicle Restrictions) capability in our APIs | [optional] [default to N]
+ **looseningBarrierRestrictions** | **NSString***| Specifies that barriers will be removed when determining the route | [optional] [default to Y]
+ **vehicleType** | **NSString***| vehicle type | [optional] [default to ALL]
+ **weight** | **NSString***| Specifies the maximum weight of a vehicle. Any vehicles over this value will be restricted when determining the route. | [optional] 
+ **weightUnit** | **NSString***| The unit of weight eg. kg(kilogram), lb(pound), mt(metric ton), t(ton) | [optional] [default to kg]
+ **height** | **NSString***| Specifies the maximum height of a vehicle. Any vehicles over this value will be restricted when determining the route. | [optional] 
+ **heightUnit** | **NSString***| The unit of height e.g m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) | [optional] [default to ft]
+ **length** | **NSString***| Specifies the maximum length of a vehicle. Any vehicles over this value will be restricted when determining the route. | [optional] 
+ **lengthUnit** | **NSString***| The unit of length eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) | [optional] [default to ft]
+ **width** | **NSString***| Specifies the maximum width of a vehicle. Any vehicles over this value will be restricted when determining the route. | [optional] 
+ **widthUnit** | **NSString***| The unit of width eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) | [optional] [default to ft]
 
 ### Return type
 
@@ -377,6 +509,17 @@ Name | Type | Description  | Notes
     majorRoads: (NSString*) majorRoads
     returnOptimalRoutesOnly: (NSString*) returnOptimalRoutesOnly
     historicTrafficTimeBucket: (NSString*) historicTrafficTimeBucket
+    useCvr: (NSString*) useCvr
+    looseningBarrierRestrictions: (NSString*) looseningBarrierRestrictions
+    vehicleType: (NSString*) vehicleType
+    weight: (NSString*) weight
+    weightUnit: (NSString*) weightUnit
+    height: (NSString*) height
+    heightUnit: (NSString*) heightUnit
+    length: (NSString*) length
+    lengthUnit: (NSString*) lengthUnit
+    width: (NSString*) width
+    widthUnit: (NSString*) widthUnit
         completionHandler: (void (^)(PBTravelCostMatrixResponse* output, NSError* error)) handler;
 ```
 
@@ -404,6 +547,17 @@ NSString* timeUnit = @"min"; // Return time unit such as min(Minute), h(Hour), s
 NSString* majorRoads = @"false"; // Whether to include all roads in routes calculation or just major roads. (optional) (default to false)
 NSString* returnOptimalRoutesOnly = @"true"; // Specifies whether to return only the optimized route for each start and end point combination. (optional) (default to true)
 NSString* historicTrafficTimeBucket = @"None"; // Specifies whether routing calculation uses the historic traffic speeds. (optional) (default to None)
+NSString* useCvr = @"N"; // This parameter will enable/disable CVR (Commercial Vehicle Restrictions) capability in our APIs (optional) (default to N)
+NSString* looseningBarrierRestrictions = @"Y"; // Specifies that barriers will be removed when determining the route (optional) (default to Y)
+NSString* vehicleType = @"ALL"; // vehicle type (optional) (default to ALL)
+NSString* weight = @"weight_example"; // Specifies the maximum weight of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+NSString* weightUnit = @"kg"; // The unit of weight eg. kg(kilogram), lb(pound), mt(metric ton), t(ton) (optional) (default to kg)
+NSString* height = @"height_example"; // Specifies the maximum height of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+NSString* heightUnit = @"ft"; // The unit of height e.g m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional) (default to ft)
+NSString* length = @"length_example"; // Specifies the maximum length of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+NSString* lengthUnit = @"ft"; // The unit of length eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional) (default to ft)
+NSString* width = @"width_example"; // Specifies the maximum width of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+NSString* widthUnit = @"ft"; // The unit of width eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional) (default to ft)
 
 PBLIAPIGeoRouteServiceApi*apiInstance = [[PBLIAPIGeoRouteServiceApi alloc] init];
 
@@ -420,6 +574,17 @@ PBLIAPIGeoRouteServiceApi*apiInstance = [[PBLIAPIGeoRouteServiceApi alloc] init]
               majorRoads:majorRoads
               returnOptimalRoutesOnly:returnOptimalRoutesOnly
               historicTrafficTimeBucket:historicTrafficTimeBucket
+              useCvr:useCvr
+              looseningBarrierRestrictions:looseningBarrierRestrictions
+              vehicleType:vehicleType
+              weight:weight
+              weightUnit:weightUnit
+              height:height
+              heightUnit:heightUnit
+              length:length
+              lengthUnit:lengthUnit
+              width:width
+              widthUnit:widthUnit
           completionHandler: ^(PBTravelCostMatrixResponse* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
@@ -446,6 +611,17 @@ Name | Type | Description  | Notes
  **majorRoads** | **NSString***| Whether to include all roads in routes calculation or just major roads. | [optional] [default to false]
  **returnOptimalRoutesOnly** | **NSString***| Specifies whether to return only the optimized route for each start and end point combination. | [optional] [default to true]
  **historicTrafficTimeBucket** | **NSString***| Specifies whether routing calculation uses the historic traffic speeds. | [optional] [default to None]
+ **useCvr** | **NSString***| This parameter will enable/disable CVR (Commercial Vehicle Restrictions) capability in our APIs | [optional] [default to N]
+ **looseningBarrierRestrictions** | **NSString***| Specifies that barriers will be removed when determining the route | [optional] [default to Y]
+ **vehicleType** | **NSString***| vehicle type | [optional] [default to ALL]
+ **weight** | **NSString***| Specifies the maximum weight of a vehicle. Any vehicles over this value will be restricted when determining the route. | [optional] 
+ **weightUnit** | **NSString***| The unit of weight eg. kg(kilogram), lb(pound), mt(metric ton), t(ton) | [optional] [default to kg]
+ **height** | **NSString***| Specifies the maximum height of a vehicle. Any vehicles over this value will be restricted when determining the route. | [optional] 
+ **heightUnit** | **NSString***| The unit of height e.g m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) | [optional] [default to ft]
+ **length** | **NSString***| Specifies the maximum length of a vehicle. Any vehicles over this value will be restricted when determining the route. | [optional] 
+ **lengthUnit** | **NSString***| The unit of length eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) | [optional] [default to ft]
+ **width** | **NSString***| Specifies the maximum width of a vehicle. Any vehicles over this value will be restricted when determining the route. | [optional] 
+ **widthUnit** | **NSString***| The unit of width eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) | [optional] [default to ft]
 
 ### Return type
 

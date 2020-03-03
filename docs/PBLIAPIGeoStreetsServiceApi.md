@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getIntersectionByAddress**](PBLIAPIGeoStreetsServiceApi.md#getintersectionbyaddress) | **GET** /geostreets/v1/intersection/byaddress | Gets NearestIntersection of major roads
 [**getIntersectionByLocation**](PBLIAPIGeoStreetsServiceApi.md#getintersectionbylocation) | **GET** /geostreets/v1/intersection/bylocation | Gets NearestIntersection of major roads
+[**getNearestSpeedLimit**](PBLIAPIGeoStreetsServiceApi.md#getnearestspeedlimit) | **GET** /geostreets/v1/speedlimit | Gets NearestSpeedLimit
 
 
 # **getIntersectionByAddress**
@@ -166,6 +167,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PBIntersectionResponse***](PBIntersectionResponse.md)
+
+### Authorization
+
+[oAuth2Password](../README.md#oAuth2Password)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getNearestSpeedLimit**
+```objc
+-(NSNumber*) getNearestSpeedLimitWithPath: (NSString*) path
+        completionHandler: (void (^)(PBSpeedLimit* output, NSError* error)) handler;
+```
+
+Gets NearestSpeedLimit
+
+GetNearestSpeedLimit Endpoint will take point coordinates of a path and will return the posted speed limit of the road segment on which this path will snap.
+
+### Example 
+```objc
+PBConfiguration *apiConfig = [PBConfiguration sharedConfig];
+
+// Configure OAuth2 access token for authorization: (authentication scheme: oAuth2Password)
+[apiConfig setAccessToken:@"YOUR_ACCESS_TOKEN"];
+
+
+NSString* path = @"path_example"; // Accepts multiple points which will be snapped to the nearest road segment. Longitude and Latitude will be comma separated (longitude,latitude) and Point Coordinates will be separated by semi-colon(;)
+
+PBLIAPIGeoStreetsServiceApi*apiInstance = [[PBLIAPIGeoStreetsServiceApi alloc] init];
+
+// Gets NearestSpeedLimit
+[apiInstance getNearestSpeedLimitWithPath:path
+          completionHandler: ^(PBSpeedLimit* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling PBLIAPIGeoStreetsServiceApi->getNearestSpeedLimit: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **path** | **NSString***| Accepts multiple points which will be snapped to the nearest road segment. Longitude and Latitude will be comma separated (longitude,latitude) and Point Coordinates will be separated by semi-colon(;) | 
+
+### Return type
+
+[**PBSpeedLimit***](PBSpeedLimit.md)
 
 ### Authorization
 

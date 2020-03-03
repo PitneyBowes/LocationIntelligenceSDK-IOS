@@ -111,6 +111,28 @@ NSInteger kPBLIAPIGeoRouteServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param returnDirectionGeometry Whether to include geometry associated with each route instruction in response. (optional, default to false)
 ///
+///  @param useCvr This parameter will enable/disable CVR (Commercial Vehicle Restrictions) capability in our APIs (optional, default to N)
+///
+///  @param looseningBarrierRestrictions Specifies that barriers will be removed when determining the route (optional, default to Y)
+///
+///  @param vehicleType vehicle type (optional, default to ALL)
+///
+///  @param weight Specifies the maximum weight of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+///
+///  @param weightUnit The unit of weight eg. kg(kilogram), lb(pound), mt(metric ton), t(ton) (optional, default to kg)
+///
+///  @param height Specifies the maximum height of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+///
+///  @param heightUnit The unit of height e.g m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional, default to ft)
+///
+///  @param length Specifies the maximum length of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+///
+///  @param lengthUnit The unit of length eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional, default to ft)
+///
+///  @param width Specifies the maximum width of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+///
+///  @param widthUnit The unit of width eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional, default to ft)
+///
 ///  @returns PBGeoRouteResponse*
 ///
 -(NSNumber*) getRouteByAddressWithStartAddress: (NSString*) startAddress
@@ -132,6 +154,17 @@ NSInteger kPBLIAPIGeoRouteServiceApiMissingParamErrorCode = 234513;
     majorRoads: (NSString*) majorRoads
     historicTrafficTimeBucket: (NSString*) historicTrafficTimeBucket
     returnDirectionGeometry: (NSString*) returnDirectionGeometry
+    useCvr: (NSString*) useCvr
+    looseningBarrierRestrictions: (NSString*) looseningBarrierRestrictions
+    vehicleType: (NSString*) vehicleType
+    weight: (NSString*) weight
+    weightUnit: (NSString*) weightUnit
+    height: (NSString*) height
+    heightUnit: (NSString*) heightUnit
+    length: (NSString*) length
+    lengthUnit: (NSString*) lengthUnit
+    width: (NSString*) width
+    widthUnit: (NSString*) widthUnit
     completionHandler: (void (^)(PBGeoRouteResponse* output, NSError* error)) handler {
     // verify the required parameter 'startAddress' is set
     if (startAddress == nil) {
@@ -220,6 +253,39 @@ NSInteger kPBLIAPIGeoRouteServiceApiMissingParamErrorCode = 234513;
     if (returnDirectionGeometry != nil) {
         queryParams[@"returnDirectionGeometry"] = returnDirectionGeometry;
     }
+    if (useCvr != nil) {
+        queryParams[@"useCvr"] = useCvr;
+    }
+    if (looseningBarrierRestrictions != nil) {
+        queryParams[@"looseningBarrierRestrictions"] = looseningBarrierRestrictions;
+    }
+    if (vehicleType != nil) {
+        queryParams[@"vehicleType"] = vehicleType;
+    }
+    if (weight != nil) {
+        queryParams[@"weight"] = weight;
+    }
+    if (weightUnit != nil) {
+        queryParams[@"weightUnit"] = weightUnit;
+    }
+    if (height != nil) {
+        queryParams[@"height"] = height;
+    }
+    if (heightUnit != nil) {
+        queryParams[@"heightUnit"] = heightUnit;
+    }
+    if (length != nil) {
+        queryParams[@"length"] = length;
+    }
+    if (lengthUnit != nil) {
+        queryParams[@"lengthUnit"] = lengthUnit;
+    }
+    if (width != nil) {
+        queryParams[@"width"] = width;
+    }
+    if (widthUnit != nil) {
+        queryParams[@"widthUnit"] = widthUnit;
+    }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
     // HTTP header `Accept`
@@ -300,6 +366,28 @@ NSInteger kPBLIAPIGeoRouteServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param returnDirectionGeometry Whether to include geometry associated with each route instruction in response. (optional, default to false)
 ///
+///  @param useCvr This parameter will enable/disable CVR (Commercial Vehicle Restrictions) capability in our APIs (optional, default to N)
+///
+///  @param looseningBarrierRestrictions Specifies that barriers will be removed when determining the route (optional, default to Y)
+///
+///  @param vehicleType vehicle type (optional, default to ALL)
+///
+///  @param weight Specifies the maximum weight of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+///
+///  @param weightUnit The unit of weight eg. kg(kilogram), lb(pound), mt(metric ton), t(ton) (optional, default to kg)
+///
+///  @param height Specifies the maximum height of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+///
+///  @param heightUnit The unit of height e.g m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional, default to ft)
+///
+///  @param length Specifies the maximum length of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+///
+///  @param lengthUnit The unit of length eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional, default to ft)
+///
+///  @param width Specifies the maximum width of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+///
+///  @param widthUnit The unit of width eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional, default to ft)
+///
 ///  @returns PBGeoRouteResponse*
 ///
 -(NSNumber*) getRouteByLocationWithStartPoint: (NSString*) startPoint
@@ -320,6 +408,17 @@ NSInteger kPBLIAPIGeoRouteServiceApiMissingParamErrorCode = 234513;
     majorRoads: (NSString*) majorRoads
     historicTrafficTimeBucket: (NSString*) historicTrafficTimeBucket
     returnDirectionGeometry: (NSString*) returnDirectionGeometry
+    useCvr: (NSString*) useCvr
+    looseningBarrierRestrictions: (NSString*) looseningBarrierRestrictions
+    vehicleType: (NSString*) vehicleType
+    weight: (NSString*) weight
+    weightUnit: (NSString*) weightUnit
+    height: (NSString*) height
+    heightUnit: (NSString*) heightUnit
+    length: (NSString*) length
+    lengthUnit: (NSString*) lengthUnit
+    width: (NSString*) width
+    widthUnit: (NSString*) widthUnit
     completionHandler: (void (^)(PBGeoRouteResponse* output, NSError* error)) handler {
     // verify the required parameter 'startPoint' is set
     if (startPoint == nil) {
@@ -405,6 +504,39 @@ NSInteger kPBLIAPIGeoRouteServiceApiMissingParamErrorCode = 234513;
     if (returnDirectionGeometry != nil) {
         queryParams[@"returnDirectionGeometry"] = returnDirectionGeometry;
     }
+    if (useCvr != nil) {
+        queryParams[@"useCvr"] = useCvr;
+    }
+    if (looseningBarrierRestrictions != nil) {
+        queryParams[@"looseningBarrierRestrictions"] = looseningBarrierRestrictions;
+    }
+    if (vehicleType != nil) {
+        queryParams[@"vehicleType"] = vehicleType;
+    }
+    if (weight != nil) {
+        queryParams[@"weight"] = weight;
+    }
+    if (weightUnit != nil) {
+        queryParams[@"weightUnit"] = weightUnit;
+    }
+    if (height != nil) {
+        queryParams[@"height"] = height;
+    }
+    if (heightUnit != nil) {
+        queryParams[@"heightUnit"] = heightUnit;
+    }
+    if (length != nil) {
+        queryParams[@"length"] = length;
+    }
+    if (lengthUnit != nil) {
+        queryParams[@"lengthUnit"] = lengthUnit;
+    }
+    if (width != nil) {
+        queryParams[@"width"] = width;
+    }
+    if (widthUnit != nil) {
+        queryParams[@"widthUnit"] = widthUnit;
+    }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
     // HTTP header `Accept`
@@ -475,6 +607,28 @@ NSInteger kPBLIAPIGeoRouteServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param historicTrafficTimeBucket Specifies whether routing calculation uses the historic traffic speeds. (optional, default to None)
 ///
+///  @param useCvr This parameter will enable/disable CVR (Commercial Vehicle Restrictions) capability in our APIs (optional, default to N)
+///
+///  @param looseningBarrierRestrictions Specifies that barriers will be removed when determining the route (optional, default to Y)
+///
+///  @param vehicleType vehicle type (optional, default to ALL)
+///
+///  @param weight Specifies the maximum weight of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+///
+///  @param weightUnit The unit of weight eg. kg(kilogram), lb(pound), mt(metric ton), t(ton) (optional, default to kg)
+///
+///  @param height Specifies the maximum height of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+///
+///  @param heightUnit The unit of height e.g m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional, default to ft)
+///
+///  @param length Specifies the maximum length of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+///
+///  @param lengthUnit The unit of length eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional, default to ft)
+///
+///  @param width Specifies the maximum width of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+///
+///  @param widthUnit The unit of width eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional, default to ft)
+///
 ///  @returns PBTravelCostMatrixResponse*
 ///
 -(NSNumber*) getTravelCostMatrixByAddressWithStartAddresses: (NSString*) startAddresses
@@ -490,6 +644,17 @@ NSInteger kPBLIAPIGeoRouteServiceApiMissingParamErrorCode = 234513;
     majorRoads: (NSString*) majorRoads
     returnOptimalRoutesOnly: (NSString*) returnOptimalRoutesOnly
     historicTrafficTimeBucket: (NSString*) historicTrafficTimeBucket
+    useCvr: (NSString*) useCvr
+    looseningBarrierRestrictions: (NSString*) looseningBarrierRestrictions
+    vehicleType: (NSString*) vehicleType
+    weight: (NSString*) weight
+    weightUnit: (NSString*) weightUnit
+    height: (NSString*) height
+    heightUnit: (NSString*) heightUnit
+    length: (NSString*) length
+    lengthUnit: (NSString*) lengthUnit
+    width: (NSString*) width
+    widthUnit: (NSString*) widthUnit
     completionHandler: (void (^)(PBTravelCostMatrixResponse* output, NSError* error)) handler {
     // verify the required parameter 'startAddresses' is set
     if (startAddresses == nil) {
@@ -560,6 +725,39 @@ NSInteger kPBLIAPIGeoRouteServiceApiMissingParamErrorCode = 234513;
     if (historicTrafficTimeBucket != nil) {
         queryParams[@"historicTrafficTimeBucket"] = historicTrafficTimeBucket;
     }
+    if (useCvr != nil) {
+        queryParams[@"useCvr"] = useCvr;
+    }
+    if (looseningBarrierRestrictions != nil) {
+        queryParams[@"looseningBarrierRestrictions"] = looseningBarrierRestrictions;
+    }
+    if (vehicleType != nil) {
+        queryParams[@"vehicleType"] = vehicleType;
+    }
+    if (weight != nil) {
+        queryParams[@"weight"] = weight;
+    }
+    if (weightUnit != nil) {
+        queryParams[@"weightUnit"] = weightUnit;
+    }
+    if (height != nil) {
+        queryParams[@"height"] = height;
+    }
+    if (heightUnit != nil) {
+        queryParams[@"heightUnit"] = heightUnit;
+    }
+    if (length != nil) {
+        queryParams[@"length"] = length;
+    }
+    if (lengthUnit != nil) {
+        queryParams[@"lengthUnit"] = lengthUnit;
+    }
+    if (width != nil) {
+        queryParams[@"width"] = width;
+    }
+    if (widthUnit != nil) {
+        queryParams[@"widthUnit"] = widthUnit;
+    }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
     // HTTP header `Accept`
@@ -628,6 +826,28 @@ NSInteger kPBLIAPIGeoRouteServiceApiMissingParamErrorCode = 234513;
 ///
 ///  @param historicTrafficTimeBucket Specifies whether routing calculation uses the historic traffic speeds. (optional, default to None)
 ///
+///  @param useCvr This parameter will enable/disable CVR (Commercial Vehicle Restrictions) capability in our APIs (optional, default to N)
+///
+///  @param looseningBarrierRestrictions Specifies that barriers will be removed when determining the route (optional, default to Y)
+///
+///  @param vehicleType vehicle type (optional, default to ALL)
+///
+///  @param weight Specifies the maximum weight of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+///
+///  @param weightUnit The unit of weight eg. kg(kilogram), lb(pound), mt(metric ton), t(ton) (optional, default to kg)
+///
+///  @param height Specifies the maximum height of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+///
+///  @param heightUnit The unit of height e.g m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional, default to ft)
+///
+///  @param length Specifies the maximum length of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+///
+///  @param lengthUnit The unit of length eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional, default to ft)
+///
+///  @param width Specifies the maximum width of a vehicle. Any vehicles over this value will be restricted when determining the route. (optional)
+///
+///  @param widthUnit The unit of width eg. m(meter), km(kilometer), yd(yard), ft(foot), mi(mile) (optional, default to ft)
+///
 ///  @returns PBTravelCostMatrixResponse*
 ///
 -(NSNumber*) getTravelCostMatrixByLocationWithStartPoints: (NSString*) startPoints
@@ -642,6 +862,17 @@ NSInteger kPBLIAPIGeoRouteServiceApiMissingParamErrorCode = 234513;
     majorRoads: (NSString*) majorRoads
     returnOptimalRoutesOnly: (NSString*) returnOptimalRoutesOnly
     historicTrafficTimeBucket: (NSString*) historicTrafficTimeBucket
+    useCvr: (NSString*) useCvr
+    looseningBarrierRestrictions: (NSString*) looseningBarrierRestrictions
+    vehicleType: (NSString*) vehicleType
+    weight: (NSString*) weight
+    weightUnit: (NSString*) weightUnit
+    height: (NSString*) height
+    heightUnit: (NSString*) heightUnit
+    length: (NSString*) length
+    lengthUnit: (NSString*) lengthUnit
+    width: (NSString*) width
+    widthUnit: (NSString*) widthUnit
     completionHandler: (void (^)(PBTravelCostMatrixResponse* output, NSError* error)) handler {
     // verify the required parameter 'startPoints' is set
     if (startPoints == nil) {
@@ -708,6 +939,39 @@ NSInteger kPBLIAPIGeoRouteServiceApiMissingParamErrorCode = 234513;
     }
     if (historicTrafficTimeBucket != nil) {
         queryParams[@"historicTrafficTimeBucket"] = historicTrafficTimeBucket;
+    }
+    if (useCvr != nil) {
+        queryParams[@"useCvr"] = useCvr;
+    }
+    if (looseningBarrierRestrictions != nil) {
+        queryParams[@"looseningBarrierRestrictions"] = looseningBarrierRestrictions;
+    }
+    if (vehicleType != nil) {
+        queryParams[@"vehicleType"] = vehicleType;
+    }
+    if (weight != nil) {
+        queryParams[@"weight"] = weight;
+    }
+    if (weightUnit != nil) {
+        queryParams[@"weightUnit"] = weightUnit;
+    }
+    if (height != nil) {
+        queryParams[@"height"] = height;
+    }
+    if (heightUnit != nil) {
+        queryParams[@"heightUnit"] = heightUnit;
+    }
+    if (length != nil) {
+        queryParams[@"length"] = length;
+    }
+    if (lengthUnit != nil) {
+        queryParams[@"lengthUnit"] = lengthUnit;
+    }
+    if (width != nil) {
+        queryParams[@"width"] = width;
+    }
+    if (widthUnit != nil) {
+        queryParams[@"widthUnit"] = widthUnit;
     }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
