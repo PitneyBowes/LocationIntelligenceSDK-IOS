@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **NSString*** |  | [optional] 
+**fullName** | **NSString*** |  | [optional] 
 **prefix** | **NSString*** |  | [optional] 
 **firstName** | **NSString*** |  | [optional] 
 **lastName** | **NSString*** |  | [optional] 

@@ -5,6 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ahjType** | **NSString*** |  | [optional] 
 **ahjId** | **NSString*** |  | [optional] 
+**type** | **NSString*** |  | [optional] 
+**fccId** | **NSString*** |  | [optional] 
 **agency** | **NSString*** |  | [optional] 
 **phone** | **NSString*** |  | [optional] 
 **comments** | **NSString*** |  | [optional] 

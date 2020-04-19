@@ -40,6 +40,10 @@
 
 @property(nonatomic) NSString* ahjId;
 
+@property(nonatomic) NSString* type;
+
+@property(nonatomic) NSString* fccId;
+
 @property(nonatomic) NSString* agency;
 
 @property(nonatomic) NSString* phone;

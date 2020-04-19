@@ -79,26 +79,6 @@ extern NSInteger kPBLIAPIGeoLifeServiceApiMissingParamErrorCode;
     completionHandler: (void (^)(PBDemographicsV2* output, NSError* error)) handler;
 
 
-/// Demographics By PBKey.
-/// Provides the demographic details for a specified PB Key. GeoLife 'bypbkey' service accepts pbkey as an input to return a specific population segment's age group, ethnicity, income, purchasing behaviour, commuter patterns and more.
-///
-/// @param pbKey free form text
-/// @param profile Retrieves the sorted demographic data on the basis of pre-defined profiles that can display the top 3 or top 5 results (by address) either in ascending or descending order.Allowed values Top5Ascending,Top5Descending,Top3Ascending,Top3Descending (optional)
-/// @param filter The &#39;filter&#39; parameter retrieves the demographic data based upon specified input themes. (optional)
-/// @param valueFormat The &#39;valueFormat&#39; parameter is applicable for few ranged variables where percent &amp; count both are available and filter response based on the input value. (optional) (default to PercentAsAvailable)
-/// @param variableLevel The &#39;variableLevel&#39; retrieves demographic facts in response based on the input value (optional) (default to Key)
-/// 
-///  code:200 message:"successful operation"
-///
-/// @return PBDemographicsV2*
--(NSNumber*) getDemographicsByPBKeyWithPbKey: (NSString*) pbKey
-    profile: (NSString*) profile
-    filter: (NSString*) filter
-    valueFormat: (NSString*) valueFormat
-    variableLevel: (NSString*) variableLevel
-    completionHandler: (void (^)(PBDemographicsV2* output, NSError* error)) handler;
-
-
 /// Segmentation By Address.
 /// Provides the segmentation details around a specified address. GeoLife 'Segmentation by Address' service accepts address as an input to return the lifestyle characteristics of households in terms of their family status, children characteristics, income behaviors, financial preferences and interests.
 ///
@@ -124,18 +104,6 @@ extern NSInteger kPBLIAPIGeoLifeServiceApiMissingParamErrorCode;
 /// @return PBSegmentation*
 -(NSNumber*) getSegmentationByLocationWithLongitude: (NSString*) longitude
     latitude: (NSString*) latitude
-    completionHandler: (void (^)(PBSegmentation* output, NSError* error)) handler;
-
-
-/// Segmentation By PB Key.
-/// Provides the segmentation details for a PB Key. GeoLife 'segmentation bypbkey' service accepts free form text PB Key as an input to return the lifestyle characteristics of households in terms of their family status, children characteristics, income behaviors, financial preferences and interests.
-///
-/// @param pbKey free form text
-/// 
-///  code:200 message:"successful operation"
-///
-/// @return PBSegmentation*
--(NSNumber*) getSegmentationByPBKeyWithPbKey: (NSString*) pbKey
     completionHandler: (void (^)(PBSegmentation* output, NSError* error)) handler;
 
 

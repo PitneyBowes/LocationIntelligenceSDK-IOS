@@ -38,6 +38,10 @@
 
 @property(nonatomic) NSString* fax;
 
+@property(nonatomic) NSString* contactName;
+
+@property(nonatomic) NSString* email;
+
 @property(nonatomic) PBMatchedAddress* address;
 
 @end

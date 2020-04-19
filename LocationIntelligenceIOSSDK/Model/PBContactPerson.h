@@ -35,6 +35,8 @@
 
 @property(nonatomic) NSString* title;
 
+@property(nonatomic) NSString* fullName;
+
 @property(nonatomic) NSString* prefix;
 
 @property(nonatomic) NSString* firstName;

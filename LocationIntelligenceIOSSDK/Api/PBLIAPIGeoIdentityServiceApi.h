@@ -77,30 +77,6 @@ extern NSInteger kPBLIAPIGeoIdentityServiceApiMissingParamErrorCode;
     completionHandler: (void (^)(PBIdentity* output, NSError* error)) handler;
 
 
-/// Gets GeoIdentityResponse
-/// Gets GeoIdentityResponse
-///
-/// @param pbKey PB specific unique key for each address
-/// @param givenName This filters all the associated identities of address by given Name (optional)
-/// @param familyName This filters all the associated identities of address by family Name (optional)
-/// @param confidence To adjust quality threshold of data returned. Default is HIGH (optional)
-/// @param maxCandidates Number of identities returned in response (optional)
-/// @param theme theme parameter for filtering results (optional)
-/// @param filter filter params (optional)
-/// 
-///  code:200 message:"successful operation"
-///
-/// @return PBGeoIdentityResponse*
--(NSNumber*) getIdentityByPBKeyWithPbKey: (NSString*) pbKey
-    givenName: (NSString*) givenName
-    familyName: (NSString*) familyName
-    confidence: (NSString*) confidence
-    maxCandidates: (NSString*) maxCandidates
-    theme: (NSString*) theme
-    filter: (NSString*) filter
-    completionHandler: (void (^)(PBGeoIdentityResponse* output, NSError* error)) handler;
-
-
 /// Gets Identity
 /// Gets Identity
 ///

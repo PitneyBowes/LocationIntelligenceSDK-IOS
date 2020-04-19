@@ -5,7 +5,6 @@
 #import "PBPOIBoundaryResponse.h"
 #import "PBPOIBoundaryAddressRequest.h"
 #import "PBPOIBoundaryLocationRequest.h"
-#import "PBPOIBoundaryPBKeyRequest.h"
 #import "PBTravelBoundaries.h"
 #import "PBApi.h"
 
@@ -146,36 +145,6 @@ extern NSInteger kPBLIAPIGeoZoneServiceApiMissingParamErrorCode;
 ///
 /// @return PBPOIBoundaryResponse*
 -(NSNumber*) getPOIBoundaryByLocationBatchWithBody: (PBPOIBoundaryLocationRequest*) body
-    completionHandler: (void (^)(PBPOIBoundaryResponse* output, NSError* error)) handler;
-
-
-/// Gets Point of Interests Boundary by PBKey
-/// Gets Point of Interests Boundary by PBKey
-///
-/// @param pbKey PBKey for which POI Boundary is requested
-/// @param categoryCode Specific Category/Categories Codes for the desired POIs. Accepts a mix of 4 digit (Top Category), 6 digit (Second-Level Category) and 11 digit (Low-Level Category) Category Codes. (optional)
-/// @param sicCode Specify starting digits or full sic code to filter the response (optional)
-/// @param naicsCode Will accept naicsCode to filter POIs in results. Max 10 allowed. (optional)
-/// 
-///  code:200 message:"successful operation"
-///
-/// @return PBPoiBoundary*
--(NSNumber*) getPOIBoundaryByPBKeyWithPbKey: (NSString*) pbKey
-    categoryCode: (NSString*) categoryCode
-    sicCode: (NSString*) sicCode
-    naicsCode: (NSString*) naicsCode
-    completionHandler: (void (^)(PBPoiBoundary* output, NSError* error)) handler;
-
-
-/// Batch method for getting Point of Interests Boundary by PBKey
-/// Batch method for getting Point of Interests Boundary by PBKey
-///
-/// @param body  (optional)
-/// 
-///  code:200 message:"successful operation"
-///
-/// @return PBPOIBoundaryResponse*
--(NSNumber*) getPOIBoundaryByPBKeyBatchWithBody: (PBPOIBoundaryPBKeyRequest*) body
     completionHandler: (void (^)(PBPOIBoundaryResponse* output, NSError* error)) handler;
 
 

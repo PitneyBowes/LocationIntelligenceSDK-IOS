@@ -2,9 +2,6 @@
 #import "PBGeoPropertyResponse.h"
 #import "PBGeoPropertyResponses.h"
 #import "PBGeoPropertyAddressRequest.h"
-#import "PBGeoPropertyPBKeyResponse.h"
-#import "PBGeoPropertyPBKeyResponses.h"
-#import "PBGeoPropertyPBKeyRequest.h"
 #import "PBParcelBoundary.h"
 #import "PBSchoolsNearByResponse.h"
 #import "PBApi.h"
@@ -65,30 +62,6 @@ extern NSInteger kPBLIAPIGeoPropertyServiceApiMissingParamErrorCode;
     completionHandler: (void (^)(PBGeoPropertyResponses* output, NSError* error)) handler;
 
 
-/// Gets GeoPropertyResponse
-/// Gets GeoPropertyResponse
-///
-/// @param pbKey free form text
-/// 
-///  code:200 message:"successful operation"
-///
-/// @return PBGeoPropertyPBKeyResponse*
--(NSNumber*) getGeoPropertyByPBKeyWithPbKey: (NSString*) pbKey
-    completionHandler: (void (^)(PBGeoPropertyPBKeyResponse* output, NSError* error)) handler;
-
-
-/// Gets GeoPropertyResponses
-/// Gets GeoPropertyResponses
-///
-/// @param body  (optional)
-/// 
-///  code:200 message:"successful operation"
-///
-/// @return PBGeoPropertyPBKeyResponses*
--(NSNumber*) getGeoPropertyByPBKeyBatchWithBody: (PBGeoPropertyPBKeyRequest*) body
-    completionHandler: (void (^)(PBGeoPropertyPBKeyResponses* output, NSError* error)) handler;
-
-
 /// Gets ParcelBoundary
 /// Gets ParcelBoundary
 ///
@@ -119,20 +92,6 @@ extern NSInteger kPBLIAPIGeoPropertyServiceApiMissingParamErrorCode;
     completionHandler: (void (^)(PBParcelBoundary* output, NSError* error)) handler;
 
 
-/// Gets ParcelBoundary
-/// Gets ParcelBoundary
-///
-/// @param pbKey PB specific unique key for each address
-/// @param accept  (optional)
-/// 
-///  code:200 message:"successful operation"
-///
-/// @return PBParcelBoundary*
--(NSNumber*) getParcelBoundaryByPBKeyWithPbKey: (NSString*) pbKey
-    accept: (NSString*) accept
-    completionHandler: (void (^)(PBParcelBoundary* output, NSError* error)) handler;
-
-
 /// Search Nearby Schools by Address
 /// Search Nearby Schools by Address
 ///
@@ -156,46 +115,6 @@ extern NSInteger kPBLIAPIGeoPropertyServiceApiMissingParamErrorCode;
 ///
 /// @return PBSchoolsNearByResponse*
 -(NSNumber*) getSchoolsByAddressWithAddress: (NSString*) address
-    edLevel: (NSString*) edLevel
-    schoolType: (NSString*) schoolType
-    schoolSubType: (NSString*) schoolSubType
-    gender: (NSString*) gender
-    assignedSchoolsOnly: (NSString*) assignedSchoolsOnly
-    districtSchoolsOnly: (NSString*) districtSchoolsOnly
-    searchRadius: (NSString*) searchRadius
-    searchRadiusUnit: (NSString*) searchRadiusUnit
-    travelTime: (NSString*) travelTime
-    travelTimeUnit: (NSString*) travelTimeUnit
-    travelDistance: (NSString*) travelDistance
-    travelDistanceUnit: (NSString*) travelDistanceUnit
-    travelMode: (NSString*) travelMode
-    maxCandidates: (NSString*) maxCandidates
-    completionHandler: (void (^)(PBSchoolsNearByResponse* output, NSError* error)) handler;
-
-
-/// Search Nearby Schools by PBKey
-/// Search Nearby Schools by PBKey
-///
-/// @param pbKey free form text
-/// @param edLevel Single digit code for education level applicable values are P -&gt; primary, M -&gt; Middle, H -&gt; High, O -&gt; Mixed Grades for public school type andE -&gt; Elementary , S -&gt; Secondary , O -&gt; Others mixed grades for private schools  (optional)
-/// @param schoolType Single digit code for schoolTypes applicable values are PRI and PUB (optional)
-/// @param schoolSubType Single digit code for schoolSubType Applicable values are C, M, A, R, I, L, P, V, U, S (i.e. Charter, Magnet, Alternative, Regular, Indian, Military, Reportable Program, Vocational, Unknown, Special Education) (optional)
-/// @param gender Single digit code for gender Applicable values are C, F, M (Coed, All Females, All Males) (optional)
-/// @param assignedSchoolsOnly Single digit code for assignedSchoolOnly applicable values are  Y/N  (optional)
-/// @param districtSchoolsOnly Single digit code for districtSchoolOnly applicable values are Y/N  (optional)
-/// @param searchRadius Search Radius within which schools are searched (optional)
-/// @param searchRadiusUnit Search Radius unit applicable values are feet,kilometers,miles,meters (optional)
-/// @param travelTime Travel Time based on ‘travelMode’ within which schools are searched. (optional)
-/// @param travelTimeUnit Travel Time unit applicable values are minutes,hours,seconds,milliseconds  (optional)
-/// @param travelDistance Travel Distance based on ‘travelMode’ within which schools are searched. (optional)
-/// @param travelDistanceUnit Travel distanceUnit applicable values are feet,kilometers,miles,meters (optional)
-/// @param travelMode Travel mode Required when travelDistance or travelTime is specified. Accepted values are walking,driving (optional)
-/// @param maxCandidates Max result to search  (optional) (default to 10)
-/// 
-///  code:200 message:"successful operation"
-///
-/// @return PBSchoolsNearByResponse*
--(NSNumber*) getSchoolsNearByUsingPBKeyWithPbKey: (NSString*) pbKey
     edLevel: (NSString*) edLevel
     schoolType: (NSString*) schoolType
     schoolSubType: (NSString*) schoolSubType

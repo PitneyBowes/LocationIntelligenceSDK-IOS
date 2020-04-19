@@ -41,4 +41,6 @@
 
 @property(nonatomic) NSString* percentile;
 
+@property(nonatomic) NSString* stateScore;
+
 @end

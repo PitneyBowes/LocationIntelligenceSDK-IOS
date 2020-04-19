@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **score** | **NSString*** |  | [optional] 
 **category** | **NSString*** |  | [optional] 
 **percentile** | **NSString*** |  | [optional] 
+**stateScore** | **NSString*** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
